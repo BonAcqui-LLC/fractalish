@@ -1,180 +1,81 @@
-# Fractalish
+# Fractalish Public Collaboration Hub
 
-## Fractalish Translation Apparatus v0.1
+Fractalish is an open morphology workbench for studying whether observable form can preserve recoverable evidence of process, constraint, disturbance, recovery, or erasure. The project combines MCVA, AMCVA, HOLD, Natural Math, and related Synaptient / Cognitive Basin work. This repository is the public contribution hub.
 
-This workspace now includes a local-first morphology translation apparatus for generating traceable evidence packages from single images.
+Site:
 
-### Install
+- [fractalish.com](https://fractalish.com)
 
-```bash
-pip install -r requirements.txt
-```
+Core public releases:
 
-### Generate synthetic samples
+- [Synaptient / Cognitive Basin Technical White Paper v0.1](https://fractalish.com/assets/docs/Synaptient_Cognitive_Basin_Technical_White_Paper_v0_1.pdf)
+- [Companion Foundation Appendix v0.1 - How We Got Here](https://fractalish.com/assets/docs/Synaptient_Cognitive_Basin_Companion_Foundation_Appendix_v0_1.pdf)
+- [Paired release landing page](https://fractalish.com/white-papers/synaptient-cognitive-basin-technical-white-paper.html)
 
-```bash
-python tools/generate_synthetic_examples.py
-```
+## Start Here
 
-This writes:
+If you are new to the project, use this order:
 
-- `examples/input/sample.png`
-- `examples/input/synthetic_branching.png`
-- `examples/input/synthetic_irregular_boundary.png`
-- `examples/input/synthetic_polygonal_cells.png`
-- `examples/input/synthetic_crack.png`
-- `examples/input/synthetic_noise.png`
+1. [Start Here](https://fractalish.com/start-here.html)
+2. [MCVA / AMCVA / HOLD](https://fractalish.com/mcva-amcva-hold.html)
+3. [Natural Math](https://fractalish.com/natural-math.html)
+4. [Documents and Working Papers](https://fractalish.com/documents.html)
+5. [Reference Library](https://fractalish.com/library.html)
+6. [Fractalish Commons](https://fractalish.com/commons.html)
 
-### Analyze one image
+## What This Repo Is
 
-```bash
-python tools/fractalish_analyze.py examples/input/sample.png --out examples/output/sample_case
-```
+This repository is the public front door for collaboration around:
 
-Expected evidence package:
+- Fractalish as morphology workbench
+- MCVA, AMCVA, and HOLD vocabulary and guardrails
+- Natural Math documents and implementation references
+- Synaptient / Cognitive Basin public architecture materials
+- study guides, references, release indexes, and contribution structure
 
-- `raw_image.png`
-- `normalized.png`
-- `binary_mask.png`
-- `skeleton.png`
-- `overlay.png`
-- `morphology_trace.svg`
-- `metrics.csv`
-- `metrics.xlsx`
-- `mcva_record.json`
-- `report.md`
+Documents explain the framework. Traces, tools, datasets, examples, and study guides test it.
 
-### Compare two images
+## Short Vocabulary
 
-```bash
-python tools/fractalish_compare.py examples/input/synthetic_branching.png examples/input/synthetic_crack.png --out examples/output/sample_compare
-```
+- `MCVA`: reads where morphology preserves process.
+- `AMCVA`: protects where morphology does not safely speak.
+- `HOLD`: preserves uncertainty when the evidence is not enough yet.
 
-### Batch analyze a folder
+## Claim Boundary
 
-```bash
-python tools/fractalish_batch.py examples/input --out examples/output/batch
-```
+Fractalish is not:
 
-### Notes
+- medical diagnosis
+- financial advice
+- a consciousness claim
+- a universal decoder
+- proof that all morphology is readable
 
-- The analyzer is local-first and rule-based in v0.1.
-- Fractal dimension is one descriptor, not a diagnosis.
-- Similarity is not identity.
-- Single images classify; sequences explain.
+Similarity is not identity. A fractal reading is not forced. It must be earned.
 
-## Natural Math
+## Contribute
 
-This workspace also now includes a canonical local-first `natural_math/` package.
+Useful public contribution lanes include:
 
-### Run Natural Math
+- references and prior art
+- morphology examples
+- dataset leads
+- criticism and hostile review
+- descriptor and tooling improvements
+- site and document fixes
+- code and schema proposals
 
-Default runner:
+Start with:
 
-```bash
-python tools/natural_math_run.py
-```
+- [CONTRIBUTING.md](CONTRIBUTING.md)
+- [docs/PROJECT_MAP.md](docs/PROJECT_MAP.md)
+- [docs/PUBLIC_RELEASE_INDEX.md](docs/PUBLIC_RELEASE_INDEX.md)
+- [docs/DISCUSSIONS_GUIDE.md](docs/DISCUSSIONS_GUIDE.md)
 
-This now defaults to the `bifurcation-demo` profile so the package demonstrates real branch splitting instead of only immediate inactive-state behavior.
+## Repo Scope
 
-### Natural Math profiles
+This repo is the public collaboration hub, not the total private IP inventory. Private patent drafts, private account material, unpublished medical records, and local-only working notes should not be added here.
 
-Closed-system inactive-state baseline:
+## License
 
-```bash
-python tools/natural_math_run.py --profile smoke
-```
-
-Single-child growth demo:
-
-```bash
-python tools/natural_math_run.py --profile growth-demo
-```
-
-Obstacle-aware branch-splitting demo:
-
-```bash
-python tools/natural_math_run.py --profile bifurcation-demo
-```
-
-Simple obstacle/growth variant:
-
-```bash
-python tools/natural_math_run.py --profile obstacle-growth
-```
-
-Optional exports:
-
-```bash
-python tools/natural_math_run.py --profile bifurcation-demo --out tmp/nm_demo
-```
-
-Expected Natural Math exports:
-
-- `natural_math_summary.json`
-- `natural_math_history.csv`
-- `natural_math_events.csv`
-
-### Natural Math package status
-
-- The canonical implementation lives under `natural_math/`.
-- The current package includes deterministic runs, event logging, invariant checks, and named demo profiles.
-- Reproduction remains a conservative scaffold, not a full Appendix B-complete validation engine yet.
-- The strongest current demos are `smoke`, `growth-demo`, and `bifurcation-demo`.
-
-See also:
-
-- [docs/natural_math_full_implementation_plan.md](C:\Users\moop\Downloads\Articles%20on%20X.com\Fractalish.com\docs\natural_math_full_implementation_plan.md)
-- [docs/natural_math_runner_profiles.md](C:\Users\moop\Downloads\Articles%20on%20X.com\Fractalish.com\docs\natural_math_runner_profiles.md)
-
-Static v1 landing page for `fractalish.com`, designed for direct deployment to Cloudflare Pages from the `public/` directory.
-
-## Structure
-
-- `public/index.html`: page markup and SEO metadata
-- `public/styles.css`: theme, layout, motion, and responsive rules
-- `public/app.js`: lightweight content rendering and UI behavior
-- `public/images/`: local source imagery used by the page
-
-## Public Site Cleanup Pass
-
-The public site now has a clearer document-first research hierarchy.
-
-Primary navigation:
-
-- `Home`
-- `Field Guide`
-- `Natural Math`
-- `MCVA / AMCVA / HOLD`
-- `Fractalish Commons`
-- `Tools`
-- `Reference Library`
-- `Research Notes`
-- `Videos / Study Guides`
-- `Documents`
-- `Contribute`
-
-Key cleanup additions:
-
-- expanded `Natural Math` and `MCVA / AMCVA / HOLD` field-guide pages
-- curated `Documents` library grouped by type and status
-- cleaned `Research Notes` index plus expanded `Recovery Wake`
-- `Tom Wessels` study-guide page with official embeds and accessible timed subtitle panels
-- `Desiloizing Geometry` field-guide page
-- `Microglia / Fractal Analysis` precedent note
-- `No Knowledge Trapped in Video` policy note
-
-Subtitle source files for the Tom Wessels study guide are staged under:
-
-- `public/assets/subtitles/`
-
-## Local preview
-
-Use any static server that serves `public/` as the web root.
-
-## Deployment
-
-Cloudflare Pages can deploy this as a static site with:
-
-- Build command: none
-- Output directory: `public`
+This repository already includes a project license file. Read [LICENSE](LICENSE) before reusing code, documents, or marks.

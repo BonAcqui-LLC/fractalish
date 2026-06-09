@@ -1,0 +1,54 @@
+name: Site or document issue
+description: Report a problem in the public site, navigation, docs, or release pages.
+title: "[Site/Docs] "
+labels:
+  - site
+body:
+  - type: textarea
+    id: target
+    attributes:
+      label: Affected page or document
+    validations:
+      required: true
+  - type: textarea
+    id: provenance
+    attributes:
+      label: Source / provenance
+      description: URL, screenshot note, or reproduction steps.
+    validations:
+      required: true
+  - type: input
+    id: domain
+    attributes:
+      label: Domain
+      description: If relevant; otherwise use site/docs.
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why it matters
+    validations:
+      required: true
+  - type: textarea
+    id: claim
+    attributes:
+      label: What claim it supports or challenges
+      description: If not claim-related, say that explicitly.
+    validations:
+      required: true
+  - type: dropdown
+    id: routing
+    attributes:
+      label: MCVA / AMCVA / HOLD relevance
+      options:
+        - MCVA
+        - AMCVA
+        - HOLD
+        - Not applicable
+    validations:
+      required: true
+  - type: textarea
+    id: limitations
+    attributes:
+      label: Known limitations

@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Discussions guide
+    url: https://github.com/BonAcqui-LLC/fractalish/blob/main/docs/DISCUSSIONS_GUIDE.md
+    about: Suggested categories for questions, references, examples, hostile review, and tooling.

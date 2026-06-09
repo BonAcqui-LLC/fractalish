@@ -1,0 +1,52 @@
+name: Dataset suggestion
+description: Suggest a public dataset, archive, or repeated-image source.
+title: "[Dataset] "
+labels:
+  - dataset
+body:
+  - type: input
+    id: dataset_name
+    attributes:
+      label: Dataset name
+    validations:
+      required: true
+  - type: textarea
+    id: provenance
+    attributes:
+      label: Source / provenance
+      description: Download URL, archive, author, or publication details.
+    validations:
+      required: true
+  - type: input
+    id: domain
+    attributes:
+      label: Domain
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why it matters
+    validations:
+      required: true
+  - type: textarea
+    id: claim
+    attributes:
+      label: What claim it supports or challenges
+    validations:
+      required: true
+  - type: dropdown
+    id: routing
+    attributes:
+      label: MCVA / AMCVA / HOLD relevance
+      options:
+        - MCVA
+        - AMCVA
+        - HOLD
+        - Mixed / unsure
+    validations:
+      required: true
+  - type: textarea
+    id: limitations
+    attributes:
+      label: Known limitations

@@ -1,0 +1,52 @@
+name: Tooling request
+description: Suggest analyzer, descriptor, export, schema, or runtime improvements.
+title: "[Tooling] "
+labels:
+  - tooling
+body:
+  - type: input
+    id: request_name
+    attributes:
+      label: Requested improvement
+    validations:
+      required: true
+  - type: textarea
+    id: provenance
+    attributes:
+      label: Source / provenance
+      description: Reference, prior art, current workflow, or evidence motivating the request.
+    validations:
+      required: true
+  - type: input
+    id: domain
+    attributes:
+      label: Domain
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why it matters
+    validations:
+      required: true
+  - type: textarea
+    id: claim
+    attributes:
+      label: What claim it supports or challenges
+    validations:
+      required: true
+  - type: dropdown
+    id: routing
+    attributes:
+      label: MCVA / AMCVA / HOLD relevance
+      options:
+        - MCVA
+        - AMCVA
+        - HOLD
+        - Mixed / unsure
+    validations:
+      required: true
+  - type: textarea
+    id: limitations
+    attributes:
+      label: Known limitations

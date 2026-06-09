@@ -1,0 +1,56 @@
+name: Reference addition
+description: Add a paper, video, prior-art source, or methodological reference.
+title: "[Reference] "
+labels:
+  - reference
+body:
+  - type: input
+    id: title
+    attributes:
+      label: Reference title
+      description: Name of the reference or source.
+    validations:
+      required: true
+  - type: textarea
+    id: provenance
+    attributes:
+      label: Source / provenance
+      description: Link, citation, archive location, or publication details.
+    validations:
+      required: true
+  - type: input
+    id: domain
+    attributes:
+      label: Domain
+      description: Example: roads, forests, pathology, signals, cognition.
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why it matters
+      description: What operation, guardrail, or framework lane this reference informs.
+    validations:
+      required: true
+  - type: textarea
+    id: claim
+    attributes:
+      label: What claim it supports or challenges
+    validations:
+      required: true
+  - type: dropdown
+    id: routing
+    attributes:
+      label: MCVA / AMCVA / HOLD relevance
+      options:
+        - MCVA
+        - AMCVA
+        - HOLD
+        - Mixed / unsure
+    validations:
+      required: true
+  - type: textarea
+    id: limitations
+    attributes:
+      label: Known limitations
+      description: Acquisition limits, domain mismatch, uncertainty, or reasons not to overclaim.
