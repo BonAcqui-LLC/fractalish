@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "If you use or discuss this work, please cite the current public release and any DOI-bearing archives once available."
+title: "Fractalish: Public research home for Fractalish, Natural Math, and Cognitive Basin"
+version: "0.2.0"
+date-released: "2026-06-08"
+authors:
+  - family-names: "Clow"
+    given-names: "James Allen"
+  - family-names: "Clow"
+    given-names: "Melissa Ellen"
+url: "https://fractalish.com"
+type: generic
+abstract: "A public research program of Bonacqui focused on process from form, morphology as memory, Natural Math, Cognitive Basin, MCVA, AMCVA, and HOLD."
+license: "CC-BY-4.0"
