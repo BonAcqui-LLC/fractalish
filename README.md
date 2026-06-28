@@ -1,6 +1,6 @@
 # Fractalish Public Collaboration Hub
 
-Fractalish is an open morphology workbench for studying whether observable form can preserve recoverable evidence of process, constraint, disturbance, recovery, or erasure. The project combines MCVA, AMCVA, HOLD, Natural Math, and related Synaptient / Cognitive Basin work. This repository is the public contribution hub.
+Fractalish is now the public front door for a larger active stack: open morphology research, MCVA / AMCVA / HOLD, Melissa Clow's Natural Math program, Cognitive Basin / BasinLab implementation, CNTM realization, Motorola activation evidence, and the Fractalish AI mobile build path. This repository is the public contribution hub for that outward-facing work.
 
 Site:
 
@@ -12,6 +12,14 @@ Core public releases:
 - [Companion Foundation Appendix v0.1 - How We Got Here](https://fractalish.com/assets/docs/Synaptient_Cognitive_Basin_Companion_Foundation_Appendix_v0_1.pdf)
 - [Paired release landing page](https://fractalish.com/white-papers/synaptient-cognitive-basin-technical-white-paper.html)
 
+Current technical entry points:
+
+- [Cognitive Basin / BasinLab](https://fractalish.com/cognitive-basin.html)
+- [CNTM realization](https://fractalish.com/cntm-realization.html)
+- [Natural Math](https://fractalish.com/natural-math.html)
+- [Motorola activation](https://fractalish.com/motorola-activation.html)
+- [Fractalish AI](https://fractalish.com/fractalish-ai.html)
+
 ## Start Here
 
 If you are new to the project, use this order:
@@ -19,9 +27,13 @@ If you are new to the project, use this order:
 1. [Start Here](https://fractalish.com/start-here.html)
 2. [MCVA / AMCVA / HOLD](https://fractalish.com/mcva-amcva-hold.html)
 3. [Natural Math](https://fractalish.com/natural-math.html)
-4. [Documents and Working Papers](https://fractalish.com/documents.html)
-5. [Reference Library](https://fractalish.com/library.html)
-6. [Fractalish Commons](https://fractalish.com/commons.html)
+4. [Cognitive Basin / BasinLab](https://fractalish.com/cognitive-basin.html)
+5. [CNTM realization](https://fractalish.com/cntm-realization.html)
+6. [Motorola activation](https://fractalish.com/motorola-activation.html)
+7. [Fractalish AI](https://fractalish.com/fractalish-ai.html)
+8. [Documents and Working Papers](https://fractalish.com/documents.html)
+9. [Reference Library](https://fractalish.com/library.html)
+10. [Fractalish Commons](https://fractalish.com/commons.html)
 
 ## What This Repo Is
 
@@ -31,9 +43,12 @@ This repository is the public front door for collaboration around:
 - MCVA, AMCVA, and HOLD vocabulary and guardrails
 - Natural Math documents and implementation references
 - Synaptient / Cognitive Basin public architecture materials
+- CNTM realization summaries
+- Motorola activation and phone-path disclosure
+- Fractalish AI build-program explanation
 - study guides, references, release indexes, and contribution structure
 
-Documents explain the framework. Traces, tools, datasets, examples, and study guides test it.
+Documents explain the framework. Code, traces, tools, datasets, examples, replay, and device evidence test it.
 
 ## Short Vocabulary
 
@@ -64,6 +79,8 @@ Useful public contribution lanes include:
 - descriptor and tooling improvements
 - site and document fixes
 - code and schema proposals
+- replay and governed-execution critique
+- Android, sensor, and device-activation help
 
 Start with:
 

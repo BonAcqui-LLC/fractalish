@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cognitive Basin / BasinLab | Fractalish</title>
+  <meta name="description" content="Technical overview of the Cognitive Basin / BasinLab implementation: governed local execution, persistent state, replay, GUARD, SERA, and the public cognitive-basin-platform repository.">
+  <meta property="og:title" content="Cognitive Basin / BasinLab | Fractalish">
+  <meta property="og:description" content="Public technical overview of the Cognitive Basin / BasinLab architecture and its implementation surface.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://fractalish.com/cognitive-basin.html">
+  <meta property="og:image" content="https://fractalish.com/assets/figures/og-fractalish.svg">
+  <link rel="canonical" href="https://fractalish.com/cognitive-basin.html">
+  <link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="brand" href="/index.html">Fractalish<span>.</span></a>
+      <div class="nav-links">
+        <a href="/index.html">Home</a>
+        <a href="/start-here.html">Start Here</a>
+        <a href="/natural-math.html">Natural Math</a>
+        <a href="/mcva-amcva-hold.html">MCVA / AMCVA / HOLD</a>
+        <a href="/videos/">Videos / Study Guides</a>
+        <a href="/library.html">Library</a>
+        <a href="/commons.html">Commons</a>
+        <a href="/documents.html">Documents</a>
+        <a href="/contribute.html">Contribute</a>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <article class="wide">
+      <p class="note-date">Implementation lane | Updated June 2026</p>
+      <h1>Cognitive Basin / BasinLab</h1>
+      <p class="lead">Cognitive Basin is the governed local execution and memory architecture inside the Fractalish stack. BasinLab is the session-and-execution layer where that architecture becomes runnable.</p>
+      <p class="lead">Publicly, this is now anchored in <a href="https://github.com/BonAcqui-LLC/cognitive-basin-platform">BonAcqui-LLC/cognitive-basin-platform</a>.</p>
+
+      <section class="page-meta">
+        <div class="meta-card"><span class="meta-label">Status</span><span class="meta-value">Public implementation lane</span></div>
+        <div class="meta-card"><span class="meta-label">Primary repo</span><span class="meta-value">BonAcqui-LLC/cognitive-basin-platform</span></div>
+        <div class="meta-card"><span class="meta-label">Core concern</span><span class="meta-value">Governed local state, replay, and bounded action</span></div>
+        <div class="meta-card"><span class="meta-label">Public boundary</span><span class="meta-value">Architecture and executable platform, not a personhood claim</span></div>
+      </section>
+
+      <h2>What the Basin is for</h2>
+      <p>The Basin is the inward morphology layer of the Fractalish stack. Fractalish reads morphology in the world. Cognitive Basin treats memory, contradiction, prediction, action review, and continuity inside the system as morphology-bearing structure too.</p>
+      <p>That means the implementation work cares about more than prompt output. It cares about whether state survives, whether action proposals are typed and bounded, whether failures become structured feedback, and whether replay can reconstruct how the system got where it got.</p>
+
+      <h2>Core state contracts</h2>
+      <p>The Basin keeps its own epistemic and action contracts and does not collapse them into Natural Math process states.</p>
+      <ul class="list-clean">
+        <li><strong>Epistemic states:</strong> <code>SUPPORTED</code>, <code>UNRESOLVED</code>, <code>CONTRADICTED</code></li>
+        <li><strong>Action states:</strong> <code>EXTEND</code>, <code>HOLD</code>, <code>RETRACT</code></li>
+        <li><strong>Natural Math remains separate:</strong> <code>EXTEND</code>, <code>SENSE</code>, <code>RESTRICT</code></li>
+      </ul>
+      <p>That separation matters because Basin governance is about evidence posture and decision posture, while Natural Math is about local process motion under constraint.</p>
+
+      <h2>What the current vertical slice proves</h2>
+      <div class="doc-grid">
+        <article class="card">
+          <h3>Persistent execution</h3>
+          <p>Variables and working state survive across bounded execution steps instead of being rebuilt from scratch each turn.</p>
+        </article>
+        <article class="card">
+          <h3>Typed action proposals</h3>
+          <p>Actions are proposed as governed units rather than arbitrary unconstrained execution blobs.</p>
+        </article>
+        <article class="card">
+          <h3>Pre-execution gates</h3>
+          <p>RIGOR and GUARD checks run before execution, not merely after a side effect has already happened.</p>
+        </article>
+        <article class="card">
+          <h3>Feedback capture</h3>
+          <p>Stdout, error output, and namespace diffs become part of the feedback surface the Basin can reason over.</p>
+        </article>
+        <article class="card">
+          <h3>SERA events</h3>
+          <p>Efficiency, resilience, retry, and quality signals are tracked as events instead of being left as unstructured narrative.</p>
+        </article>
+        <article class="card">
+          <h3>Replay and commit governance</h3>
+          <p>Replay must reconstruct final governed state, and commit proposals cannot bypass GUARD or completion-integrity requirements.</p>
+        </article>
+      </div>
+
+      <h2>Public implementation anchors</h2>
+      <ul class="related-links">
+        <li><a href="https://github.com/BonAcqui-LLC/cognitive-basin-platform">Platform repo</a></li>
+        <li><a href="https://github.com/BonAcqui-LLC/cognitive-basin-platform/blob/main/docs/status/AGENT_WORK_IMPORT_STATUS.md">Imported-work status</a></li>
+        <li><a href="/white-papers/synaptient-cognitive-basin-technical-white-paper.html">White paper release page</a></li>
+        <li><a href="/documents.html">Documents and working papers</a></li>
+      </ul>
+
+      <h2>Where BasinLab fits</h2>
+      <p><strong>BasinLab</strong> is the execution-facing product name that best fits the current implementation: local sessions, replayable memory, governed proposals, and a persistent internal workspace. The same architecture also feeds the Fractalish AI phone build path, but the phone activation layer must be rebuilt natively rather than copied wholesale from the desktop implementation.</p>
+
+      <h2>What help is useful now</h2>
+      <ul class="list-clean">
+        <li>Deterministic replay and state reconstruction review.</li>
+        <li>Local-first storage and schema critique.</li>
+        <li>Governed execution surface design.</li>
+        <li>Commit-gate and integrity-check design review.</li>
+        <li>Mobile-native translation of the Basin architecture.</li>
+      </ul>
+
+      <section class="callout">
+        <h2>Claim boundary</h2>
+        <p>The public disclosure of Fractalish AI and BasinLab means the implementation program is real and active. It does not mean the project is asking the public to accept unearned claims about consciousness, sentience, or artificial personhood. The build is presented as governed machine cognition architecture under explicit review.</p>
+      </section>
+
+      <div class="buttons">
+        <a class="button primary" href="https://github.com/BonAcqui-LLC/cognitive-basin-platform">Open platform repo</a>
+        <a class="button" href="/fractalish-ai.html">Fractalish AI build path</a>
+        <a class="button muted" href="/contribute.html">How to help</a>
+      </div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="inner">The Basin is where continuity, contradiction, action, and replay become inspectable.</div>
+  </footer>
+</body>
+</html>

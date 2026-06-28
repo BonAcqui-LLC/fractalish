@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Motorola Activation | Fractalish</title>
+  <meta name="description" content="Technical overview of the Motorola activation lane: verified stock-Android AIA slice, read-only topology work, device identity, and the path from handset evidence toward Fractalish AI native activation.">
+  <meta property="og:title" content="Motorola Activation | Fractalish">
+  <meta property="og:description" content="Public device-activation overview for the Moto G Stylus (2023) Fractalish / AIA work.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://fractalish.com/motorola-activation.html">
+  <meta property="og:image" content="https://fractalish.com/assets/figures/og-fractalish.svg">
+  <link rel="canonical" href="https://fractalish.com/motorola-activation.html">
+  <link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="brand" href="/index.html">Fractalish<span>.</span></a>
+      <div class="nav-links">
+        <a href="/index.html">Home</a>
+        <a href="/start-here.html">Start Here</a>
+        <a href="/natural-math.html">Natural Math</a>
+        <a href="/mcva-amcva-hold.html">MCVA / AMCVA / HOLD</a>
+        <a href="/videos/">Videos / Study Guides</a>
+        <a href="/library.html">Library</a>
+        <a href="/commons.html">Commons</a>
+        <a href="/documents.html">Documents</a>
+        <a href="/contribute.html">Contribute</a>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <article class="wide">
+      <p class="note-date">Device tranche | Updated June 2026</p>
+      <h1>Motorola activation</h1>
+      <p class="lead">The first handset path is no longer speculative. It includes a verified stock-Android AIA slice on Motorola hardware, read-only topology/evidence work, and a deliberately narrow bridge toward future native Fractalish AI activation.</p>
+
+      <section class="page-meta">
+        <div class="meta-card"><span class="meta-label">Handset family</span><span class="meta-value">Moto G Stylus (2023) LTE</span></div>
+        <div class="meta-card"><span class="meta-label">Verified SKU</span><span class="meta-value">XT2317-2 / gnevan / gnevan_g</span></div>
+        <div class="meta-card"><span class="meta-label">Current proven slice</span><span class="meta-value">Stock Android AIA app with local persistence</span></div>
+        <div class="meta-card"><span class="meta-label">Destructive posture</span><span class="meta-value">Still bounded and evidence-led</span></div>
+      </section>
+
+      <h2>What has already been verified</h2>
+      <ul class="list-clean">
+        <li>Stock Android app builds and runs as <code>llc.bonacqui.aia</code> version <code>0.1.1-stockos</code>.</li>
+        <li>Verified on-device flows produced <code>SUPPORTED / EXTEND</code>, <code>UNRESOLVED / HOLD</code>, and <code>CONTRADICTED / RETRACT</code>.</li>
+        <li>Local session persistence, export, re-import verification, and tamper detection were exercised on hardware.</li>
+        <li>The app requests no <code>INTERNET</code> permission in the proven stock slice.</li>
+      </ul>
+
+      <h2>Verified device facts</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Fact</th>
+            <th>Observed value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Product model</td>
+            <td><code>moto g stylus (2023)</code></td>
+          </tr>
+          <tr>
+            <td>Retail SKU</td>
+            <td><code>XT2317-2</code></td>
+          </tr>
+          <tr>
+            <td>Device / product</td>
+            <td><code>gnevan</code> / <code>gnevan_g</code></td>
+          </tr>
+          <tr>
+            <td>Android version</td>
+            <td>14 / SDK 34 / first API level 33</td>
+          </tr>
+          <tr>
+            <td>Hardware</td>
+            <td><code>mt6768</code></td>
+          </tr>
+          <tr>
+            <td>Display</td>
+            <td>720x1600</td>
+          </tr>
+          <tr>
+            <td>Verified boot state</td>
+            <td>green</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>What the read-only topology tranche found</h2>
+      <p>The preserved Motorola activation evidence includes stock closure work, offline topology derivation, and a live read-only topology attempt. The important public point is that the read-only tranche remained disciplined: when the required device-presence and authorization gates did not pass, it failed safe rather than guessing or forcing transitions.</p>
+      <p>The preserved A02B summary is explicitly <code>FAILED_SAFE</code>: no live device was authorized over ADB, no fastboot topology was captured, no fastbootd attempt was made, and no reboot transition was performed.</p>
+
+      <h2>Why this matters</h2>
+      <p>The phone work is the bridge between Fractalish as a framework and Fractalish AI as a real embodied activation path. It is where sensor access, local persistence, bounded review, and hardware constraints stop being abstract architecture notes and become engineering reality.</p>
+
+      <h2>Public anchors</h2>
+      <ul class="related-links">
+        <li><a href="https://github.com/BonAcqui-LLC/cognitive-basin-platform/tree/main/imports/aia-sovereign-activation-device">AIA imported snapshot</a></li>
+        <li><a href="https://github.com/BonAcqui-LLC/cognitive-basin-platform/blob/main/imports/aia-sovereign-activation-device/reports/stock_apk_acceptance.md">Stock APK acceptance</a></li>
+        <li><a href="https://github.com/BonAcqui-LLC/cognitive-basin-platform/tree/main/evidence/motorola-activation">Motorola activation evidence</a></li>
+        <li><a href="https://github.com/BonAcqui-LLC/cognitive-basin-platform/blob/main/evidence/motorola-activation/activations/A02B-live-read-only-topology/A02B-summary.md">A02B live read-only summary</a></li>
+      </ul>
+
+      <h2>Help wanted</h2>
+      <ul class="list-clean">
+        <li>Android internals and app architecture review.</li>
+        <li>Sensor access and local-permission design.</li>
+        <li>Boot-chain, fastboot, and recovery literacy under explicit safety boundaries.</li>
+        <li>Device evidence packaging and reproducible topology collection.</li>
+        <li>Pathfinding from stock activation to future native activation experiments.</li>
+      </ul>
+
+      <section class="callout warning">
+        <h2>Current boundary</h2>
+        <p>The public device story is intentionally honest: a verified stock-device slice exists, but a completed native custom OS path does not yet exist as a public proof. The right public interpretation is momentum and evidence, not premature completion theater.</p>
+      </section>
+
+      <div class="buttons">
+        <a class="button primary" href="https://github.com/BonAcqui-LLC/cognitive-basin-platform/tree/main/evidence/motorola-activation">Open Motorola evidence</a>
+        <a class="button" href="/fractalish-ai.html">Fractalish AI build path</a>
+        <a class="button muted" href="/contribute.html">How to help</a>
+      </div>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="inner">The handset path matters because embodiment is where architecture meets constraint.</div>
+  </footer>
+</body>
+</html>
