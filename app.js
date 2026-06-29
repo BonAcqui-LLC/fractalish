@@ -75,9 +75,9 @@ const archiveLinks = [
     href: "/commons",
   },
   {
-    title: "Reference Library",
-    body: "Synthetic anchors, proof-positive examples, proof-negative controls, and HOLD cases with trace files attached.",
-    href: "/library",
+    title: "Documents and records",
+    body: "Public records, evidence indexes, proof-positive lanes, proof-negative lanes, and HOLD cases.",
+    href: "/documents#evidence-records",
   },
   {
     title: "The Recovery Wake Is the Evidence",
