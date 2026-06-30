@@ -1,6 +1,6 @@
 # Fractalish Public Collaboration Hub
 
-Fractalish is now the public front door for a larger active stack: open morphology research, MCVA / AMCVA / HOLD, Melissa Clow's Natural Math program, Cognitive Basin / BasinLab implementation, CNTM realization, Motorola activation evidence, and the Fractalish AI mobile build path. This repository is the public contribution hub for that outward-facing work.
+Fractalish is now the public front door for a larger active stack: open morphology research, MCVA / AMCVA / HOLD, Natural Math, Cognitive Basin / BasinLab implementation, CNTM realization, Motorola activation evidence, and the Fractalish AI mobile build path. This repository is the public contribution hub for that outward-facing work.
 
 Site:
 
