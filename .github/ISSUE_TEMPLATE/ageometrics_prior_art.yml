@@ -1,0 +1,55 @@
+name: Ageometrics prior art
+description: Report prior art, conceptual overlap, naming conflicts, or equivalent earlier metrics.
+title: "[Ageometrics Prior Art] "
+labels:
+  - prior-art
+  - ageometrics
+body:
+  - type: input
+    id: cited_work
+    attributes:
+      label: Cited work
+    validations:
+      required: true
+  - type: input
+    id: date
+    attributes:
+      label: Publication date
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: DOI or source URL
+    validations:
+      required: true
+  - type: textarea
+    id: overlap
+    attributes:
+      label: Exact overlap
+      description: What specifically overlaps with Ageometrics, GSR, residue taxonomy, or benchmark design?
+    validations:
+      required: true
+  - type: dropdown
+    id: predates
+    attributes:
+      label: Does it clearly predate the Ageometrics proposal?
+      options:
+        - yes
+        - no
+        - unclear
+    validations:
+      required: true
+  - type: textarea
+    id: neighbor
+    attributes:
+      label: Equivalent metric or conceptual neighbor
+      description: State whether this is an exact match, a strong neighbor, a terminology conflict, or a weaker conceptual precedent.
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: Suggested correction
+    validations:
+      required: true

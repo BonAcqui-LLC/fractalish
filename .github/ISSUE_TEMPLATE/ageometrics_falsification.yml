@@ -1,0 +1,55 @@
+name: Ageometrics falsification or counterexample
+description: Submit a benchmark, construction, or result that weakens or falsifies the proposal.
+title: "[Ageometrics Falsification] "
+labels:
+  - hostile-review
+  - ageometrics
+body:
+  - type: textarea
+    id: claim
+    attributes:
+      label: Claim challenged
+    validations:
+      required: true
+  - type: input
+    id: dataset
+    attributes:
+      label: Dataset or construction
+    validations:
+      required: true
+  - type: textarea
+    id: geometry
+    attributes:
+      label: Geometric representation
+    validations:
+      required: true
+  - type: input
+    id: target
+    attributes:
+      label: Target
+    validations:
+      required: true
+  - type: input
+    id: baseline
+    attributes:
+      label: Baseline score
+    validations:
+      required: true
+  - type: input
+    id: geometry_only
+    attributes:
+      label: Geometry-only result
+    validations:
+      required: true
+  - type: input
+    id: full_record
+    attributes:
+      label: Full-record result
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why it weakens or falsifies the proposal
+    validations:
+      required: true

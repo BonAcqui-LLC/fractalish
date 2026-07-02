@@ -37,6 +37,20 @@ This map is a public orientation aid. It distinguishes what each lane is, where 
 - Related site or document: [Natural Math](https://fractalish.com/natural-math.html), `natural_math/` package references in this repo family, and the hardened specification.
 - Status: drafted and partially implemented.
 
+## Ageometrics
+
+- What it is: the proposed research program for measuring what a specified geometric representation fails to preserve relative to a fuller available record.
+- Public status: public working proposal.
+- Related site or document: [Ageometrics](https://fractalish.com/ageometrics/), [Geometric Sufficiency Ratio](https://fractalish.com/geometric-sufficiency-ratio/), and the v0.2 working paper in `research/ageometrics/`.
+- Status: newly published as a reviewable public proposal; prior-art review and benchmark validation remain open.
+
+## Geometric Sufficiency Ratio
+
+- What it is: the proposed task-relative metric for the fraction of recoverable performance captured by a declared geometry relative to the fuller record.
+- Public status: public working proposal.
+- Related site or document: [Geometric Sufficiency Ratio](https://fractalish.com/geometric-sufficiency-ratio/) and `research/ageometrics/metrics.md`.
+- Status: defined publicly; formal properties and empirical validation remain open.
+
 ## Cognitive Basin
 
 - What it is: a bounded persistent state architecture for continuity, regulation, reasoning, uncertainty, recovery, and purpose-bound action.

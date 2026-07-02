@@ -14,6 +14,8 @@ Core public releases:
 
 Current technical entry points:
 
+- [Ageometrics](https://fractalish.com/ageometrics/)
+- [Geometric Sufficiency Ratio](https://fractalish.com/geometric-sufficiency-ratio/)
 - [Cognitive Basin / BasinLab](https://fractalish.com/cognitive-basin.html)
 - [CNTM realization](https://fractalish.com/cntm-realization.html)
 - [Natural Math](https://fractalish.com/natural-math.html)
@@ -27,13 +29,33 @@ If you are new to the project, use this order:
 1. [Start Here](https://fractalish.com/start-here.html)
 2. [MCVA / AMCVA / HOLD](https://fractalish.com/mcva-amcva-hold.html)
 3. [Natural Math](https://fractalish.com/natural-math.html)
-4. [Cognitive Basin / BasinLab](https://fractalish.com/cognitive-basin.html)
-5. [CNTM realization](https://fractalish.com/cntm-realization.html)
-6. [Motorola activation](https://fractalish.com/motorola-activation.html)
-7. [Fractalish AI](https://fractalish.com/fractalish-ai.html)
-8. [Documents and Working Papers](https://fractalish.com/documents.html)
-9. [Documents and evidence records](https://fractalish.com/documents.html#evidence-records)
-10. [Fractalish Commons](https://fractalish.com/commons.html)
+4. [Ageometrics](https://fractalish.com/ageometrics/)
+5. [Geometric Sufficiency Ratio](https://fractalish.com/geometric-sufficiency-ratio/)
+6. [Cognitive Basin / BasinLab](https://fractalish.com/cognitive-basin.html)
+7. [CNTM realization](https://fractalish.com/cntm-realization.html)
+8. [Motorola activation](https://fractalish.com/motorola-activation.html)
+9. [Fractalish AI](https://fractalish.com/fractalish-ai.html)
+10. [Documents and Working Papers](https://fractalish.com/documents.html)
+11. [Documents and evidence records](https://fractalish.com/documents.html#evidence-records)
+12. [Fractalish Commons](https://fractalish.com/commons.html)
+
+## Ageometrics and GSR
+
+Ageometrics is the proposed study of what a specified geometric representation fails to preserve relative to the fuller available record. The Geometric Sufficiency Ratio measures the normalized fraction of recoverable target-relevant performance captured by that geometry.
+
+Status:
+
+- working proposal
+- version `0.2`
+- priority and prior-art review remain open
+
+Links:
+
+- [Ageometrics field page](https://fractalish.com/ageometrics/)
+- [Geometric Sufficiency Ratio metric page](https://fractalish.com/geometric-sufficiency-ratio/)
+- [Working paper](https://fractalish.com/assets/docs/Ageometrics_and_the_Geometric_Sufficiency_Ratio_v0_2.md)
+- [Prior-art matrix](https://github.com/BonAcqui-LLC/fractalish/tree/main/research/ageometrics/prior-art-matrix.md)
+- [Falsification criteria](https://github.com/BonAcqui-LLC/fractalish/tree/main/research/ageometrics/falsification-criteria.md)
 
 ## What This Repo Is
 

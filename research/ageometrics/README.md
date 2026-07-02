@@ -16,7 +16,7 @@ Status:
 Primary artifacts:
 
 - `Ageometrics_and_the_Geometric_Sufficiency_Ratio_v0_2.md`
-- `../..//assets/docs/Ageometrics_and_the_Geometric_Sufficiency_Ratio_v0_2.pdf`
+- `../../assets/docs/Ageometrics_and_the_Geometric_Sufficiency_Ratio_v0_2.pdf`
 
 Working components in this package:
 

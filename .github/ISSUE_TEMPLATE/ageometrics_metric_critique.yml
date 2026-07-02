@@ -1,0 +1,37 @@
+name: Ageometrics metric critique
+description: Critique the normalization, comparator, invariance, or evaluation design of GSR.
+title: "[Ageometrics Metric Critique] "
+labels:
+  - metric
+  - ageometrics
+body:
+  - type: textarea
+    id: normalization
+    attributes:
+      label: Normalization issue
+    validations:
+      required: true
+  - type: textarea
+    id: model_class
+    attributes:
+      label: Model-class confound
+    validations:
+      required: true
+  - type: textarea
+    id: score_invariance
+    attributes:
+      label: Score-invariance issue
+    validations:
+      required: true
+  - type: textarea
+    id: denominator
+    attributes:
+      label: Denominator problem
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: Proposed correction
+    validations:
+      required: true

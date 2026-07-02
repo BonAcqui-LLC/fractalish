@@ -1,0 +1,61 @@
+name: Ageometrics benchmark proposal
+description: Propose a benchmark for Ageometrics or GSR.
+title: "[Ageometrics Benchmark] "
+labels:
+  - benchmark
+  - ageometrics
+body:
+  - type: input
+    id: domain
+    attributes:
+      label: Domain
+    validations:
+      required: true
+  - type: textarea
+    id: full_record
+    attributes:
+      label: Full record
+    validations:
+      required: true
+  - type: textarea
+    id: geometry
+    attributes:
+      label: Geometry
+    validations:
+      required: true
+  - type: input
+    id: target
+    attributes:
+      label: Target
+    validations:
+      required: true
+  - type: textarea
+    id: matched_pair
+    attributes:
+      label: Matched-pair design
+    validations:
+      required: true
+  - type: textarea
+    id: intervention
+    attributes:
+      label: Intervention
+    validations:
+      required: true
+  - type: textarea
+    id: scoring
+    attributes:
+      label: Scoring rule
+    validations:
+      required: true
+  - type: textarea
+    id: anticipated_residue
+    attributes:
+      label: Anticipated residue
+    validations:
+      required: true
+  - type: textarea
+    id: leakage
+    attributes:
+      label: Leakage risks
+    validations:
+      required: true
