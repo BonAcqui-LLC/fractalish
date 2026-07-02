@@ -4,7 +4,7 @@
 
 **Version:** 0.3 working paper  
 **Date:** July 2, 2026  
-**Public attribution:** Fractalish Research Program  
+**Public attribution:** Synaptient  
 **Status:** Comparator-revised working paper; empirical validation, formal properties, and exhaustive prior-art review remain incomplete
 
 ## Abstract
@@ -1084,4 +1084,4 @@ von Kügelgen, J., Besserve, M., Wendong, L., Gresele, L., Kekić, A., Bareinboi
 
 Wei, G.-W., et al. (2025). Topological Data Analysis and Topological Deep Learning Beyond Persistent Homology: A Review. Artificial Intelligence Review.
 
-Fractalish Research Program. (2026). Fractalish, Cognitive Basin, and Ageometrics working research records.
+Synaptient. (2026). Ageometrics and the Geometric Sufficiency Ratio working research records.
