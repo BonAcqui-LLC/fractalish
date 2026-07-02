@@ -11,40 +11,48 @@ body:
       label: Claim challenged
     validations:
       required: true
-  - type: input
-    id: dataset
-    attributes:
-      label: Dataset or construction
-    validations:
-      required: true
   - type: textarea
-    id: geometry
+    id: representation
     attributes:
       label: Geometric representation
     validations:
       required: true
-  - type: input
-    id: target
+  - type: textarea
+    id: fuller_record
     attributes:
-      label: Target
+      label: Declared fuller reference record
     validations:
       required: true
   - type: input
     id: baseline
     attributes:
-      label: Baseline score
+      label: Baseline
     validations:
       required: true
-  - type: input
-    id: geometry_only
+  - type: textarea
+    id: comparator_protocol
     attributes:
-      label: Geometry-only result
+      label: Comparator protocol
     validations:
       required: true
-  - type: input
-    id: full_record
+  - type: textarea
+    id: component_risks
     attributes:
-      label: Full-record result
+      label: Component risks
+      description: Include baseline, geometry-only, and fuller-record risks or scores.
+    validations:
+      required: true
+  - type: textarea
+    id: raw_gsr_interval
+    attributes:
+      label: Raw GSR and interval
+    validations:
+      required: true
+  - type: textarea
+    id: failure_mode
+    attributes:
+      label: Failure mode
+      description: State whether the result shows learner mismatch, metric redundancy, conceptual failure, or another failure mode.
     validations:
       required: true
   - type: textarea

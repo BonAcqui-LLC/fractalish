@@ -6,45 +6,81 @@ labels:
   - ageometrics
 body:
   - type: input
-    id: domain
-    attributes:
-      label: Domain
-    validations:
-      required: true
-  - type: textarea
-    id: full_record
-    attributes:
-      label: Full record
-    validations:
-      required: true
-  - type: textarea
-    id: geometry
-    attributes:
-      label: Geometry
-    validations:
-      required: true
-  - type: input
     id: target
     attributes:
       label: Target
     validations:
       required: true
   - type: textarea
-    id: matched_pair
+    id: fuller_reference_record
     attributes:
-      label: Matched-pair design
+      label: Declared fuller reference record
+    validations:
+      required: true
+  - type: textarea
+    id: geometry
+    attributes:
+      label: Declared geometric representation
+    validations:
+      required: true
+  - type: textarea
+    id: baseline
+    attributes:
+      label: Baseline
+    validations:
+      required: true
+  - type: textarea
+    id: loss_or_score
+    attributes:
+      label: Loss or proper score
+    validations:
+      required: true
+  - type: textarea
+    id: temporal_boundary
+    attributes:
+      label: Temporal information boundary
+    validations:
+      required: true
+  - type: textarea
+    id: train_validation_test
+    attributes:
+      label: Train, validation, and test protocol
+    validations:
+      required: true
+  - type: textarea
+    id: same_learner_plan
+    attributes:
+      label: Same-learner plan
+    validations:
+      required: true
+  - type: textarea
+    id: capacity_matching_plan
+    attributes:
+      label: Capacity-matching plan
+    validations:
+      required: true
+  - type: textarea
+    id: model_envelope_plan
+    attributes:
+      label: Model-envelope plan
+    validations:
+      required: true
+  - type: textarea
+    id: tuning_search_budget
+    attributes:
+      label: Tuning and search budget
     validations:
       required: true
   - type: textarea
     id: intervention
     attributes:
-      label: Intervention
+      label: Intervention, if any
     validations:
       required: true
   - type: textarea
-    id: scoring
+    id: uncertainty_method
     attributes:
-      label: Scoring rule
+      label: Uncertainty method
     validations:
       required: true
   - type: textarea
@@ -54,8 +90,14 @@ body:
     validations:
       required: true
   - type: textarea
-    id: leakage
+    id: leakage_risks
     attributes:
       label: Leakage risks
+    validations:
+      required: true
+  - type: textarea
+    id: out_of_range_plan
+    attributes:
+      label: Out-of-range diagnosis plan
     validations:
       required: true
