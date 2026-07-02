@@ -2,18 +2,18 @@
 
 The proposal weakens materially if one or more of the following becomes well-supported:
 
-- an equivalent formal metric and benchmark program already exists under another name;
-- GSR adds no useful structure beyond standard ablation, sufficiency analysis, or response-preservation baselines;
-- residue classes cannot be operationalized consistently;
-- comparator choice dominates the metric so strongly that stable interpretation fails;
-- cross-domain GSR comparison is incoherent except in narrow within-task settings;
-- modest geometric augmentation captures the supposedly missing information at low cost across most benchmarks;
-- matched-equivalence benchmarks turn out to be too artificial to generalize;
-- encoding cost cannot be defined in a way that survives adversarial review.
+- GSR adds no useful interpretive structure beyond established skill scores, nested-model comparisons, or sufficiency-analysis baselines.
+- The residue taxonomy does not improve diagnosis, benchmark design, or empirical explanation.
+- Apparent residue vanishes under same-learner, capacity-matched, or model-envelope testing.
+- Reported residue is mostly explained by learner mismatch, tuning asymmetry, or unavailable future information.
+- Geometric augmentation restores sufficiency so cheaply and routinely that a distinct residue program adds little value.
+- The canonical versus empirical distinction fails to improve clarity in practice.
+- The combined program is already present in earlier literature under another name.
 
 Positive support would instead look like:
 
 - stable gaps across reasonable geometric representations
-- consistent restoration from small auxiliary channels
-- recurring residue types across multiple domains
+- recurring typed residue patterns across domains
+- robust restoration through small auxiliary channels
 - predictive value for intervention or distribution-shift failure
+- clearer experiment design than generic ablation alone

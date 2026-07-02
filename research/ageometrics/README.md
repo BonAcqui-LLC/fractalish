@@ -1,24 +1,30 @@
-# Ageometrics and the Geometric Sufficiency Ratio
+# Ageometrics: Geometric Sufficiency and Residue Analysis
 
-This directory is the canonical public research package for the Ageometrics / GSR publication tranche.
+This directory is the canonical public research package for the Ageometrics and Geometric Sufficiency Ratio publication line.
 
 Public attribution:
 
-> Fractalish Research Program, stewarded by BonAcqui LLC.
+> Synaptient
 
-Status:
+Current public release:
 
-- working proposal
-- version `0.2`
-- priority and prior-art review remain open
-- literature review incomplete
+- version `0.3`
+- status `comparator-revised working paper`
+- date `2026-07-02`
 
-Primary artifacts:
+Current canonical text:
 
-- `Ageometrics_and_the_Geometric_Sufficiency_Ratio_v0_2.md`
-- `../../assets/docs/Ageometrics_and_the_Geometric_Sufficiency_Ratio_v0_2.pdf`
+- `Ageometrics_and_the_Geometric_Sufficiency_Ratio_v0_3.md`
+- `../../assets/docs/Ageometrics_and_the_Geometric_Sufficiency_Ratio_v0_3.md`
+- `../../assets/docs/Ageometrics_and_the_Geometric_Sufficiency_Ratio_v0_3.pdf`
 
-Working components in this package:
+Preserved historical release:
+
+- v0.2 remains in place as historical priority evidence
+- tag `ageometrics-v0.2` is preserved
+- canonical v0.2 source commit remains preserved in repository history
+
+Working package components:
 
 - `definitions.md`
 - `metrics.md`
@@ -30,17 +36,19 @@ Working components in this package:
 - `CHANGELOG.md`
 - `CITATION.cff`
 - `LICENSE-NOTE.md`
+- `metadata.json`
+- `checksums.sha256`
 
 Release posture:
 
-- Markdown and HTML are the primary public forms.
-- PDF is published as a convenience artifact.
-- DOCX remains outside the public tree pending a separate release gate.
+- Markdown is the canonical public source.
+- HTML and PDF are public release formats.
+- DOCX remains a private production artifact and is not published in this repository.
 
-Claim boundary:
+Claim discipline:
 
 - Ageometrics is proposed as a research program.
-- GSR is proposed as a task-relative metric family.
-- No exhaustive novelty claim is made here.
-- No claim is made that geometry is absolutely incapable of encoding the omitted information.
-- The program remains open to prior-art correction, benchmark failure, metric revision, and falsification.
+- GSR is proposed as a comparator-controlled metric family.
+- The normalized-improvement form has close mathematical relatives.
+- The broader combined program remains open to correction, falsification, and prior-art revision.
+- No claim is made that the declared fuller reference record is metaphysically complete.

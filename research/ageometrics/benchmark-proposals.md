@@ -1,5 +1,22 @@
 # Benchmark Proposals
 
+Every benchmark should declare:
+
+- target
+- fuller reference record
+- geometric representation
+- baseline
+- loss or proper score
+- temporal information boundary
+- train, validation, and test protocol
+- same-learner plan
+- capacity-matching plan
+- model-envelope plan
+- tuning and search budget
+- uncertainty method
+- leakage risks
+- out-of-range diagnosis plan
+
 ## AI memory
 
 Matched-pair benchmark:
@@ -58,19 +75,3 @@ Targets:
 - identification
 - causal explanation
 - sparse reconstruction
-
-## Benchmark design minimum
-
-Every benchmark should declare:
-
-- full record
-- geometry
-- target
-- matched-pair relation
-- intervention plan if any
-- baseline
-- geometry-only model class
-- full-record model class
-- score
-- leakage risks
-- planned HOLD criteria

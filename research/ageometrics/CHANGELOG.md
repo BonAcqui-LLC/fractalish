@@ -1,5 +1,14 @@
 # Changelog
 
+## v0.3.0 - 2026-07-02
+
+- added the comparator-revised v0.3 canonical paper
+- replaced the score-only presentation with a canonical Bayes-risk quantity and a protocol-specific empirical estimator
+- distinguished bounded canonical NGR from signed empirical NGR diagnostics
+- narrowed novelty language and added explicit skill-score, R-squared, SDR, and Information Bottleneck neighbors
+- disclosed the unrelated geometric-group-theory use of `ageometric`
+- updated issue templates, metadata, hashes, and site integration for v0.3 while preserving v0.2 history
+
 ## v0.2.0 - 2026-07-01
 
 - preserved the supplied Markdown working paper as the canonical public text

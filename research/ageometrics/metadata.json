@@ -1,22 +1,28 @@
 {
-  "title": "Ageometrics and the Geometric Sufficiency Ratio: A Research Program for Measuring What Geometry Preserves, What It Erases, and What Must Be Added Back",
-  "short_title": "Ageometrics and the Geometric Sufficiency Ratio",
-  "version": "0.2",
-  "date": "2026-07-01",
-  "status": "working paper",
-  "public_attribution": "Fractalish Research Program, stewarded by BonAcqui LLC.",
-  "source_commit": "160fa80c392760b9e9d447d714b242928af53200",
+  "title": "Ageometrics and the Geometric Sufficiency Ratio",
+  "formal_label": "Ageometrics: Geometric Sufficiency and Residue Analysis",
+  "version": "0.3",
+  "date": "2026-07-02",
+  "status": "comparator-revised working paper",
+  "public_attribution": "Synaptient",
+  "source_commit": "3fc78e3134316730c2fc91825247564acf1f87f6",
+  "preserved_history": {
+    "v0_2_source_commit": "160fa80c392760b9e9d447d714b242928af53200",
+    "v0_2_tag": "ageometrics-v0.2"
+  },
   "artifact_hashes": {
-    "markdown_sha256": "cb04a15536e0580047ecbb651c0bc37e87b36e593fec1b60762ce4f2829f02eb",
-    "pdf_sha256": "728feb8bf050b7ad2dd49b8bd3742eac41436bdff3e7df0ba34a2a305ef6b07d"
+    "markdown_v0_3_sha256": "d95203e1c017b5313e54e594be60f84cec44a044337bbeea14cc95dde96fa5c2",
+    "pdf_v0_3_sha256": "90bfb35b688c8797cd588fac896fc815744fbedbe96c78647993f363e4e3e793",
+    "markdown_v0_2_sha256": "cb04a15536e0580047ecbb651c0bc37e87b36e593fec1b60762ce4f2829f02eb",
+    "pdf_v0_2_sha256": "728feb8bf050b7ad2dd49b8bd3742eac41436bdff3e7df0ba34a2a305ef6b07d"
   },
   "canonical_urls": {
     "field_page": "https://fractalish.com/ageometrics/",
     "metric_page": "https://fractalish.com/geometric-sufficiency-ratio/"
   },
   "notes": [
-    "Priority and prior-art review remain open.",
-    "DOCX is withheld from the public tree pending a separate office-format release gate.",
-    "This metadata records a public working-paper release and artifact identity; it does not settle exhaustive novelty."
+    "v0.3 supersedes v0.2 without erasing the v0.2 history.",
+    "DOCX remains outside the public tree.",
+    "The normalized-improvement form has close predecessors and the exact novelty claim remains under review."
   ]
 }

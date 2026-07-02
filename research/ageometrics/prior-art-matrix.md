@@ -4,25 +4,46 @@ Status:
 
 - literature review incomplete
 - exact novelty claim withheld
-- conceptual-neighbor review active
+- close mathematical relatives acknowledged explicitly
+- exact prior-art matches invited
 
 ## Current read
 
 | Source | What it already covers | Relation to Ageometrics / GSR | Current classification |
 | --- | --- | --- | --- |
-| Tishby, Pereira, Bialek, *The Information Bottleneck Method* (2000) | Compressed codes that preserve target-relevant information | Strong neighbor on task-relative compression, but not framed as geometric insufficiency measurement or residue taxonomy | conceptual neighbor |
-| Cook-centered sufficient dimension reduction literature | Low-dimensional projections that preserve response-relevant information | Very close on sufficiency language; not limited to geometry and not organized around residue, intervention, encoding cost, or matched-equivalence benchmarks | strong metric neighbor |
-| Bronstein et al., *Geometric Deep Learning* (2021) | Unified geometric principles for representation learning | Explains geometry's reach, not a metric for what declared geometry fails to preserve | neighboring field |
-| von Kugelgen et al., *Nonparametric Identifiability of Causal Representations from Unknown Interventions* (2023) | Conditions under which latent causal structure becomes identifiable from interventional environments | Supports the claim that observational structure can be causally insufficient without extra conditions | neighboring field |
-| Abramsky and Brandenburger, *The Sheaf-Theoretic Structure of Non-Locality and Contextuality* (2011) | Context dependence and failure of a single global assignment | Strong conceptual precedent for contextual residue, but not a general geometry-insufficiency program | conceptual neighbor |
-| Chazal and Michel, *An Introduction to Topological Data Analysis* (2021) | Multiscale topological summaries and their uses | Relevant because topology extracts robust structure while omitting other information; does not define a sufficiency ratio against fuller records | neighboring field |
-| Muhle-Karbe et al., *A Unified Theory of Order Flow, Market Impact, and Volatility* (2026) | Microstructural route from order flow to rough volatility and impact | Supports finance as a benchmark domain where visible path geometry can omit mechanism-rich history | domain support |
-| Rodriguez Dominguez, *Is Causality Necessary for Efficient Portfolios?* (2026) | Uses the phrase "geometric sufficiency conditions" in portfolio optimization | Possible terminology neighbor, but scope is portfolio signal geometry rather than a general insufficiency metric or residue taxonomy | terminology neighbor |
-| Geometric group theory use of "ageometric" / "ageometrics" | Established technical term in another mathematical domain | Naming collision risk for discoverability and search, even though the meaning is unrelated | naming conflict |
+| Murphy (1988), skill scores based on mean-square error | Reference-normalized forecast improvement relative to a baseline | Very close algebraic relative for normalized improvement against a reference predictor | strong algebraic precedent |
+| Gneiting and Raftery (2007), proper scoring rules | Loss and score discipline for forecast evaluation | Important precedent for proper loss choice and evaluation rigor; not a geometric residue program | evaluation precedent |
+| Anderson-Sprecher (1994), model comparisons and R-squared | Relative improvement and nested-model comparison logic | Close neighbor for partial improvement framing and nested comparisons | strong metric neighbor |
+| Partial R^2 and coefficient-of-determination traditions | Relative explanatory contribution in nested settings | Close family resemblance in normalized improvement, without the geometric residue framing | strong metric neighbor |
+| Sufficient statistics and sufficient dimension reduction | Compression that preserves target-relevant information | Very close on sufficiency language and target-relative reduction; broader than geometry and not organized around residue | strong conceptual neighbor |
+| Tishby, Pereira, Bialek (2000), Information Bottleneck | Compression that preserves target-relevant information | Strong conceptual neighbor; not the default empirical estimator proposed here | conceptual neighbor |
+| Bronstein et al. (2021), Geometric Deep Learning | Unified geometric principles for representation learning | Supports the importance of geometric representation while sharpening the need for a boundary question | neighboring field |
+| von Kugelgen et al. (2023), causal representation identifiability | Conditions for recovering causal structure beyond observation alone | Supports causal insufficiency claims and interventional variants | neighboring field |
+| Abramsky and Brandenburger (2011), contextuality | Failures of context-free global assignment | Strong precedent for contextual residue as a typed failure mode | conceptual neighbor |
+| Chazal and Michel (2021), topological data analysis | Robust structure summaries with known limits | Useful precedent for asking what structured summaries omit relative to fuller records | neighboring field |
+| Algorithmic information theory | Distinguishes description from generative program | Supports algorithmic residue as a meaningful category | conceptual neighbor |
+| Geometric group theory use of `ageometric` | Established unrelated mathematical usage | Naming collision risk for discoverability and disambiguation | terminology collision |
+
+## Novelty boundary
+
+The normalized-improvement form itself is not claimed as novel.
+
+The narrower proposed contribution is the combined program:
+
+- specified geometric representation versus declared fuller reference record
+- task-relative geometric sufficiency
+- comparator-controlled empirical protocol
+- canonical versus empirical NGR distinction
+- temporal and interventional variants
+- representation-stability envelopes
+- encoding-cost frontiers
+- minimal residue-restoring channels
+- matched-equivalence benchmarks
+- cross-domain residue comparison
 
 ## HOLD conclusions
 
-- No exact prior-art match for the full package of field name, ratio, residue taxonomy, stability envelope, encoding-cost frontier, and matched-equivalence benchmark program has been confirmed yet.
 - No exhaustive search has been completed.
-- A reviewer can reasonably argue that GSR is a close descendant of sufficiency-analysis and supervised compression ideas unless the distinct contribution is stated very carefully.
-- The naming collision around `ageometric` / `ageometrics` should be disclosed in contribution and metadata notes.
+- No exact prior-art match for the full combined program has been confirmed.
+- A reviewer can reasonably argue that GSR is a close descendant of established skill-score and sufficiency-analysis traditions unless the distinct programmatic contribution is stated carefully.
+- The unrelated geometric-group-theory use of `ageometric` should be disclosed wherever terminology matters.
