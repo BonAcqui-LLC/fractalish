@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+title: "Ageometrics and the Geometric Sufficiency Ratio: A Research Program for Measuring What Geometry Preserves, What It Erases, and What Must Be Added Back"
+type: article
+authors:
+  - name: "Fractalish Research Program"
+version: "0.2"
+date-released: "2026-07-01"
+publisher: "BonAcqui LLC"
+license: "See LICENSE-NOTE.md"
+repository-code: "https://github.com/BonAcqui-LLC/fractalish"
+url: "https://fractalish.com/ageometrics/"
+abstract: "Working paper defining Ageometrics, the Geometric Sufficiency Ratio, and a benchmark program for measuring what specified geometric representations fail to preserve relative to fuller available records."
+keywords:
+  - "Ageometrics"
+  - "Geometric Sufficiency Ratio"
+  - "Non-Geometric Residue"
+  - "representation sufficiency"
+  - "geometry"
+  - "causal residue"
+message: "If you use this working paper, cite the entity-level public record and include the exact version."
