@@ -41,19 +41,19 @@ If you are new to the project, use this order:
 
 ## Ageometrics and GSR
 
-Ageometrics is the proposed study of what a specified geometric representation fails to preserve relative to the fuller available record. The Geometric Sufficiency Ratio measures the normalized fraction of recoverable target-relevant performance captured by that geometry.
+Ageometrics is the proposed study of what a specified geometric representation fails to preserve relative to a declared fuller reference record. The Geometric Sufficiency Ratio measures how much target-relevant predictive value survives a declared geometric compression under a controlled comparator protocol.
 
 Status:
 
 - working proposal
-- version `0.2`
+- version `0.3`
 - priority and prior-art review remain open
 
 Links:
 
 - [Ageometrics field page](https://fractalish.com/ageometrics/)
 - [Geometric Sufficiency Ratio metric page](https://fractalish.com/geometric-sufficiency-ratio/)
-- [Working paper](https://fractalish.com/assets/docs/Ageometrics_and_the_Geometric_Sufficiency_Ratio_v0_2.md)
+- [Working paper](https://fractalish.com/assets/docs/Ageometrics_and_the_Geometric_Sufficiency_Ratio_v0_3.md)
 - [Prior-art matrix](https://github.com/BonAcqui-LLC/fractalish/tree/main/research/ageometrics/prior-art-matrix.md)
 - [Falsification criteria](https://github.com/BonAcqui-LLC/fractalish/tree/main/research/ageometrics/falsification-criteria.md)
 

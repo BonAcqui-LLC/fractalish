@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Geometric Sufficiency Ratio | A Metric for Geometric Information Retention</title>
-  <meta name="description" content="The Geometric Sufficiency Ratio measures the fraction of recoverable target-relevant performance captured by a declared geometric representation relative to the fuller available record.">
-  <meta property="og:title" content="Geometric Sufficiency Ratio | A Metric for Geometric Information Retention">
-  <meta property="og:description" content="A technical Fractalish page defining GSR, its extensions, and the main statistical cautions.">
+  <title>Geometric Sufficiency Ratio | Comparator-Controlled Representation Sufficiency</title>
+  <meta name="description" content="GSR measures how much target-relevant predictive value survives a declared geometric compression under a controlled comparator protocol.">
+  <meta property="og:title" content="Geometric Sufficiency Ratio | Comparator-Controlled Representation Sufficiency">
+  <meta property="og:description" content="A Synaptient technical page defining the canonical Bayes-risk GSR, the empirical estimator, and the required comparator protocol.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://fractalish.com/geometric-sufficiency-ratio/">
   <meta property="og:image" content="https://fractalish.com/assets/figures/og-ageometrics.svg">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Geometric Sufficiency Ratio | A Metric for Geometric Information Retention">
-  <meta name="twitter:description" content="Formal definition, worked example, extensions, and cautions for the proposed GSR metric.">
+  <meta name="twitter:title" content="Geometric Sufficiency Ratio | Comparator-Controlled Representation Sufficiency">
+  <meta name="twitter:description" content="Bayes-risk definition, protocol-specific estimator, and signed empirical diagnostics for GSR.">
   <meta name="twitter:image" content="https://fractalish.com/assets/figures/og-ageometrics.svg">
   <link rel="canonical" href="https://fractalish.com/geometric-sufficiency-ratio/">
   <link rel="stylesheet" href="/assets/site.css">
@@ -37,95 +37,143 @@
       <p class="eyebrow">Technical metric page</p>
       <p class="small"><a href="/index.html">Home</a> / <a href="/ageometrics/">Ageometrics</a> / <strong>Geometric Sufficiency Ratio</strong></p>
       <h1>Geometric Sufficiency Ratio</h1>
-      <p class="lead">GSR measures the normalized fraction of recoverable target-relevant performance captured by a declared geometric representation relative to the fuller available record.</p>
+      <p class="lead">GSR measures how much target-relevant predictive value survives a declared geometric compression under a controlled comparator protocol.</p>
+
+      <div class="callout warning">
+        <p><strong>A GSR estimate without a comparator protocol is not an Ageometrics result.</strong></p>
+      </div>
 
       <section class="page-meta">
-        <div class="meta-card"><span class="meta-label">Metric status</span><span class="meta-value">Working proposal</span></div>
-        <div class="meta-card"><span class="meta-label">Target dependence</span><span class="meta-value">Explicit and required</span></div>
-        <div class="meta-card"><span class="meta-label">Comparator rule</span><span class="meta-value">Must be declared and fair</span></div>
-        <div class="meta-card"><span class="meta-label">Known risk</span><span class="meta-value">Model-class confounding</span></div>
+        <div class="meta-card"><span class="meta-label">Metric status</span><span class="meta-value">Comparator-revised working proposal</span></div>
+        <div class="meta-card"><span class="meta-label">Version</span><span class="meta-value">0.3</span></div>
+        <div class="meta-card"><span class="meta-label">Attribution</span><span class="meta-value">Synaptient</span></div>
+        <div class="meta-card"><span class="meta-label">Known risk</span><span class="meta-value">Comparator imbalance can mimic residue</span></div>
       </section>
 
-      <h2>Formal definition</h2>
-      <pre><code>GSR_Y(G) = (SG - S0) / (SX - S0), where SX &gt; S0</code></pre>
-      <p>The numerator measures the gain over baseline available from the declared geometry. The denominator measures the gain over baseline available from the fuller declared record. The ratio therefore asks what fraction of the recoverable improvement survives geometric compression.</p>
+      <h2>1. Concise definition</h2>
+      <p>GSR is a task-relative ratio comparing the risk reduction preserved by a declared geometric representation against the risk reduction available from a declared fuller reference record.</p>
 
-      <h2>Variable definitions</h2>
+      <h2>2. Why comparator discipline matters</h2>
+      <p>The central failure mode is easy to state and easy to miss: if the geometry-only path is evaluated with one learner family and the fuller record with a stronger one, the measured gap may reflect learner advantage rather than representational insufficiency.</p>
+      <figure class="image-frame">
+        <img src="/assets/figures/ageometrics-comparator-protocol.svg" alt="Comparator protocol diagram showing the same held-out cases, same temporal boundary, and matched learner or capacity controls feeding baseline, geometry-only, and fuller-record risks before producing a GSR estimate with uncertainty.">
+        <figcaption class="caption">Same cases, same temporal boundary, declared control of learner and capacity, then a paired estimate with uncertainty.</figcaption>
+      </figure>
+
+      <h2>3. Declared objects</h2>
       <ul class="list-clean">
-        <li><code>X</code>: fullest available system record allowed by the benchmark protocol</li>
-        <li><code>G(X)</code>: chosen geometric representation of that record</li>
-        <li><code>Y</code>: target property, outcome, or response</li>
-        <li><code>S0</code>: baseline score</li>
-        <li><code>SG</code>: best validated geometry-only score under the declared evaluation rules</li>
-        <li><code>SX</code>: best validated full-record score under the declared evaluation rules</li>
+        <li><code>X</code>: declared fuller reference record available at prediction or decision time</li>
+        <li><code>G(X)</code>: specified geometric representation derived from <code>X</code></li>
+        <li><code>B</code>: declared baseline information or baseline predictor</li>
+        <li><code>Y</code>: target</li>
+        <li><code>ell</code>: declared loss, with lower preferred</li>
+        <li><code>Pi</code>: complete empirical comparison protocol</li>
       </ul>
 
-      <h2>Worked numerical example</h2>
+      <h2>4. Canonical Bayes-risk definition</h2>
+      <pre><code>R*_ell(Z) = inf_f E[ell(Y, f(Z))]</code></pre>
+      <pre><code>GSR*_{ell,Y}(G | X,B)
+=
+[R*_ell(B) - R*_ell(G(X))]
+/
+[R*_ell(B) - R*_ell(X)]</code></pre>
+      <pre><code>R*_ell(B) &gt; R*_ell(X)</code></pre>
+
+      <h2>5. Boundedness assumptions</h2>
+      <pre><code>R*_ell(X) &lt;= R*_ell(G(X)) &lt;= R*_ell(B)</code></pre>
+      <p>When the geometry is derived from the fuller record, the fuller record can reproduce the geometry-only decision rule, and the geometry is at least as informative as the baseline, the canonical population quantity is bounded:</p>
+      <pre><code>0 &lt;= GSR* &lt;= 1</code></pre>
+      <p>Boundedness is not automatic when those assumptions fail.</p>
+
+      <h2>6. Empirical protocol-specific estimator</h2>
+      <pre><code>GSR_hat_Pi
+=
+[R_hat_Pi(B) - R_hat_Pi(G)]
+/
+[R_hat_Pi(B) - R_hat_Pi(X)]</code></pre>
+      <p>The three empirical risks should be evaluated on the same held-out cases, under the same temporal-availability rules, with declared comparator controls and leakage safeguards.</p>
+
+      <h2>7. Same-learner, capacity-matched, and model-envelope comparisons</h2>
+      <ul class="list-clean">
+        <li>Same-learner GSR: the same learner family and tuning budget are applied to geometry and fuller record when technically possible.</li>
+        <li>Capacity-matched GSR: compute, search effort, and effective capacity are matched when model forms differ.</li>
+        <li>Model-envelope GSR: several credible learner families are reported to expose learner dependence.</li>
+      </ul>
+
+      <h2>8. Worked 0.75 / 0.80 / 0.95 example</h2>
+      <p>Accuracy form:</p>
       <pre><code>(0.80 - 0.75) / (0.95 - 0.75) = 0.25</code></pre>
-      <p>In this example, 80% raw accuracy sounds strong until the denominator is respected. The geometry captured only 25% of the recoverable improvement above baseline.</p>
+      <p>Error-risk form:</p>
+      <pre><code>(0.25 - 0.20) / (0.25 - 0.05) = 0.25</code></pre>
+      <p>Raw geometry-only performance can sound strong while still preserving only a small share of the recoverable improvement.</p>
 
-      <h2>Why baseline normalization matters</h2>
-      <p>Baseline normalization prevents easy tasks, class imbalance, and strong priors from making a geometry look more sufficient than it is. A raw geometry-only score can be high even when almost all target-relevant improvement remains outside the geometry.</p>
+      <h2>9. Empirical interval violations</h2>
+      <p>Empirical estimates below <code>0</code> or above <code>1</code> can occur because of finite samples, regularization, optimization, model mismatch, or comparator imbalance. These values are diagnostic and should be preserved, not silently clipped.</p>
 
-      <h2>Loss-based formulation</h2>
-      <pre><code>GSR^L_Y(G) = (L0 - LG) / (L0 - LX)</code></pre>
-      <p>Use the loss form when the benchmark is defined by a proper loss rather than a score, and state the loss explicitly.</p>
+      <h2>10. Canonical and empirical NGR</h2>
+      <figure class="image-frame">
+        <img src="/assets/figures/ageometrics-ngr-labeling.svg" alt="Side-by-side panels distinguishing bounded canonical non-geometric residue from signed empirical non-geometric residue diagnostics.">
+        <figcaption class="caption">Canonical NGR is bounded only under the canonical assumptions. Empirical NGR is signed and protocol-relative.</figcaption>
+      </figure>
+      <pre><code>NGR* = 1 - GSR*</code></pre>
+      <pre><code>NGR_hat_Pi = 1 - GSR_hat_Pi</code></pre>
+      <p>NGR is not a metaphysical non-geometric substance. It is a target-, representation-, loss-, and protocol-relative performance gap.</p>
 
-      <h2>Information-theoretic formulation</h2>
-      <pre><code>GSR^I_Y(G) = I(G(X);Y) / I(X;Y)</code></pre>
-      <p>This is a conceptual bridge to information bottleneck work. It is useful only where mutual information can be estimated credibly and the estimator assumptions are declared.</p>
+      <h2>11. Information-theoretic companion</h2>
+      <pre><code>GSR^I_Y(G | X) = I(G(X);Y) / I(X;Y)</code></pre>
+      <p>This companion connects Ageometrics to Information Bottleneck thinking. It is not the default empirical estimator because high-dimensional mutual information can be unstable to estimate.</p>
 
-      <h2>Interventional GSR</h2>
-      <p>Interventional GSR replaces passive observation with intervention-response prediction. It is relevant when observational geometry can hide causal differences that only surface after perturbation.</p>
+      <h2>12. Interventional GSR</h2>
+      <p>Interventional GSR asks how much of intervention-response prediction survives geometric compression, rather than passive observation alone.</p>
 
-      <h2>Temporal GSR</h2>
-      <p>Temporal GSR evaluates how much target-relevant information survives when developmental or event history is compressed into final-state or trajectory geometry.</p>
+      <h2>13. Temporal GSR</h2>
+      <p>Temporal GSR asks how much target-relevant information remains when developmental or event history is compressed into final-state or trajectory geometry.</p>
 
-      <h2>Representation-stability envelope</h2>
+      <h2>14. Representation-stability envelope</h2>
       <p>One geometry is rarely enough. The representation-stability envelope summarizes GSR across a family of admissible geometric representations of the same record. A wide envelope means the sufficiency claim depends too heavily on representation choice.</p>
 
-      <h2>Geometric encoding cost</h2>
+      <h2>15. Encoding cost</h2>
       <figure class="image-frame">
-        <img src="/assets/figures/ageometrics-encoding-frontier.svg" alt="Chart showing geometric sufficiency rising as encoding cost increases, with a warning about merely warehousing the full record inside the geometry.">
-        <figcaption class="caption">A geometry that only becomes sufficient after heavy augmentation may no longer be a meaningful compression.</figcaption>
+        <img src="/assets/figures/ageometrics-encoding-frontier.svg" alt="Chart showing geometric sufficiency rising as encoding cost increases, with a warning about merely warehousing the fuller record inside the geometry.">
+        <figcaption class="caption">A geometry that becomes sufficient only after heavy augmentation may no longer be a meaningful compression.</figcaption>
       </figure>
       <p>Encoding cost forces a harder question: did the geometry expose structure, or did it merely absorb timestamps, labels, provenance, and interventions until it became a renamed full record?</p>
 
-      <h2>Minimal residue-restoring channel</h2>
+      <h2>16. Minimal residue-restoring channel</h2>
       <p>A useful benchmark can ask what smallest auxiliary channel restores sufficiency above a declared threshold. That channel identifies what the geometry was missing.</p>
 
-      <h2>Benchmark design</h2>
-      <figure class="image-frame">
-        <img src="/assets/figures/ageometrics-matched-pair.svg" alt="Diagram of two systems that share the same tested geometry but differ in hidden history and diverge after intervention.">
-        <figcaption class="caption">The cleanest experiment is a matched pair with the same tested geometry and a different outcome under intervention or later evaluation.</figcaption>
-      </figure>
+      <h2>17. Benchmark protocol</h2>
+      <p>At minimum, an Ageometrics benchmark should declare the fuller reference record, the geometry, the baseline, the target, the loss, the temporal boundary, the learner controls, the uncertainty method, and the leakage-risk plan.</p>
+
+      <h2>18. Statistical cautions</h2>
       <ul class="list-clean">
-        <li>Declare the equivalence relation that defines “same geometry.”</li>
-        <li>Match model class or state clearly how comparator power is controlled.</li>
-        <li>Prevent leakage, geometry smuggling, and temporally unavailable full-record features.</li>
-        <li>Report the raw scores, not just the ratio.</li>
+        <li>Comparator unfairness</li>
+        <li>Model-class confounding</li>
+        <li>Target leakage and future information</li>
+        <li>Geometry smuggling through labels or timestamps</li>
+        <li>Small-denominator instability</li>
       </ul>
 
-      <h2>Statistical cautions</h2>
-      <div class="callout warning">
-        <p><strong>Main cautions.</strong> Comparator unfairness, model-class confounding, target leakage, geometry smuggling, unstable score choice, and overclaiming “non-geometric” as a metaphysical category.</p>
-      </div>
-      <p>GSR should not be treated as a magic scalar. It is only as trustworthy as the declared task, comparator, scoring rule, and evaluation budget.</p>
-
-      <h2>Open questions</h2>
+      <h2>19. Open questions</h2>
       <ul class="list-clean">
-        <li>Can the ratio be stabilized across monotone score transformations?</li>
-        <li>How should uncertainty propagate through the ratio?</li>
+        <li>Which proper losses are best by domain?</li>
+        <li>How should uncertainty be propagated for ratio estimators?</li>
+        <li>How should model-envelope results be aggregated?</li>
         <li>When are cross-domain comparisons meaningful?</li>
-        <li>What encoding-cost functional survives adversarial review?</li>
       </ul>
 
-      <h2>Downloads, source, and citation</h2>
+      <h2>20. Downloads and citation</h2>
       <div class="buttons">
-        <a class="button primary" href="/assets/docs/Ageometrics_and_the_Geometric_Sufficiency_Ratio_v0_2.md">Working paper</a>
-        <a class="button" href="https://github.com/BonAcqui-LLC/fractalish/tree/research/publish-ageometrics-gsr-v0.2/research/ageometrics/metrics.md">Metric notes</a>
+        <a class="button primary" href="/assets/docs/Ageometrics_and_the_Geometric_Sufficiency_Ratio_v0_3.md">Current working paper</a>
+        <a class="button" href="/assets/docs/Ageometrics_and_the_Geometric_Sufficiency_Ratio_v0_3.pdf">Current PDF</a>
+        <a class="button muted" href="https://github.com/BonAcqui-LLC/fractalish/tree/research/publish-ageometrics-gsr-v0.2/research/ageometrics/metrics.md">Metric notes</a>
         <a class="button muted" href="https://github.com/BonAcqui-LLC/fractalish/tree/research/publish-ageometrics-gsr-v0.2/research/ageometrics/CITATION.cff">Citation file</a>
       </div>
+
+      <figure class="image-frame" style="margin-top: 28px;">
+        <img src="/assets/figures/ageometrics-population-vs-empirical.svg" alt="Diagram distinguishing the canonical Bayes-risk quantity from the finite-data empirical estimator, showing that only the canonical quantity is bounded under stated assumptions while the empirical estimate may violate the interval and requires diagnosis.">
+        <figcaption class="caption">The population quantity and the empirical estimate should never be spoken of as if they were the same object.</figcaption>
+      </figure>
     </article>
   </main>
   <footer class="site-footer">
