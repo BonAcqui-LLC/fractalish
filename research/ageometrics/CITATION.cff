@@ -3,13 +3,13 @@ title: "Ageometrics and the Geometric Sufficiency Ratio"
 type: article
 authors:
   - name: "Synaptient"
-version: "0.3"
-date-released: "2026-07-02"
+version: "0.5"
+date-released: "2026-07-03"
 publisher: "Synaptient"
 license: "See LICENSE-NOTE.md"
 repository-code: "https://github.com/BonAcqui-LLC/fractalish"
 url: "https://fractalish.com/ageometrics/"
-abstract: "Ageometrics: Geometric Sufficiency and Residue Analysis. Comparator-revised working paper defining a canonical Bayes-risk GSR, a protocol-specific empirical estimator, and bounded versus signed residue interpretations."
+abstract: "Ageometrics: Geometric Sufficiency and Residue Analysis. Decision-theoretic working paper defining a canonical Bayes-risk GSR, observer-relative V-GSR guidance, a minimal reproducible illustration, and a typed residue-oriented benchmark program."
 keywords:
   - "Ageometrics"
   - "Geometric Sufficiency Ratio"

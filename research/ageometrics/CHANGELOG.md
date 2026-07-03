@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.5.0 - 2026-07-03
+
+- added the v0.5 canonical paper and synchronized public Markdown/PDF artifacts
+- reframed the synthetic package as a minimal reproducible illustration rather than validation or proof
+- corrected V-GSR public guidance to emphasize observer-relative same-learner comparisons, approximate capacity matching, and robustness-oriented model envelopes
+- separated empirical failure from distinct-value criteria and clarified the Basin instrumentation role
+- added the AutoMem benchmark lane, reproduction manifest, and public site/document updates for the v0.5 release
+
 ## v0.3.0 - 2026-07-02
 
 - added the comparator-revised v0.3 canonical paper

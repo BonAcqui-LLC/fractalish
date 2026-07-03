@@ -8,18 +8,19 @@ Public attribution:
 
 Current public release:
 
-- version `0.3`
-- status `comparator-revised working paper`
-- date `2026-07-02`
+- version `0.5`
+- status `decision-theoretic working paper with a minimal reproducible illustration`
+- date `2026-07`
 
 Current canonical text:
 
-- `Ageometrics_and_the_Geometric_Sufficiency_Ratio_v0_3.md`
-- `../../assets/docs/Ageometrics_and_the_Geometric_Sufficiency_Ratio_v0_3.md`
-- `../../assets/docs/Ageometrics_and_the_Geometric_Sufficiency_Ratio_v0_3.pdf`
+- `Ageometrics_and_the_Geometric_Sufficiency_Ratio_v0_5.md`
+- `../../assets/docs/Ageometrics_and_the_Geometric_Sufficiency_Ratio_v0_5.md`
+- `../../assets/docs/Ageometrics_and_the_Geometric_Sufficiency_Ratio_v0_5.pdf`
 
 Preserved historical release:
 
+- v0.3 remains in place as a superseded public working revision
 - v0.2 remains in place as historical priority evidence
 - tag `ageometrics-v0.2` is preserved
 - canonical v0.2 source commit remains preserved in repository history
@@ -38,6 +39,8 @@ Working package components:
 - `LICENSE-NOTE.md`
 - `metadata.json`
 - `checksums.sha256`
+- `minimal-reproducible-illustration/README.md`
+- `minimal-reproducible-illustration/experiment_manifest.json`
 
 Release posture:
 
@@ -49,6 +52,7 @@ Claim discipline:
 
 - Ageometrics is proposed as a research program.
 - GSR is proposed as a comparator-controlled metric family.
+- The current synthetic package is a minimal reproducible illustration, not a broad validation suite.
 - The normalized-improvement form has close mathematical relatives.
 - The broader combined program remains open to correction, falsification, and prior-art revision.
 - No claim is made that the declared fuller reference record is metaphysically complete.

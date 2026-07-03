@@ -6,13 +6,13 @@
   <title>Geometric Sufficiency Ratio | Comparator-Controlled Representation Sufficiency</title>
   <meta name="description" content="GSR measures how much target-relevant predictive value survives a declared geometric compression under a controlled comparator protocol.">
   <meta property="og:title" content="Geometric Sufficiency Ratio | Comparator-Controlled Representation Sufficiency">
-  <meta property="og:description" content="A Synaptient technical page defining the canonical Bayes-risk GSR, the empirical estimator, and the required comparator protocol.">
+  <meta property="og:description" content="A Synaptient technical page defining the canonical Bayes-risk GSR, observer-relative V-GSR views, and the required comparator protocol.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://fractalish.com/geometric-sufficiency-ratio/">
   <meta property="og:image" content="https://fractalish.com/assets/figures/og-ageometrics.svg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Geometric Sufficiency Ratio | Comparator-Controlled Representation Sufficiency">
-  <meta name="twitter:description" content="Bayes-risk definition, protocol-specific estimator, and signed empirical diagnostics for GSR.">
+  <meta name="twitter:description" content="Bayes-risk definition, observer-relative V-GSR guidance, and signed empirical diagnostics for GSR.">
   <meta name="twitter:image" content="https://fractalish.com/assets/figures/og-ageometrics.svg">
   <link rel="canonical" href="https://fractalish.com/geometric-sufficiency-ratio/">
   <link rel="stylesheet" href="/assets/site.css">
@@ -44,8 +44,8 @@
       </div>
 
       <section class="page-meta">
-        <div class="meta-card"><span class="meta-label">Metric status</span><span class="meta-value">Comparator-revised working proposal</span></div>
-        <div class="meta-card"><span class="meta-label">Version</span><span class="meta-value">0.3</span></div>
+        <div class="meta-card"><span class="meta-label">Metric status</span><span class="meta-value">Decision-theoretic working paper metric</span></div>
+        <div class="meta-card"><span class="meta-label">Version</span><span class="meta-value">0.5</span></div>
         <div class="meta-card"><span class="meta-label">Attribution</span><span class="meta-value">Synaptient</span></div>
         <div class="meta-card"><span class="meta-label">Known risk</span><span class="meta-value">Comparator imbalance can mimic residue</span></div>
       </section>
@@ -93,11 +93,11 @@
 [R_hat_Pi(B) - R_hat_Pi(X)]</code></pre>
       <p>The three empirical risks should be evaluated on the same held-out cases, under the same temporal-availability rules, with declared comparator controls and leakage safeguards.</p>
 
-      <h2>7. Same-learner, capacity-matched, and model-envelope comparisons</h2>
+      <h2>7. Same-learner, approximately capacity-matched, and model-envelope views</h2>
       <ul class="list-clean">
-        <li>Same-learner GSR: the same learner family and tuning budget are applied to geometry and fuller record when technically possible.</li>
-        <li>Capacity-matched GSR: compute, search effort, and effective capacity are matched when model forms differ.</li>
-        <li>Model-envelope GSR: several credible learner families are reported to expose learner dependence.</li>
+        <li>Same-learner GSR: the same declared predictive family, preprocessing policy, search budget, partitions, and stopping rule are applied when technically possible. This holds much of the observer and protocol fixed while remaining observer- and architecture-relative.</li>
+        <li>Approximately capacity-matched GSR: when input forms require different model families, parameter count, training compute, data exposure, tuning effort, regularization, and stopping criteria are matched as closely as practicable and the remaining asymmetries are reported.</li>
+        <li>Model-envelope GSR: several credible predictive families are reported to expose observer dependence. This is a robustness-oriented view, not an automatically conservative one.</li>
       </ul>
 
       <h2>8. Worked 0.75 / 0.80 / 0.95 example</h2>
@@ -164,10 +164,10 @@
 
       <h2>20. Downloads and citation</h2>
       <div class="buttons">
-        <a class="button primary" href="/assets/docs/Ageometrics_and_the_Geometric_Sufficiency_Ratio_v0_3.md">Current working paper</a>
-        <a class="button" href="/assets/docs/Ageometrics_and_the_Geometric_Sufficiency_Ratio_v0_3.pdf">Current PDF</a>
-        <a class="button muted" href="https://github.com/BonAcqui-LLC/fractalish/tree/research/publish-ageometrics-gsr-v0.2/research/ageometrics/metrics.md">Metric notes</a>
-        <a class="button muted" href="https://github.com/BonAcqui-LLC/fractalish/tree/research/publish-ageometrics-gsr-v0.2/research/ageometrics/CITATION.cff">Citation file</a>
+        <a class="button primary" href="/assets/docs/Ageometrics_and_the_Geometric_Sufficiency_Ratio_v0_5.md">Current working paper</a>
+        <a class="button" href="/assets/docs/Ageometrics_and_the_Geometric_Sufficiency_Ratio_v0_5.pdf">Current PDF</a>
+        <a class="button muted" href="/assets/docs/ageometrics_synthetic_temporal_residue_v0_5.py">Illustration code</a>
+        <a class="button muted" href="https://github.com/BonAcqui-LLC/fractalish/tree/main/research/ageometrics">Repository package</a>
       </div>
 
       <figure class="image-frame" style="margin-top: 28px;">

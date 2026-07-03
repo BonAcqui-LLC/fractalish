@@ -1,14 +1,20 @@
 # Falsification Criteria
 
-The proposal weakens materially if one or more of the following becomes well-supported:
+Empirical failure criterion:
 
-- GSR adds no useful interpretive structure beyond established skill scores, nested-model comparisons, or sufficiency-analysis baselines.
-- The residue taxonomy does not improve diagnosis, benchmark design, or empirical explanation.
-- Apparent residue vanishes under same-learner, capacity-matched, or model-envelope testing.
-- Reported residue is mostly explained by learner mismatch, tuning asymmetry, or unavailable future information.
-- Geometric augmentation restores sufficiency so cheaply and routinely that a distinct residue program adds little value.
-- The canonical versus empirical distinction fails to improve clarity in practice.
-- The combined program is already present in earlier literature under another name.
+- the protocol repeatedly fails to detect known planted target-relevant losses under preregistered controlled conditions
+- substantial residue is reported when the declared geometric representation is sufficient for the declared target
+- protocol-preserving replication produces materially incompatible conclusions
+
+Distinct-value criterion:
+
+- GSR, V-GSR, representation-stability analysis, typed residue, and restoration testing prove wholly reducible to existing methods without additional diagnostic or practical value
+- the residue taxonomy does not improve benchmark design, diagnosis, or explanation
+- the canonical versus empirical distinction fails to improve clarity in practice
+
+Important boundary:
+
+- mathematical overlap alone would reduce distinctiveness, not automatically invalidate applications centered on developmental history, provenance, contradiction history, continuity, or process-to-form compression
 
 Positive support would instead look like:
 

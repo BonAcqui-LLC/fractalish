@@ -46,14 +46,14 @@ Ageometrics is the proposed study of what a specified geometric representation f
 Status:
 
 - working proposal
-- version `0.3`
+- version `0.5`
 - priority and prior-art review remain open
 
 Links:
 
 - [Ageometrics field page](https://fractalish.com/ageometrics/)
 - [Geometric Sufficiency Ratio metric page](https://fractalish.com/geometric-sufficiency-ratio/)
-- [Working paper](https://fractalish.com/assets/docs/Ageometrics_and_the_Geometric_Sufficiency_Ratio_v0_3.md)
+- [Working paper](https://fractalish.com/assets/docs/Ageometrics_and_the_Geometric_Sufficiency_Ratio_v0_5.md)
 - [Prior-art matrix](https://github.com/BonAcqui-LLC/fractalish/tree/main/research/ageometrics/prior-art-matrix.md)
 - [Falsification criteria](https://github.com/BonAcqui-LLC/fractalish/tree/main/research/ageometrics/falsification-criteria.md)
 

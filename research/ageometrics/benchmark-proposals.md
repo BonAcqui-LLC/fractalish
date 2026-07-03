@@ -31,6 +31,21 @@ Targets:
 - intervention response
 - continuity discrimination
 
+External agent-memory compression benchmark:
+
+- preserve the full interaction trace
+- preserve explicit memory read, search, append, rewrite, and consolidation operations
+- preserve successive memory-state snapshots
+- compare full trace, initial memory, evolved memory, and task-specific summary views
+- measure next-action prediction, temporal-order reconstruction, provenance recovery, contradiction recovery, and hazard prediction
+
+Protocol discipline:
+
+- keep a final evaluation set untouched by scaffold or model selection
+- declare whether prompts, policies, safety rules, or action vocabularies changed alongside memory structure
+- treat policy additions and blockers as possible intervention confounds rather than automatic memory gains
+- preserve complete traces so restoration tests can be run after the primary experiment
+
 ## Finance
 
 Matched-window benchmark:

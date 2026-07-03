@@ -4,15 +4,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ageometrics | Geometric Sufficiency and Residue Analysis</title>
-  <meta name="description" content="Ageometrics measures how much target-relevant information a declared geometry retains, what remains outside it, and what must be added back.">
+  <meta name="description" content="Ageometrics measures how much target-relevant decision value a declared geometry preserves, what remains outside it, and what restoration channels recover.">
   <meta property="og:title" content="Ageometrics | Geometric Sufficiency and Residue Analysis">
-  <meta property="og:description" content="A Synaptient working field page on comparator-controlled geometric sufficiency and residue analysis.">
+  <meta property="og:description" content="A Synaptient working field page on Ageometrics, GSR, typed residue, and minimal reproducible illustration protocol.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://fractalish.com/ageometrics/">
   <meta property="og:image" content="https://fractalish.com/assets/figures/og-ageometrics.svg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Ageometrics | Geometric Sufficiency and Residue Analysis">
-  <meta name="twitter:description" content="Comparator-controlled representation sufficiency from the Synaptient program.">
+  <meta name="twitter:description" content="Ageometrics asks what target-relevant decision value survives compression into a declared geometry and what residue remains outside it.">
   <meta name="twitter:image" content="https://fractalish.com/assets/figures/og-ageometrics.svg">
   <link rel="canonical" href="https://fractalish.com/ageometrics/">
   <link rel="stylesheet" href="/assets/site.css">
@@ -21,7 +21,7 @@
     "@context": "https://schema.org",
     "@type": "ScholarlyArticle",
     "headline": "Ageometrics: Geometric Sufficiency and Residue Analysis",
-    "description": "A field page for the comparator-revised Ageometrics working proposal.",
+    "description": "A public field page for the Synaptient Ageometrics v0.5 working paper and minimal reproducible illustration package.",
     "author": {
       "@type": "Organization",
       "name": "Synaptient"
@@ -54,127 +54,102 @@
       <p class="eyebrow">Working field page</p>
       <p class="small"><a href="/index.html">Home</a> / <a href="/research.html">Research</a> / <strong>Ageometrics</strong></p>
       <h1>Ageometrics</h1>
-      <p class="lead"><strong>Ageometrics: Geometric Sufficiency and Residue Analysis</strong> measures how much target-relevant information a declared geometry retains, what remains outside it, and what must be added back.</p>
+      <p class="lead"><strong>Ageometrics: Geometric Sufficiency and Residue Analysis</strong> studies what a declared geometry preserves, what it erases, and what auxiliary channels restore target-relevant decision value.</p>
 
       <section class="page-meta">
-        <div class="meta-card"><span class="meta-label">Status</span><span class="meta-value">Comparator-revised working proposal</span></div>
-        <div class="meta-card"><span class="meta-label">Version</span><span class="meta-value">0.3</span></div>
+        <div class="meta-card"><span class="meta-label">Status</span><span class="meta-value">Decision-theoretic working paper</span></div>
+        <div class="meta-card"><span class="meta-label">Version</span><span class="meta-value">0.5</span></div>
         <div class="meta-card"><span class="meta-label">Attribution</span><span class="meta-value">Synaptient</span></div>
-        <div class="meta-card"><span class="meta-label">Claim boundary</span><span class="meta-value">Exact novelty and full validation remain open</span></div>
+        <div class="meta-card"><span class="meta-label">Claim boundary</span><span class="meta-value">Minimal reproducible illustration, not broad empirical validation</span></div>
       </section>
 
       <div class="callout">
-        <p><strong>What changed in v0.3.</strong> Version 0.3 formalizes GSR through Bayes-optimal risk, makes the empirical quantity explicitly protocol-dependent, distinguishes bounded canonical residue from signed empirical diagnostics, and narrows the novelty claim in light of skill-score and sufficiency-analysis precedents.</p>
+        <p><strong>Current release posture.</strong> Ageometrics is published here as a decision-theoretic working paper with a minimal reproducible illustration, typed residue taxonomy, and an explicit benchmark roadmap. Cross-domain validation, sensitivity analysis, observer-envelope testing, and exhaustive prior-art review remain in progress.</p>
       </div>
 
       <div class="callout warning">
-        <p><strong>Comparator discipline is part of the definition.</strong> A GSR estimate without a declared comparator protocol is not an Ageometrics result.</p>
+        <p><strong>Claim boundary.</strong> Same-learner V-GSR holds the declared observer and much of the comparison protocol fixed, but it remains observer- and architecture-relative. Model-envelope views are robustness-oriented, not automatically conservative.</p>
       </div>
 
-      <figure class="image-frame">
-        <img src="/assets/figures/ageometrics-comparator-protocol.svg" alt="Comparator protocol diagram showing same held-out cases, same temporal boundary, and matched learner or capacity controls feeding baseline, geometry-only, and fuller-record risks before producing a GSR estimate with uncertainty.">
-        <figcaption class="caption">Comparator discipline moved from cautionary note to definitional requirement in v0.3.</figcaption>
-      </figure>
-
-      <h2>Why geometry's success creates a blind spot</h2>
-      <p>Geometry has become one of the most successful compressive languages in science and machine learning. Coordinates, manifolds, graphs, embeddings, topological summaries, and state spaces can organize astonishing amounts of structure. That success creates a risk: once nearly anything can be represented geometrically, the existence of a useful geometry stops proving that geometry is sufficient for causality, provenance, semantics, history, or identity.</p>
-
-      <h2>What Ageometrics studies</h2>
-      <p>Ageometrics asks a narrower question than "can this system be represented geometrically?" It asks what must be added back before a declared geometry becomes sufficient for a declared target, and how costly that restoration is.</p>
+      <h2>Core question</h2>
+      <p>Geometry is one of science's most powerful compressive languages. Coordinates, neighborhoods, symmetries, manifolds, graphs, and topologies can all preserve striking amounts of structure. That success also creates a methodological risk: a useful geometry does not by itself show that the representation preserves everything relevant to a declared task.</p>
+      <p>Ageometrics asks that narrower question directly.</p>
       <ul class="list-clean">
-        <li>Declared fuller reference record: the admissible richer record used for comparison, not a claim of metaphysical completeness.</li>
-        <li>Declared geometry: the tested representation, not geometry in the abstract.</li>
-        <li>Declared target: what the representation is being asked to predict, explain, or preserve.</li>
-        <li>Declared comparator protocol: the temporal, learner, capacity, loss, uncertainty, and leakage rules that make the comparison interpretable.</li>
+        <li>How much target-relevant decision value survives compression into a declared geometry?</li>
+        <li>How stable is that result across reasonable representations and observer choices?</li>
+        <li>What typed residue remains outside the geometric account?</li>
       </ul>
 
-      <h2>Non-Geometric Residue taxonomy</h2>
-      <p>The residue taxonomy is a proposed working partition, not a settled ontology.</p>
-      <figure class="image-frame">
-        <img src="/assets/figures/ageometrics-residue-taxonomy.svg" alt="Taxonomy diagram placing non-geometric residue at the center and eight proposed residue classes around it: temporal, causal, provenance, contextual, algorithmic, semantic, identity, and energetic.">
-        <figcaption class="caption">The proposed residue classes remain reviewable, revisable, and open to collapse or expansion.</figcaption>
-      </figure>
-
-      <h2>Relationship to Fractalish</h2>
-      <p>Fractalish and Ageometrics remain paired rather than competing programs. Fractalish asks what history becomes visible in form. Ageometrics asks what history disappears when reality is reduced to form.</p>
-
-      <h2>Blind growth and local contact</h2>
-      <p>One strong motivation comes from blind or locally informed growth. In branching, aggregation, fracture, morphogenesis, and local-memory systems, the active front often lacks a representation of the completed whole. It responds to local contact, finite-range fields, and path-dependent consequences already embodied in the structure. That is why morphology can preserve partial history without preserving all of it.</p>
-
-      <h2>Perceptual horizon</h2>
-      <p>Perceptual horizon is the extent of information available to an updating process beyond its current local state. Varying it creates a practical way to test how much developmental history survives into final structure.</p>
-      <figure class="image-frame">
-        <img src="/assets/figures/ageometrics-perceptual-horizon.svg" alt="A ladder of perceptual horizon levels from contact-only awareness through predictive and counterfactual world modeling.">
-        <figcaption class="caption">Local contact and broad foresight can be treated as experimentally variable rather than rhetorical opposites.</figcaption>
-      </figure>
-
-      <h2>AI-memory application</h2>
-      <p>Artificial memory is an especially strong benchmark because a machine can preserve much more of its own developmental record than a biological or geological specimen usually can. The comparison can therefore be measured directly: geometry versus full history, geometry plus provenance channel, geometry plus contradiction history, and so on.</p>
-
-      <h2>Finance as a canonical test domain</h2>
-      <p>Finance is useful because market research already leans heavily on visible geometry: price paths, volatility surfaces, fractal statistics, embeddings, and network structure. At the same time, the underlying mechanism can retain order-flow, depth, leverage, cancellation, and participant-history detail that the chart alone does not preserve. This remains a benchmark domain, not a trading claim.</p>
-
-      <h2>Falsification and failure conditions</h2>
-      <p>The program should weaken if the metric collapses into established skill-score or nested-model analysis without adding useful experiment design, if the residue taxonomy does not help diagnose failures, or if apparent residue vanishes under fair model-envelope testing.</p>
-
-      <h2>Current research status</h2>
+      <h2>The Geometric Sufficiency Ratio</h2>
+      <p>The <strong>Geometric Sufficiency Ratio</strong> compares prediction from a declared geometric representation with prediction from a declared fuller reference record.</p>
       <ul class="list-clean">
-        <li>Defined: the field label, canonical population quantity, empirical estimator, and canonical versus empirical NGR distinction.</li>
-        <li>Proposed: representation-stability envelopes, encoding-cost frontier, perceptual-horizon experiments, and cross-domain residue recurrence.</li>
-        <li>Supported by neighboring literature: target-relative compression, skill-score normalization, causal insufficiency of observation alone, and mechanism-rich domains where visible form omits history.</li>
-        <li>Not yet established: exhaustive novelty, stable cross-domain comparability, and a final residue ontology.</li>
+        <li><strong>GSR = 0</strong>: the geometry adds nothing beyond baseline.</li>
+        <li><strong>GSR = 1</strong>: the geometry preserves all target-relevant decision value available from the fuller record.</li>
+        <li><strong>0 &lt; GSR &lt; 1</strong>: the geometry is useful for the declared target but incomplete.</li>
       </ul>
+      <p>The framework also defines observer-relative <strong>V-GSR</strong> for restricted predictive families, temporal and interventional extensions, representation-stability envelopes, and a typed taxonomy of Non-Geometric Residue.</p>
 
-      <h2>Terminology note</h2>
-      <p>The adjective <em>ageometric</em> already has an unrelated specialized use in geometric group theory. The present proposal concerns geometric sufficiency and residue analysis and does not use the term in that established sense.</p>
+      <figure class="image-frame">
+        <img src="/assets/figures/ageometrics-comparator-protocol.svg" alt="Comparator protocol diagram showing baseline, geometry-only, and fuller-record risks compared on the same held-out cases under a declared protocol.">
+        <figcaption class="caption">Comparator discipline is part of the definition. A GSR estimate without a declared comparison protocol is not an Ageometrics result.</figcaption>
+      </figure>
 
-      <h2>Downloads and citation</h2>
+      <h2>Minimal reproducible illustration</h2>
+      <p>The current public illustration plants temporal information outside a declared terminal-geometric representation and then measures how much of the available log-loss improvement survives in geometry alone. Under the seeded same-learner protocol, the geometry-only channel recovers only about one fifth of the fuller-record improvement.</p>
+      <p>This is a controlled minimal reproducible illustration. It is not a broad validation suite, not proof of cross-domain adequacy, and not a claim that the residue taxonomy is complete.</p>
+
+      <h2>Why it matters</h2>
+      <p>Many natural and computational systems develop through local action, finite perception, path dependence, and embodied history. Final form may preserve part of that history while erasing other parts. Ageometrics provides a protocol for measuring what survives and for testing candidate explanations of what was lost.</p>
+      <p>This matters especially for history-bearing artificial systems. Full developmental records can be compared with embeddings, graphs, summaries, attractors, replay states, or memory topologies to test how much causal, provenance, contradiction, and continuity information survives each conversion.</p>
+
+      <h2>Connection to Fractalish</h2>
+      <p>Fractalish asks what history becomes visible in form. Ageometrics asks what history disappears when reality is reduced to form. One studies the evidentiary power of structure. The other measures its declared limit.</p>
+
+      <h2>Current release package</h2>
       <div class="doc-grid">
         <article class="card">
-          <h3>Current working paper</h3>
+          <h3>Ageometrics v0.5 working paper</h3>
           <ul class="meta-inline">
-            <li>Version: 0.3</li>
+            <li>Type: decision-theoretic working paper</li>
             <li>Status: current</li>
-            <li>Date: 2026-07-02</li>
-            <li>Tag: ageometrics-v0.3</li>
+            <li>Date: July 2026</li>
           </ul>
-          <p class="small">Canonical source commit: <code>3fc78e3134316730c2fc91825247564acf1f87f6</code>.</p>
           <div class="buttons">
-            <a class="button" href="/assets/docs/Ageometrics_and_the_Geometric_Sufficiency_Ratio_v0_3.md">Open Markdown</a>
-            <a class="button muted" href="/assets/docs/Ageometrics_and_the_Geometric_Sufficiency_Ratio_v0_3.pdf">Open PDF</a>
-            <a class="button muted" href="https://github.com/BonAcqui-LLC/fractalish/tree/research/publish-ageometrics-gsr-v0.2/research/ageometrics/metrics.md">Metric notes</a>
-            <a class="button muted" href="https://github.com/BonAcqui-LLC/fractalish/tree/research/publish-ageometrics-gsr-v0.2/research/ageometrics">Repository path</a>
+            <a class="button" href="/assets/docs/Ageometrics_and_the_Geometric_Sufficiency_Ratio_v0_5.md">Open Markdown</a>
+            <a class="button muted" href="/assets/docs/Ageometrics_and_the_Geometric_Sufficiency_Ratio_v0_5.pdf">Open PDF</a>
           </div>
         </article>
         <article class="card">
-          <h3>Historical release</h3>
+          <h3>Illustration artifacts</h3>
           <ul class="meta-inline">
-            <li>Version: 0.2</li>
-            <li>Status: superseded</li>
-            <li>Tag: ageometrics-v0.2</li>
+            <li>Status: current</li>
+            <li>Scope: code, results, protocol</li>
+            <li>Lane: reproducible illustration</li>
           </ul>
           <div class="buttons">
-            <a class="button" href="/assets/docs/Ageometrics_and_the_Geometric_Sufficiency_Ratio_v0_2.md">Open v0.2 Markdown</a>
-            <a class="button muted" href="/assets/docs/Ageometrics_and_the_Geometric_Sufficiency_Ratio_v0_2.pdf">Open v0.2 PDF</a>
+            <a class="button" href="/assets/docs/ageometrics_synthetic_temporal_residue_v0_5.py">Code</a>
+            <a class="button muted" href="/assets/docs/ageometrics_synthetic_v0_5_results.json">Data</a>
+            <a class="button muted" href="/assets/docs/ageometrics_synthetic_experiment_manifest_v0_5.json">Manifest</a>
+            <a class="button muted" href="/assets/docs/ageometrics_minimal_reproducible_illustration_v0_5_README.md">README</a>
           </div>
         </article>
         <article class="card">
-          <h3>Support files</h3>
+          <h3>Related public routes</h3>
           <ul class="meta-inline">
             <li>Status: current</li>
-            <li>Scope: definitions and review</li>
-            <li>Lane: repository package</li>
+            <li>Purpose: metric, instrumentation, review</li>
+            <li>Audience: reviewers and developers</li>
           </ul>
           <div class="buttons">
-            <a class="button" href="https://github.com/BonAcqui-LLC/fractalish/tree/research/publish-ageometrics-gsr-v0.2/research/ageometrics/prior-art-matrix.md">Prior-art matrix</a>
-            <a class="button muted" href="https://github.com/BonAcqui-LLC/fractalish/tree/research/publish-ageometrics-gsr-v0.2/research/ageometrics/CHANGELOG.md">Changelog</a>
-            <a class="button muted" href="https://github.com/BonAcqui-LLC/fractalish/tree/research/publish-ageometrics-gsr-v0.2/research/ageometrics/CITATION.cff">Citation file</a>
+            <a class="button" href="/geometric-sufficiency-ratio/">Metric page</a>
+            <a class="button muted" href="/cognitive-basin.html">Cognitive Basin</a>
+            <a class="button muted" href="https://github.com/BonAcqui-LLC/fractalish/tree/main/research/ageometrics">Repository package</a>
           </div>
         </article>
       </div>
 
-      <h2>Review and contribution request</h2>
-      <p>The useful questions are concrete: Is the comparator fair? Is the metric distinct? Is the naming collision manageable? Which benchmark would fail the program fastest if it adds no value beyond existing tools?</p>
+      <h2>Review focus</h2>
+      <p>The useful critiques are concrete: whether the comparator protocol is fair, whether the metric adds diagnostic value beyond nearby precedents, whether the residue taxonomy survives hostile testing, and which benchmark would falsify the program fastest if it adds nothing beyond existing tools.</p>
       <div class="buttons">
         <a class="button primary" href="https://github.com/BonAcqui-LLC/fractalish/issues/new?template=ageometrics_prior_art.yml">Submit prior art</a>
         <a class="button" href="https://github.com/BonAcqui-LLC/fractalish/issues/new?template=ageometrics_falsification.yml">Submit counterexample</a>
@@ -183,7 +158,7 @@
     </article>
   </main>
   <footer class="site-footer">
-    <div class="inner">Ageometrics is public as a Synaptient working proposal. Review, correction, and falsification remain open.</div>
+    <div class="inner">Ageometrics remains open to correction, falsification, replication, and hostile comparison against neighboring methods.</div>
   </footer>
 </body>
 </html>

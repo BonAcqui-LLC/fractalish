@@ -1,0 +1,19 @@
+{
+  "seed": 42,
+  "n": 20000,
+  "test_n": 8000,
+  "bootstrap_samples": 2000,
+  "loss": "log_loss",
+  "learner": "StandardScaler + LogisticRegression",
+  "risk_baseline": 0.6931346805078615,
+  "risk_geometry": 0.6167793772454127,
+  "risk_fuller": 0.3287583211635697,
+  "accuracy_geometry": 0.64475,
+  "accuracy_fuller": 0.85525,
+  "gsr": 0.2095506508705805,
+  "gsr_bootstrap_ci_95": [
+    0.18923265136981707,
+    0.23131519077455637
+  ],
+  "gsr_bootstrap_median": 0.2097442703836216
+}
