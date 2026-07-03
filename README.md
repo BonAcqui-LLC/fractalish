@@ -54,8 +54,8 @@ Links:
 - [Ageometrics field page](https://fractalish.com/ageometrics/)
 - [Geometric Sufficiency Ratio metric page](https://fractalish.com/geometric-sufficiency-ratio/)
 - [Working paper](https://fractalish.com/assets/docs/Ageometrics_and_the_Geometric_Sufficiency_Ratio_v0_5.md)
-- [Prior-art matrix](https://github.com/BonAcqui-LLC/fractalish/tree/main/research/ageometrics/prior-art-matrix.md)
-- [Falsification criteria](https://github.com/BonAcqui-LLC/fractalish/tree/main/research/ageometrics/falsification-criteria.md)
+- [Prior-art matrix](research/ageometrics/prior-art-matrix.md)
+- [Falsification criteria](research/ageometrics/falsification-criteria.md)
 
 ## What This Repo Is
 
