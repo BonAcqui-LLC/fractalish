@@ -2,18 +2,18 @@
   "title": "Ageometrics and the Geometric Sufficiency Ratio",
   "formal_label": "Ageometrics: Geometric Sufficiency and Residue Analysis",
   "version": "0.5",
-  "date": "2026-07-03",
+  "date": "2026-07-04",
   "status": "decision-theoretic working paper with a minimal reproducible illustration",
   "public_attribution": "Synaptient",
-  "source_commit": "550089772b32405113efbecb6567885bda8963ce",
+  "source_commit": "02c991119165542e8dc69852f39ab19827886e53",
   "preserved_history": {
     "v0_3_source_commit": "3fc78e3134316730c2fc91825247564acf1f87f6",
     "v0_2_source_commit": "160fa80c392760b9e9d447d714b242928af53200",
     "v0_2_tag": "ageometrics-v0.2"
   },
   "artifact_hashes": {
-    "markdown_v0_5_sha256": "c2477de96d2e66633a774039ce6b65d4353f2d29fdb5c5990877a31428f369da",
-    "pdf_v0_5_sha256": "f51c35b9e626403159a753ea040ba760219654304a659e8e059426c7b9c6b0ff",
+    "markdown_v0_5_sha256": "e0dd8c9d88af427a0fce5f31611ba6d86393748fbb4759d58f24c57e0f2c6296",
+    "pdf_v0_5_sha256": "43582fda3351f967e554c3640d19fb6f7320086a1d718450e43c2ad13407dd3b",
     "illustration_code_v0_5_sha256": "d68923b1ff649a5b8d8fe5ab728da19575aa4db7f6c9f33a0745c317c2fbf038",
     "illustration_data_v0_5_sha256": "ce9112f7d5787bea4b092333fe86b560035b513130e44edc4fc993ac5b67a95f",
     "illustration_manifest_v0_5_sha256": "a0af4944e754aba18973ef78e851f1112707824e8e5461777b672c0668863c0b",
@@ -35,6 +35,7 @@
     "v0.5 supersedes v0.3 without erasing the v0.3 or v0.2 history.",
     "DOCX remains outside the public tree.",
     "The normalized-improvement form has close predecessors and the exact novelty claim remains under review.",
-    "The current synthetic package is a minimal reproducible illustration rather than a broad validation suite."
+    "The current synthetic package is a minimal reproducible illustration rather than a broad validation suite.",
+    "The July 4 manuscript sync preserves the v0.5 version label while updating the canonical text and regenerated PDF."
   ]
 }
