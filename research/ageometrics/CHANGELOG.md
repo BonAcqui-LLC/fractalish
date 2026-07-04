@@ -3,6 +3,7 @@
 ## v0.5.0 - 2026-07-03
 
 - added the v0.5 canonical paper and synchronized public Markdown/PDF artifacts
+- synchronized the canonical manuscript to the finished-product July 2026 text while preserving the v0.5 version label
 - reframed the synthetic package as a minimal reproducible illustration rather than validation or proof
 - corrected V-GSR public guidance to emphasize observer-relative same-learner comparisons, approximate capacity matching, and robustness-oriented model envelopes
 - separated empirical failure from distinct-value criteria and clarified the Basin instrumentation role
