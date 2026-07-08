@@ -4,7 +4,10 @@ title: "Fractalish: Public research home for Fractalish, Natural Math, and Cogni
 version: "0.2.0"
 date-released: "2026-06-08"
 authors:
-  - name: "Fractalish Research Program, stewarded by BonAcqui LLC"
+  - family-names: "Clow"
+    given-names: "James Allen"
+  - family-names: "Clow"
+    given-names: "Melissa Ellen"
 url: "https://fractalish.com"
 type: generic
 abstract: "A public research program of Bonacqui focused on process from form, morphology as memory, Natural Math, Cognitive Basin, MCVA, AMCVA, and HOLD."

@@ -17,7 +17,7 @@ Use this page as a stable index of live public materials and placeholders for re
 - Start Here: [https://fractalish.com/start-here.html](https://fractalish.com/start-here.html)
 - MCVA / AMCVA / HOLD: [https://fractalish.com/mcva-amcva-hold.html](https://fractalish.com/mcva-amcva-hold.html)
 - Natural Math: [https://fractalish.com/natural-math.html](https://fractalish.com/natural-math.html)
-- Natural Math release registry: [https://fractalish.com/canonical-versions.html](https://fractalish.com/canonical-versions.html)
+- Natural Math specification: [https://fractalish.com/assets/docs/natural-math-v2.4-hardened-specification.docx](https://fractalish.com/assets/docs/natural-math-v2.4-hardened-specification.docx)
 
 ## Library and Commons
 
