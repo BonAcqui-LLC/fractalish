@@ -10,11 +10,15 @@ Core public releases:
 
 - [Synaptient / Cognitive Basin Technical White Paper v0.1](https://fractalish.com/assets/docs/Synaptient_Cognitive_Basin_Technical_White_Paper_v0_1.pdf)
 - [Companion Foundation Appendix v0.1 - How We Got Here](https://fractalish.com/assets/docs/Synaptient_Cognitive_Basin_Companion_Foundation_Appendix_v0_1.pdf)
+- [Ageometrics and the Geometric Sufficiency Ratio v0.5](https://fractalish.com/ageometrics/)
+- [The Specificity Thesis v0.3](https://fractalish.com/specificity-thesis.html)
 - [Paired release landing page](https://fractalish.com/white-papers/synaptient-cognitive-basin-technical-white-paper.html)
 
 Current technical entry points:
 
 - [Cognitive Basin / BasinLab](https://fractalish.com/cognitive-basin.html)
+- [Ageometrics / GSR](https://fractalish.com/ageometrics/)
+- [The Specificity Thesis](https://fractalish.com/specificity-thesis.html)
 - [CNTM realization](https://fractalish.com/cntm-realization.html)
 - [Natural Math](https://fractalish.com/natural-math.html)
 - [Motorola activation](https://fractalish.com/motorola-activation.html)
@@ -28,12 +32,14 @@ If you are new to the project, use this order:
 2. [MCVA / AMCVA / HOLD](https://fractalish.com/mcva-amcva-hold.html)
 3. [Natural Math](https://fractalish.com/natural-math.html)
 4. [Cognitive Basin / BasinLab](https://fractalish.com/cognitive-basin.html)
-5. [CNTM realization](https://fractalish.com/cntm-realization.html)
-6. [Motorola activation](https://fractalish.com/motorola-activation.html)
-7. [Fractalish AI](https://fractalish.com/fractalish-ai.html)
-8. [Documents and Working Papers](https://fractalish.com/documents.html)
-9. [Documents and evidence records](https://fractalish.com/documents.html#evidence-records)
-10. [Fractalish Commons](https://fractalish.com/commons.html)
+5. [Ageometrics / GSR](https://fractalish.com/ageometrics/)
+6. [The Specificity Thesis](https://fractalish.com/specificity-thesis.html)
+7. [CNTM realization](https://fractalish.com/cntm-realization.html)
+8. [Motorola activation](https://fractalish.com/motorola-activation.html)
+9. [Fractalish AI](https://fractalish.com/fractalish-ai.html)
+10. [Documents and Working Papers](https://fractalish.com/documents.html)
+11. [Documents and evidence records](https://fractalish.com/documents.html#evidence-records)
+12. [Fractalish Commons](https://fractalish.com/commons.html)
 
 ## What This Repo Is
 
@@ -43,6 +49,7 @@ This repository is the public front door for collaboration around:
 - MCVA, AMCVA, and HOLD vocabulary and guardrails
 - Natural Math documents and implementation references
 - Synaptient / Cognitive Basin public architecture materials
+- Ageometrics, GSR, and Specificity Thesis representation-sufficiency materials
 - CNTM realization summaries
 - Motorola activation and phone-path disclosure
 - Fractalish AI build-program explanation

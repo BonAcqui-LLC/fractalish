@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Ageometrics residue taxonomy</title>
+  <desc id="desc">A central non-geometric residue node surrounded by eight proposed residue classes: temporal, causal, provenance, contextual, algorithmic, semantic, identity, and energetic.</desc>
+  <rect width="1200" height="760" fill="#0b1119"/>
+  <circle cx="600" cy="380" r="122" fill="#16202d" stroke="#c8ae82" stroke-width="3"/>
+  <text x="600" y="362" text-anchor="middle" fill="#eef2f7" font-family="Georgia, 'Times New Roman', serif" font-size="34">Non-Geometric</text>
+  <text x="600" y="402" text-anchor="middle" fill="#eef2f7" font-family="Georgia, 'Times New Roman', serif" font-size="34">Residue</text>
+  <text x="600" y="436" text-anchor="middle" fill="#b2bccb" font-family="Segoe UI, sans-serif" font-size="18">proposed working taxonomy</text>
+  <g fill="#121a25" stroke="#334155" stroke-width="2">
+    <rect x="136" y="100" width="232" height="86" rx="12"/>
+    <rect x="466" y="54" width="268" height="86" rx="12"/>
+    <rect x="836" y="100" width="232" height="86" rx="12"/>
+    <rect x="930" y="306" width="210" height="86" rx="12"/>
+    <rect x="836" y="530" width="232" height="86" rx="12"/>
+    <rect x="466" y="596" width="268" height="86" rx="12"/>
+    <rect x="136" y="530" width="232" height="86" rx="12"/>
+    <rect x="60" y="306" width="210" height="86" rx="12"/>
+  </g>
+  <g fill="#eef2f7" font-family="Georgia, 'Times New Roman', serif" font-size="30" text-anchor="middle">
+    <text x="252" y="148">Temporal</text>
+    <text x="600" y="102">Causal</text>
+    <text x="952" y="148">Provenance</text>
+    <text x="1035" y="354">Contextual</text>
+    <text x="952" y="578">Algorithmic</text>
+    <text x="600" y="644">Semantic</text>
+    <text x="252" y="578">Identity</text>
+    <text x="165" y="354">Energetic</text>
+  </g>
+  <g fill="#b2bccb" font-family="Segoe UI, sans-serif" font-size="17" text-anchor="middle">
+    <text x="252" y="176">order, duration, path</text>
+    <text x="600" y="130">intervention, mechanism</text>
+    <text x="952" y="176">authority, source integrity</text>
+    <text x="1035" y="382">frame-dependent state</text>
+    <text x="952" y="606">program and construction rule</text>
+    <text x="600" y="672">meaning, obligation, intent</text>
+    <text x="252" y="606">continuity and lineage</text>
+    <text x="165" y="382">work, stress, compute cost</text>
+  </g>
+  <g stroke="#8aa2c6" stroke-width="3">
+    <line x1="379" y1="180" x2="512" y2="300"/>
+    <line x1="600" y1="141" x2="600" y2="258"/>
+    <line x1="822" y1="180" x2="688" y2="300"/>
+    <line x1="930" y1="349" x2="724" y2="367"/>
+    <line x1="822" y1="572" x2="688" y2="460"/>
+    <line x1="600" y1="596" x2="600" y2="502"/>
+    <line x1="379" y1="572" x2="512" y2="460"/>
+    <line x1="270" y1="349" x2="476" y2="367"/>
+  </g>
+</svg>

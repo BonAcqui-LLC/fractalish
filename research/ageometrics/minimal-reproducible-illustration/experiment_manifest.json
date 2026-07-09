@@ -1,0 +1,50 @@
+{
+  "name": "ageometrics_synthetic_temporal_residue",
+  "version": "0.5",
+  "status": "minimal reproducible illustration",
+  "seed": 42,
+  "sample_size": 20000,
+  "train_fraction": 0.6,
+  "test_fraction": 0.4,
+  "split": {
+    "method": "train_test_split",
+    "stratify": true,
+    "random_state": 42
+  },
+  "declared_geometry": [
+    "g1",
+    "g2"
+  ],
+  "fuller_record": [
+    "g1",
+    "g2",
+    "history"
+  ],
+  "baseline": {
+    "type": "class-rate predictor",
+    "source": "training-set prevalence"
+  },
+  "learner": {
+    "pipeline": [
+      "StandardScaler",
+      "LogisticRegression"
+    ],
+    "hyperparameters": {
+      "max_iter": 1000
+    }
+  },
+  "loss": "log_loss",
+  "uncertainty": {
+    "method": "paired bootstrap",
+    "samples": 2000,
+    "bootstrap_seed_offset": 81
+  },
+  "claim_boundary": {
+    "pairwise_identical_terminal_geometry": false,
+    "note": "The illustration excludes an informative history channel from the declared terminal-geometric representation; it does not claim pairwise identical terminal geometry across examples."
+  },
+  "todo": [
+    "Run the recommended multi-seed sensitivity suite.",
+    "Add negative-control and restoration conditions.",
+    "Add additional learner families for observer-envelope analysis."
+  ]

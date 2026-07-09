@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Specificity Thesis governance path</title>
+  <desc id="desc">Diagram showing how a fuller record and declared representation are measured against a target, converted into specificity receipts, structural debt, governance posture, replay, and repair.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#080e16"/>
+      <stop offset="0.55" stop-color="#162337"/>
+      <stop offset="1" stop-color="#090c10"/>
+    </linearGradient>
+    <radialGradient id="pulse" cx="50%" cy="45%" r="50%">
+      <stop offset="0" stop-color="#7cff6b" stop-opacity="0.22"/>
+      <stop offset="0.46" stop-color="#a8c2e8" stop-opacity="0.11"/>
+      <stop offset="1" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#000000" flood-opacity="0.44"/>
+    </filter>
+    <style>
+      .box{fill:rgba(18,26,37,.96);stroke:#56697f;stroke-width:1.4;rx:18;filter:url(#shadow)}
+      .box2{fill:rgba(168,194,232,.08);stroke:#7f98be;stroke-width:1.4;rx:18}
+      .title{font:700 28px Georgia,serif;fill:#eef2f7}
+      .label{font:700 21px Georgia,serif;fill:#eef2f7}
+      .small{font:600 14px system-ui,-apple-system,Segoe UI,sans-serif;fill:#b2bccb}
+      .tiny{font:700 12px system-ui,-apple-system,Segoe UI,sans-serif;fill:#7cff6b;letter-spacing:.08em}
+      .line{stroke:#a8c2e8;stroke-width:3;fill:none;stroke-linecap:round;stroke-linejoin:round}
+      .line2{stroke:#7cff6b;stroke-width:3;fill:none;stroke-linecap:round;stroke-linejoin:round}
+      .line3{stroke:#9db59a;stroke-width:3;fill:none;stroke-linecap:round;stroke-linejoin:round}
+      .dot{fill:#0f1723;stroke:#7cff6b;stroke-width:2}
+      .code{font:700 14px ui-monospace,SFMono-Regular,Consolas,monospace;fill:#dbe6f3}
+    </style>
+  </defs>
+  <rect width="1200" height="900" fill="url(#bg)"/>
+  <rect width="1200" height="900" fill="url(#pulse)"/>
+  <text class="title" x="64" y="68">The Specificity Thesis</text>
+  <text class="small" x="64" y="96">Representation sufficiency becomes a governed, replayable state surface.</text>
+
+  <g transform="translate(64 150)">
+    <rect class="box" width="300" height="142"/>
+    <text class="tiny" x="22" y="34">REFERENCE RECORD</text>
+    <text class="label" x="22" y="68">Fuller admissible record</text>
+    <text class="small" x="22" y="100">History, target context,</text>
+    <text class="small" x="22" y="122">provenance, and structure.</text>
+  </g>
+
+  <g transform="translate(64 385)">
+    <rect class="box" width="300" height="142"/>
+    <text class="tiny" x="22" y="34">DECLARED FORM</text>
+    <text class="label" x="22" y="68">Representation</text>
+    <text class="small" x="22" y="100">Geometry, summary, embedding,</text>
+    <text class="small" x="22" y="122">trace, graph, or memory object.</text>
+  </g>
+
+  <g transform="translate(450 268)">
+    <rect class="box2" width="300" height="148"/>
+    <text class="tiny" x="22" y="34">TARGET CONTRACT</text>
+    <text class="label" x="22" y="68">What must survive?</text>
+    <text class="small" x="22" y="100">Declared target features,</text>
+    <text class="small" x="22" y="122">loss rules, and comparators.</text>
+  </g>
+
+  <g transform="translate(835 150)">
+    <rect class="box" width="300" height="142"/>
+    <text class="tiny" x="22" y="34">MEASUREMENT RECEIPT</text>
+    <text class="label" x="22" y="68">Specificity score</text>
+    <text class="code" x="22" y="102">GSR, NGR, SDP</text>
+    <text class="small" x="22" y="124">Content-addressed and verifiable.</text>
+  </g>
+
+  <g transform="translate(835 385)">
+    <rect class="box" width="300" height="154"/>
+    <text class="tiny" x="22" y="34">STRUCTURAL DEBT</text>
+    <text class="label" x="22" y="68">Corrective burden</text>
+    <text class="small" x="22" y="101">Missing target value becomes</text>
+    <text class="small" x="22" y="123">repair cost, caution, or</text>
+    <text class="small" x="22" y="145">constraint on action.</text>
+  </g>
+
+  <g transform="translate(449 612)">
+    <rect class="box" width="304" height="162"/>
+    <text class="tiny" x="22" y="34">GOVERNANCE POSTURE</text>
+    <text class="label" x="22" y="68">Separate state systems</text>
+    <text class="code" x="22" y="104">SUPPORTED | HOLD | SENSE</text>
+    <text class="small" x="22" y="132">Epistemic, action, and Natural</text>
+    <text class="small" x="22" y="153">Math process states do not merge.</text>
+  </g>
+
+  <g transform="translate(64 650)">
+    <rect class="box2" width="300" height="124"/>
+    <text class="tiny" x="22" y="34">REPLAY</text>
+    <text class="label" x="22" y="68">Reconstruct final state</text>
+    <text class="small" x="22" y="100">Ledger proves the route, not just the output.</text>
+  </g>
+
+  <g transform="translate(835 650)">
+    <rect class="box2" width="300" height="124"/>
+    <text class="tiny" x="22" y="34">REPAIR</text>
+    <text class="label" x="22" y="68">Later action can close debt</text>
+    <text class="small" x="22" y="100">Repair is measured without restarting history.</text>
+  </g>
+
+  <path class="line" d="M364 221 C410 228 430 262 450 310"/>
+  <path class="line" d="M364 456 C415 446 430 396 450 356"/>
+  <path class="line2" d="M750 332 C790 277 808 224 835 213"/>
+  <path class="line2" d="M985 292 V385"/>
+  <path class="line3" d="M985 539 C922 608 831 661 753 692"/>
+  <path class="line3" d="M449 702 H364"/>
+  <path class="line2" d="M753 702 H835"/>
+  <path class="line" d="M214 650 V527"/>
+  <circle class="dot" cx="364" cy="221" r="7"/>
+  <circle class="dot" cx="364" cy="456" r="7"/>
+  <circle class="dot" cx="835" cy="213" r="7"/>
+  <circle class="dot" cx="985" cy="385" r="7"/>
+  <circle class="dot" cx="753" cy="702" r="7"/>
+  <circle class="dot" cx="364" cy="702" r="7"/>
+  <circle class="dot" cx="835" cy="702" r="7"/>
+</svg>

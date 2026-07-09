@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Population versus empirical GSR diagram</title>
+  <desc id="desc">A diagram distinguishing the canonical Bayes-risk quantity from the finite-data empirical estimator, showing that only the canonical quantity is bounded under stated assumptions while the empirical estimate may violate the interval and requires diagnosis.</desc>
+  <rect width="1200" height="720" fill="#0b1119"/>
+  <rect x="64" y="64" width="452" height="592" rx="18" fill="#121a25" stroke="#334155"/>
+  <rect x="684" y="64" width="452" height="592" rx="18" fill="#121a25" stroke="#334155"/>
+  <text x="290" y="122" text-anchor="middle" fill="#c8ae82" font-family="Georgia, 'Times New Roman', serif" font-size="32">Canonical population quantity</text>
+  <text x="910" y="122" text-anchor="middle" fill="#c8ae82" font-family="Georgia, 'Times New Roman', serif" font-size="32">Protocol-specific empirical estimate</text>
+  <rect x="112" y="188" width="356" height="118" rx="12" fill="#16202d" stroke="#8aa2c6"/>
+  <rect x="732" y="188" width="356" height="118" rx="12" fill="#16202d" stroke="#8aa2c6"/>
+  <text x="290" y="238" text-anchor="middle" fill="#eef2f7" font-family="Georgia, 'Times New Roman', serif" font-size="28">Bayes-optimal risk</text>
+  <text x="910" y="238" text-anchor="middle" fill="#eef2f7" font-family="Georgia, 'Times New Roman', serif" font-size="28">Finite data plus learner</text>
+  <text x="290" y="272" text-anchor="middle" fill="#b2bccb" font-family="Segoe UI, sans-serif" font-size="18">R*_ell(B), R*_ell(G(X)), R*_ell(X)</text>
+  <text x="910" y="272" text-anchor="middle" fill="#b2bccb" font-family="Segoe UI, sans-serif" font-size="18">R_hat_Pi(B), R_hat_Pi(G), R_hat_Pi(X)</text>
+  <path d="M290 306V386" stroke="#9db59a" stroke-width="5"/>
+  <path d="M910 306V386" stroke="#9db59a" stroke-width="5"/>
+  <polygon points="290,386 279,368 301,368" fill="#9db59a"/>
+  <polygon points="910,386 899,368 921,368" fill="#9db59a"/>
+  <rect x="112" y="392" width="356" height="108" rx="12" fill="#111926" stroke="#c8ae82"/>
+  <rect x="732" y="392" width="356" height="108" rx="12" fill="#111926" stroke="#c89a72"/>
+  <text x="290" y="438" text-anchor="middle" fill="#eef2f7" font-family="Georgia, 'Times New Roman', serif" font-size="28">GSR*</text>
+  <text x="910" y="438" text-anchor="middle" fill="#eef2f7" font-family="Georgia, 'Times New Roman', serif" font-size="28">GSR_hat_Pi</text>
+  <text x="290" y="470" text-anchor="middle" fill="#c8ae82" font-family="Segoe UI, sans-serif" font-size="18">bounded in [0,1] under stated assumptions</text>
+  <text x="910" y="470" text-anchor="middle" fill="#c89a72" font-family="Segoe UI, sans-serif" font-size="18">may fall below 0 or above 1 and must be diagnosed</text>
+  <rect x="112" y="540" width="356" height="74" rx="12" fill="#16202d" stroke="#8aa2c6"/>
+  <rect x="732" y="540" width="356" height="74" rx="12" fill="#16202d" stroke="#8aa2c6"/>
+  <text x="290" y="586" text-anchor="middle" fill="#eef2f7" font-family="Georgia, 'Times New Roman', serif" font-size="24">Canonical NGR* = 1 - GSR*</text>
+  <text x="910" y="586" text-anchor="middle" fill="#eef2f7" font-family="Georgia, 'Times New Roman', serif" font-size="24">Empirical NGR_hat = 1 - GSR_hat_Pi</text>
+</svg>

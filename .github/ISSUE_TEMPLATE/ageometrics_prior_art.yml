@@ -1,0 +1,79 @@
+name: Ageometrics prior art
+description: Report prior art, conceptual overlap, naming conflicts, or equivalent earlier metrics.
+title: "[Ageometrics Prior Art] "
+labels:
+  - prior-art
+  - ageometrics
+body:
+  - type: input
+    id: cited_work
+    attributes:
+      label: Cited work
+    validations:
+      required: true
+  - type: input
+    id: date
+    attributes:
+      label: Publication date
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: DOI or source URL
+    validations:
+      required: true
+  - type: textarea
+    id: algebraic_match
+    attributes:
+      label: Exact algebraic match
+      description: State whether the cited work matches the GSR normalization or a direct mathematical equivalent.
+    validations:
+      required: true
+  - type: textarea
+    id: program_match
+    attributes:
+      label: Exact experimental-program match
+      description: State whether the cited work matches the broader Ageometrics program rather than only one formula.
+    validations:
+      required: true
+  - type: textarea
+    id: terminology_collision
+    attributes:
+      label: Terminology collision
+      description: Note whether the cited work creates a naming conflict such as the established geometric-group-theory use of ageometric.
+    validations:
+      required: true
+  - type: dropdown
+    id: predates_v0_2
+    attributes:
+      label: Does it clearly predate Ageometrics v0.2?
+      options:
+        - yes
+        - no
+        - unclear
+    validations:
+      required: true
+  - type: dropdown
+    id: predates_v0_3
+    attributes:
+      label: Does it clearly predate Ageometrics v0.3?
+      options:
+        - yes
+        - no
+        - unclear
+    validations:
+      required: true
+  - type: textarea
+    id: neighbor
+    attributes:
+      label: Equivalent metric or conceptual neighbor
+      description: State whether this is an exact match, a strong neighbor, a terminology conflict, or a weaker conceptual precedent.
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: Suggested correction
+    validations:
+      required: true
