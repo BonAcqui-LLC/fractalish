@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Matched-pair benchmark diagram</title>
+  <desc id="desc">Two systems share the same tested geometry but differ in hidden history, causing different outcomes after intervention.</desc>
+  <rect width="1200" height="760" fill="#0b1119"/>
+  <rect x="64" y="56" width="472" height="648" rx="18" fill="#121a25" stroke="#334155"/>
+  <rect x="664" y="56" width="472" height="648" rx="18" fill="#121a25" stroke="#334155"/>
+  <text x="300" y="118" text-anchor="middle" fill="#c8ae82" font-family="Georgia, 'Times New Roman', serif" font-size="34">System A</text>
+  <text x="900" y="118" text-anchor="middle" fill="#c8ae82" font-family="Georgia, 'Times New Roman', serif" font-size="34">System B</text>
+  <rect x="148" y="154" width="304" height="116" rx="14" fill="#16202d" stroke="#8aa2c6"/>
+  <rect x="748" y="154" width="304" height="116" rx="14" fill="#16202d" stroke="#8aa2c6"/>
+  <text x="300" y="207" text-anchor="middle" fill="#eef2f7" font-family="Georgia, 'Times New Roman', serif" font-size="28">Same tested geometry</text>
+  <text x="900" y="207" text-anchor="middle" fill="#eef2f7" font-family="Georgia, 'Times New Roman', serif" font-size="28">Same tested geometry</text>
+  <text x="300" y="240" text-anchor="middle" fill="#b2bccb" font-family="Segoe UI, sans-serif" font-size="18">same graph, same path, same embedding, or same visible morphology</text>
+  <text x="900" y="240" text-anchor="middle" fill="#b2bccb" font-family="Segoe UI, sans-serif" font-size="18">same graph, same path, same embedding, or same visible morphology</text>
+  <rect x="108" y="340" width="384" height="118" rx="14" fill="#111926" stroke="#72543c"/>
+  <rect x="708" y="340" width="384" height="118" rx="14" fill="#111926" stroke="#72543c"/>
+  <text x="300" y="388" text-anchor="middle" fill="#eef2f7" font-family="Georgia, 'Times New Roman', serif" font-size="28">Hidden distinction</text>
+  <text x="900" y="388" text-anchor="middle" fill="#eef2f7" font-family="Georgia, 'Times New Roman', serif" font-size="28">Hidden distinction</text>
+  <text x="300" y="420" text-anchor="middle" fill="#c89a72" font-family="Segoe UI, sans-serif" font-size="19">safe curriculum, direct provenance, continuous lineage, low stored stress</text>
+  <text x="900" y="420" text-anchor="middle" fill="#c89a72" font-family="Segoe UI, sans-serif" font-size="19">repair-heavy history, adversarial source, restored copy, high stored stress</text>
+  <rect x="146" y="530" width="308" height="108" rx="14" fill="#16202d" stroke="#9db59a"/>
+  <rect x="746" y="530" width="308" height="108" rx="14" fill="#16202d" stroke="#9db59a"/>
+  <text x="300" y="578" text-anchor="middle" fill="#eef2f7" font-family="Georgia, 'Times New Roman', serif" font-size="30">Intervention outcome</text>
+  <text x="900" y="578" text-anchor="middle" fill="#eef2f7" font-family="Georgia, 'Times New Roman', serif" font-size="30">Intervention outcome</text>
+  <text x="300" y="610" text-anchor="middle" fill="#b2bccb" font-family="Segoe UI, sans-serif" font-size="19">stable recovery or trusted continuation</text>
+  <text x="900" y="610" text-anchor="middle" fill="#b2bccb" font-family="Segoe UI, sans-serif" font-size="19">failure, drift, mistrust, or continuity break</text>
+  <path d="M300 270V332" stroke="#8aa2c6" stroke-width="6" fill="none"/>
+  <polygon points="300,332 289,314 311,314" fill="#8aa2c6"/>
+  <path d="M900 270V332" stroke="#8aa2c6" stroke-width="6" fill="none"/>
+  <polygon points="900,332 889,314 911,314" fill="#8aa2c6"/>
+  <path d="M300 460V520" stroke="#9db59a" stroke-width="6" fill="none"/>
+  <polygon points="300,520 289,502 311,502" fill="#9db59a"/>
+  <path d="M900 460V520" stroke="#9db59a" stroke-width="6" fill="none"/>
+  <polygon points="900,520 889,502 911,502" fill="#9db59a"/>
+  <text x="600" y="698" text-anchor="middle" fill="#c8ae82" font-family="Georgia, 'Times New Roman', serif" font-size="28">If geometry cannot separate the outcomes but fuller records can, the tested representation leaves measurable residue.</text>
+</svg>
