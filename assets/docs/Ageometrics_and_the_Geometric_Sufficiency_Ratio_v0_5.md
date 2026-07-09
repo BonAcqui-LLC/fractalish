@@ -2,9 +2,11 @@
 
 ## A Research Program for Measuring What Geometry Preserves, What It Erases, and What Must Be Added Back
 
-**Version:** 0.5 working paper  
-**Date:** July 2026  
-**Public attribution:** Synaptient  
+**Version:** 0.5 working paper
+
+**Date:** July 2026
+
+**Public attribution:** Synaptient
 **Status:** Decision-theoretic working paper with minimal reproducible illustration; empirical validation, sensitivity analysis, observer-envelope testing, and exhaustive prior-art review remain in progress.
 
 > Fractalish asks what history becomes visible in form. Ageometrics asks what history disappears when reality is reduced to form.

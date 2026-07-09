@@ -2,9 +2,11 @@
 
 ## A Research Program for Measuring What Geometry Preserves, What It Erases, and What Must Be Added Back
 
-**Version:** 0.2 working paper  
-**Date:** July 1, 2026  
-**Public attribution:** Fractalish Research Program  
+**Version:** 0.2 working paper
+
+**Date:** July 1, 2026
+
+**Public attribution:** Fractalish Research Program
 **Status:** Expanded working paper; priority, formal properties, and literature review remain incomplete
 
 ## Abstract

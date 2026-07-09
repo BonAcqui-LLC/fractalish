@@ -1,8 +1,10 @@
 # The Specificity Thesis v0.3 Public Note
 
-**Status:** implementation-facing public note  
-**Version:** 0.3  
-**Repository surface:** BonAcqui-LLC/cognitive-basin-platform  
+**Status:** implementation-facing public note
+
+**Version:** 0.3
+
+**Repository surface:** BonAcqui-LLC/cognitive-basin-platform
 **Current implementation route:** Specificity Engine v0.3 draft pull request
 
 The Specificity Thesis treats representation quality as a governed state problem. A representation is not accepted merely because it is elegant, geometric, compact, or useful in one downstream task. It is measured against a declared target contract: which target-relevant features had to survive, which were preserved, which were lost, and what corrective burden follows.

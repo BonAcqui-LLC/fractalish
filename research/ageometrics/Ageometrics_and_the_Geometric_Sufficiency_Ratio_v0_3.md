@@ -2,9 +2,11 @@
 
 ## A Research Program for Measuring What Geometry Preserves, What It Erases, and What Must Be Added Back
 
-**Version:** 0.3 working paper  
-**Date:** July 2, 2026  
-**Public attribution:** Synaptient  
+**Version:** 0.3 working paper
+
+**Date:** July 2, 2026
+
+**Public attribution:** Synaptient
 **Status:** Comparator-revised working paper; empirical validation, formal properties, and exhaustive prior-art review remain incomplete
 
 ## Abstract
