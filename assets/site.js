@@ -99,8 +99,111 @@ async function bootSubtitlePanels() {
   );
 }
 
+function getLightboxCaption(image) {
+  const figure = image.closest("figure");
+  const caption = figure?.querySelector("figcaption")?.textContent?.trim();
+  return caption || image.alt || "Fractalish visual";
+}
+
+function shouldLightboxImage(image) {
+  const src = image.getAttribute("src") || "";
+  return Boolean(
+    src.includes("/assets/figures/") ||
+    image.closest(".image-frame, .feature-figure, .atlas-image")
+  );
+}
+
+function buildLightbox() {
+  const lightbox = document.createElement("div");
+  lightbox.className = "image-lightbox";
+  lightbox.setAttribute("role", "dialog");
+  lightbox.setAttribute("aria-modal", "true");
+  lightbox.setAttribute("aria-label", "Expanded visual");
+  lightbox.setAttribute("hidden", "");
+  lightbox.innerHTML = `
+    <button class="image-lightbox__close" type="button" aria-label="Close enlarged image">Close</button>
+    <div class="image-lightbox__stage" role="document">
+      <img class="image-lightbox__image" alt="">
+      <p class="image-lightbox__caption"></p>
+    </div>
+  `;
+  document.body.appendChild(lightbox);
+  return lightbox;
+}
+
+function initImageLightbox() {
+  const images = Array.from(document.querySelectorAll("main img")).filter(shouldLightboxImage);
+  if (!images.length) {
+    return;
+  }
+
+  const lightbox = buildLightbox();
+  const lightboxImage = lightbox.querySelector(".image-lightbox__image");
+  const lightboxCaption = lightbox.querySelector(".image-lightbox__caption");
+  const closeButton = lightbox.querySelector(".image-lightbox__close");
+  let lastTrigger = null;
+
+  const close = () => {
+    lightbox.setAttribute("hidden", "");
+    document.documentElement.classList.remove("has-image-lightbox");
+    if (lastTrigger) {
+      lastTrigger.focus({ preventScroll: true });
+    }
+  };
+
+  const open = (image, trigger) => {
+    lastTrigger = trigger;
+    lightboxImage.src = image.currentSrc || image.src;
+    lightboxImage.alt = image.alt || "";
+    lightboxCaption.textContent = getLightboxCaption(image);
+    lightbox.removeAttribute("hidden");
+    document.documentElement.classList.add("has-image-lightbox");
+    closeButton.focus({ preventScroll: true });
+  };
+
+  images.forEach((image) => {
+    const frame = image.closest(".image-frame, .feature-figure, .atlas-image") || image;
+    if (frame.dataset.lightboxReady === "true") {
+      return;
+    }
+    frame.dataset.lightboxReady = "true";
+    frame.classList.add("is-zoomable");
+    frame.setAttribute("role", "button");
+    frame.setAttribute("tabindex", "0");
+    frame.setAttribute("aria-label", `Enlarge image: ${getLightboxCaption(image)}`);
+
+    const hint = document.createElement("span");
+    hint.className = "image-zoom-hint";
+    hint.textContent = "Click to enlarge";
+    if (frame !== image) {
+      frame.appendChild(hint);
+    }
+
+    frame.addEventListener("click", () => open(image, frame));
+    frame.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        open(image, frame);
+      }
+    });
+  });
+
+  closeButton.addEventListener("click", close);
+  lightbox.addEventListener("click", (event) => {
+    if (event.target === lightbox) {
+      close();
+    }
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !lightbox.hasAttribute("hidden")) {
+      close();
+    }
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   if (document.querySelector("[data-subtitle-source]")) {
     bootSubtitlePanels();
   }
+  initImageLightbox();
 });
