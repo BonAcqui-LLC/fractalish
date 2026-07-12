@@ -18,13 +18,13 @@ The public loop is:
 1. A resonance or boundary condition constrains local process.
 2. Local growth proceeds through finite decisions, thresholds, trails, and restrictions.
 3. The resulting morphology becomes a structured record of what happened.
-4. A symbolic readout attempts to encode the form without pretending to recover everything.
+4. A symbolic readout attempts to encode the form without asserting complete recovery.
 5. A specificity receipt measures what was preserved, what failed, and what governance state follows.
 6. The Cognitive Basin admits the result as evidence, feedback, warning, or HOLD rather than as an unexamined conclusion.
 
 ## Reproduced local prototype receipt
 
-A local Natural Math / Construction A+ prototype called `bifurcation_motif_v1.py` was reviewed and executed during this publication pass. The seed-42 run reproduced the thesis draft's reported receipt:
+A local Natural Math / Construction A+ prototype, `bifurcation_motif_v1.py`, reproduces the following deterministic receipt for seed 42:
 
 | Observation | Result |
 | --- | --- |
@@ -36,7 +36,7 @@ A local Natural Math / Construction A+ prototype called `bifurcation_motif_v1.py
 | Debt classification | `CAUTION` |
 | Failed checklist item | `trail_density_ok` |
 
-The result is useful because it does not overclaim. The run generated a motif and a symbolic readout, but the receipt retained a failed condition and a nonzero debt state.
+The result is useful because the receipt preserves a failed condition and a nonzero debt state. The motif and symbolic readout are therefore carried forward as bounded evidence rather than unrestricted confirmation.
 
 ## Why it belongs in Cognitive Basin
 
@@ -48,17 +48,7 @@ Fractalish AI is the broader implementation program that asks whether morphology
 
 Fractalish AI can be described publicly as an active AI architecture and implementation program: local-first, governed, replayable machine cognition designed to connect morphology, memory, measurement, and device evidence.
 
-This is not a chatbot brand, not a claim of subjective experience, and not a claim of artificial personhood.
-
-## Anti-Illogical boundary
-
-Anti-Illogical is best reserved for the audit and security suite: structural-integrity checks, coherence-risk measurement, specificity receipts, drift detection, corrective burden, and claim-boundary enforcement for AI systems.
-
-A clean public structure is:
-
-- Fractalish AI: the broader machine-cognition architecture and implementation program.
-- BasinLab: the local execution and replay environment.
-- Anti-Illogical: the AI security, coherence, and audit suite.
+This is not a claim about conversational-interface capability, subjective experience, or artificial personhood.
 
 ## Claim boundary
 
