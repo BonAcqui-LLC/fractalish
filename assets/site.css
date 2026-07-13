@@ -1020,3 +1020,28 @@ pre {
     gap: 4px;
   }
 }
+
+
+/* Audit 2026-07-13: persistent footer nav + archival / pivot callouts */
+.site-footer-nav {
+  border-top: 1px solid rgba(0,0,0,0.08);
+  margin-top: 2rem;
+  padding: 1.25rem 1rem 2rem;
+  background: rgba(0,0,0,0.02);
+}
+.footer-nav-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem 1.1rem;
+  font-size: 0.92rem;
+}
+.footer-nav-inner a {
+  color: inherit;
+  text-decoration: none;
+  opacity: 0.9;
+}
+.footer-nav-inner a:hover { text-decoration: underline; opacity: 1; }
+.archival-banner { margin: 1rem auto; max-width: 960px; }
+.pivot-callout { margin: 1.25rem 0 1.75rem; }
