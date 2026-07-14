@@ -36,20 +36,27 @@
   <script src="/assets/site.js" defer></script>
 </head>
 <body>
-  <header class="site-header">
-    <nav class="nav" aria-label="Primary navigation">
-      <a class="brand" href="/index.html">Fractalish<span>.</span></a>
-      <div class="nav-links">
-        <a href="/index.html">Home</a>
-        <a href="/start-here.html">Start Here</a>
-        <a href="/framework.html">Framework</a>
-        <a href="/documents.html">Documents</a>
-        <a href="/tools.html">Benchmarks &amp; Tools</a>
-        <a href="/status.html">Status</a>
-        <a href="/review.html">Review &amp; Contribute</a>
-      </div>
-    </nav>
-  </header>
+<header class="site-header">
+  <nav class="nav" aria-label="Primary navigation">
+    <a class="brand" href="/index.html">Fractalish<span>.</span></a>
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="primary-nav-links" data-nav-toggle>
+      <span class="nav-toggle-label">Menu</span>
+      <span class="nav-toggle-icon" aria-hidden="true"></span>
+    </button>
+    <div class="nav-links" id="primary-nav-links" data-nav-links>
+      <a href="/start-here.html">Start Here</a>
+      <a href="/framework.html">Framework</a>
+      <a href="/natural-math.html">Natural Math</a>
+      <a href="/specificity-thesis.html">Specificity</a>
+      <a aria-current="page" href="/ageometrics/">Ageometrics</a>
+      <a href="/documents.html">Documents</a>
+      <a href="/contribute.html">Contribute</a>
+      <a class="nav-more" href="/cognitive-basin.html">Basin</a>
+      <a class="nav-more" href="/review.html">Review</a>
+    </div>
+  </nav>
+</header>
+
   <main>
     <article class="wide">
       <p class="eyebrow">Working field page</p>
@@ -162,23 +169,37 @@
       </div>
     </article>
   </main>
-  <footer class="site-footer">
-    <div class="inner">Ageometrics remains open to correction, falsification, replication, and hostile comparison against neighboring methods.</div>
-  </footer>
-
-<nav class="site-footer-nav" aria-label="Site footer navigation">
-  <div class="inner footer-nav-inner">
-    <a href="/index.html">Home</a>
-    <a href="/start-here.html">Start Here</a>
-    <a href="/natural-math.html">Natural Math</a>
-    <a href="/specificity-thesis.html">Specificity Thesis</a>
-    <a href="/ageometrics/">Ageometrics</a>
-    <a href="/documents.html">Documents</a>
-    <a href="/contribute.html">Contribute</a>
-    <a href="/review.html">Review</a>
-    <a href="https://github.com/BonAcqui-LLC/fractalish">Site repo</a>
-    <a href="https://github.com/BonAcqui-LLC/cognitive-basin-platform">Platform repo</a>
+  
+<footer class="site-footer site-footer-unified">
+  <div class="inner footer-grid">
+    <div>
+      <p class="footer-title">Fractalish</p>
+      <p class="footer-tagline">How history becomes visible in form — under explicit claim boundaries.</p>
+      <p class="footer-motto">Read form carefully. Preserve uncertainty. Compare before claiming.</p>
+    </div>
+    <div>
+      <p class="footer-label">Explore</p>
+      <nav class="footer-nav-inner" aria-label="Site footer navigation">
+        <a href="/start-here.html">Start Here</a>
+        <a href="/framework.html">Framework</a>
+        <a href="/natural-math.html">Natural Math</a>
+        <a href="/specificity-thesis.html">Specificity</a>
+        <a href="/ageometrics/">Ageometrics</a>
+        <a href="/documents.html">Documents</a>
+        <a href="/cognitive-basin.html">Cognitive Basin</a>
+        <a href="/contribute.html">Contribute</a>
+        <a href="/review.html">Review</a>
+        <a href="/support.html">Support</a>
+      </nav>
+    </div>
+    <div>
+      <p class="footer-label">Source</p>
+      <nav class="footer-nav-inner" aria-label="Repository links">
+        <a href="https://github.com/BonAcqui-LLC/fractalish">Site repo</a>
+        <a href="https://github.com/BonAcqui-LLC/cognitive-basin-platform">Platform repo</a>
+      </nav>
+    </div>
   </div>
-</nav>
+</footer>
 </body>
 </html>

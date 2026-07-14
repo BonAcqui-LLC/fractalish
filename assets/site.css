@@ -91,11 +91,12 @@ svg {
 .nav {
   max-width: var(--max);
   margin: 0 auto;
-  padding: 18px 24px;
+  padding: 14px 24px;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
-  gap: 18px 28px;
+  gap: 14px 20px;
+  flex-wrap: wrap;
 }
 
 .brand {
@@ -110,13 +111,39 @@ svg {
   color: var(--accent-2);
 }
 
+.nav-toggle {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--ink);
+  font: 700 12px/1 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.nav-toggle-icon {
+  width: 14px;
+  height: 10px;
+  display: inline-block;
+  background:
+    linear-gradient(var(--ink), var(--ink)) 0 0 / 100% 2px no-repeat,
+    linear-gradient(var(--ink), var(--ink)) 0 4px / 100% 2px no-repeat,
+    linear-gradient(var(--ink), var(--ink)) 0 8px / 100% 2px no-repeat;
+}
+
 .nav-links {
   display: flex;
   justify-content: flex-end;
-  gap: 10px 16px;
+  gap: 8px 14px;
   flex-wrap: wrap;
-  font: 700 12px/1.25 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  letter-spacing: 0.06em;
+  font: 700 11px/1.25 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
 }
 
@@ -129,6 +156,136 @@ svg {
 .nav-links a[aria-current="page"],
 .nav-links a:hover {
   color: var(--ink);
+}
+
+.nav-links a.nav-more {
+  opacity: 0.72;
+}
+
+/* UX sprint: role lanes, current focus, docs collapse */
+.role-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin: 28px 0 12px;
+}
+
+.role-card {
+  padding: 20px 18px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--paper-soft);
+}
+
+.role-card h2 {
+  margin: 0 0 8px;
+  font-size: 22px;
+}
+
+.role-card ol {
+  margin: 12px 0 16px;
+  padding-left: 1.2em;
+}
+
+.role-card li {
+  margin: 0.35em 0;
+}
+
+.current-focus {
+  margin: 8px 0 28px;
+}
+
+.current-focus .eyebrow {
+  margin-bottom: 6px;
+}
+
+.pillar-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.featured-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 14px;
+  margin: 18px 0 28px;
+}
+
+.featured-strip .card h3 {
+  margin-top: 0;
+  font-size: 18px;
+}
+
+.doc-group[data-doc-collapse] > h2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.doc-collapse-toggle {
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--muted);
+  border-radius: 8px;
+  padding: 6px 10px;
+  font: 700 11px/1 system-ui, sans-serif;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.doc-collapse-toggle:hover {
+  color: var(--ink);
+}
+
+.site-footer-unified .footer-grid {
+  grid-template-columns: 1.2fr 1fr 0.7fr;
+  gap: 28px;
+}
+
+.site-footer-unified .footer-tagline {
+  margin: 0 0 8px;
+  max-width: 36ch;
+}
+
+.site-footer-unified .footer-motto {
+  margin: 0;
+  font-style: italic;
+  opacity: 0.9;
+}
+
+.site-footer-unified .footer-label {
+  margin: 0 0 10px;
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.site-footer-unified .footer-nav-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+}
+
+.site-footer-unified .footer-nav-inner a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.site-footer-unified .footer-nav-inner a:hover {
+  color: var(--ink);
+  text-decoration: underline;
+}
+
+.archive-quiet {
+  border-style: dashed;
+  opacity: 0.92;
 }
 
 main {
@@ -968,18 +1125,52 @@ pre {
   }
 }
 
+@media (max-width: 899px) {
+  .nav-toggle {
+    display: inline-flex;
+  }
+
+  .nav-links {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    padding: 8px 0 4px;
+    border-top: 1px solid var(--line);
+  }
+
+  .nav-links.is-open {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 10px 4px;
+    width: 100%;
+  }
+
+  .role-grid,
+  .pillar-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .site-footer-unified .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 780px) {
   body {
     font-size: 17px;
   }
 
   .nav {
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    align-items: center;
   }
 
   .nav-links {
-    gap: 10px 12px;
+    gap: 4px;
   }
 
   main {

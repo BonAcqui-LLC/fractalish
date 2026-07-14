@@ -201,7 +201,52 @@ function initImageLightbox() {
   });
 }
 
+function initMobileNav() {
+  const toggle = document.querySelector("[data-nav-toggle]");
+  const links = document.querySelector("[data-nav-links]");
+  if (!toggle || !links) return;
+
+  const setOpen = (open) => {
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    links.classList.toggle("is-open", open);
+    document.documentElement.classList.toggle("nav-open", open);
+  };
+
+  toggle.addEventListener("click", () => {
+    const open = toggle.getAttribute("aria-expanded") !== "true";
+    setOpen(open);
+  });
+
+  links.querySelectorAll("a").forEach((a) => {
+    a.addEventListener("click", () => setOpen(false));
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") setOpen(false);
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.matchMedia("(min-width: 900px)").matches) setOpen(false);
+  });
+}
+
+function initDocCollapsibles() {
+  document.querySelectorAll("[data-doc-collapse]").forEach((section) => {
+    const btn = section.querySelector("[data-doc-collapse-toggle]");
+    const panel = section.querySelector("[data-doc-collapse-panel]");
+    if (!btn || !panel) return;
+    btn.addEventListener("click", () => {
+      const open = btn.getAttribute("aria-expanded") !== "true";
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+      panel.hidden = !open;
+      section.classList.toggle("is-collapsed", !open);
+    });
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
+  initMobileNav();
+  initDocCollapsibles();
   if (document.querySelector("[data-subtitle-source]")) {
     bootSubtitlePanels();
   }

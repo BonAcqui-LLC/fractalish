@@ -15,25 +15,68 @@
   <script src="/assets/site.js" defer></script>
 </head>
 <body>
-  <header class="site-header">
-    <nav class="nav" aria-label="Primary navigation">
-      <a class="brand" href="/index.html">Fractalish<span>.</span></a>
-      <div class="nav-links">
-        <a href="/index.html">Home</a>
-        <a href="/start-here.html">Start Here</a>
-        <a href="/natural-math.html">Natural Math</a>
-        <a href="/mcva-amcva-hold.html">MCVA / AMCVA / HOLD</a>
-        <a href="/videos/">Videos / Study Guides</a>
-        <a href="/commons.html">Commons</a>
-        <a aria-current="page" href="/documents.html">Documents</a>
-        <a href="/contribute.html">Contribute</a>
-      </div>
-    </nav>
-  </header>
+<header class="site-header">
+  <nav class="nav" aria-label="Primary navigation">
+    <a class="brand" href="/index.html">Fractalish<span>.</span></a>
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="primary-nav-links" data-nav-toggle>
+      <span class="nav-toggle-label">Menu</span>
+      <span class="nav-toggle-icon" aria-hidden="true"></span>
+    </button>
+    <div class="nav-links" id="primary-nav-links" data-nav-links>
+      <a href="/start-here.html">Start Here</a>
+      <a href="/framework.html">Framework</a>
+      <a href="/natural-math.html">Natural Math</a>
+      <a href="/specificity-thesis.html">Specificity</a>
+      <a href="/ageometrics/">Ageometrics</a>
+      <a aria-current="page" href="/documents.html">Documents</a>
+      <a href="/contribute.html">Contribute</a>
+      <a class="nav-more" href="/cognitive-basin.html">Basin</a>
+      <a class="nav-more" href="/review.html">Review</a>
+    </div>
+  </nav>
+</header>
+
   <main>
     <section class="hero">
       <p class="eyebrow">Documents and Records</p>
-      <h1>Public records, papers, specifications, and source texts.</h1>
+      <h1>One desk for papers, specs, and evidence.</h1>
+      <p class="lead">Featured entry points first. Full inventory below — expand a section when you need it.</p>
+    </section>
+
+    <section class="doc-group" aria-labelledby="featured-docs-title">
+      <h2 id="featured-docs-title">Featured</h2>
+      <div class="featured-strip">
+        <article class="card">
+          <h3>Start Here</h3>
+          <p class="small">Three roles, three steps each.</p>
+          <div class="buttons"><a class="button primary" href="/start-here.html">Open</a></div>
+        </article>
+        <article class="card">
+          <h3>Natural Math</h3>
+          <p class="small">Current experimental front (July 2026).</p>
+          <div class="buttons"><a class="button" href="/natural-math.html">Open</a></div>
+        </article>
+        <article class="card">
+          <h3>Specificity Thesis</h3>
+          <p class="small">Receipts, debt, repair.</p>
+          <div class="buttons"><a class="button" href="/specificity-thesis.html">Open</a></div>
+        </article>
+        <article class="card">
+          <h3>Ageometrics</h3>
+          <p class="small">Sufficiency and residue measurement.</p>
+          <div class="buttons"><a class="button" href="/ageometrics/">Open</a></div>
+        </article>
+        <article class="card">
+          <h3>White papers</h3>
+          <p class="small">Cognitive Basin technical paper + appendix.</p>
+          <div class="buttons"><a class="button" href="#white-papers">Jump</a></div>
+        </article>
+        <article class="card">
+          <h3>Evidence records</h3>
+          <p class="small">Commons, proof-positive/negative, HOLD.</p>
+          <div class="buttons"><a class="button" href="#evidence-records">Jump</a></div>
+        </article>
+      </div>
     </section>
 
     <section class="doc-group" id="evidence-records">
@@ -109,16 +152,16 @@
             <a class="button muted" href="/assets/docs/specificity-thesis-v0.3-public-note.md">Public note</a>
           </div>
         </article>
-        <article class="card">
-          <h3>The Resonant Morphology Thesis</h3>
+        <article class="card archive-quiet">
+          <h3>Resonant Morphology (archived)</h3>
           <ul class="meta-inline">
-            <li>Type: AI architecture research note</li>
-            <li>Status: public implementation target</li>
-            <li>Audience: developers and reviewers</li>
+            <li>Type: corrected research note</li>
+            <li>Status: provenance only (July 2026)</li>
+            <li>Audience: reviewers tracing claim history</li>
           </ul>
           <div class="buttons">
-            <a class="button" href="/resonant-morphology-thesis.html">Open page</a>
-            <a class="button muted" href="/assets/docs/resonant-morphology-thesis-v0.1-public-note.md">Public note</a>
+            <a class="button muted" href="/archive/resonant-morphology-thesis-corrected-2026-07-13.html">Open archive</a>
+            <a class="button muted" href="/assets/docs/resonant-morphology-thesis-v0.1-public-note.md">Markdown</a>
           </div>
         </article>
         <article class="card">
@@ -201,9 +244,9 @@
       </div>
     </section>
 
-    <section class="doc-group">
-      <h2>Field Guides</h2>
-      <div class="doc-grid">
+    <section class="doc-group" data-doc-collapse id="field-guides">
+      <h2>Field Guides <button type="button" class="doc-collapse-toggle" data-doc-collapse-toggle aria-expanded="false">Show</button></h2>
+      <div class="doc-grid" data-doc-collapse-panel hidden>
         <article class="card">
           <h3>Natural Math</h3>
           <ul class="meta-inline">
@@ -240,9 +283,9 @@
       </div>
     </section>
 
-    <section class="doc-group">
-      <h2>Technical Specs</h2>
-      <div class="doc-grid">
+    <section class="doc-group" data-doc-collapse id="technical-specs">
+      <h2>Technical Specs <button type="button" class="doc-collapse-toggle" data-doc-collapse-toggle aria-expanded="false">Show</button></h2>
+      <div class="doc-grid" data-doc-collapse-panel hidden>
         <article class="card">
           <h3>Ageometrics and the Geometric Sufficiency Ratio v0.5</h3>
           <ul class="meta-inline">
@@ -304,9 +347,9 @@
       </div>
     </section>
 
-    <section class="doc-group">
-      <h2>Research Notes</h2>
-      <div class="doc-grid">
+    <section class="doc-group" data-doc-collapse id="research-notes">
+      <h2>Research Notes <button type="button" class="doc-collapse-toggle" data-doc-collapse-toggle aria-expanded="false">Show</button></h2>
+      <div class="doc-grid" data-doc-collapse-panel hidden>
         <article class="card">
           <h3>Ageometrics</h3>
           <ul class="meta-inline">
@@ -376,7 +419,7 @@
       </div>
     </section>
 
-    <section class="doc-group">
+    <section class="doc-group" id="white-papers">
       <h2>White Papers</h2>
       <div class="doc-grid">
         <article class="card">
@@ -413,9 +456,9 @@
       </div>
     </section>
 
-    <section class="doc-group">
-      <h2>Study Guides</h2>
-      <div class="doc-grid">
+    <section class="doc-group" data-doc-collapse id="study-guides">
+      <h2>Study Guides <button type="button" class="doc-collapse-toggle" data-doc-collapse-toggle aria-expanded="false">Show</button></h2>
+      <div class="doc-grid" data-doc-collapse-panel hidden>
         <article class="card">
           <h3>Tom Wessels - Reading the Forested Landscape</h3>
           <ul class="meta-inline">
@@ -430,9 +473,9 @@
       </div>
     </section>
 
-    <section class="doc-group">
-      <h2>Archive / Drafts</h2>
-      <div class="doc-grid">
+    <section class="doc-group" data-doc-collapse id="archive-drafts">
+      <h2>Archive / Drafts <button type="button" class="doc-collapse-toggle" data-doc-collapse-toggle aria-expanded="false">Show</button></h2>
+      <div class="doc-grid" data-doc-collapse-panel hidden>
         <article class="card">
           <h3>InfinitySight / SymLan module draft</h3>
           <ul class="meta-inline">
@@ -460,23 +503,37 @@
       </div>
     </section>
   </main>
-  <footer class="site-footer">
-    <div class="inner">Public records, source texts, and evidence indexes.</div>
-  </footer>
-
-<nav class="site-footer-nav" aria-label="Site footer navigation">
-  <div class="inner footer-nav-inner">
-    <a href="/index.html">Home</a>
-    <a href="/start-here.html">Start Here</a>
-    <a href="/natural-math.html">Natural Math</a>
-    <a href="/specificity-thesis.html">Specificity Thesis</a>
-    <a href="/ageometrics/">Ageometrics</a>
-    <a href="/documents.html">Documents</a>
-    <a href="/contribute.html">Contribute</a>
-    <a href="/review.html">Review</a>
-    <a href="https://github.com/BonAcqui-LLC/fractalish">Site repo</a>
-    <a href="https://github.com/BonAcqui-LLC/cognitive-basin-platform">Platform repo</a>
+  
+<footer class="site-footer site-footer-unified">
+  <div class="inner footer-grid">
+    <div>
+      <p class="footer-title">Fractalish</p>
+      <p class="footer-tagline">How history becomes visible in form — under explicit claim boundaries.</p>
+      <p class="footer-motto">Read form carefully. Preserve uncertainty. Compare before claiming.</p>
+    </div>
+    <div>
+      <p class="footer-label">Explore</p>
+      <nav class="footer-nav-inner" aria-label="Site footer navigation">
+        <a href="/start-here.html">Start Here</a>
+        <a href="/framework.html">Framework</a>
+        <a href="/natural-math.html">Natural Math</a>
+        <a href="/specificity-thesis.html">Specificity</a>
+        <a href="/ageometrics/">Ageometrics</a>
+        <a href="/documents.html">Documents</a>
+        <a href="/cognitive-basin.html">Cognitive Basin</a>
+        <a href="/contribute.html">Contribute</a>
+        <a href="/review.html">Review</a>
+        <a href="/support.html">Support</a>
+      </nav>
+    </div>
+    <div>
+      <p class="footer-label">Source</p>
+      <nav class="footer-nav-inner" aria-label="Repository links">
+        <a href="https://github.com/BonAcqui-LLC/fractalish">Site repo</a>
+        <a href="https://github.com/BonAcqui-LLC/cognitive-basin-platform">Platform repo</a>
+      </nav>
+    </div>
   </div>
-</nav>
+</footer>
 </body>
 </html>
