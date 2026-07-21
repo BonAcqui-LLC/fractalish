@@ -1671,33 +1671,6 @@ pre {
 }
 
 /* Public narrative refresh, 2026-07-21 */
-.skip-link {
-  position: absolute;
-  left: 18px;
-  top: -120px;
-  z-index: 100;
-  padding: 10px 14px;
-  border-radius: 0 0 6px 6px;
-  background: var(--accent-2);
-  color: #071006;
-  font: 700 14px/1 system-ui, sans-serif;
-}
-
-.skip-link:focus {
-  top: 0;
-}
-
-.skip-target {
-  display: block;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-}
-
-.skip-target:focus {
-  outline: none;
-}
-
 .nav-groups,
 .nav-group {
   display: flex;

@@ -86,15 +86,18 @@ function ensureAssets(html) {
 }
 
 function applyChrome(html, filePath) {
+  const redirect = /http-equiv=["']refresh["']/i.test(html);
+  if (redirect && !/class=["'][^"']*\bskip-link\b/i.test(html) && !/Skip to main content/i.test(html)) {
+    return html;
+  }
   let out = ensureAssets(html);
   const header = headerFor(filePath);
-  const redirect = /http-equiv=["']refresh["']/i.test(out);
 
   // Remove existing primary header(s)
   out = out.replace(/<header class="site-header">[\s\S]*?<\/header>\s*/gi, "");
 
   // Remove old dual footers / audit footer-nav
-  out = out.replace(/<footer class="site-footer[\s\S]*?<\/footer>\s*/gi, "");
+  out = out.replace(/\s*<footer class="site-footer[\s\S]*?<\/footer>\s*/gi, "\n");
   out = out.replace(/<nav class="site-footer-nav"[\s\S]*?<\/nav>\s*/gi, "");
 
   // Insert header after <body...>
@@ -104,10 +107,10 @@ function applyChrome(html, filePath) {
     out = header + "\n" + out;
   }
 
-  // Give the shared skip link a stable destination without disturbing existing IDs.
+  // Keep a stable main-content landmark target without disturbing existing IDs.
   out = out.replace(/<main(?![^>]*\bid=)([^>]*)>/i, '<main id="main-content"$1>');
   if (!/\bid=["']main-content["']/i.test(out)) {
-    out = out.replace(/(<\/header>)/i, '$1\n<span id="main-content" class="skip-target" tabindex="-1"></span>');
+    out = out.replace(/(<\/header>)/i, '$1\n<span id="main-content" tabindex="-1"></span>');
   }
 
   // Fill missing canonical metadata on content pages; redirects retain their existing policy.

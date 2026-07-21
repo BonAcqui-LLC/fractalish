@@ -11,7 +11,7 @@ Remote: `BonAcqui-LLC/fractalish`
 
 - The launch directory is not the editable Git repository. The canonical source is the `fractalish_public_site_v1.2` subdirectory.
 - Public content is a static HTML site with shared presentation in `assets/site.css`, shared behavior in `assets/site.js`, and shared chrome sourced from `_partials/site-header.html` and `_partials/site-footer.html`.
-- `scripts/apply-ux-sprint1.mjs` injects the shared header and footer across every HTML route. The script is intentionally idempotent and now also supplies skip targets, progressive-enhancement hooks, and missing canonical metadata for non-redirect content pages.
+- `scripts/apply-ux-sprint1.mjs` injects the shared header and footer across every HTML route. The script is intentionally idempotent and now also supplies main-content landmark targets, progressive-enhancement hooks, and missing canonical metadata for non-redirect content pages.
 - Most top-level `name.html` pages are canonical; matching `name/index.html` pages are redirects. Ageometrics is the exception: `/ageometrics/` is canonical and `/ageometrics.html` is a redirect alias.
 - The Specificity canonical was inconsistent (`/specificity-thesis`); this refresh normalizes it to `/specificity-thesis.html` in page metadata and the sitemap.
 - The sitemap previously listed both the Ageometrics canonical and its redirect alias. The redirect alias was removed.

@@ -17,7 +17,7 @@ The supplied `LEAF GENERATOR WEBSITE.pdf` provided direct evidence for one addit
 - Rewritten: `/`, `/start-here.html`, `/framework.html`, `/natural-math.html`, `/cognitive-basin.html`, `/contribute.html`, `/support.html`, and `/review.html`.
 - Added: `/scientific-neighbors.html`.
 - Bridged without replacing technical content: `/specificity-thesis.html` and `/ageometrics/`.
-- Updated site-wide: grouped header navigation, expanded footer, skip targets, canonical completion, no-JavaScript navigation fallback, focus styles, and reduced-motion behavior.
+- Updated site-wide: grouped header navigation, expanded footer, main-content landmark targets, canonical completion, no-JavaScript navigation fallback, focus styles, and reduced-motion behavior.
 - Added original SVG assets:
   - `assets/figures/exploration-becomes-form.svg`
   - `assets/figures/representation-loss-and-residue.svg`
@@ -43,7 +43,7 @@ Warnings (1): 404.html has no canonical link.
 PASS: local routes, anchors, IDs, core metadata, sitemap, and narrative boundary checks.
 ```
 
-`git diff --check` also completed without whitespace errors. The validator checks local `href` and `src` targets, same-page anchors, duplicate IDs, heading-one count, shared skip targets, canonical presence, required metadata, sitemap uniqueness, required claim-boundary phrases, and that `Natural Math Leaf Generator` identity language appears only in the preserved archival correction record.
+`git diff --check` also completed without whitespace errors. The validator checks local `href` and `src` targets, same-page anchors, duplicate IDs, heading-one count, main-content landmark targets, canonical presence, required metadata, sitemap uniqueness, required claim-boundary phrases, and that `Natural Math Leaf Generator` identity language appears only in the preserved archival correction record.
 
 ## Browser checks
 
@@ -63,7 +63,7 @@ Screenshots:
 
 ## Accessibility notes
 
-- Shared skip link with a stable destination on both modern and legacy page structures.
+- Stable `main-content` landmarks remain available on modern and legacy page structures.
 - One `h1` on every non-redirect page checked by the validator.
 - Descriptive alternative text and captions for the three new explanatory visuals.
 - Visible `:focus-visible` treatment for links and buttons.

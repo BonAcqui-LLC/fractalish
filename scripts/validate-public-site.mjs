@@ -51,7 +51,10 @@ for (const file of files) {
   const duplicateIds = [...new Set(idList.filter((id, i) => idList.indexOf(id) !== i))];
 
   if (!redirect && h1Count !== 1) errors.push(`${rel}: expected one h1, found ${h1Count}`);
-  if (!redirect && !/\bid=["']main-content["']/i.test(html)) errors.push(`${rel}: missing #main-content skip target`);
+  if (!redirect && !/\bid=["']main-content["']/i.test(html)) errors.push(`${rel}: missing #main-content landmark target`);
+  if (/class=["'][^"']*\bskip-link\b/i.test(html) || /Skip to main content/i.test(html)) {
+    errors.push(`${rel}: retired skip link is still present`);
+  }
   if (!redirect && !/document\.documentElement\.classList\.add\(["']js["']\)/.test(html)) errors.push(`${rel}: missing no-JS navigation hook`);
   if (duplicateIds.length) errors.push(`${rel}: duplicate ids ${duplicateIds.join(", ")}`);
   if (!redirect && (html.match(/<link\b[^>]*rel=["']canonical["']/gi) || []).length !== 1) {
