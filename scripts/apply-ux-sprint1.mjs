@@ -64,6 +64,12 @@ function headerFor(filePath) {
 
 function ensureAssets(html) {
   let out = html;
+  if (!/document\.documentElement\.classList\.add\(["']js["']\)/.test(out) && /<\/head>/i.test(out)) {
+    out = out.replace(
+      /<\/head>/i,
+      '  <script>document.documentElement.classList.add("js");</script>\n</head>'
+    );
+  }
   if (!/assets\/site\.css/.test(out) && /<\/head>/i.test(out)) {
     out = out.replace(
       /<\/head>/i,
@@ -82,6 +88,7 @@ function ensureAssets(html) {
 function applyChrome(html, filePath) {
   let out = ensureAssets(html);
   const header = headerFor(filePath);
+  const redirect = /http-equiv=["']refresh["']/i.test(out);
 
   // Remove existing primary header(s)
   out = out.replace(/<header class="site-header">[\s\S]*?<\/header>\s*/gi, "");
@@ -95,6 +102,18 @@ function applyChrome(html, filePath) {
     out = out.replace(/(<body[^>]*>)/i, `$1\n${header}\n`);
   } else {
     out = header + "\n" + out;
+  }
+
+  // Give the shared skip link a stable destination without disturbing existing IDs.
+  out = out.replace(/<main(?![^>]*\bid=)([^>]*)>/i, '<main id="main-content"$1>');
+  if (!/\bid=["']main-content["']/i.test(out)) {
+    out = out.replace(/(<\/header>)/i, '$1\n<span id="main-content" class="skip-target" tabindex="-1"></span>');
+  }
+
+  // Fill missing canonical metadata on content pages; redirects retain their existing policy.
+  if (!redirect && path.basename(filePath).toLowerCase() !== "404.html" && !/<link\b[^>]*rel=["']canonical["']/i.test(out)) {
+    const canonical = `https://fractalish.com${webPath(filePath)}`;
+    out = out.replace(/<\/head>/i, `  <link rel="canonical" href="${canonical}">\n</head>`);
   }
 
   // Insert footer before </body>

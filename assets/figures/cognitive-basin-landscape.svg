@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520" role="img" aria-labelledby="title desc">
+  <title id="title">Cognitive Basin association landscape</title>
+  <desc id="desc">Recurring domains form basins, reused associations thicken into routes, a contradiction scar blocks direct traversal, a recovery path forms around it, a HOLD region remains protected, and replay preserves the historical route.</desc>
+  <defs>
+    <radialGradient id="field" cx="42%" cy="42%" r="70%">
+      <stop offset="0" stop-color="#102536"/><stop offset="1" stop-color="#020507"/>
+    </radialGradient>
+    <filter id="soft"><feGaussianBlur stdDeviation="10"/></filter>
+    <marker id="arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0L8 4L0 8Z" fill="#7cff6b"/>
+    </marker>
+  </defs>
+  <rect width="900" height="520" rx="28" fill="url(#field)"/>
+  <g fill="none" stroke="#9dd7ff" stroke-opacity="0.16">
+    <path d="M62 384C132 270 236 208 364 218C470 228 526 162 664 144C752 132 812 180 850 246"/>
+    <path d="M40 426C144 306 246 274 358 286C486 300 546 222 682 204C766 192 826 228 870 292"/>
+    <path d="M88 458C194 352 292 334 398 350C516 366 610 300 732 288C800 282 844 308 874 350"/>
+  </g>
+
+  <g opacity="0.42" filter="url(#soft)">
+    <ellipse cx="250" cy="212" rx="122" ry="92" fill="#7cff6b" fill-opacity="0.2"/>
+    <ellipse cx="660" cy="322" rx="138" ry="100" fill="#9dd7ff" fill-opacity="0.2"/>
+  </g>
+
+  <g fill="none" stroke-linecap="round">
+    <path d="M92 392C164 336 202 286 246 224C302 146 384 136 460 184" stroke="#9dd7ff" stroke-opacity="0.35" stroke-width="4" stroke-dasharray="7 8"/>
+    <path d="M92 392C164 336 202 286 246 224C302 146 384 136 460 184" stroke="#7cff6b" stroke-width="9" stroke-opacity="0.7"/>
+    <path d="M460 184C520 226 544 300 620 326C704 354 764 324 820 266" stroke="#7cff6b" stroke-width="9" stroke-opacity="0.78" marker-end="url(#arrow)"/>
+    <path d="M460 184C520 194 564 180 610 146" stroke="#9dd7ff" stroke-width="4" stroke-opacity="0.55"/>
+    <path d="M610 146C662 116 720 118 770 148" stroke="#9dd7ff" stroke-width="3" stroke-opacity="0.32"/>
+  </g>
+
+  <path d="M496 130C470 184 478 238 524 280" fill="none" stroke="#f0b46a" stroke-width="18" stroke-opacity="0.18"/>
+  <path d="M496 130C470 184 478 238 524 280" fill="none" stroke="#f0b46a" stroke-width="5" stroke-dasharray="7 7"/>
+
+  <path d="M442 210C456 278 502 322 570 336" fill="none" stroke="#5ef0a1" stroke-width="5" stroke-linecap="round" marker-end="url(#arrow)"/>
+
+  <path d="M598 82C664 64 732 82 760 128C782 166 766 206 726 222C672 244 612 214 592 174C578 146 580 108 598 82Z" fill="#f0b46a" fill-opacity="0.06" stroke="#f0b46a" stroke-width="2" stroke-dasharray="8 7"/>
+
+  <g fill="#071019" stroke="#7cff6b" stroke-width="3">
+    <circle cx="246" cy="224" r="19"/>
+    <circle cx="460" cy="184" r="17"/>
+    <circle cx="620" cy="326" r="20"/>
+    <circle cx="820" cy="266" r="16"/>
+  </g>
+  <g fill="#071019" stroke="#9dd7ff" stroke-width="2">
+    <circle cx="610" cy="146" r="12"/><circle cx="770" cy="148" r="10"/>
+  </g>
+
+  <g font-family="system-ui, sans-serif">
+    <text x="176" y="188" fill="#f3f7f2" font-size="15" font-weight="700">recurring domain</text>
+    <text x="158" y="250" fill="#aeb9c3" font-size="12">reused routes become easier to traverse</text>
+    <text x="416" y="110" fill="#f0b46a" font-size="13" font-weight="700">contradiction scar</text>
+    <text x="432" y="356" fill="#5ef0a1" font-size="13" font-weight="700">recovery route</text>
+    <text x="642" y="112" fill="#f0b46a" font-size="13" font-weight="700">HOLD</text>
+    <text x="616" y="132" fill="#aeb9c3" font-size="12">protected unresolved region</text>
+    <text x="78" y="428" fill="#9dd7ff" font-size="12">replay trace</text>
+    <text x="624" y="378" fill="#aeb9c3" font-size="12">future access reflects prior history</text>
+  </g>
+</svg>

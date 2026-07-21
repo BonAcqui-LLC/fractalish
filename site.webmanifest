@@ -1,6 +1,9 @@
 {
   "name": "Fractalish",
   "short_name": "Fractalish",
+  "description": "Form is what exploration leaves behind.",
+  "start_url": "/",
+  "scope": "/",
   "icons": [
     {
       "src": "/android-chrome-192x192.png?v=20260603",

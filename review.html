@@ -3,117 +3,93 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Review | Fractalish</title>
-  <meta name="description" content="How professors, technical reviewers, and skeptical readers can critique the Fractalish research stack constructively.">
+  <title>Review and Corrections | Fractalish</title>
+  <meta name="description" content="A reviewer-facing guide to claim boundaries, evidence states, correction history, and constructive falsification of Fractalish work.">
+  <meta property="og:title" content="Review and Corrections | Fractalish">
+  <meta property="og:description" content="A reviewer-facing guide to claim boundaries, evidence states, correction history, and constructive falsification of Fractalish work.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://fractalish.com/review.html">
+  <meta property="og:image" content="https://fractalish.com/assets/figures/og-fractalish.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Review and Corrections | Fractalish">
+  <meta name="twitter:description" content="A reviewer-facing guide to claim boundaries, evidence states, correction history, and constructive falsification of Fractalish work.">
+  <meta name="twitter:image" content="https://fractalish.com/assets/figures/og-fractalish.svg">
   <link rel="canonical" href="https://fractalish.com/review.html">
   <link rel="stylesheet" href="/assets/site.css">
   <script src="/assets/site.js" defer></script>
+  <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
 <header class="site-header">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <nav class="nav" aria-label="Primary navigation">
-    <a class="brand" href="/index.html">Fractalish<span>.</span></a>
+    <a class="brand" href="/index.html" aria-label="Fractalish home">Fractalish<span>.</span></a>
     <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="primary-nav-links" data-nav-toggle>
       <span class="nav-toggle-label">Menu</span>
       <span class="nav-toggle-icon" aria-hidden="true"></span>
     </button>
-    <div class="nav-links" id="primary-nav-links" data-nav-links>
-      <a href="/start-here.html">Start Here</a>
-      <a href="/framework.html">Framework</a>
-      <a href="/natural-math.html">Natural Math</a>
-      <a href="/specificity-thesis.html">Specificity</a>
-      <a href="/ageometrics/">Ageometrics</a>
-      <a href="/documents.html">Documents</a>
-      <a href="/contribute.html">Contribute</a>
-      <a class="nav-more" href="/cognitive-basin.html">Basin</a>
-      <a class="nav-more" href="/review.html">Review</a>
+    <div class="nav-links nav-groups" id="primary-nav-links" data-nav-links>
+      <div class="nav-group">
+        <span class="nav-group-label">Understand</span>
+        <a href="/start-here.html">Idea</a>
+        <a href="/framework.html">Framework</a>
+      </div>
+      <div class="nav-group">
+        <span class="nav-group-label">Test</span>
+        <a href="/natural-math.html">Experiments</a>
+        <a href="/documents.html">Documents</a>
+      </div>
+      <div class="nav-group">
+        <span class="nav-group-label">Build</span>
+        <a href="/cognitive-basin.html">Basin</a>
+      </div>
+      <div class="nav-group">
+        <span class="nav-group-label">Help</span>
+        <a href="/contribute.html">Contribute</a>
+      </div>
     </div>
   </nav>
 </header>
 
-  <main>
-    <section class="hero">
-      <p class="eyebrow">For reviewers</p>
-      <h1>Please try to break it cleanly.</h1>
-      <p class="lead">This site exists so serious readers can inspect the claims, identify overreach, demand definitions, propose baselines, and test whether the process-from-form idea survives contact with evidence.</p>
-    </section>
+<main id="main-content" class="page-shell">
+  <header class="page-hero narrow"><p class="eyebrow">Review and corrections</p><h1>Skepticism is part of the method.</h1><p class="lead">Fractalish asks reviewers to separate what is directly demonstrated, what is proposed, what remains unresolved, and what has been contradicted.</p></header>
+  <section class="section"><h2>A compact review protocol</h2><ol class="review-steps"><li><strong>Name the claim.</strong><span>Quote or link the smallest exact statement being reviewed.</span></li><li><strong>Name the evidence.</strong><span>Identify the artifact, run, citation, or observation that bears on it.</span></li><li><strong>Name the boundary.</strong><span>State the observer, protocol, representation, and target.</span></li><li><strong>Try the alternative.</strong><span>Offer a counterexample, competing mechanism, negative control, or missing variable.</span></li><li><strong>Assign a posture.</strong><span>SUPPORTED, UNRESOLVED, or CONTRADICTED—without turning uncertainty into failure or success.</span></li></ol></section>
+  <section class="section"><h2>High-value review targets</h2><div class="card-grid three"><article class="card"><h3>Non-uniqueness</h3><p>Can different histories produce the same represented form?</p></article><article class="card"><h3>Representation loss</h3><p>Does the protocol erase the distinction it later claims to measure?</p></article><article class="card"><h3>Namespace drift</h3><p>Are process operators, action states, and evidence postures being conflated?</p></article></div></section>
+  <section class="section split"><div><h2>Correction policy</h2><p>Raw evidence and prior public artifacts remain attributable. A correction should identify what changed, why it changed, and which newer record supersedes the older interpretation. Negative evidence is not removed simply because it is inconvenient.</p></div><aside class="callout"><h3>Priority is not the review question.</h3><p>The useful question is whether a claim is clear, testable, properly situated, and supported by the cited evidence. See the contextual map before making novelty claims.</p><a href="/scientific-neighbors.html">Scientific Neighbors and Prior Art</a></aside></section>
+  <section class="section invitation"><h2>Send a review</h2><p>Use a repository issue for a public, traceable correction or test proposal. Include primary sources and reproduction steps where possible.</p><a class="button" href="https://github.com/BonAcqui-LLC/fractalish/issues">Open an issue</a></section>
+</main>
 
-    <section>
-      <h2>Suggested reading order</h2>
-      <ol class="list-clean">
-        <li><a href="/documents.html">Document library</a>, especially the master white paper and Natural Math v2.4.</li>
-        <li><a href="/framework.html">Framework overview</a> for the stack and boundaries.</li>
-        <li><a href="/notes/alphabet-of-transition.html">The Alphabet of Transition</a> for the current Fractalish / Cognitive Basin synthesis.</li>
-        <li><a href="/status.html">Status</a> before evaluating major claims.</li>
-      </ol>
-    </section>
 
-    <section class="grid">
-      <article class="card">
-        <h2>How to critique the work</h2>
-        <ol class="list-clean">
-          <li>Separate definitions from hypotheses and implementation-backed claims.</li>
-          <li>Name where the framework infers cause from appearance too quickly.</li>
-          <li>Ask whether the claimed measurement object can be operationalized.</li>
-          <li>Demand negative controls, proof-negative cases, and AMCVA routing where appropriate.</li>
-          <li>Check whether the same claim survives when sequences, metadata, or baselines are missing.</li>
-        </ol>
-      </article>
-      <article class="card">
-        <h2>What evidence would strengthen it</h2>
-        <ul class="list-clean">
-          <li>Versioned documents and reproducible code.</li>
-          <li>Stable synthetic baselines and inverse-morphology tests.</li>
-          <li>Library examples with trace files attached.</li>
-          <li>Proof-positive, proof-negative, and HOLD cases published side by side.</li>
-          <li>Explicit comparison against naive or random baselines.</li>
-        </ul>
-      </article>
-    </section>
 
-    <section>
-      <h2>What would weaken or falsify specific claims</h2>
-      <ul class="list-clean">
-        <li>If hidden generating parameters cannot be recovered from synthetic morphology better than chance.</li>
-        <li>If morphology family assignments collapse when modest domain shifts are introduced.</li>
-        <li>If AMCVA and HOLD do not reliably suppress overinterpretation in weak-evidence cases.</li>
-        <li>If the framework depends mainly on metaphor rather than measurable descriptors.</li>
-      </ul>
-    </section>
-
-    <section class="callout">
-      <h2>How to submit comments</h2>
-      <p>If the public repository is live, use GitHub issues so critique stays attached to concrete files and versions. If it is not live yet, use the document versions and contact route on the site so critique can still be tied to specific claims and artifacts.</p>
-    </section>
-  </main>
-  
 <footer class="site-footer site-footer-unified">
   <div class="inner footer-grid">
     <div>
       <p class="footer-title">Fractalish</p>
-      <p class="footer-tagline">How history becomes visible in form — under explicit claim boundaries.</p>
+      <p class="footer-tagline">Form is what exploration leaves behind.</p>
       <p class="footer-motto">Read form carefully. Preserve uncertainty. Compare before claiming.</p>
+      <p class="footer-boundary">An independent research program. Results, proposals, and open questions are labeled separately.</p>
     </div>
     <div>
-      <p class="footer-label">Explore</p>
+      <p class="footer-label">Understand and test</p>
       <nav class="footer-nav-inner" aria-label="Site footer navigation">
-        <a href="/start-here.html">Start Here</a>
+        <a href="/start-here.html">The idea</a>
         <a href="/framework.html">Framework</a>
-        <a href="/natural-math.html">Natural Math</a>
+        <a href="/natural-math.html">Natural Math experiments</a>
         <a href="/specificity-thesis.html">Specificity</a>
         <a href="/ageometrics/">Ageometrics</a>
+        <a href="/scientific-neighbors.html">Scientific neighbors</a>
         <a href="/documents.html">Documents</a>
-        <a href="/cognitive-basin.html">Cognitive Basin</a>
-        <a href="/contribute.html">Contribute</a>
-        <a href="/review.html">Review</a>
-        <a href="/support.html">Support</a>
       </nav>
     </div>
     <div>
-      <p class="footer-label">Source</p>
-      <nav class="footer-nav-inner" aria-label="Repository links">
-        <a href="https://github.com/BonAcqui-LLC/fractalish">Site repo</a>
-        <a href="https://github.com/BonAcqui-LLC/cognitive-basin-platform">Platform repo</a>
+      <p class="footer-label">Build and review</p>
+      <nav class="footer-nav-inner" aria-label="Participation links">
+        <a href="/cognitive-basin.html">Cognitive Basin</a>
+        <a href="/contribute.html">Contribute</a>
+        <a href="/review.html">Review and corrections</a>
+        <a href="/support.html">Support</a>
+        <a href="https://github.com/BonAcqui-LLC/fractalish">Site repository</a>
+        <a href="https://github.com/BonAcqui-LLC/cognitive-basin-platform">Platform repository</a>
       </nav>
     </div>
   </div>

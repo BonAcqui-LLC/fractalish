@@ -4,189 +4,110 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Start Here | Fractalish</title>
-  <meta name="description" content="A short path into Fractalish: three roles, three steps each — reader, reviewer, implementer.">
+  <meta name="description" content="A plain-language path from the central Fractalish idea to its tests, measurements, and public implementation.">
   <meta property="og:title" content="Start Here | Fractalish">
-  <meta property="og:description" content="Pick a role. Follow three steps. Stay inside claim boundaries.">
+  <meta property="og:description" content="A plain-language path from the central Fractalish idea to its tests, measurements, and public implementation.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://fractalish.com/start-here.html">
   <meta property="og:image" content="https://fractalish.com/assets/figures/og-fractalish.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Start Here | Fractalish">
+  <meta name="twitter:description" content="A plain-language path from the central Fractalish idea to its tests, measurements, and public implementation.">
+  <meta name="twitter:image" content="https://fractalish.com/assets/figures/og-fractalish.svg">
   <link rel="canonical" href="https://fractalish.com/start-here.html">
   <link rel="stylesheet" href="/assets/site.css">
   <script src="/assets/site.js" defer></script>
+  <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
 <header class="site-header">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <nav class="nav" aria-label="Primary navigation">
-    <a class="brand" href="/index.html">Fractalish<span>.</span></a>
+    <a class="brand" href="/index.html" aria-label="Fractalish home">Fractalish<span>.</span></a>
     <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="primary-nav-links" data-nav-toggle>
       <span class="nav-toggle-label">Menu</span>
       <span class="nav-toggle-icon" aria-hidden="true"></span>
     </button>
-    <div class="nav-links" id="primary-nav-links" data-nav-links>
-      <a aria-current="page" href="/start-here.html">Start Here</a>
-      <a href="/framework.html">Framework</a>
-      <a href="/natural-math.html">Natural Math</a>
-      <a href="/specificity-thesis.html">Specificity</a>
-      <a href="/ageometrics/">Ageometrics</a>
-      <a href="/documents.html">Documents</a>
-      <a href="/contribute.html">Contribute</a>
-      <a class="nav-more" href="/cognitive-basin.html">Basin</a>
-      <a class="nav-more" href="/review.html">Review</a>
+    <div class="nav-links nav-groups" id="primary-nav-links" data-nav-links>
+      <div class="nav-group">
+        <span class="nav-group-label">Understand</span>
+        <a aria-current="page" href="/start-here.html">Idea</a>
+        <a href="/framework.html">Framework</a>
+      </div>
+      <div class="nav-group">
+        <span class="nav-group-label">Test</span>
+        <a href="/natural-math.html">Experiments</a>
+        <a href="/documents.html">Documents</a>
+      </div>
+      <div class="nav-group">
+        <span class="nav-group-label">Build</span>
+        <a href="/cognitive-basin.html">Basin</a>
+      </div>
+      <div class="nav-group">
+        <span class="nav-group-label">Help</span>
+        <a href="/contribute.html">Contribute</a>
+      </div>
     </div>
   </nav>
 </header>
 
-  <main>
-    <article class="wide">
-      <p class="note-date">Start Here · Updated July 2026</p>
-      <h1>Pick a role. Follow three steps.</h1>
-      <p class="lead">Fractalish studies how process leaves evidence in form — and how machines can remember, measure, and correct that evidence under explicit limits. You do not need every page on day one.</p>
+<main id="main-content" class="page-shell">
+  <header class="page-hero narrow">
+    <p class="eyebrow">Start here</p>
+    <h1>Form is what exploration leaves behind.</h1>
+    <p class="lead">Fractalish begins with a simple possibility: present structure may preserve a partial record of local exploration.</p>
+  </header>
+  <section class="section section-narrow">
+    <h2>Picture a front moving without a map.</h2>
+    <p>It can continue, divide, stop, reconnect, or fade. Barriers redirect it. Limited resources shorten it. Earlier routes screen later ones. When the process ends, the surviving form is neither random decoration nor a full recording. It is a filtered residue of what happened.</p>
+    <figure class="inline-figure"><img src="/assets/figures/exploration-becomes-form.svg" alt="A schematic separates recorded history, active constraints, observed evidence, and typed residue."><figcaption>A bounded claim needs the history record, constraints, representation, target, and residue—not a decorative generated form.</figcaption></figure>
+  </section>
+  <section class="section" aria-labelledby="four-questions">
+    <h2 id="four-questions">Four linked questions</h2>
+    <div class="card-grid four">
+      <article class="card"><h3>How does form grow?</h3><p><a href="/natural-math.html">Natural Math</a> models bounded local exploration.</p></article>
+      <article class="card"><h3>What does form preserve?</h3><p><a href="/specificity-thesis.html">Specificity</a> asks how strongly a representation supports a target claim.</p></article>
+      <article class="card"><h3>What did representation erase?</h3><p><a href="/ageometrics/">Ageometrics</a> records sufficiency, residue, and recoverability.</p></article>
+      <article class="card"><h3>Can history shape future action?</h3><p><a href="/cognitive-basin.html">Cognitive Basin</a> implements persistent, replayable state.</p></article>
+    </div>
+  </section>
+  <section class="section split">
+    <div><p class="eyebrow">The important limit</p><h2>Similarity is not identity.</h2><p>Two forms can look alike and still come from different histories. One history can also look different under different observers or representations. Fractalish therefore treats every inference as target- and protocol-relative.</p></div>
+    <aside class="callout"><h3>Choose your next route</h3><ul class="link-list"><li><a href="/framework.html">See the whole framework</a></li><li><a href="/natural-math.html">Inspect the generative experiments</a></li><li><a href="/documents.html">Read the documents</a></li><li><a href="/review.html">Audit the claims and corrections</a></li></ul></aside>
+  </section>
+</main>
 
-      <section class="page-meta">
-        <div class="meta-card"><span class="meta-label">Status</span><span class="meta-value">Entry guide</span></div>
-        <div class="meta-card"><span class="meta-label">Current front</span><span class="meta-value">Natural Math Leaf Generator</span></div>
-        <div class="meta-card"><span class="meta-label">Core rule</span><span class="meta-value">Every claim travels with its trace</span></div>
-        <div class="meta-card"><span class="meta-label">Map</span><span class="meta-value"><a href="/framework.html">Framework</a></span></div>
-      </section>
 
-      <figure class="fx-diagram" aria-label="Short orientation path">
-        <div class="fx-diagram__head">
-          <p class="fx-diagram__kicker">Orientation</p>
-          <p class="fx-diagram__title">Map first, then one deep lane</p>
-        </div>
-        <ol class="fx-flow">
-          <li>
-            <div class="fx-step">
-              <span class="fx-step__n">1</span>
-              <span class="fx-step__label">Framework</span>
-              <p class="fx-step__hint">See the stack</p>
-            </div>
-            <span class="fx-flow__join" aria-hidden="true"></span>
-          </li>
-          <li>
-            <div class="fx-step">
-              <span class="fx-step__n">2</span>
-              <span class="fx-step__label">Pick a role</span>
-              <p class="fx-step__hint">Reader · reviewer · builder</p>
-            </div>
-            <span class="fx-flow__join" aria-hidden="true"></span>
-          </li>
-          <li>
-            <div class="fx-step">
-              <span class="fx-step__n">3</span>
-              <span class="fx-step__label">Three steps</span>
-              <p class="fx-step__hint">Stay inside claim bounds</p>
-            </div>
-          </li>
-        </ol>
-      </figure>
-
-      <div class="role-grid">
-        <article class="role-card">
-          <h2>New reader</h2>
-          <p class="small">Build a mental model before the acronyms.</p>
-          <ol>
-            <li><a href="/framework.html">Framework</a> — the stack in one screen.</li>
-            <li><a href="/natural-math.html">Natural Math</a> — current experimental front (Leaf Generator + inverse test).</li>
-            <li><a href="/specificity-thesis.html">Specificity Thesis</a> — receipts, debt, and repair without overclaim.</li>
-          </ol>
-          <div class="buttons">
-            <a class="button primary" href="/framework.html">Begin</a>
-          </div>
-        </article>
-
-        <article class="role-card">
-          <h2>Technical reviewer</h2>
-          <p class="small">Stress-test claims, measurements, and boundaries.</p>
-          <ol>
-            <li><a href="/natural-math.html">Natural Math</a> + claim boundary (including θ<sub>b</sub> and Seed 42 language).</li>
-            <li><a href="/ageometrics/">Ageometrics</a> — sufficiency, residue, comparators.</li>
-            <li><a href="/review.html">Review</a> — how to critique cleanly; then open issues on the site repo.</li>
-          </ol>
-          <div class="buttons">
-            <a class="button primary" href="/review.html">Review path</a>
-          </div>
-        </article>
-
-        <article class="role-card">
-          <h2>Implementer</h2>
-          <p class="small">Read architecture, then run and critique code.</p>
-          <ol>
-            <li><a href="/cognitive-basin.html">Cognitive Basin</a> — executable architecture overview.</li>
-            <li><a href="https://github.com/BonAcqui-LLC/cognitive-basin-platform">Platform repo</a> — README, tests, BasinLab surface.</li>
-            <li><a href="/contribute.html">Contribute</a> — guardrails and preferred contribution shapes.</li>
-          </ol>
-          <div class="buttons">
-            <a class="button primary" href="/cognitive-basin.html">Build path</a>
-          </div>
-        </article>
-      </div>
-
-      <section class="doc-group">
-        <h2>When you are ready for more</h2>
-        <ul class="list-clean">
-          <li><a href="/mcva-amcva-hold.html">MCVA / AMCVA / HOLD</a> — vocabulary for when morphology may or may not safely speak.</li>
-          <li><a href="/documents.html">Documents</a> — papers, specs, evidence indexes, downloads.</li>
-          <li><a href="/cntm-realization.html">Device work (CNTM)</a> — physical realization and substrate path.</li>
-          <li><a href="/videos/tom-wessels-reading-forested-landscapes.html">Tom Wessels study guide</a> — accessible process-memory-in-form example.</li>
-          <li><a href="/archive/resonant-morphology-thesis-corrected-2026-07-13.html">Archived Resonant Morphology note</a> — provenance only after the July 2026 correction.</li>
-        </ul>
-      </section>
-
-      <section class="doc-group">
-        <h2>Repositories</h2>
-        <div class="doc-grid">
-          <article class="card">
-            <h3>BonAcqui-LLC/fractalish</h3>
-            <p>Public site, field guides, documents, and collaboration forms.</p>
-            <div class="buttons">
-              <a class="button" href="https://github.com/BonAcqui-LLC/fractalish">Site repo</a>
-            </div>
-          </article>
-          <article class="card">
-            <h3>BonAcqui-LLC/cognitive-basin-platform</h3>
-            <p>Executable platform, BasinLab, tests, and device-related evidence materials.</p>
-            <div class="buttons">
-              <a class="button" href="https://github.com/BonAcqui-LLC/cognitive-basin-platform">Platform repo</a>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section class="callout">
-        <h2>What to watch for</h2>
-        <p>Claims, evidence, representation loss, structural debt, and restraint. If a page sells certainty without a receipt, treat that as a defect.</p>
-      </section>
-    </article>
-  </main>
 
 <footer class="site-footer site-footer-unified">
   <div class="inner footer-grid">
     <div>
       <p class="footer-title">Fractalish</p>
-      <p class="footer-tagline">How history becomes visible in form — under explicit claim boundaries.</p>
+      <p class="footer-tagline">Form is what exploration leaves behind.</p>
       <p class="footer-motto">Read form carefully. Preserve uncertainty. Compare before claiming.</p>
+      <p class="footer-boundary">An independent research program. Results, proposals, and open questions are labeled separately.</p>
     </div>
     <div>
-      <p class="footer-label">Explore</p>
+      <p class="footer-label">Understand and test</p>
       <nav class="footer-nav-inner" aria-label="Site footer navigation">
-        <a href="/start-here.html">Start Here</a>
+        <a href="/start-here.html">The idea</a>
         <a href="/framework.html">Framework</a>
-        <a href="/natural-math.html">Natural Math</a>
+        <a href="/natural-math.html">Natural Math experiments</a>
         <a href="/specificity-thesis.html">Specificity</a>
         <a href="/ageometrics/">Ageometrics</a>
+        <a href="/scientific-neighbors.html">Scientific neighbors</a>
         <a href="/documents.html">Documents</a>
-        <a href="/cognitive-basin.html">Cognitive Basin</a>
-        <a href="/contribute.html">Contribute</a>
-        <a href="/review.html">Review</a>
-        <a href="/support.html">Support</a>
       </nav>
     </div>
     <div>
-      <p class="footer-label">Source</p>
-      <nav class="footer-nav-inner" aria-label="Repository links">
-        <a href="https://github.com/BonAcqui-LLC/fractalish">Site repo</a>
-        <a href="https://github.com/BonAcqui-LLC/cognitive-basin-platform">Platform repo</a>
+      <p class="footer-label">Build and review</p>
+      <nav class="footer-nav-inner" aria-label="Participation links">
+        <a href="/cognitive-basin.html">Cognitive Basin</a>
+        <a href="/contribute.html">Contribute</a>
+        <a href="/review.html">Review and corrections</a>
+        <a href="/support.html">Support</a>
+        <a href="https://github.com/BonAcqui-LLC/fractalish">Site repository</a>
+        <a href="https://github.com/BonAcqui-LLC/cognitive-basin-platform">Platform repository</a>
       </nav>
     </div>
   </div>
