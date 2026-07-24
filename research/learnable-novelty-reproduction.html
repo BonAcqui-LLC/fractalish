@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Learnable Novelty Reproduction Protocol | Fractalish</title>
+  <meta name="description" content="Readable Fractalish reproduction protocol for the external learnable-novelty paper: commits, seeds, tasks, controls, falsification conditions, and artifact hashes.">
+  <link rel="canonical" href="https://fractalish.com/research/learnable-novelty-reproduction.html">
+  <link rel="stylesheet" href="/assets/site.css">
+  <script src="/assets/site.js" defer></script>
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+<header class="site-header">
+  <nav class="nav" aria-label="Primary navigation">
+    <a class="brand" href="/index.html" aria-label="Fractalish home">Fractalish<span>.</span></a>
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="primary-nav-links" data-nav-toggle>
+      <span class="nav-toggle-label">Menu</span>
+      <span class="nav-toggle-icon" aria-hidden="true"></span>
+    </button>
+    <div class="nav-links nav-groups" id="primary-nav-links" data-nav-links>
+      <div class="nav-group">
+        <span class="nav-group-label">Understand</span>
+        <a href="/persistent-observer.html">Persistent observer</a>
+        <a href="/weighting-kernel.html">UFWK</a>
+      </div>
+      <div class="nav-group">
+        <span class="nav-group-label">Test</span>
+        <a href="/mathematical-bindings.html">Bindings</a>
+        <a href="/documents.html">Documents</a>
+      </div>
+      <div class="nav-group">
+        <span class="nav-group-label">Build</span>
+        <a href="/bolt-on.html">Bolt-On</a>
+      </div>
+      <div class="nav-group">
+        <span class="nav-group-label">Help</span>
+        <a href="/contribute.html">Contribute</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main id="main-content" class="page-shell research-article">
+  <header class="page-hero narrow">
+    <p class="eyebrow">External reported result protocol</p>
+    <h1>Learnable Novelty Reproduction Protocol</h1>
+    <p class="lead">This is the readable version of the Fractalish preregistration protocol for reproducing the external learnable-novelty paper before any numerical claim is promoted locally.</p>
+    <div class="status-strip">
+      <span class="status-badge is-external">External reported result</span>
+      <span class="status-badge is-unresolved">Results state: Not yet run</span>
+    </div>
+    <p class="claim-boundary"><strong>Scope:</strong> the paper is presented as a preprint with a fixed bounded observer and a reservoir-based closed-form estimator or approximation of epiplexity. Co-evolving observers and production-LLM substrates remain future work until separately implemented and qualified.</p>
+  </header>
+
+  <section class="section">
+    <h2>Paper boundary</h2>
+    <ul class="detail-list">
+      <li><a href="https://arxiv.org/abs/2607.18433">Intelligence from Learnable Novelty, arXiv:2607.18433v1</a></li>
+      <li><a href="https://arxiv.org/abs/2601.03220">From Entropy to Epiplexity, arXiv:2601.03220v2</a></li>
+      <li>MNIST labels were absent from representation training and used only for evaluation.</li>
+      <li>Task reward plus epiplexity bonus must remain distinct from epiplexity-only reward.</li>
+      <li>The Acrobot result is evidence that intrinsic learnability is not a substitute for a declared target.</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>Pre-registration fields</h2>
+    <div class="card-grid three">
+      <article class="card"><h3>Code and environment</h3><p>Exact repository, commit, archive hash, runtime, dependency lock, accelerator libraries, and numerical backend must be fixed before execution.</p></article>
+      <article class="card"><h3>Seeds and hardware</h3><p>Enumerate environment, policy, reservoir, data split, evaluation seeds, CPU, RAM, GPU, driver/runtime, precision mode, and wall-clock budget.</p></article>
+      <article class="card"><h3>Artifacts and controls</h3><p>Hash configs, logs, checkpoints, plots, and tables. Declare task-only, epiplexity-only, task-plus-bonus, inert-representation, and shuffled controls up front.</p></article>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Scope-specific requirements</h2>
+    <ol class="experiment-flow">
+      <li><div><strong>Rule 110 / ECA.</strong><p>Enumerate all 88 locally unique rules, width 64, next-32-state target, ten reservoir and input draws, rank statistic, and tie handling.</p></div></li>
+      <li><div><strong>Neural cellular automata.</strong><p>Record the tau equals 8 configuration, figure seeds where applicable, update law, and evaluation procedure for traveling or interacting structures.</p></div></li>
+      <li><div><strong>MNIST.</strong><p>Keep labels out of representation training and make probe, k-nearest-neighbor, evaluation, and visualization usage explicit.</p></div></li>
+      <li><div><strong>Reinforcement learning.</strong><p>Record all ten tasks, ten seeds, 600k-step budget, PPO implementation, bonus schedule, and the task-only, task-plus-bonus, and epiplexity-only regimes.</p></div></li>
+    </ol>
+  </section>
+
+  <section class="section">
+    <h2>Falsification conditions</h2>
+    <div class="compare-grid">
+      <article class="note-panel">
+        <ul class="detail-list">
+          <li>Rule 110 does not rank highest under the preregistered aggregation.</li>
+          <li>Neural cellular automata findings disappear under seed expansion or negative controls.</li>
+          <li>MNIST gains do not survive held-out evaluation with labels excluded from training.</li>
+        </ul>
+      </article>
+      <article class="note-panel">
+        <ul class="detail-list">
+          <li>Task-plus-bonus does not outperform task-only under the preregistered aggregation.</li>
+          <li>Epiplexity-only behavior is reported as task solving despite absent terminal success.</li>
+          <li>Published tables cannot be regenerated from immutable raw logs and the bound commit.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="callout">
+      <h2>Download the protocol</h2>
+      <div class="buttons">
+        <a class="button" href="/assets/docs/learnable-novelty-reproduction-protocol-v0.1.md">Markdown protocol</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer site-footer-unified">
+  <div class="inner footer-grid">
+    <div>
+      <p class="footer-title">Fractalish</p>
+      <p class="footer-tagline">Form is what exploration leaves behind.</p>
+      <p class="footer-motto">Read form carefully. Preserve uncertainty. Compare before claiming.</p>
+      <p class="footer-boundary">An independent research program. Results, proposals, and open questions are labeled separately.</p>
+    </div>
+    <div>
+      <p class="footer-label">Understand and test</p>
+      <nav class="footer-nav-inner" aria-label="Site footer navigation">
+        <a href="/persistent-observer.html">Persistent observer</a>
+        <a href="/research/beyond-learnable-novelty.html">Technical note</a>
+        <a href="/mathematical-bindings.html">Bindings</a>
+      </nav>
+    </div>
+    <div>
+      <p class="footer-label">Build and review</p>
+      <nav class="footer-nav-inner" aria-label="Participation links">
+        <a href="/contribute.html">Contribute</a>
+        <a href="/documents.html">Documents</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

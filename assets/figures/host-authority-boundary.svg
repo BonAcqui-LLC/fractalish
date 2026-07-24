@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1320 720" role="img" aria-labelledby="title desc">
+  <title id="title">Host authority boundary</title>
+  <desc id="desc">A replaceable host connects to a read-only adapter, canonical event projection, receipts, optional WeightReceipt, Cognitive Basin, guard and HOLD, and finally a host-owned command boundary.</desc>
+  <rect width="1320" height="720" fill="#071019"/>
+  <style>text{font-family:Arial,Helvetica,sans-serif;fill:#f3f7f2}.muted{fill:#aeb9c3}.box{fill:#101b25;stroke:#8fd7ff;stroke-width:2}.gate{fill:#1d1a12;stroke:#f0b46a;stroke-width:2}.line{stroke:#7cff6b;stroke-width:4;fill:none}.dash{stroke:#f0b46a;stroke-width:4;fill:none;stroke-dasharray:12 10}</style>
+  <text x="60" y="70" font-size="34" font-weight="700">Continuity beside the host, not control of the host</text>
+  <rect class="box" x="60" y="150" width="170" height="100" rx="8"/><text x="92" y="195" font-size="20" font-weight="700">Replaceable</text><text x="92" y="222" font-size="20" font-weight="700">host</text>
+  <rect class="box" x="280" y="150" width="170" height="100" rx="8"/><text x="310" y="195" font-size="20" font-weight="700">Read-only</text><text x="310" y="222" font-size="20" font-weight="700">adapter</text>
+  <rect class="box" x="500" y="150" width="170" height="100" rx="8"/><text x="530" y="195" font-size="20" font-weight="700">Canonical</text><text x="530" y="222" font-size="20" font-weight="700">event</text>
+  <rect class="box" x="720" y="150" width="170" height="100" rx="8"/><text x="750" y="195" font-size="20" font-weight="700">Receipt</text><text x="750" y="222" font-size="20" font-weight="700">and replay</text>
+  <rect class="box" x="940" y="150" width="170" height="100" rx="8"/><text x="970" y="195" font-size="20" font-weight="700">Optional</text><text x="970" y="222" font-size="20" font-weight="700">WeightReceipt</text>
+  <rect class="box" x="720" y="360" width="170" height="100" rx="8"/><text x="750" y="405" font-size="20" font-weight="700">Cognitive</text><text x="750" y="432" font-size="20" font-weight="700">Basin</text>
+  <rect class="gate" x="500" y="360" width="170" height="100" rx="8"/><text x="530" y="405" font-size="20" font-weight="700">GUARD /</text><text x="530" y="432" font-size="20" font-weight="700">HOLD</text>
+  <rect class="gate" x="280" y="360" width="170" height="100" rx="8"/><text x="310" y="405" font-size="20" font-weight="700">Host-owned</text><text x="310" y="432" font-size="20" font-weight="700">boundary</text>
+  <rect class="gate" x="60" y="360" width="170" height="100" rx="8"/><text x="92" y="405" font-size="20" font-weight="700">Native host</text><text x="92" y="432" font-size="20" font-weight="700">action</text>
+  <path class="line" d="M230 200 H280M450 200H500M670 200H720M890 200H940M1025 250V330C1025 410 960 410 890 410M720 410H670M500 410H450"/>
+  <path class="dash" d="M280 410H230"/>
+  <text class="muted" x="290" y="510" font-size="18">Dashed final edge requires host permit. Adapter does not execute.</text>
+</svg>

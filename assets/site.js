@@ -244,6 +244,178 @@ function initDocCollapsibles() {
   });
 }
 
+function badgeClass(value) {
+  const normalized = (value || "").toUpperCase();
+  if (
+    normalized.includes("VERIFIED") ||
+    normalized.includes("FROZEN") ||
+    normalized.includes("ESTABLISHED")
+  ) {
+    return "is-frozen";
+  }
+  if (
+    normalized.includes("LOCALLY VALIDATED") ||
+    normalized.includes("IMPLEMENTED") ||
+    normalized.includes("CODE-PRESENT")
+  ) {
+    return "is-local";
+  }
+  if (
+    normalized.includes("SPECIFICATION") ||
+    normalized.includes("PROPOSED") ||
+    normalized.includes("DEFERRED")
+  ) {
+    return "is-spec";
+  }
+  if (normalized.includes("EXTERNAL")) {
+    return "is-external";
+  }
+  if (normalized.includes("NEGATIVE")) {
+    return "is-negative";
+  }
+  if (normalized.includes("UNRESOLVED") || normalized.includes("NOT ESTABLISHED")) {
+    return "is-unresolved";
+  }
+  return "";
+}
+
+function renderBindingCard(binding) {
+  const source = binding.source || {};
+  const repoLink = source.repository_locator
+    ? `<a href="${source.repository_locator}">Open source lane</a>`
+    : "";
+  const commit = source.commit ? `<strong>Commit / authority:</strong> ${source.commit}` : "";
+  const evidence = Array.isArray(binding.evidence) ? binding.evidence.join("; ") : "";
+
+  return `
+    <article class="binding-card">
+      <div class="binding-header">
+        <div>
+          <p class="eyebrow">${binding.binding_id} / ${binding.claim_id}</p>
+          <h3>${binding.name}</h3>
+        </div>
+        <div class="status-strip">
+          <span class="status-badge ${badgeClass(binding.status)}">${binding.status}</span>
+          <span class="status-badge ${badgeClass(binding.representation_layer)}">${binding.representation_layer}</span>
+        </div>
+      </div>
+      <div class="binding-tags">
+        <span class="binding-tag">${binding.family}</span>
+        <span class="binding-tag">${binding.category}</span>
+      </div>
+      <p>${binding.summary}</p>
+      <div class="binding-formula">
+        <code class="code-line">${binding.original_statement || "Original statement not published in this record."}</code>
+        <code class="code-line">${binding.normalized_representation || "Normalized representation not published in this record."}</code>
+      </div>
+      <div class="binding-columns">
+        <div class="binding-meta">
+          <p><strong>Definitions:</strong> ${binding.definitions}</p>
+          <p><strong>Input domain:</strong> ${binding.input_domain}</p>
+          <p><strong>Output domain:</strong> ${binding.output_domain}</p>
+          <p><strong>Implementation:</strong> ${binding.implementation_status}</p>
+          <p><strong>Implementation reference:</strong> ${binding.implementation_ref}</p>
+        </div>
+        <div class="binding-meta">
+          <p><strong>Evidence IDs:</strong> ${evidence || "No public evidence identifier listed."}</p>
+          <p><strong>Public-safe source ID:</strong> ${binding.public_safe_source_id || "No public-safe source ID listed."}</p>
+          <p><strong>Next required evidence:</strong> ${binding.next_required_evidence || "Not specified in this public ledger."}</p>
+          <p><strong>Exact result:</strong> ${binding.result}</p>
+          <p><strong>Negative result:</strong> ${binding.negative_result}</p>
+          <p><strong>Boundary:</strong> ${binding.boundary}</p>
+        </div>
+      </div>
+      <div class="binding-links">
+        <span><strong>Public source:</strong> ${source.repository} / ${source.path}</span>
+        <span><strong>SHA-256:</strong> ${source.sha256}</span>
+        ${commit ? `<span>${commit}</span>` : ""}
+        ${repoLink}
+      </div>
+    </article>
+  `;
+}
+
+async function initBindingsExplorer() {
+  const root = document.querySelector("[data-bindings-explorer]");
+  if (!root) return;
+
+  const source = root.getAttribute("data-bindings-source");
+  const summary = root.querySelector("[data-bindings-summary]");
+  const list = root.querySelector("[data-bindings-list]");
+  const searchInput = root.querySelector("[data-bindings-search]");
+  const familySelect = root.querySelector("[data-bindings-family]");
+  const statusSelect = root.querySelector("[data-bindings-status]");
+  const layerSelect = root.querySelector("[data-bindings-layer]");
+
+  try {
+    const response = await fetch(source);
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}`);
+    }
+    const payload = await response.json();
+    const bindings = payload.bindings || [];
+
+    const families = [...new Set(bindings.map((item) => item.family).filter(Boolean))].sort();
+    const statuses = [...new Set(bindings.map((item) => item.status).filter(Boolean))].sort();
+    const layers = [...new Set(bindings.map((item) => item.representation_layer).filter(Boolean))].sort();
+
+    families.forEach((value) => familySelect?.insertAdjacentHTML("beforeend", `<option value="${value}">${value}</option>`));
+    statuses.forEach((value) => statusSelect?.insertAdjacentHTML("beforeend", `<option value="${value}">${value}</option>`));
+    layers.forEach((value) => layerSelect?.insertAdjacentHTML("beforeend", `<option value="${value}">${value}</option>`));
+
+    const render = () => {
+      const query = (searchInput?.value || "").trim().toLowerCase();
+      const family = familySelect?.value || "";
+      const status = statusSelect?.value || "";
+      const layer = layerSelect?.value || "";
+
+      const filtered = bindings.filter((binding) => {
+        const haystack = [
+          binding.binding_id,
+          binding.claim_id,
+          binding.name,
+          binding.aliases,
+          binding.family,
+          binding.category,
+          binding.original_statement,
+          binding.normalized_representation,
+          binding.summary,
+          binding.negative_result,
+          binding.public_safe_source_id,
+          binding.next_required_evidence,
+        ]
+          .join(" ")
+          .toLowerCase();
+
+        return (
+          (!query || haystack.includes(query)) &&
+          (!family || binding.family === family) &&
+          (!status || binding.status === status) &&
+          (!layer || binding.representation_layer === layer)
+        );
+      });
+
+      if (summary) {
+        summary.textContent = `${filtered.length} of ${bindings.length} bindings shown.`;
+      }
+      if (list) {
+        list.innerHTML = filtered.map(renderBindingCard).join("");
+      }
+    };
+
+    [searchInput, familySelect, statusSelect, layerSelect].forEach((node) => {
+      node?.addEventListener("input", render);
+      node?.addEventListener("change", render);
+    });
+
+    render();
+  } catch (error) {
+    if (summary) {
+      summary.textContent = `Bindings explorer unavailable: ${error.message}`;
+    }
+  }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   initMobileNav();
   initDocCollapsibles();
@@ -251,4 +423,5 @@ document.addEventListener("DOMContentLoaded", () => {
     bootSubtitlePanels();
   }
   initImageLightbox();
+  initBindingsExplorer();
 });

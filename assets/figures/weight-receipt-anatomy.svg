@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">WeightReceipt anatomy</title>
+  <desc id="desc">A structured WeightReceipt has immutable evidence, eight target-relative weight families, an uncertainty envelope, invalidation conditions, non-compensatory gates, and derived task projections.</desc>
+  <rect width="1200" height="720" fill="#071019"/>
+  <style>text{font-family:Arial,Helvetica,sans-serif;fill:#f3f7f2}.muted{fill:#aeb9c3}.box{fill:#101b25;stroke:#8fd7ff;stroke-width:2}.gate{fill:#1d1a12;stroke:#f0b46a;stroke-width:2}.line{stroke:#7cff6b;stroke-width:4;fill:none}</style>
+  <text x="60" y="70" font-size="34" font-weight="700">Structured WeightReceipt</text>
+  <rect class="box" x="60" y="120" width="480" height="90" rx="8"/><text x="90" y="172" font-size="24" font-weight="700">Immutable evidence</text><text class="muted" x="90" y="198" font-size="16">hashes, source, target, protocol</text>
+  <rect class="box" x="60" y="250" width="230" height="80" rx="8"/><text x="90" y="298" font-size="20" font-weight="700">Structural</text>
+  <rect class="box" x="310" y="250" width="230" height="80" rx="8"/><text x="340" y="298" font-size="20" font-weight="700">Contextual</text>
+  <rect class="box" x="60" y="350" width="230" height="80" rx="8"/><text x="90" y="398" font-size="20" font-weight="700">Affective-significance</text>
+  <rect class="box" x="310" y="350" width="230" height="80" rx="8"/><text x="340" y="398" font-size="20" font-weight="700">Prospective</text>
+  <rect class="box" x="60" y="450" width="230" height="80" rx="8"/><text x="90" y="498" font-size="20" font-weight="700">Consequential</text>
+  <rect class="box" x="310" y="450" width="230" height="80" rx="8"/><text x="340" y="498" font-size="20" font-weight="700">Mnemonic</text>
+  <rect class="box" x="60" y="550" width="230" height="80" rx="8"/><text x="90" y="598" font-size="20" font-weight="700">Residual</text>
+  <rect class="box" x="310" y="550" width="230" height="80" rx="8"/><text x="340" y="598" font-size="20" font-weight="700">Counterfactual</text>
+  <rect class="gate" x="660" y="130" width="420" height="110" rx="8"/><text x="695" y="178" font-size="23" font-weight="700">Uncertainty envelope</text><text class="muted" x="695" y="212" font-size="17">scope, disagreement, missing evidence</text>
+  <rect class="gate" x="660" y="280" width="420" height="110" rx="8"/><text x="695" y="328" font-size="23" font-weight="700">Non-compensatory gates</text><text class="muted" x="695" y="362" font-size="17">HOLD, rights, target failure</text>
+  <rect class="gate" x="660" y="430" width="420" height="110" rx="8"/><text x="695" y="478" font-size="23" font-weight="700">Invalidation conditions</text><text class="muted" x="695" y="512" font-size="17">correction, replay failure, target drift</text>
+  <rect class="box" x="660" y="580" width="420" height="70" rx="8"/><text x="695" y="624" font-size="22" font-weight="700">Derived task projection only</text>
+</svg>
