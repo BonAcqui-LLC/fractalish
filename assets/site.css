@@ -1885,6 +1885,44 @@ pre {
   min-width: clamp(720px, 76vw, 960px);
 }
 
+.hero-refresh:has(.hero-visual img[src$=".svg"]) {
+  grid-template-columns: 1fr;
+  min-height: 0;
+}
+
+.hero-refresh:has(.hero-visual img[src$=".svg"]) .hero-copy {
+  max-width: 820px;
+}
+
+.hero-refresh:has(.hero-visual img[src$=".svg"]) .hero-visual {
+  width: 100%;
+  max-width: 960px;
+}
+
+@media (min-width: 1281px) {
+  .split:has(.inline-figure img[src$=".svg"]),
+  .visual-pair:has(.inline-figure img[src$=".svg"]),
+  .compare-grid:has(.diagram-card img[src$=".svg"]) {
+    grid-template-columns: minmax(0, 0.82fr) minmax(720px, 1.18fr);
+  }
+
+  .hero-refresh .hero-visual img[src$=".svg"],
+  .split .inline-figure img[src$=".svg"],
+  .visual-pair .inline-figure img[src$=".svg"],
+  .compare-grid .diagram-card img[src$=".svg"] {
+    max-width: 100%;
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 1280px) {
+  .split:has(.inline-figure img[src$=".svg"]),
+  .visual-pair:has(.inline-figure img[src$=".svg"]),
+  .compare-grid:has(.diagram-card img[src$=".svg"]) {
+    grid-template-columns: 1fr;
+  }
+}
+
 .hero-visual figcaption,
 .inline-figure figcaption {
   max-width: 72ch;
