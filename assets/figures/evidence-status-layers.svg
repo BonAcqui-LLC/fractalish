@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 720" role="img" aria-labelledby="title desc">
+  <title id="title">Evidence status layers</title>
+  <desc id="desc">Stack of evidence labels from verified frozen through locally validated, code-present, specification, proposed integration, external reported result, negative result, and historical archived.</desc>
+  <rect width="1100" height="720" fill="#071019"/>
+  <style>text{font-family:Arial,Helvetica,sans-serif;fill:#f3f7f2}.muted{fill:#aeb9c3}.row{fill:#101b25;stroke:#8fd7ff;stroke-width:2}.warn{fill:#1d1a12;stroke:#f0b46a;stroke-width:2}</style>
+  <text x="70" y="70" font-size="34" font-weight="700">Evidence status is part of the claim</text>
+  <g font-size="22" font-weight="700">
+    <rect class="row" x="90" y="120" width="920" height="60" rx="8"/><text x="125" y="158">VERIFIED / FROZEN</text><text class="muted" x="520" y="158" font-size="18">hash-bound, frozen, fixture-qualified</text>
+    <rect class="row" x="90" y="195" width="920" height="60" rx="8"/><text x="125" y="233">BUILT AND LOCALLY VALIDATED</text><text class="muted" x="520" y="233" font-size="18">implemented and rerun, not broadly qualified</text>
+    <rect class="row" x="90" y="270" width="920" height="60" rx="8"/><text x="125" y="308">CODE-PRESENT</text><text class="muted" x="520" y="308" font-size="18">structures exist, complete behavior not qualified</text>
+    <rect class="row" x="90" y="345" width="920" height="60" rx="8"/><text x="125" y="383">SPECIFICATION</text><text class="muted" x="520" y="383" font-size="18">formal contract without complete runtime evidence</text>
+    <rect class="warn" x="90" y="420" width="920" height="60" rx="8"/><text x="125" y="458">PROPOSED INTEGRATION</text><text class="muted" x="520" y="458" font-size="18">planned connection, not demonstrated</text>
+    <rect class="warn" x="90" y="495" width="920" height="60" rx="8"/><text x="125" y="533">EXTERNAL REPORTED RESULT</text><text class="muted" x="520" y="533" font-size="18">neighboring result, not locally reproduced</text>
+    <rect class="warn" x="90" y="570" width="920" height="60" rx="8"/><text x="125" y="608">NEGATIVE / HISTORICAL</text><text class="muted" x="520" y="608" font-size="18">failures and lineage stay visible</text>
+  </g>
+</svg>

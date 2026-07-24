@@ -1,101 +1,58 @@
 # Project Map
 
-This map is a public orientation aid. It distinguishes what each lane is, where it is publicly represented, and whether it is implemented, drafted, speculative, or planned.
+This map follows the Fractalish Mathematical Bindings and Evidence Register v1.1 SANITIZED. It favors explicit authority over file names, high version numbers, or historical priority language.
 
-## Fractalish
+## Persistent Observer
 
-- What it is: an open morphology workbench for reading process from form across domains.
-- Public status: public.
-- Related site or document: [fractalish.com](https://fractalish.com), [Start Here](https://fractalish.com/start-here.html), [Documents](https://fractalish.com/documents.html).
-- Status: implemented as public site and collaboration hub; broader tooling remains mixed implemented and drafted.
-
-## MCVA
-
-- What it is: morphology-constrained vocabulary analysis for cases where morphology preserves process strongly enough to support cautious interpretation.
-- Public status: public.
-- Related site or document: [MCVA / AMCVA / HOLD](https://fractalish.com/mcva-amcva-hold.html).
-- Status: implemented as public framework language; tooling remains early.
-
-## AMCVA
-
-- What it is: the refusal lane for absent, obscured, erased, misleading, dominated, or otherwise unsafe morphology readings.
-- Public status: public.
-- Related site or document: [MCVA / AMCVA / HOLD](https://fractalish.com/mcva-amcva-hold.html).
-- Status: public framework language; tooling remains early.
-
-## HOLD
-
-- What it is: the unresolved state that preserves uncertainty and prevents false closure.
-- Public status: public.
-- Related site or document: [MCVA / AMCVA / HOLD](https://fractalish.com/mcva-amcva-hold.html).
-- Status: public framework language; partly reflected in tooling and research notes.
+- What it is: the primary contemporary research contribution and public front door.
+- Public route: https://fractalish.com/persistent-observer
+- Status: PROPOSED INTEGRATION architecture with frozen, local, specification, and external evidence layers kept separate.
+- Boundary: no complete production language-model persistent observer is claimed.
 
 ## Natural Math
 
-- What it is: the forward or generative layer asking what shapes finite local systems tend to make under constraint, memory, and time.
-- Public status: public.
-- Related site or document: [Natural Math](https://fractalish.com/natural-math.html), `natural_math/` package references in this repo family, and the hardened specification.
-- Status: drafted and partially implemented.
+- What it is: the exact integer/reference baseline for bounded local process and replay.
+- Public route: https://fractalish.com/natural-math.html
+- Status: Natural Math v5 is VERIFIED / FROZEN and governing.
+- Boundary: v5.1 is an extension line; v6/v6.18/Stage 10 are separate diagnostic or research branches; v10.3.2/v12 and higher candidates do not supersede v5 without explicit hash-bound promotion.
+
+## UFWK
+
+- What it is: the Unified Fractalish Weighting Kernel and structured WeightReceipt specification.
+- Public route: https://fractalish.com/weighting-kernel.html
+- Status: SPECIFICATION.
+- Boundary: learnability is one candidate signal; no universal scalar replaces the structured receipt.
 
 ## Cognitive Basin
 
-- What it is: a bounded persistent state architecture for continuity, regulation, reasoning, uncertainty, recovery, and purpose-bound action.
-- Public status: public architecture draft.
-- Related site or document: [Synaptient / Cognitive Basin Technical White Paper v0.1](https://fractalish.com/assets/docs/Synaptient_Cognitive_Basin_Technical_White_Paper_v0_1.pdf).
-- Status: drafted, with release materials public and implementation lanes still planned or early.
+- What it is: persistent state, recovery route, contradiction, and changed-accessibility architecture.
+- Public route: https://fractalish.com/cognitive-basin.html
+- Status: code-present and locally validated where separately claimed.
+- Boundary: not complete production LLM integration.
 
-## Synaptient
+## Bolt-On
 
-- What it is: the broader public research lane around human-AI cognition, continuity, activation, and benchmarkable cognitive structure.
-- Public status: public.
-- Related site or document: paired white paper and appendix on Fractalish.
-- Status: drafted and publicly described; implementation is mixed.
+- What it is: portable continuity and governance beside replaceable hosts while execution remains host-owned.
+- Public route: https://fractalish.com/bolt-on.html
+- Status: v0.3 VERIFIED / FROZEN; v0.4 Stage 1 BUILT AND LOCALLY VALIDATED.
+- Boundary: zero adapter-executed actions; not production integration.
 
-## SymLan
+## Specificity / Ageometrics
 
-- What it is: symbolic compression and resolution language for pending and resolved vocabulary states.
-- Public status: public reference lane.
-- Related site or document: source artifacts linked from [Documents](https://fractalish.com/documents.html).
-- Status: drafted.
+- What it is: target-relative sufficiency, residue, and governance posture.
+- Routes: https://fractalish.com/specificity-thesis.html and https://fractalish.com/ageometrics/
+- Status: Specificity v0.3 is locally validated; Ageometrics v0.5 is a current working paper.
+- Boundary: NGR is not epiplexity residual entropy and target-contract compliance is not absolute truth.
 
-## Construction A+
+## Resonant Morphology M1
 
-- What it is: a related formal or structural lane referenced as part of the prerequisite framework stack.
-- Public status: referenced publicly.
-- Related site or document: Companion Foundation Appendix.
-- Status: drafted / reference status.
+- What it is: a bounded software fixture connecting local-growth simulation, descriptor extraction, finite glyph encoding, and target-relative Specificity receipt.
+- Public route: https://fractalish.com/archive/resonant-morphology-thesis-corrected-2026-07-13.html
+- Status: HISTORICAL DEVELOPMENT ARTIFACT / BOUNDED SOFTWARE FIXTURE.
+- Boundary: not flagship proof, not physical morphology memory, not universal coding, not completed persistent intelligence.
 
-## InfinitySight / MNMVE
+## CONFIGURATOR / Bridge
 
-- What it is: machine-native morphological vision embodiment and related perception architecture work.
-- Public status: referenced publicly.
-- Related site or document: Companion Foundation Appendix and source artifacts in Documents.
-- Status: drafted / speculative depending subcomponent.
-
-## SERA
-
-- What it is: software efficiency and resilience activation accounting for cost, waste, and metabolism.
-- Public status: public reference lane.
-- Related site or document: white paper and appendix.
-- Status: drafted, with partial implementation concepts.
-
-## Guardian / ExoMCP
-
-- What it is: integrity, guardrail, or external monitoring lane for drift, boundary, and control discipline.
-- Public status: partially public by reference.
-- Related site or document: white paper and appendix.
-- Status: drafted / planned.
-
-## Entroresilience
-
-- What it is: a related public framework lane elsewhere in the BonAcqui workspace family.
-- Public status: public, but not core to this repo.
-- Related site or document: separate Entroresilience materials when linked.
-- Status: separate public project.
-
-## Logientia
-
-- What it is: a named future or adjacent conceptual lane in the user's broader framework family.
-- Public status: referenced but not surfaced as a primary Fractalish lane here.
-- Related site or document: placeholder public reference status only unless later published.
-- Status: planned / speculative.
+- What it is: proposed integration lane for connecting Natural Math, interpretation namespaces, and future WeightReceipt handling.
+- Status: PROPOSED INTEGRATION / ACTIVE EXPERIMENT.
+- Boundary: v0.5 PASS messages are not treated as qualified evidence; v0.6 needs separate hardening and qualification.

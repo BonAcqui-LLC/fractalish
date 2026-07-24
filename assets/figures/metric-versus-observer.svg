@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">Metric versus persistent observer</title>
+  <desc id="desc">A metric produces a score from an encounter. A persistent observer preserves evidence, target, residue, contradiction, replay, and changed future accessibility.</desc>
+  <rect width="1200" height="680" fill="#071019"/>
+  <style>text{font-family:Arial,Helvetica,sans-serif;fill:#f3f7f2}.muted{fill:#aeb9c3}.box{fill:#101b25;stroke:#8fd7ff;stroke-width:2}.gate{fill:#1d1a12;stroke:#f0b46a;stroke-width:2}.line{stroke:#7cff6b;stroke-width:4;fill:none}</style>
+  <text x="90" y="80" font-size="34" font-weight="700">Metric</text>
+  <text x="660" y="80" font-size="34" font-weight="700">Persistent observer</text>
+  <rect class="box" x="90" y="150" width="360" height="95" rx="8"/><text x="125" y="205" font-size="24" font-weight="700">Encounter</text>
+  <path class="line" d="M270 245 V320"/>
+  <rect class="gate" x="90" y="320" width="360" height="95" rx="8"/><text x="125" y="375" font-size="24" font-weight="700">Score</text>
+  <text class="muted" x="125" y="415" font-size="18">Useful, but not memory or governance</text>
+  <rect class="box" x="660" y="130" width="390" height="72" rx="8"/><text x="690" y="174" font-size="21" font-weight="700">Immutable evidence</text>
+  <rect class="box" x="660" y="222" width="390" height="72" rx="8"/><text x="690" y="266" font-size="21" font-weight="700">Target and residue</text>
+  <rect class="box" x="660" y="314" width="390" height="72" rx="8"/><text x="690" y="358" font-size="21" font-weight="700">Contradiction and correction</text>
+  <rect class="box" x="660" y="406" width="390" height="72" rx="8"/><text x="690" y="450" font-size="21" font-weight="700">Replay and changed reach</text>
+  <rect class="gate" x="660" y="498" width="390" height="72" rx="8"/><text x="690" y="542" font-size="21" font-weight="700">HOLD / host boundary</text>
+  <text class="muted" x="660" y="622" font-size="18">Changed inspectably, reversibly, and with receipts.</text>
+</svg>
