@@ -18,3 +18,6 @@
 
 /site.webmanifest
   Cache-Control: public, max-age=300, must-revalidate
+
+/assets/site.css
+  Cache-Control: public, max-age=300, must-revalidate
