@@ -22,7 +22,9 @@
     <text x="626" y="282">global map</text>
     <rect x="606" y="172" width="440" height="56" rx="10" fill="#16202d" stroke="#c8ae82"/>
     <text x="656" y="208">H5</text>
-    <text x="768" y="208">predictive and counterfactual world model</text>
+    <text x="756" y="194" font-size="22">predictive and counterfactual</text>
+    <text x="756" y="222" font-size="22">world model</text>
   </g>
-  <text x="132" y="676" fill="#b2bccb" font-family="Segoe UI, sans-serif" font-size="19">The Ageometric question is whether broader foresight improves local optimization while erasing recoverable developmental history from final structure.</text>
+  <text x="132" y="664" fill="#b2bccb" font-family="Segoe UI, sans-serif" font-size="18">The Ageometric question is whether broader foresight improves local optimization</text>
+  <text x="132" y="692" fill="#b2bccb" font-family="Segoe UI, sans-serif" font-size="18">while erasing recoverable developmental history from final structure.</text>
 </svg>
