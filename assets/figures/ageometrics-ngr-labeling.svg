@@ -12,6 +12,8 @@
   <text x="896" y="264" text-anchor="middle" fill="#b2bccb" font-family="Segoe UI, sans-serif" font-size="20">signed protocol-relative diagnostic</text>
   <text x="304" y="322" text-anchor="middle" fill="#b2bccb" font-family="Segoe UI, sans-serif" font-size="20">population-level quantity</text>
   <text x="896" y="322" text-anchor="middle" fill="#b2bccb" font-family="Segoe UI, sans-serif" font-size="20">may be below 0 or above 1</text>
-  <text x="304" y="380" text-anchor="middle" fill="#eef2f7" font-family="Georgia, 'Times New Roman', serif" font-size="24">Do not use this bounded reading automatically in finite samples.</text>
-  <text x="896" y="380" text-anchor="middle" fill="#eef2f7" font-family="Georgia, 'Times New Roman', serif" font-size="24">Preserve the raw value and diagnose the interval violation.</text>
+  <text x="304" y="368" text-anchor="middle" fill="#eef2f7" font-family="Georgia, 'Times New Roman', serif" font-size="21">Do not use this bounded reading</text>
+  <text x="304" y="398" text-anchor="middle" fill="#eef2f7" font-family="Georgia, 'Times New Roman', serif" font-size="21">automatically in finite samples.</text>
+  <text x="896" y="368" text-anchor="middle" fill="#eef2f7" font-family="Georgia, 'Times New Roman', serif" font-size="21">Preserve the raw value and</text>
+  <text x="896" y="398" text-anchor="middle" fill="#eef2f7" font-family="Georgia, 'Times New Roman', serif" font-size="21">diagnose the interval violation.</text>
 </svg>

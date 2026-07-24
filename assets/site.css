@@ -78,6 +78,52 @@ svg {
   height: auto;
 }
 
+:where(
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  li,
+  .button,
+  .badge,
+  .status-badge,
+  .eyebrow,
+  .card,
+  .meta-card,
+  .note-panel,
+  .binding-card,
+  .source-card,
+  .summary-card,
+  .diagram-card
+) {
+  overflow-wrap: anywhere;
+}
+
+:where(
+  .hero-refresh > *,
+  .visual-pair > *,
+  .compare-grid > *,
+  .status-board > *,
+  .status-grid > *,
+  .summary-grid > *,
+  .source-grid > *,
+  .download-strip > *,
+  .binding-controls > *,
+  .binding-columns > *,
+  .card-grid > *,
+  .page-meta > *,
+  .card,
+  .meta-card,
+  .note-panel,
+  .binding-card,
+  .source-card,
+  .summary-card,
+  .diagram-card
+) {
+  min-width: 0;
+}
+
 .site-header {
   position: sticky;
   top: 0;
@@ -472,6 +518,10 @@ p {
   padding-top: 10px;
 }
 
+.buttons > * {
+  min-width: 0;
+}
+
 .button {
   display: inline-block;
   padding: 10px 14px;
@@ -518,7 +568,9 @@ p {
 
 table {
   width: 100%;
+  max-width: 100%;
   border-collapse: collapse;
+  table-layout: fixed;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: 15px;
   line-height: 1.45;
@@ -530,6 +582,8 @@ td {
   text-align: left;
   vertical-align: top;
   border-bottom: 1px solid var(--line);
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 th {
@@ -600,7 +654,7 @@ tr:last-child td {
 
 .page-meta {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(180px, 100%), 1fr));
   gap: 14px;
   margin: 26px 0 18px;
 }
@@ -610,6 +664,7 @@ tr:last-child td {
   border: 1px solid var(--line);
   border-radius: 4px;
   background: var(--paper-soft);
+  min-width: 0;
 }
 
 .meta-label {
@@ -681,6 +736,14 @@ tr:last-child td {
   border-radius: calc(var(--radius) + 2px);
   background: var(--panel-strong);
   box-shadow: var(--shadow);
+}
+
+.image-frame:has(> img[src$=".svg"]) {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-color: rgba(157, 215, 255, 0.5) rgba(255, 255, 255, 0.06);
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
 }
 
 .feature-figure,
@@ -895,6 +958,8 @@ tr:last-child td {
   font: 600 12px/1.4 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.04em;
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .prose-columns {
@@ -1798,6 +1863,11 @@ pre {
   border-radius: 16px;
   background: linear-gradient(145deg, rgba(157, 215, 255, 0.045), rgba(124, 255, 107, 0.035));
   box-shadow: 0 24px 80px rgba(0, 0, 0, 0.34);
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-color: rgba(157, 215, 255, 0.5) rgba(255, 255, 255, 0.06);
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
 }
 
 .hero-visual img,
@@ -1805,6 +1875,14 @@ pre {
   display: block;
   width: 100%;
   border-radius: 10px;
+}
+
+.hero-visual img[src$=".svg"],
+.inline-figure img[src$=".svg"],
+.image-frame img[src$=".svg"],
+.diagram-card img[src$=".svg"] {
+  max-width: none;
+  min-width: clamp(720px, 76vw, 960px);
 }
 
 .hero-visual figcaption,
@@ -2089,7 +2167,7 @@ pre {
 
 .download-strip,
 .expertise-grid {
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
 }
 
 .source-grid {
@@ -2183,6 +2261,14 @@ pre {
   border-radius: 12px;
   background: var(--paper-soft);
   box-shadow: var(--shadow);
+}
+
+.diagram-card {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-color: rgba(157, 215, 255, 0.5) rgba(255, 255, 255, 0.06);
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
 }
 
 .diagram-card figure,
@@ -2287,6 +2373,17 @@ pre {
 .binding-meta {
   color: var(--muted);
   font: 14px/1.55 system-ui, sans-serif;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.binding-card span,
+.binding-tag,
+.binding-links,
+.source-list,
+.source-list li {
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .binding-meta strong,
@@ -2471,6 +2568,21 @@ button:focus-visible {
 }
 
 @media (max-width: 700px) {
+  main {
+    padding-right: clamp(12px, 4.5vw, 24px);
+    padding-left: clamp(12px, 4.5vw, 24px);
+  }
+
+  .doc-grid,
+  .section-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .doc-grid .card,
+  .section-grid .card {
+    grid-column: auto;
+  }
+
   .card-grid.three,
   .card-grid.four {
     grid-template-columns: 1fr;
@@ -2487,6 +2599,15 @@ button:focus-visible {
 
   .section {
     padding: 46px 0;
+  }
+
+  .card,
+  .note-panel,
+  .binding-card,
+  .source-card,
+  .summary-card,
+  .diagram-card {
+    padding: clamp(14px, 4vw, 22px);
   }
 
   .process-chain li,

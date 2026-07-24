@@ -16,8 +16,10 @@
   <rect x="708" y="340" width="384" height="118" rx="14" fill="#111926" stroke="#72543c"/>
   <text x="300" y="388" text-anchor="middle" fill="#eef2f7" font-family="Georgia, 'Times New Roman', serif" font-size="28">Hidden distinction</text>
   <text x="900" y="388" text-anchor="middle" fill="#eef2f7" font-family="Georgia, 'Times New Roman', serif" font-size="28">Hidden distinction</text>
-  <text x="300" y="420" text-anchor="middle" fill="#c89a72" font-family="Segoe UI, sans-serif" font-size="19">safe curriculum, direct provenance, continuous lineage, low stored stress</text>
-  <text x="900" y="420" text-anchor="middle" fill="#c89a72" font-family="Segoe UI, sans-serif" font-size="19">repair-heavy history, adversarial source, restored copy, high stored stress</text>
+  <text x="300" y="414" text-anchor="middle" fill="#c89a72" font-family="Segoe UI, sans-serif" font-size="17">safe curriculum, direct provenance,</text>
+  <text x="300" y="438" text-anchor="middle" fill="#c89a72" font-family="Segoe UI, sans-serif" font-size="17">continuous lineage, low stored stress</text>
+  <text x="900" y="414" text-anchor="middle" fill="#c89a72" font-family="Segoe UI, sans-serif" font-size="17">repair-heavy history, adversarial source,</text>
+  <text x="900" y="438" text-anchor="middle" fill="#c89a72" font-family="Segoe UI, sans-serif" font-size="17">restored copy, high stored stress</text>
   <rect x="146" y="530" width="308" height="108" rx="14" fill="#16202d" stroke="#9db59a"/>
   <rect x="746" y="530" width="308" height="108" rx="14" fill="#16202d" stroke="#9db59a"/>
   <text x="300" y="578" text-anchor="middle" fill="#eef2f7" font-family="Georgia, 'Times New Roman', serif" font-size="30">Intervention outcome</text>
@@ -32,5 +34,6 @@
   <polygon points="300,520 289,502 311,502" fill="#9db59a"/>
   <path d="M900 460V520" stroke="#9db59a" stroke-width="6" fill="none"/>
   <polygon points="900,520 889,502 911,502" fill="#9db59a"/>
-  <text x="600" y="698" text-anchor="middle" fill="#c8ae82" font-family="Georgia, 'Times New Roman', serif" font-size="28">If geometry cannot separate the outcomes but fuller records can, the tested representation leaves measurable residue.</text>
+  <text x="600" y="690" text-anchor="middle" fill="#c8ae82" font-family="Georgia, 'Times New Roman', serif" font-size="24">If geometry cannot separate the outcomes but fuller records can,</text>
+  <text x="600" y="724" text-anchor="middle" fill="#c8ae82" font-family="Georgia, 'Times New Roman', serif" font-size="24">the tested representation leaves measurable residue.</text>
 </svg>
