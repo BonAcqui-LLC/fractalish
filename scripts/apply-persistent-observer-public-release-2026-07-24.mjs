@@ -295,7 +295,7 @@ write("persistent-observer.html", page({
 write("natural-math.html", page({
   title: "Natural Math Authority | Fractalish",
   description: "Natural Math v5 is the governing frozen integer baseline; later diagnostic and experimental branches remain separate unless explicitly promoted by hash-bound qualification.",
-  canonical: "https://fractalish.com/natural-math.html",
+  canonical: "https://fractalish.com/natural-math",
   image: "/assets/figures/natural-math-version-authority.svg",
   active: "natural",
   body: String.raw`<main id="main-content" class="page-shell">
@@ -547,7 +547,7 @@ write("scientific-neighbors.html", page({
 write("status.html", page({
   title: "Status | Fractalish",
   description: "Public status register for frozen evidence, local validation, code-present structures, specifications, proposed integrations, external reported results, limitations, and archives.",
-  canonical: "https://fractalish.com/status.html",
+  canonical: "https://fractalish.com/status",
   active: "status",
   body: String.raw`<main id="main-content" class="page-shell">
   <header class="page-hero narrow">
