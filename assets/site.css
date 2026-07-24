@@ -17,6 +17,7 @@
   --measure: 760px;
   --radius: 8px;
   --shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
+  color-scheme: dark;
 }
 
 * {
@@ -24,20 +25,38 @@
 }
 
 html {
+  background-color: var(--bg-deep);
+  color: var(--ink);
   scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  min-height: 100svh;
   background:
     radial-gradient(circle at 50% 0%, rgba(124, 255, 107, 0.13), transparent 24rem),
     radial-gradient(circle at 82% 18%, rgba(157, 215, 255, 0.12), transparent 30rem),
     linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0) 130px),
-    linear-gradient(180deg, #070b10 0%, #0b1118 38%, #030507 100%);
+    linear-gradient(180deg, #070b10 0%, #0b1118 38%, #030507 100%),
+    var(--bg);
+  background-color: var(--bg);
   color: var(--ink);
   font: 18px/1.7 Georgia, "Times New Roman", serif;
   text-rendering: optimizeLegibility;
   position: relative;
+}
+
+@supports (-webkit-touch-callout: none) {
+  html,
+  body {
+    background-color: #06090d;
+  }
+
+  body {
+    -webkit-text-size-adjust: 100%;
+  }
 }
 
 body::before,
