@@ -18,6 +18,38 @@
   <link rel="stylesheet" href="/assets/site.css?v=ios-dark-20260724">
   <script src="/assets/site.js?v=observer-20260724" defer></script>
   <script>document.documentElement.classList.add("js");</script>
+  <style>
+    .natural-math-version-section {
+      grid-template-columns: 1fr;
+      align-items: start;
+    }
+
+    .natural-math-version-section > div,
+    .natural-math-version-section .inline-figure {
+      width: 100%;
+      max-width: none;
+    }
+
+    .natural-math-version-section .status-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .natural-math-version-section .summary-card {
+      max-width: none;
+      overflow-wrap: normal;
+      word-break: normal;
+    }
+
+    .natural-math-version-section .inline-figure {
+      max-width: 960px;
+    }
+
+    @media (max-width: 720px) {
+      .natural-math-version-section .status-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
 <header class="site-header">
@@ -61,7 +93,7 @@
     <p class="claim-boundary"><strong>Authority note:</strong> Natural Math v5 is the governing frozen integer baseline. Later-numbered diagnostic and experimental branches remain separate unless a versioned, hash-bound qualification record explicitly promotes them.</p>
   </header>
 
-  <section class="section visual-pair">
+  <section class="section visual-pair natural-math-version-section">
     <div>
       <p class="eyebrow">Version hierarchy</p>
       <h2>Do not infer authority from numbering.</h2>
