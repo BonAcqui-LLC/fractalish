@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Natural Math version authority</title>
+  <desc id="desc">Natural Math v5 is the frozen governing baseline. v5.1 is an extension line, v6 and Stage 10 are research branches, and higher-numbered candidates do not supersede v5 without explicit qualification.</desc>
+  <rect width="1200" height="720" fill="#071019"/>
+  <style>
+    text{font-family:Arial,Helvetica,sans-serif;fill:#f3f7f2}.muted{fill:#aeb9c3}.frozen{fill:#102113;stroke:#7cff6b;stroke-width:3}.branch{fill:#101b25;stroke:#8fd7ff;stroke-width:2}.candidate{fill:#1d1a12;stroke:#f0b46a;stroke-width:2}.line{stroke:#aeb9c3;stroke-width:3;fill:none}.dash{stroke:#f0b46a;stroke-width:3;fill:none;stroke-dasharray:10 9}
+  </style>
+  <text x="600" y="80" font-size="36" font-weight="700" text-anchor="middle">Authority follows qualification, not numbering</text>
+  <rect class="frozen" x="90" y="160" width="1020" height="120" rx="8"/>
+  <text x="130" y="210" font-size="28" font-weight="700">Natural Math v5</text>
+  <text class="muted" x="130" y="250" font-size="20">governing frozen integer/reference baseline — hash-bound fixtures and replay</text>
+  <path class="line" d="M600 280 V335"/>
+  <rect class="branch" x="90" y="350" width="300" height="130" rx="8"/>
+  <text x="125" y="400" font-size="24" font-weight="700">v5.1</text>
+  <text class="muted" x="125" y="438" font-size="18">extension line only</text>
+  <rect class="branch" x="450" y="350" width="300" height="130" rx="8"/>
+  <text x="485" y="400" font-size="22" font-weight="700">v6 / v6.18 / Stage 10</text>
+  <text class="muted" x="485" y="438" font-size="18">diagnostic or research branch</text>
+  <rect class="candidate" x="810" y="350" width="300" height="130" rx="8"/>
+  <text x="845" y="400" font-size="24" font-weight="700">v10.3.2 / v12+</text>
+  <text class="muted" x="845" y="438" font-size="18">candidate or historical branch</text>
+  <path class="dash" d="M240 520 H960"/>
+  <text class="muted" x="600" y="570" font-size="22" text-anchor="middle">No branch supersedes v5 without explicit frozen</text>
+  <text class="muted" x="600" y="604" font-size="22" text-anchor="middle">compatibility promotion.</text>
+</svg>
