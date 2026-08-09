@@ -65,8 +65,12 @@ for (const file of files) {
   }
   const robotsNoindex = /<meta\b[^>]*name=["']robots["'][^>]*content=["'][^"']*\bnoindex\b/i.test(html);
   const canonicalMatches = [...html.matchAll(/<link\b[^>]*rel=["']canonical["'][^>]*href=["']([^"']+)["']/gi)];
+  const metaDescriptionCount = (html.match(/<meta\b[^>]*name=["']description["'][^>]*content=["'][^"']+["'][^>]*>/gi) || []).length;
   if (!redirect && !robotsNoindex && canonicalMatches.length !== 1) {
     warnings.push(`${rel}: expected one canonical link`);
+  }
+  if (!redirect && !robotsNoindex && metaDescriptionCount !== 1) {
+    errors.push(`${rel}: expected one meta description, found ${metaDescriptionCount}`);
   }
   for (const match of canonicalMatches) {
     const canonical = match[1];
@@ -166,6 +170,40 @@ for (const configFile of ["_headers", "functions/api/site-chat.js"]) {
     if (/access-control-allow-origin\s*:\s*\*/i.test(config) || /"access-control-allow-origin"\s*:\s*"\*"/i.test(config)) {
       errors.push(`${configFile}: wildcard Access-Control-Allow-Origin is not allowed`);
     }
+  }
+}
+
+const headersPath = path.join(ROOT, "_headers");
+if (fs.existsSync(headersPath)) {
+  const headers = fs.readFileSync(headersPath, "utf8");
+  for (const requiredHeader of [
+    "Content-Security-Policy",
+    "Strict-Transport-Security",
+    "X-Frame-Options",
+    "X-Content-Type-Options",
+    "Referrer-Policy",
+    "Permissions-Policy",
+  ]) {
+    if (!headers.includes(requiredHeader)) errors.push(`_headers: missing ${requiredHeader}`);
+  }
+}
+
+const redirectsPath = path.join(ROOT, "_redirects");
+if (fs.existsSync(redirectsPath)) {
+  const redirects = fs.readFileSync(redirectsPath, "utf8");
+  for (const rule of ["/atlas /documents 301", "/atlas.html /documents 301", "/library /documents 301", "/library.html /documents 301"]) {
+    if (!redirects.includes(rule)) errors.push(`_redirects: missing ${rule}`);
+  }
+} else {
+  errors.push("_redirects: missing redirect file");
+}
+
+for (const jsFile of fs.readdirSync(ROOT, { recursive: true }).filter((name) => /\.(?:js|mjs)$/.test(name))) {
+  if (jsFile.includes(".git") || jsFile.includes("node_modules") || jsFile.includes("live-verification")) continue;
+  if (jsFile === path.join("scripts", "validate-public-site.mjs")) continue;
+  const js = fs.readFileSync(path.join(ROOT, jsFile), "utf8");
+  if (/\b(?:innerHTML|outerHTML|insertAdjacentHTML)\b/.test(js)) {
+    errors.push(`${jsFile}: unsafe DOM insertion pattern present`);
   }
 }
 
