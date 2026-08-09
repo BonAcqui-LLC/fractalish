@@ -1835,7 +1835,8 @@ pre {
 .research-question,
 .claim-boundary,
 .fine-print,
-.footer-boundary {
+.footer-boundary,
+.footer-privacy {
   color: var(--muted);
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   line-height: 1.55;
@@ -1869,9 +1870,15 @@ pre {
   font-size: 13px;
 }
 
-.footer-boundary {
+.footer-boundary,
+.footer-privacy {
   max-width: 46ch;
   margin-top: 14px;
+}
+
+.footer-privacy {
+  font-size: 12px;
+  opacity: 0.82;
 }
 
 .hero-visual,
