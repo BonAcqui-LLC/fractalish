@@ -43,15 +43,15 @@ const homepage = bodies.get("/") || "";
 const declaration = bodies.get("/synaptient-declaration/") || "";
 const declarationLinkCount = (declaration.match(/href="\/synaptient-declaration\/"/g) || []).length;
 const assertions = {
-  homepageCorrect: homepage.includes("forms—not a universal label"),
-  homepageCorrupt: homepage.includes("formsâ€”"),
+  homepageCorrect: homepage.includes("Form is accumulated consequence"),
+  homepageCorrupt: homepage.includes("formsā€”") || homepage.includes("forms—not a universal label"),
   declarationDashes: declaration.includes("Human–AI"),
   declarationQuotes: declaration.includes("“Show your work”"),
   declarationLinkCount
 };
 
-if (!assertions.homepageCorrect) failures.push({ url: new URL("/", BASE).href, problem: "corrected homepage phrase absent" });
-if (assertions.homepageCorrupt) failures.push({ url: new URL("/", BASE).href, problem: "corrupt homepage phrase present" });
+if (!assertions.homepageCorrect) failures.push({ url: new URL("/", BASE).href, problem: "constitutional homepage phrase absent" });
+if (assertions.homepageCorrupt) failures.push({ url: new URL("/", BASE).href, problem: "legacy/corrupt homepage phrase present" });
 if (!assertions.declarationDashes || !assertions.declarationQuotes) {
   failures.push({ url: new URL("/synaptient-declaration/", BASE).href, problem: "source punctuation absent" });
 }
