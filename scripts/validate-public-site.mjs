@@ -63,9 +63,17 @@ for (const file of files) {
   if (rel === "synaptient-declaration/index.html" && declarationPunctuationLossPattern.test(html)) {
     errors.push(`${rel}: declaration punctuation differs from the authoritative DOCX source`);
   }
-  if (!redirect && (html.match(/<link\b[^>]*rel=["']canonical["']/gi) || []).length !== 1) {
+  const robotsNoindex = /<meta\b[^>]*name=["']robots["'][^>]*content=["'][^"']*\bnoindex\b/i.test(html);
+  const canonicalMatches = [...html.matchAll(/<link\b[^>]*rel=["']canonical["'][^>]*href=["']([^"']+)["']/gi)];
+  if (!redirect && !robotsNoindex && canonicalMatches.length !== 1) {
     warnings.push(`${rel}: expected one canonical link`);
   }
+  for (const match of canonicalMatches) {
+    const canonical = match[1];
+    if (canonical.includes("#")) errors.push(`${rel}: canonical URL contains a fragment`);
+    if (/\.html(?:$|[?#])/.test(canonical)) errors.push(`${rel}: canonical URL uses .html instead of extensionless public URL`);
+  }
+  if (rel === "404.html" && !robotsNoindex) errors.push("404.html: missing noindex robots directive");
   if (/Natural Math Leaf Generator/i.test(html) && !leafGeneratorArchiveAllowlist.has(rel)) {
     errors.push(`${rel}: Leaf Generator identity language appears outside the preserved archival record`);
   }
@@ -139,10 +147,27 @@ const sitemap = fs.readFileSync(path.join(ROOT, "sitemap.xml"), "utf8");
 const locations = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
 const duplicateLocations = [...new Set(locations.filter((url, i) => locations.indexOf(url) !== i))];
 if (duplicateLocations.length) errors.push(`sitemap.xml: duplicate URLs ${duplicateLocations.join(", ")}`);
-for (const required of ["https://fractalish.com/", "https://fractalish.com/constitution.html", "https://fractalish.com/desiloization.html", "https://fractalish.com/scientific-neighbors.html", "https://fractalish.com/ageometrics/", "https://fractalish.com/specificity-thesis.html"]) {
+for (const required of ["https://fractalish.com/", "https://fractalish.com/constitution", "https://fractalish.com/desiloization", "https://fractalish.com/scientific-neighbors", "https://fractalish.com/ageometrics/", "https://fractalish.com/specificity-thesis"]) {
   if (!locations.includes(required)) errors.push(`sitemap.xml: missing ${required}`);
 }
 if (locations.includes("https://fractalish.com/ageometrics.html")) errors.push("sitemap.xml: redirect alias ageometrics.html should not be indexed");
+for (const loc of locations) {
+  if (loc.includes("#")) errors.push(`sitemap.xml: URL contains fragment ${loc}`);
+  if (/\.html(?:$|[?#])/.test(loc)) errors.push(`sitemap.xml: URL uses .html instead of extensionless public URL ${loc}`);
+  if (loc === "https://fractalish.com/atlas" || loc === "https://fractalish.com/library") {
+    errors.push(`sitemap.xml: redirect stub should not be indexed ${loc}`);
+  }
+}
+
+for (const configFile of ["_headers", "functions/api/site-chat.js"]) {
+  const configPath = path.join(ROOT, configFile);
+  if (fs.existsSync(configPath)) {
+    const config = fs.readFileSync(configPath, "utf8");
+    if (/access-control-allow-origin\s*:\s*\*/i.test(config) || /"access-control-allow-origin"\s*:\s*"\*"/i.test(config)) {
+      errors.push(`${configFile}: wildcard Access-Control-Allow-Origin is not allowed`);
+    }
+  }
+}
 
 console.log(`Checked ${files.length} HTML files and ${locations.length} sitemap routes.`);
 if (warnings.length) {
