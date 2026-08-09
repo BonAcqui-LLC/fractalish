@@ -11,7 +11,7 @@ export function onRequestGet(context) {
     generated_at_utc: new Date().toISOString(),
     source_policy: "production deploys are expected to originate from clean, merged main commits",
     clean_tree_assertion: env.CF_PAGES_COMMIT_SHA
-      ? "git-integrated clean source expected"
+      ? "commit-bound upload expected; confirm commit_dirty=false in Cloudflare Pages deployment metadata"
       : "not available from runtime environment",
     secrets_exposed: false,
   };
