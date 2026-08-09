@@ -9,15 +9,86 @@
   <meta property="og:description" content="Natural Math v5 is the governing frozen integer baseline; later diagnostic and experimental branches remain separate unless explicitly promoted by hash-bound qualification.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://fractalish.com/natural-math">
-  <meta property="og:image" content="https://fractalish.com/assets/figures/natural-math-version-authority.svg">
+  <meta property="og:image" content="https://fractalish.com/assets/figures/natural-math-version-authority-v2.svg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Natural Math Authority | Fractalish">
   <meta name="twitter:description" content="Natural Math v5 is the governing frozen integer baseline; later diagnostic and experimental branches remain separate unless explicitly promoted by hash-bound qualification.">
-  <meta name="twitter:image" content="https://fractalish.com/assets/figures/natural-math-version-authority.svg">
+  <meta name="twitter:image" content="https://fractalish.com/assets/figures/natural-math-version-authority-v2.svg">
   <link rel="canonical" href="https://fractalish.com/natural-math">
-  <link rel="stylesheet" href="/assets/site.css?v=ios-dark-20260724">
+  <link rel="stylesheet" href="/assets/site.css?v=natural-math-ledger-20260726">
   <script src="/assets/site.js?v=observer-20260724" defer></script>
   <script>document.documentElement.classList.add("js");</script>
+  <style>
+    .natural-math-version-section {
+      display: block;
+    }
+
+    .version-ledger {
+      width: 100%;
+      max-width: 980px;
+      margin: 26px 0 42px;
+      padding: 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .version-ledger-row {
+      display: grid;
+      grid-template-columns: minmax(150px, 0.34fr) minmax(0, 1fr);
+      gap: 24px 34px;
+      padding: 26px 0 28px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .version-ledger dt,
+    .version-ledger dd,
+    .version-ledger h3,
+    .version-ledger p {
+      margin: 0;
+      min-width: 0;
+      overflow-wrap: normal;
+      word-break: normal;
+    }
+
+    .version-ledger dt {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    .version-ledger .status-badge {
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    .version-ledger h3 {
+      color: var(--ink);
+      font-size: clamp(24px, 3vw, 34px);
+      line-height: 1.12;
+    }
+
+    .version-ledger p {
+      max-width: 68ch;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.65;
+    }
+
+    .natural-math-version-section .inline-figure {
+      width: 100%;
+      max-width: 960px;
+      margin-top: 10px;
+    }
+
+    @media (max-width: 680px) {
+      .version-ledger-row {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 22px 0 24px;
+      }
+
+      .version-ledger p {
+        font-size: 17px;
+      }
+    }
+  </style>
 </head>
 <body>
 <header class="site-header">
@@ -60,19 +131,29 @@
     <p class="claim-boundary"><strong>Authority note:</strong> Natural Math v5 is the governing frozen integer baseline. Later-numbered diagnostic and experimental branches remain separate unless a versioned, hash-bound qualification record explicitly promotes them.</p>
   </header>
 
-  <section class="section visual-pair">
-    <div>
-      <p class="eyebrow">Version hierarchy</p>
-      <h2>Do not infer authority from numbering.</h2>
-      <div class="status-grid">
-        <article class="summary-card"><span class="status-badge is-frozen">Verified / Frozen</span><h3>v5</h3><p>Frozen integer/reference baseline with exact specification hashes, frozen operators, bounded fixtures, and deterministic replay evidence.</p></article>
-        <article class="summary-card"><span class="status-badge is-local">Extension line</span><h3>v5.1</h3><p>Extension line only. It does not silently replace v5.</p></article>
-        <article class="summary-card"><span class="status-badge is-spec">Research branch</span><h3>v6, v6.18, Stage 10</h3><p>Later diagnostic or research branches, separately qualified where applicable, not the governing frozen base.</p></article>
-        <article class="summary-card"><span class="status-badge is-spec">Candidates</span><h3>v10.3.2, v12, higher</h3><p>Active or historical research candidates. They do not supersede v5 without an explicit frozen compatibility decision.</p></article>
+  <section class="section natural-math-version-section">
+    <p class="eyebrow">Version hierarchy</p>
+    <h2>Do not infer authority from numbering.</h2>
+    <dl class="version-ledger">
+      <div class="version-ledger-row">
+        <dt><span class="status-badge is-frozen">Verified / Frozen</span><h3>v5</h3></dt>
+        <dd><p>Frozen integer/reference baseline with exact specification hashes, frozen operators, bounded fixtures, and deterministic replay evidence.</p></dd>
       </div>
-    </div>
+      <div class="version-ledger-row">
+        <dt><span class="status-badge is-local">Extension line</span><h3>v5.1</h3></dt>
+        <dd><p>Extension line only. It does not silently replace v5.</p></dd>
+      </div>
+      <div class="version-ledger-row">
+        <dt><span class="status-badge is-spec">Research branch</span><h3>v6, v6.18, Stage 10</h3></dt>
+        <dd><p>Later diagnostic or research branches, separately qualified where applicable, not the governing frozen base.</p></dd>
+      </div>
+      <div class="version-ledger-row">
+        <dt><span class="status-badge is-spec">Candidates</span><h3>v10.3.2, v12, higher</h3></dt>
+        <dd><p>Active or historical research candidates. They do not supersede v5 without an explicit frozen compatibility decision.</p></dd>
+      </div>
+    </dl>
     <figure class="inline-figure">
-      <img src="/assets/figures/natural-math-version-authority.svg" alt="Natural Math authority ladder showing v5 as the frozen baseline and later branches as separate candidates or diagnostic branches.">
+      <img src="/assets/figures/natural-math-version-authority-v2.svg" alt="Natural Math authority ladder showing v5 as the frozen baseline and later branches as separate candidates or diagnostic branches.">
       <figcaption>Authority flows from frozen qualification, not from the largest version number.</figcaption>
     </figure>
   </section>
