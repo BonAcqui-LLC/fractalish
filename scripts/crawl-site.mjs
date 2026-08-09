@@ -3,6 +3,9 @@
  * Usage:
  *   node scripts/crawl-site.mjs https://fractalish.com
  */
+import http from "node:http";
+import https from "node:https";
+
 const BASE = new URL(process.argv[2] || "https://fractalish.com");
 const MAX_URLS = Number(process.env.FRACTALISH_CRAWL_LIMIT || 500);
 const visited = new Set();
@@ -13,9 +16,9 @@ const assets = new Set();
 const internalPages = new Set();
 
 try {
-  const sitemap = await fetch(new URL("/sitemap.xml", BASE), { headers: { "cache-control": "no-cache" } });
+  const sitemap = await requestUrl(new URL("/sitemap.xml", BASE));
   if (sitemap.ok) {
-    const text = await sitemap.text();
+    const text = sitemap.text;
     for (const match of text.matchAll(/<loc>([^<]+)<\/loc>/g)) {
       const indexed = normalizeUrl(match[1], BASE);
       const url = indexed ? new URL(indexed.pathname + indexed.search, BASE) : null;
@@ -52,8 +55,60 @@ function refsFrom(html) {
   return [...html.matchAll(/\b(?:href|src)=["']([^"']+)["']/gi)].map((match) => match[1]);
 }
 
+function requestUrl(url, { follow = false, redirectsLeft = 8 } = {}) {
+  return new Promise((resolve, reject) => {
+    const transport = url.protocol === "https:" ? https : http;
+    const request = transport.request(
+      url,
+      {
+        headers: {
+          "cache-control": "no-cache",
+          "user-agent": "fractalish-local-crawler/1.0",
+        },
+        timeout: Number(process.env.FRACTALISH_CRAWL_TIMEOUT_MS || 10000),
+      },
+      (response) => {
+        const chunks = [];
+        response.on("data", (chunk) => chunks.push(chunk));
+        response.on("end", () => {
+          const status = response.statusCode || 0;
+          const headers = new Map(Object.entries(response.headers).map(([key, value]) => [key.toLowerCase(), Array.isArray(value) ? value[0] : value]));
+          const location = headers.get("location");
+          if (follow && status >= 300 && status < 400 && location && redirectsLeft > 0) {
+            const next = normalizeUrl(location, url);
+            if (next) {
+              resolve(requestUrl(next, { follow, redirectsLeft: redirectsLeft - 1 }));
+              return;
+            }
+          }
+          if (follow && status >= 300 && status < 400 && location && redirectsLeft === 0) {
+            const body = Buffer.concat(chunks);
+            resolve({
+              status,
+              ok: false,
+              headers,
+              text: body.toString("utf8"),
+            });
+            return;
+          }
+          const body = Buffer.concat(chunks);
+          resolve({
+            status,
+            ok: status >= 200 && status < 300,
+            headers,
+            text: body.toString("utf8"),
+          });
+        });
+      },
+    );
+    request.on("timeout", () => request.destroy(new Error(`timeout after ${request.timeout}ms`)));
+    request.on("error", reject);
+    request.end();
+  });
+}
+
 async function fetchUrl(url) {
-  const response = await fetch(url, { redirect: "manual", headers: { "cache-control": "no-cache" } });
+  const response = await requestUrl(url);
   if (
     response.status === 404 &&
     /^(?:localhost|127\.0\.0\.1)$/.test(url.hostname) &&
@@ -63,8 +118,10 @@ async function fetchUrl(url) {
   ) {
     const fallback = new URL(url.href);
     fallback.pathname = `${url.pathname}.html`;
-    const fallbackResponse = await fetch(fallback, { redirect: "manual", headers: { "cache-control": "no-cache" } });
-    if (fallbackResponse.ok) return { response: fallbackResponse };
+    const fallbackResponse = await requestUrl(fallback);
+    if (fallbackResponse.ok) {
+      return { response: fallbackResponse };
+    }
   }
   const location = response.headers.get("location");
   if (response.status >= 300 && response.status < 400 && location) {
@@ -101,7 +158,7 @@ while (queued.length && visited.size < MAX_URLS) {
   if (!isPage(url)) continue;
 
   internalPages.add(href);
-  const html = await response.text();
+  const html = response.text;
   for (const ref of refsFrom(html)) {
     const target = normalizeUrl(ref, url);
     if (!target || shouldSkip(target) || !sameSite(target)) continue;
@@ -116,7 +173,7 @@ while (queued.length && visited.size < MAX_URLS) {
 for (const href of assets) {
   let response;
   try {
-    response = await fetch(href, { redirect: "follow", headers: { "cache-control": "no-cache" } });
+    response = await requestUrl(new URL(href), { follow: true });
   } catch (error) {
     broken.push({ url: href, problem: error.message });
     continue;
