@@ -29,7 +29,7 @@ function renderSubtitlePanel(panel, entries) {
   const empty = panel.querySelector("[data-subtitle-empty]");
   const videoUrl = panel.getAttribute("data-video-url") || "";
 
-  list.innerHTML = "";
+  list.replaceChildren();
 
   for (const entry of entries) {
     const item = document.createElement("li");
@@ -120,13 +120,21 @@ function buildLightbox() {
   lightbox.setAttribute("aria-modal", "true");
   lightbox.setAttribute("aria-label", "Expanded visual");
   lightbox.setAttribute("hidden", "");
-  lightbox.innerHTML = `
-    <button class="image-lightbox__close" type="button" aria-label="Close enlarged image">Close</button>
-    <div class="image-lightbox__stage" role="document">
-      <img class="image-lightbox__image" alt="">
-      <p class="image-lightbox__caption"></p>
-    </div>
-  `;
+  const close = document.createElement("button");
+  close.className = "image-lightbox__close";
+  close.type = "button";
+  close.setAttribute("aria-label", "Close enlarged image");
+  close.textContent = "Close";
+  const stage = document.createElement("div");
+  stage.className = "image-lightbox__stage";
+  stage.setAttribute("role", "document");
+  const image = document.createElement("img");
+  image.className = "image-lightbox__image";
+  image.alt = "";
+  const caption = document.createElement("p");
+  caption.className = "image-lightbox__caption";
+  stage.append(image, caption);
+  lightbox.append(close, stage);
   document.body.appendChild(lightbox);
   return lightbox;
 }
@@ -279,60 +287,91 @@ function badgeClass(value) {
   return "";
 }
 
-function renderBindingCard(binding) {
+function appendText(parent, tag, text, className) {
+  const node = document.createElement(tag);
+  if (className) node.className = className;
+  node.textContent = text || "";
+  parent.appendChild(node);
+  return node;
+}
+
+function appendStrongLine(parent, label, value) {
+  const p = document.createElement("p");
+  const strong = document.createElement("strong");
+  strong.textContent = label;
+  p.append(strong, " ", value || "");
+  parent.appendChild(p);
+}
+
+function appendBadge(parent, value) {
+  const badge = document.createElement("span");
+  badge.className = `status-badge ${badgeClass(value)}`.trim();
+  badge.textContent = value || "";
+  parent.appendChild(badge);
+}
+
+function appendBindingCard(list, binding) {
   const source = binding.source || {};
-  const repoLink = source.repository_locator
-    ? `<a href="${source.repository_locator}">Open source lane</a>`
-    : "";
-  const commit = source.commit ? `<strong>Commit / authority:</strong> ${source.commit}` : "";
   const evidence = Array.isArray(binding.evidence) ? binding.evidence.join("; ") : "";
 
-  return `
-    <article class="binding-card">
-      <div class="binding-header">
-        <div>
-          <p class="eyebrow">${binding.binding_id} / ${binding.claim_id}</p>
-          <h3>${binding.name}</h3>
-        </div>
-        <div class="status-strip">
-          <span class="status-badge ${badgeClass(binding.status)}">${binding.status}</span>
-          <span class="status-badge ${badgeClass(binding.representation_layer)}">${binding.representation_layer}</span>
-        </div>
-      </div>
-      <div class="binding-tags">
-        <span class="binding-tag">${binding.family}</span>
-        <span class="binding-tag">${binding.category}</span>
-      </div>
-      <p>${binding.summary}</p>
-      <div class="binding-formula">
-        <code class="code-line">${binding.original_statement || "Original statement not published in this record."}</code>
-        <code class="code-line">${binding.normalized_representation || "Normalized representation not published in this record."}</code>
-      </div>
-      <div class="binding-columns">
-        <div class="binding-meta">
-          <p><strong>Definitions:</strong> ${binding.definitions}</p>
-          <p><strong>Input domain:</strong> ${binding.input_domain}</p>
-          <p><strong>Output domain:</strong> ${binding.output_domain}</p>
-          <p><strong>Implementation:</strong> ${binding.implementation_status}</p>
-          <p><strong>Implementation reference:</strong> ${binding.implementation_ref}</p>
-        </div>
-        <div class="binding-meta">
-          <p><strong>Evidence IDs:</strong> ${evidence || "No public evidence identifier listed."}</p>
-          <p><strong>Public-safe source ID:</strong> ${binding.public_safe_source_id || "No public-safe source ID listed."}</p>
-          <p><strong>Next required evidence:</strong> ${binding.next_required_evidence || "Not specified in this public ledger."}</p>
-          <p><strong>Exact result:</strong> ${binding.result}</p>
-          <p><strong>Negative result:</strong> ${binding.negative_result}</p>
-          <p><strong>Boundary:</strong> ${binding.boundary}</p>
-        </div>
-      </div>
-      <div class="binding-links">
-        <span><strong>Public source:</strong> ${source.repository} / ${source.path}</span>
-        <span><strong>SHA-256:</strong> ${source.sha256}</span>
-        ${commit ? `<span>${commit}</span>` : ""}
-        ${repoLink}
-      </div>
-    </article>
-  `;
+  const article = document.createElement("article");
+  article.className = "binding-card";
+  const header = document.createElement("div");
+  header.className = "binding-header";
+  const titleWrap = document.createElement("div");
+  appendText(titleWrap, "p", `${binding.binding_id || ""} / ${binding.claim_id || ""}`, "eyebrow");
+  appendText(titleWrap, "h3", binding.name || "Untitled binding");
+  const strip = document.createElement("div");
+  strip.className = "status-strip";
+  appendBadge(strip, binding.status);
+  appendBadge(strip, binding.representation_layer);
+  header.append(titleWrap, strip);
+
+  const tags = document.createElement("div");
+  tags.className = "binding-tags";
+  appendText(tags, "span", binding.family, "binding-tag");
+  appendText(tags, "span", binding.category, "binding-tag");
+
+  const formula = document.createElement("div");
+  formula.className = "binding-formula";
+  appendText(formula, "code", binding.original_statement || "Original statement not published in this record.", "code-line");
+  appendText(formula, "code", binding.normalized_representation || "Normalized representation not published in this record.", "code-line");
+
+  const columns = document.createElement("div");
+  columns.className = "binding-columns";
+  const left = document.createElement("div");
+  left.className = "binding-meta";
+  appendStrongLine(left, "Definitions:", binding.definitions);
+  appendStrongLine(left, "Input domain:", binding.input_domain);
+  appendStrongLine(left, "Output domain:", binding.output_domain);
+  appendStrongLine(left, "Implementation:", binding.implementation_status);
+  appendStrongLine(left, "Implementation reference:", binding.implementation_ref);
+  const right = document.createElement("div");
+  right.className = "binding-meta";
+  appendStrongLine(right, "Evidence IDs:", evidence || "No public evidence identifier listed.");
+  appendStrongLine(right, "Public-safe source ID:", binding.public_safe_source_id || "No public-safe source ID listed.");
+  appendStrongLine(right, "Next required evidence:", binding.next_required_evidence || "Not specified in this public ledger.");
+  appendStrongLine(right, "Exact result:", binding.result);
+  appendStrongLine(right, "Negative result:", binding.negative_result);
+  appendStrongLine(right, "Boundary:", binding.boundary);
+  columns.append(left, right);
+
+  const links = document.createElement("div");
+  links.className = "binding-links";
+  appendStrongLine(links, "Public source:", `${source.repository || ""} / ${source.path || ""}`);
+  appendStrongLine(links, "SHA-256:", source.sha256);
+  if (source.commit) appendStrongLine(links, "Commit / authority:", source.commit);
+  if (source.repository_locator) {
+    const link = document.createElement("a");
+    link.href = source.repository_locator;
+    link.textContent = "Open source lane";
+    links.appendChild(link);
+  }
+
+  const summary = document.createElement("p");
+  summary.textContent = binding.summary || "";
+  article.append(header, tags, summary, formula, columns, links);
+  list.appendChild(article);
 }
 
 async function initBindingsExplorer() {
@@ -359,9 +398,16 @@ async function initBindingsExplorer() {
     const statuses = [...new Set(bindings.map((item) => item.status).filter(Boolean))].sort();
     const layers = [...new Set(bindings.map((item) => item.representation_layer).filter(Boolean))].sort();
 
-    families.forEach((value) => familySelect?.insertAdjacentHTML("beforeend", `<option value="${value}">${value}</option>`));
-    statuses.forEach((value) => statusSelect?.insertAdjacentHTML("beforeend", `<option value="${value}">${value}</option>`));
-    layers.forEach((value) => layerSelect?.insertAdjacentHTML("beforeend", `<option value="${value}">${value}</option>`));
+    const appendOption = (select, value) => {
+      if (!select) return;
+      const option = document.createElement("option");
+      option.value = value;
+      option.textContent = value;
+      select.appendChild(option);
+    };
+    families.forEach((value) => appendOption(familySelect, value));
+    statuses.forEach((value) => appendOption(statusSelect, value));
+    layers.forEach((value) => appendOption(layerSelect, value));
 
     const render = () => {
       const query = (searchInput?.value || "").trim().toLowerCase();
@@ -399,7 +445,8 @@ async function initBindingsExplorer() {
         summary.textContent = `${filtered.length} of ${bindings.length} bindings shown.`;
       }
       if (list) {
-        list.innerHTML = filtered.map(renderBindingCard).join("");
+        list.replaceChildren();
+        filtered.forEach((binding) => appendBindingCard(list, binding));
       }
     };
 

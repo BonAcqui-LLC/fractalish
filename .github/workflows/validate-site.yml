@@ -1,0 +1,39 @@
+name: Validate public site
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Validate site structure
+        run: node scripts/validate-public-site.mjs
+
+      - name: Crawl local static site
+        run: |
+          python3 -m http.server 8000 &
+          echo $! > /tmp/fractalish-http.pid
+          sleep 2
+          node scripts/crawl-site.mjs http://127.0.0.1:8000
+          kill "$(cat /tmp/fractalish-http.pid)"
+
+      - name: Validate deploy provenance assumptions
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: node scripts/validate-deploy-provenance.mjs
