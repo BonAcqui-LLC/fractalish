@@ -26,6 +26,14 @@ jobs:
       - name: Validate site structure
         run: node scripts/validate-public-site.mjs
 
+      - name: Crawl local static site
+        run: |
+          python3 -m http.server 8000 &
+          echo $! > /tmp/fractalish-http.pid
+          sleep 2
+          node scripts/crawl-site.mjs http://127.0.0.1:8000
+          kill "$(cat /tmp/fractalish-http.pid)"
+
       - name: Validate deploy provenance assumptions
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: node scripts/validate-deploy-provenance.mjs
