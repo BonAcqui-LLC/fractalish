@@ -1,15 +1,15 @@
 # Fractalish figure inventory
 
-Generated: 2026-07-24T18:05:51.898Z
+Generated: 2026-08-09T12:50:53.476Z
 
 Scope: SVG assets, public HTML pages that reference figure assets, and native HTML/CSS diagram containers. This inventory records visual/legibility status only; it does not rewrite or re-evaluate scientific claims.
 
 ## Summary
 
 - SVG assets inventoried: 26
-- Public HTML pages inventoried: 101
+- Public HTML pages inventoried: 104
 - Current-release required SVGs: 8
-- Pages with rendered figure or diagram surfaces: 37
+- Pages with rendered figure or diagram surfaces: 39
 
 ## SVG assets
 
@@ -32,7 +32,7 @@ Scope: SVG assets, public HTML pages that reference figure assets, and native HT
 | assets/figures/metric-versus-observer.svg | current-release-required | 0 0 1200 680 | 11 | 18-34px | Arial,Helvetica,sans-serif | /persistent-observer.html | none from static parse |
 | assets/figures/natural-math-version-authority.svg | current-release-required | 0 0 1200 720 | 10 | 18-36px | Arial,Helvetica,sans-serif | /natural-math.html | none from static parse |
 | assets/figures/og-ageometrics.svg | social-preview | 0 0 1200 630 | 8 | 24-60px | Georgia,; Segoe UI, sans-serif | /ageometrics/, /geometric-sufficiency-ratio/ | none from static parse |
-| assets/figures/og-fractalish.svg | social-preview | 0 0 1200 630 | 2 | 32-58px | system-ui, -apple-system, Segoe UI, sans-serif; Georgia, serif | /cntm-realization.html, /commons.html, /contribute.html, /desiloization.html, /docs/video-accessibility-policy.html, /documents.html, /field-guide.html, /fractalish-ai.html, /framework.html, /mathematical-bindings.html, /mcva-amcva-hold.html, /motorola-activation.html, /notes/alphabet-of-transition.html, /research.html, /research/microglia-fractal-analysis-precedent.html, /research/recovery-wake.html, /review.html, /scientific-neighbors.html, /start-here.html, /status.html, /support.html, /tools.html, /videos.html, /videos/, /videos/tom-wessels-reading-forested-landscapes.html, /white-papers/synaptient-cognitive-basin-technical-white-paper.html | missing-title, missing-desc |
+| assets/figures/og-fractalish.svg | social-preview | 0 0 1200 630 | 2 | 32-58px | system-ui, -apple-system, Segoe UI, sans-serif; Georgia, serif | /cntm-realization.html, /commons.html, /constitution.html, /contribute.html, /desiloization.html, /docs/video-accessibility-policy.html, /documents.html, /documents/, /field-guide.html, /fractalish-ai.html, /framework.html, /mathematical-bindings.html, /mcva-amcva-hold.html, /motorola-activation.html, /notes/alphabet-of-transition.html, /research.html, /research/microglia-fractal-analysis-precedent.html, /research/recovery-wake.html, /review.html, /scientific-neighbors.html, /start-here.html, /status.html, /support.html, /tools.html, /videos.html, /videos/, /videos/tom-wessels-reading-forested-landscapes.html, /white-papers/synaptient-cognitive-basin-technical-white-paper.html | missing-title, missing-desc |
 | assets/figures/persistent-observer-experiment.svg | current-release-required | 0 0 1320 760 | 13 | 16-34px | Arial,Helvetica,sans-serif | /persistent-observer.html | none from static parse |
 | assets/figures/persistent-observer-stack.svg | current-release-required | 0 0 1320 760 | 20 | 15-34px | Arial,Helvetica,sans-serif | /persistent-observer.html | none from static parse |
 | assets/figures/representation-loss-and-residue.svg | supporting | 0 0 960 340 | 10 | 12-16px | system-ui, sans-serif | /framework.html | none from static parse |
@@ -52,10 +52,12 @@ Scope: SVG assets, public HTML pages that reference figure assets, and native HT
 | cntm-realization.html | /cntm-realization.html | svg-image-use | assets/figures/og-fractalish.svg |
 | cognitive-basin.html | /cognitive-basin.html | svg-image-use, inline-figure | assets/figures/cognitive-basin-landscape.svg |
 | commons.html | /commons.html | svg-image-use | assets/figures/og-fractalish.svg |
+| constitution.html | /constitution.html | svg-image-use | assets/figures/og-fractalish.svg |
 | contribute.html | /contribute.html | svg-image-use | assets/figures/og-fractalish.svg |
 | desiloization.html | /desiloization.html | svg-image-use | assets/figures/og-fractalish.svg |
 | docs/video-accessibility-policy.html | /docs/video-accessibility-policy.html | svg-image-use | assets/figures/og-fractalish.svg |
 | documents.html | /documents.html | svg-image-use, status-board | assets/figures/og-fractalish.svg |
+| documents/index.html | /documents/ | svg-image-use, status-board | assets/figures/og-fractalish.svg |
 | field-guide.html | /field-guide.html | svg-image-use | assets/figures/og-fractalish.svg |
 | fractalish-ai.html | /fractalish-ai.html | svg-image-use, image-frame | assets/figures/og-fractalish.svg, assets/figures/first-lift-fractal-tree-crystal-discharge-photosynthesis.png, assets/figures/morphological-computation-vocabulary-atlas.jpg |
 | framework.html | /framework.html | svg-image-use, inline-figure | assets/figures/og-fractalish.svg, assets/figures/representation-loss-and-residue.svg |

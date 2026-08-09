@@ -1,0 +1,17 @@
+{
+  "site": "fractalish.com",
+  "route": "https://fractalish.com/synaptient-declaration/",
+  "published_date": "2026-08-02",
+  "source_docx_filename": "Synaptient_Declaration_Human_AI_Authorship.docx",
+  "source_docx_sha256": "add3f1ef23b6d6e2c981c296503083b830d12744199ff8c0c045dde81d23daaa",
+  "download_path": "/assets/docs/Synaptient_Declaration_Human_AI_Authorship.docx",
+  "download_sha256": "add3f1ef23b6d6e2c981c296503083b830d12744199ff8c0c045dde81d23daaa",
+  "page_path": "synaptient-declaration/index.html",
+  "page_sha256": "28126bae1fba80638cdab7b833fcf09ce1397acceca45c9213d984ed009eaffd",
+  "content_note": "Rendered declaration preserves the supplied DOCX declaration paragraphs and concise version; site intro and cross-site/download sections are contextual additions.",
+  "claim_boundary": "No legal personhood, machine consciousness, sentience, or rights-bearing status is claimed for AI systems by this declaration page.",
+  "human_stewards": [
+    "James Allen Clow",
+    "Melissa Ellen Clow"
+  ]
+}

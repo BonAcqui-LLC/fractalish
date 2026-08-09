@@ -4,7 +4,7 @@
 
 | Route | Public job | Central message | Boundary carried forward | Recommended next route |
 |---|---|---|---|---|
-| `/` | Orient | Form is what exploration leaves behind. | Results, proposals, and open questions are separate; a generator is an instrument, not the thesis. | Start Here, experiments, or build surface |
+| `/` | Orient | Form is accumulated consequence. Geometry is one way of measuring the receipt. | Results, proposals, and open questions are separate; a representation is an instrument, not the thesis. | Start Here, Framework, Constitution, or build surface |
 | `/start-here.html` | Explain one idea without jargon | Present form can be a filtered residue of local exploration. | Similarity is not identity; histories may be non-unique. | Framework or a chosen working layer |
 | `/framework.html` | Map the stack progressively | Generate, measure, implement, realize. | Operators, action states, and evidence postures are distinct namespaces. | Natural Math, Specificity, Ageometrics, or Basin |
 | `/natural-math.html` | Introduce the forward experiments | EXTEND, SENSE, and RESTRICT under finite energy and constraint. | Bounded model, not a theory of everything. | Documents, Specificity, or Ageometrics |
@@ -30,6 +30,8 @@ The footer exposes the deeper technical routes—Specificity, Ageometrics, Scien
 
 ## Claim vocabulary
 
+- **Natural Math process operators:** EXTEND / SENSE / RESTRICT.
+- **First-verb hypotheses:** GO / STOP / HOLD or PERMIT / INHIBIT / PRESERVE; not established universal primitives.
 - **Natural Math process operators:** EXTEND / SENSE / RESTRICT.
 - **Cognitive Basin action states:** EXTEND / HOLD / RETRACT.
 - **Cognitive Basin evidence postures:** SUPPORTED / UNRESOLVED / CONTRADICTED.

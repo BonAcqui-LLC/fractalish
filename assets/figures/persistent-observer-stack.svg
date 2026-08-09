@@ -23,5 +23,6 @@
   <path class="solid" d="M320 347 H270"/>
   <text class="warn" x="382" y="236">candidate signal / proposed experiment</text>
   <text class="label" x="125" y="444">No direct signal-to-execution edge</text>
-  <text class="muted" x="60" y="650" font-size="18">Solid edges: bounded custody or specified handoff. Dashed edge: proposed integration. The host retains execution authority.</text>
+  <text class="muted" x="60" y="640" font-size="18">Solid edges: bounded custody or specified handoff. Dashed edge: proposed integration.</text>
+  <text class="muted" x="60" y="668" font-size="18">The host retains execution authority.</text>
 </svg>

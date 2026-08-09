@@ -2,11 +2,9 @@
 
 ## A Research Program for Measuring What Geometry Preserves, What It Erases, and What Must Be Added Back
 
-**Version:** 0.5 working paper
-
-**Date:** July 2026
-
-**Public attribution:** Synaptient
+**Version:** 0.5 working paper  
+**Date:** July 2026  
+**Public attribution:** Fractalish Research Program  
 **Status:** Decision-theoretic working paper with minimal reproducible illustration; empirical validation, sensitivity analysis, observer-envelope testing, and exhaustive prior-art review remain in progress.
 
 > Fractalish asks what history becomes visible in form. Ageometrics asks what history disappears when reality is reduced to form.
@@ -1055,4 +1053,4 @@ Wu, S., Zhu, H., Zhang, Y., Wang, X., and Yeung-Levy, S. (2026). AutoMem: Automa
 
 Xu, Y., Zhao, S., Song, J., Stewart, R., and Ermon, S. (2020). A theory of usable information under computational constraints. *ICLR 2020*. arXiv:2002.10689.
 
-Synaptient. (2026). Fractalish, Cognitive Basin, and Ageometrics working research records.
+Fractalish Research Program. (2026). Fractalish, Cognitive Basin, and Ageometrics working research records.
