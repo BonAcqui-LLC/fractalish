@@ -1,9 +1,12 @@
 # Fractalish Public Site
 
-This repository contains the public static site for Fractalish. The current review branch aligns the site with the Fractalish Mathematical Bindings and Evidence Register v1.1 SANITIZED.
+This repository contains the public static site for Fractalish. The current constitutional baseline centers the site on accumulated form, geometry as receipt, generative grammar, representation residue, intervention, desiloization, and explicit claim boundaries.
 
 ## Review Branch Focus
 
+- Constitutional center: Form is accumulated consequence. Geometry is one way of measuring the receipt. Fractalish seeks the generative grammar upstream of accumulated form.
+- Constitution: `CONSTITUTION.md`, public route `https://fractalish.com/constitution.html`.
+- Governance: `GOVERNANCE.md` and `rfcs/` preserve versioned constitutional changes without rewriting historical artifacts.
 - Primary public route: https://fractalish.com/persistent-observer
 - Natural Math authority: v5 is the governing frozen integer baseline.
 - UFWK: specification only unless a named implementation qualifies it.
@@ -32,7 +35,7 @@ This repository contains the public static site for Fractalish. The current revi
 
 ## Current Non-Claims
 
-No current release demonstrates the complete Natural Math-UFWK-Cognitive Basin-Bolt-On pipeline operating end to end inside ChatGPT or another production language-model service. No page should imply completed production integration, physical CNT memory, morphology uniqueness, universal coding, or machine-generated human-value scoring.
+No current release demonstrates a universal grammar of nature, a universal geometry, proof that everything is fractal, GO / STOP / HOLD as universal primitives, causation from morphology alone, or the complete Natural Math-UFWK-Cognitive Basin-Bolt-On pipeline operating end to end inside ChatGPT or another production language-model service. No page should imply completed production integration, physical CNT memory, morphology uniqueness, universal coding, or machine-generated human-value scoring.
 
 ## Local Validation
 

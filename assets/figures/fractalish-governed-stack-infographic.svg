@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 780" role="img" aria-labelledby="title desc">
-  <title id="title">Fractalish governed stack</title>
-  <desc id="desc">A layered diagram connecting visible morphology, Natural Math, Cognitive Basin, Ageometrics, Specificity, CNTM, and device evidence under explicit claim boundaries.</desc>
+  <title id="title">Fractalish constitutional evidence stack</title>
+  <desc id="desc">A layered diagram connecting accumulated form, local process rules, changed accessibility, representation limits, specificity receipts, and physical traces under explicit public claim boundaries.</desc>
   <defs>
     <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
       <stop offset="0" stop-color="#08101a"/>
@@ -38,8 +38,8 @@
 
   <g transform="translate(70 70)">
     <rect class="box" width="345" height="170"/>
-    <text class="tiny" x="24" y="35">OBSERVED PROCESS</text>
-    <text class="label" x="24" y="72">Form carries history</text>
+    <text class="tiny" x="24" y="35">ACCUMULATED FORM</text>
+    <text class="label" x="24" y="72">Consequence made visible</text>
     <text class="small" x="24" y="106">Rivers, roots, cracks, scars,</text>
     <text class="small" x="24" y="128">dendrites, vascular trees, signals,</text>
     <text class="small" x="24" y="150">devices, and machine-state traces.</text>
@@ -56,7 +56,7 @@
 
   <g transform="translate(980 70)">
     <rect class="box" width="335" height="170"/>
-    <text class="tiny" x="24" y="35">MACHINE MEMORY</text>
+    <text class="tiny" x="24" y="35">CHANGED ACCESSIBILITY</text>
     <text class="label" x="24" y="72">Cognitive Basin</text>
     <text class="small" x="24" y="106">History-bearing state, scars,</text>
     <text class="small" x="24" y="128">domains, routing, recurrence,</text>
@@ -65,19 +65,19 @@
 
   <g transform="translate(90 338)">
     <rect class="box" width="360" height="178"/>
-    <text class="tiny" x="24" y="35">MEASUREMENT OF LIMITS</text>
+    <text class="tiny" x="24" y="35">REPRESENTATION LIMITS</text>
     <text class="label" x="24" y="72">Ageometrics / VERITAS</text>
-    <text class="small" x="24" y="106">What does geometry preserve?</text>
-    <text class="small" x="24" y="128">What residue remains?</text>
+    <text class="small" x="24" y="106">What survives representation?</text>
+    <text class="small" x="24" y="128">What residue remains visible?</text>
     <text class="small" x="24" y="150">What correction burden follows?</text>
   </g>
 
   <g transform="translate(520 328)">
     <rect class="box" width="365" height="190"/>
-    <text class="tiny" x="24" y="35">REPRESENTATION GOVERNANCE</text>
+    <text class="tiny" x="24" y="35">RECEIPT GOVERNANCE</text>
     <text class="label" x="24" y="72">Specificity Thesis</text>
-    <text class="small" x="24" y="106">Specificity receipts convert</text>
-    <text class="small" x="24" y="128">declared target recovery into</text>
+    <text class="small" x="24" y="106">Target receipts convert</text>
+    <text class="small" x="24" y="128">declared recovery into</text>
     <text class="small" x="24" y="150">structural debt and repair posture.</text>
   </g>
 
@@ -93,7 +93,8 @@
   <g transform="translate(210 607)">
     <rect class="soft" width="980" height="96"/>
     <text class="tiny" x="28" y="34">PUBLIC CLAIM BOUNDARY</text>
-    <text class="small" x="28" y="62">Strong evidence should be inspectable. Weak evidence remains weak. No claim here establishes sentience, personhood, medical authority, or universal decoding.</text>
+    <text class="small" x="28" y="58">Strong evidence should be inspectable. Geometry is one instrument among others.</text>
+    <text class="small" x="28" y="82">No claim here establishes sentience, personhood, medical authority, or universal decoding.</text>
   </g>
 
   <path d="M416 154 H525" class="line"/>

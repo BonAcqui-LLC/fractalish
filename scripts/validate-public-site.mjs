@@ -6,6 +6,8 @@ import { fileURLToPath } from "node:url";
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const errors = [];
 const warnings = [];
+const mojibakePattern = /(?:\uFFFD|\u00E2[\u0080-\uFFFF]|\u00C3[\u0080-\uFFFF]|\u00C2[\u0080-\uFFFF])/;
+const declarationPunctuationLossPattern = /(?:[Hh]uman\?AI|human\?machine|reproduction\?not|\?Show your work\?|\?slop\?)/;
 
 function walk(dir, out = []) {
   for (const ent of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -57,6 +59,10 @@ for (const file of files) {
   }
   if (!redirect && !/document\.documentElement\.classList\.add\(["']js["']\)/.test(html)) errors.push(`${rel}: missing no-JS navigation hook`);
   if (duplicateIds.length) errors.push(`${rel}: duplicate ids ${duplicateIds.join(", ")}`);
+  if (mojibakePattern.test(html)) errors.push(`${rel}: possible UTF-8 mojibake or replacement character`);
+  if (rel === "synaptient-declaration/index.html" && declarationPunctuationLossPattern.test(html)) {
+    errors.push(`${rel}: declaration punctuation differs from the authoritative DOCX source`);
+  }
   if (!redirect && (html.match(/<link\b[^>]*rel=["']canonical["']/gi) || []).length !== 1) {
     warnings.push(`${rel}: expected one canonical link`);
   }
@@ -96,25 +102,44 @@ for (const rel of refreshed) {
 
 const index = fs.readFileSync(path.join(ROOT, "index.html"), "utf8");
 for (const phrase of [
+  "Fractalish studies the generative grammar upstream of observable form",
+  "Form is accumulated consequence",
+  "Geometry is one way of measuring the receipt",
   "Form is what exploration leaves behind",
-  "final form is the surviving subset",
-  "The generator is an instrument, not the thesis",
+  "The representation is an instrument, not the thesis",
+  "Description reads the receipt. Intervention tests the grammar.",
+  "Decompartmentalization without decontextualization",
+  "GO / STOP / HOLD and PERMIT / INHIBIT / PRESERVE are hypotheses",
   "Fractalish is not a claim that everything is a fractal",
-  "EXTEND", "SENSE", "RESTRICT"
+  "Unobserved is not zero"
 ]) {
   if (!index.includes(phrase)) errors.push(`index.html: missing required narrative phrase: ${phrase}`);
 }
 
 const framework = fs.readFileSync(path.join(ROOT, "framework.html"), "utf8");
-for (const phrase of ["EXTEND / HOLD / RETRACT", "SUPPORTED / UNRESOLVED / CONTRADICTED", "not a proof of identity", "not a substitute name for SENSE"]) {
+for (const phrase of ["EXTEND / HOLD / RETRACT", "SUPPORTED / UNRESOLVED / CONTRADICTED", "EXTEND / SENSE / RESTRICT", "GO / STOP / HOLD", "not a proof of identity", "not a substitute name for SENSE", "Unobserved does not mean zero"]) {
   if (!framework.includes(phrase)) errors.push(`framework.html: missing boundary phrase: ${phrase}`);
+}
+
+const constitution = fs.readFileSync(path.join(ROOT, "constitution.html"), "utf8");
+for (const phrase of [
+  "Form is accumulated consequence",
+  "Geometry is one way of measuring the receipt",
+  "Fractalish seeks the generative grammar upstream of accumulated form",
+  "Description reads the receipt. Intervention tests the grammar.",
+  "Decompartmentalization without decontextualization",
+  "GO / STOP / HOLD",
+  "not established universal primitives",
+  "does not claim a universal grammar"
+]) {
+  if (!constitution.includes(phrase)) errors.push(`constitution.html: missing constitutional phrase: ${phrase}`);
 }
 
 const sitemap = fs.readFileSync(path.join(ROOT, "sitemap.xml"), "utf8");
 const locations = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
 const duplicateLocations = [...new Set(locations.filter((url, i) => locations.indexOf(url) !== i))];
 if (duplicateLocations.length) errors.push(`sitemap.xml: duplicate URLs ${duplicateLocations.join(", ")}`);
-for (const required of ["https://fractalish.com/", "https://fractalish.com/scientific-neighbors.html", "https://fractalish.com/ageometrics/", "https://fractalish.com/specificity-thesis.html"]) {
+for (const required of ["https://fractalish.com/", "https://fractalish.com/constitution.html", "https://fractalish.com/desiloization.html", "https://fractalish.com/scientific-neighbors.html", "https://fractalish.com/ageometrics/", "https://fractalish.com/specificity-thesis.html"]) {
   if (!locations.includes(required)) errors.push(`sitemap.xml: missing ${required}`);
 }
 if (locations.includes("https://fractalish.com/ageometrics.html")) errors.push("sitemap.xml: redirect alias ageometrics.html should not be indexed");
@@ -129,5 +154,5 @@ if (errors.length) {
   for (const error of errors) console.error(`  ERROR ${error}`);
   process.exitCode = 1;
 } else {
-  console.log("PASS: local routes, anchors, IDs, core metadata, sitemap, and narrative boundary checks.");
+  console.log("PASS: local routes, anchors, IDs, encoding, source punctuation, core metadata, sitemap, and narrative boundary checks.");
 }

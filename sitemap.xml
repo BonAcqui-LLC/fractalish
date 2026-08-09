@@ -3,6 +3,7 @@
   <url><loc>https://fractalish.com/</loc></url>
   <url><loc>https://fractalish.com/start-here.html</loc></url>
   <url><loc>https://fractalish.com/framework.html</loc></url>
+  <url><loc>https://fractalish.com/constitution.html</loc></url>
   <url><loc>https://fractalish.com/persistent-observer.html</loc></url>
   <url><loc>https://fractalish.com/weighting-kernel.html</loc></url>
   <url><loc>https://fractalish.com/bolt-on.html</loc></url>
@@ -58,4 +59,9 @@
   <url><loc>https://fractalish.com/archive/morphological-memory-paper.html</loc></url>
   <url><loc>https://fractalish.com/archive/mcva-amcva-atlas.html</loc></url>
   <url><loc>https://fractalish.com/archive/evidence-library.html</loc></url>
+  <url>
+    <loc>https://fractalish.com/synaptient-declaration/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.9</priority>
+  </url>
 </urlset>
