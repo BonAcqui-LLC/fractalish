@@ -304,6 +304,13 @@ write("natural-math.html", page({
     <h1>Natural Math v5 is the governing frozen integer baseline.</h1>
     <p class="lead">Natural Math is a bounded local-process model for exact integer state, deterministic replay, and controlled morphology experiments. Higher version numbers do not establish authority by themselves.</p>
     <p class="claim-boundary"><strong>Authority note:</strong> Natural Math v5 is the governing frozen integer baseline. Later-numbered diagnostic and experimental branches remain separate unless a versioned, hash-bound qualification record explicitly promotes them.</p>
+    <ul class="artifact-links" aria-label="Natural Math public artifacts">
+      <li><a href="/assets/docs/public-claim-evidence-map-v1.1-sanitized.json">Claim evidence map</a></li>
+      <li><a href="/assets/docs/mathematical-bindings-ledger-v1.1-sanitized.json">Bindings ledger</a></li>
+      <li><a href="/assets/docs/public-source-manifest-sanitized-v1.1.csv">Source manifest</a></li>
+      <li><a href="/assets/docs/natural-math-v2.4-hardened-specification.docx">Historical v2.4 DOCX</a></li>
+    </ul>
+    <p class="artifact-note">The public bundle currently exposes Natural Math v5 through this authority page and the sanitized claim/evidence artifacts. The v2.4 DOCX is historical lineage, not the governing v5 baseline.</p>
   </header>
 
   <section class="section visual-pair">
@@ -327,9 +334,9 @@ write("natural-math.html", page({
     <p class="eyebrow">Frozen v5 evidence</p>
     <h2>What v5 establishes.</h2>
     <div class="status-board">
-      <article class="card"><h3>Operators</h3><p>Integer division, squared grid distance, energy deficit, exact-rational gradient, pressure projection, action selection, movement conflict resolution, bifurcation, bonding, cluster stepping, seeded randomness, serialization, and default parameters are bound to CLAIM-0001 through CLAIM-0013.</p></article>
-      <article class="card"><h3>Rerun result</h3><p>Natural Math v5 passed 40/40 frozen oracle fixtures and 210/210 replay configurations in the 2026-07-23 read-only rerun. Claim: CLAIM-0014.</p></article>
-      <article class="card"><h3>Boundary</h3><p>The result is deterministic software behavior under declared integer parameters and fixtures. It is not a general law of biology, physics, intelligence, or morphology.</p></article>
+      <article class="card"><h3>Operators</h3><p>Integer division, squared grid distance, energy deficit, exact-rational gradient, pressure projection, action selection, movement conflict resolution, bifurcation, bonding, cluster stepping, seeded randomness, serialization, and default parameters are bound to CLAIM-0001 through CLAIM-0013.</p><ul class="artifact-links"><li><a href="/assets/docs/public-claim-evidence-map-v1.1-sanitized.json">Claims 0001-0013</a></li></ul></article>
+      <article class="card"><h3>Rerun result</h3><p>Natural Math v5 passed 40/40 frozen oracle fixtures and 210/210 replay configurations in the 2026-07-23 read-only rerun. Claim: CLAIM-0014.</p><ul class="artifact-links"><li><a href="/assets/docs/public-claim-evidence-map-v1.1-sanitized.json">Claim 0014</a></li><li><a href="/assets/docs/public-source-manifest-sanitized-v1.1.csv">Source manifest</a></li></ul></article>
+      <article class="card"><h3>Boundary</h3><p>The result is deterministic software behavior under declared integer parameters and fixtures. It is not a general law of biology, physics, intelligence, or morphology.</p><ul class="artifact-links"><li><a href="/docs/PAGE_TO_PUBLIC_CLAIM_MAP.md">Page-to-claim map</a></li></ul></article>
     </div>
   </section>
 
@@ -635,26 +642,26 @@ write("documents.html", page({
   <section class="section" id="evidence-records">
     <h2>Verified / Frozen</h2>
     <div class="status-board">
-      <article class="card"><h3>Natural Math v5 frozen integer baseline</h3><ul class="meta-inline"><li>Version: v5</li><li>Date: 2026-07-23 rerun</li><li>Status: VERIFIED / FROZEN</li><li>Superseded: no</li></ul><p>Governing authority for Natural Math integer/reference claims. Later-numbered branches do not supersede it without a hash-bound promotion record.</p><p><a class="button" href="/natural-math.html">Authority note</a></p></article>
-      <article class="card"><h3>Bolt-On v0.3 frozen release</h3><ul class="meta-inline"><li>Version: v0.3</li><li>Status: VERIFIED / FROZEN</li><li>Authority: CLAIM-0065 to CLAIM-0070</li></ul><p>Portable sidecar evidence with zero adapter-executed actions under bounded fixtures.</p><p><a class="button" href="/bolt-on.html">Open page</a></p></article>
-      <article class="card"><h3>CNTM frozen software gates</h3><ul class="meta-inline"><li>Status: VERIFIED / FROZEN</li><li>Boundary: software-only</li></ul><p>Finite ternary readout and replay infrastructure are not physical CNT chemistry or morphology-memory proof.</p><p><a class="button" href="/mathematical-bindings.html">View bindings</a></p></article>
+      <article class="card"><h3>Natural Math v5 frozen integer baseline</h3><ul class="meta-inline"><li>Version: v5</li><li>Date: 2026-07-23 rerun</li><li>Status: VERIFIED / FROZEN</li><li>Superseded: no</li></ul><p>Governing authority for Natural Math integer/reference claims. Later-numbered branches do not supersede it without a hash-bound promotion record.</p><ul class="artifact-links"><li><a href="/natural-math.html">Authority page</a></li><li><a href="/assets/docs/public-claim-evidence-map-v1.1-sanitized.json">Claim evidence map</a></li><li><a href="/assets/docs/public-source-manifest-sanitized-v1.1.csv">Source manifest</a></li></ul><p class="artifact-note">No separate v5 manuscript download is published in this site bundle; the public authority path is the page plus sanitized evidence artifacts.</p></article>
+      <article class="card"><h3>Bolt-On v0.3 frozen release</h3><ul class="meta-inline"><li>Version: v0.3</li><li>Status: VERIFIED / FROZEN</li><li>Authority: CLAIM-0065 to CLAIM-0070</li></ul><p>Portable sidecar evidence with zero adapter-executed actions under bounded fixtures.</p><ul class="artifact-links"><li><a href="/bolt-on.html">Public page</a></li><li><a href="/assets/docs/public-claim-evidence-map-v1.1-sanitized.json">Claim evidence map</a></li><li><a href="/assets/docs/mathematical-bindings-ledger-v1.1-sanitized.json">Bindings ledger</a></li></ul></article>
+      <article class="card"><h3>CNTM frozen software gates</h3><ul class="meta-inline"><li>Status: VERIFIED / FROZEN</li><li>Boundary: software-only</li></ul><p>Finite ternary readout and replay infrastructure are not physical CNT chemistry or morphology-memory proof.</p><ul class="artifact-links"><li><a href="/mathematical-bindings.html">Bindings page</a></li><li><a href="/assets/docs/mathematical-bindings-ledger-v1.1-sanitized.json">Bindings JSON</a></li></ul></article>
     </div>
   </section>
 
   <section class="section">
     <h2>Built and Locally Validated</h2>
     <div class="status-board">
-      <article class="card"><h3>Specificity Engine v0.3</h3><ul class="meta-inline"><li>Status: local validation</li><li>Boundary: target-contract compliance</li></ul><p>Measures target-relative compliance and repair posture. It is not absolute truth.</p><p><a class="button" href="/assets/docs/specificity-thesis-v0.3-public-note.md">Public note</a></p></article>
-      <article class="card"><h3>Construction A+</h3><ul class="meta-inline"><li>Status: local validation</li><li>Negative result: collision preserved</li></ul><p>Five-seed batch produced two glyph IDs; descriptor round-trip does not reconstruct the original morphology.</p><p><a class="button" href="/mathematical-bindings.html">See CLAIM-0046 to CLAIM-0051</a></p></article>
-      <article class="card"><h3>Bolt-On v0.4 Stage 1</h3><ul class="meta-inline"><li>Status: local validation</li><li>Boundary: not production</li></ul><p>External-host contract demonstration only; no third-party or production host is qualified.</p><p><a class="button" href="/bolt-on.html">Open page</a></p></article>
+      <article class="card"><h3>Specificity Engine v0.3</h3><ul class="meta-inline"><li>Status: local validation</li><li>Boundary: target-contract compliance</li></ul><p>Measures target-relative compliance and repair posture. It is not absolute truth.</p><ul class="artifact-links"><li><a href="/assets/docs/specificity-thesis-v0.3-public-note.md">Public note</a></li><li><a href="/mathematical-bindings.html">Claims page</a></li></ul></article>
+      <article class="card"><h3>Construction A+</h3><ul class="meta-inline"><li>Status: local validation</li><li>Negative result: collision preserved</li></ul><p>Five-seed batch produced two glyph IDs; descriptor round-trip does not reconstruct the original morphology.</p><ul class="artifact-links"><li><a href="/mathematical-bindings.html">Claims page</a></li><li><a href="/assets/docs/public-claim-evidence-map-v1.1-sanitized.json">Claim evidence map</a></li></ul></article>
+      <article class="card"><h3>Bolt-On v0.4 Stage 1</h3><ul class="meta-inline"><li>Status: local validation</li><li>Boundary: not production</li></ul><p>External-host contract demonstration only; no third-party or production host is qualified.</p><ul class="artifact-links"><li><a href="/bolt-on.html">Public page</a></li><li><a href="/assets/docs/public-claim-evidence-map-v1.1-sanitized.json">Claim evidence map</a></li></ul></article>
     </div>
   </section>
 
   <section class="section">
     <h2>Specification and Proposed Integration</h2>
     <div class="status-board">
-      <article class="card"><h3>Persistent Observer</h3><ul class="meta-inline"><li>Status: proposed integration architecture</li><li>Route: /persistent-observer</li></ul><p>Primary contemporary research contribution and planned public reply target.</p><p><a class="button" href="/persistent-observer">Open page</a></p></article>
-      <article class="card"><h3>Unified Fractalish Weighting Kernel</h3><ul class="meta-inline"><li>Status: specification</li><li>Boundary: no universal scalar</li></ul><p>Structured WeightReceipts, uncertainty envelope, HOLD, and invalidation conditions.</p><p><a class="button" href="/weighting-kernel.html">Open page</a></p></article>
+      <article class="card"><h3>Persistent Observer</h3><ul class="meta-inline"><li>Status: proposed integration architecture</li><li>Route: /persistent-observer</li></ul><p>Primary contemporary research contribution and planned public reply target.</p><ul class="artifact-links"><li><a href="/persistent-observer">Public page</a></li><li><a href="/assets/docs/beyond-learnable-novelty-v0.1.md">Technical note</a></li><li><a href="/assets/docs/learnable-novelty-reproduction-protocol-v0.1.md">Protocol</a></li></ul></article>
+      <article class="card"><h3>Unified Fractalish Weighting Kernel</h3><ul class="meta-inline"><li>Status: specification</li><li>Boundary: no universal scalar</li></ul><p>Structured WeightReceipts, uncertainty envelope, HOLD, and invalidation conditions.</p><ul class="artifact-links"><li><a href="/weighting-kernel.html">Public page</a></li><li><a href="/assets/docs/public-claim-evidence-map-v1.1-sanitized.json">Claim evidence map</a></li></ul></article>
       <article class="card"><h3>CONFIGURATOR / Bridge</h3><ul class="meta-inline"><li>Status: PROPOSED INTEGRATION / ACTIVE EXPERIMENT</li><li>Boundary: no successful architectural conclusion yet</li></ul><p>Not placed in the homepage hero and not used as qualified evidence before v0.6 qualification.</p></article>
     </div>
   </section>
@@ -662,9 +669,9 @@ write("documents.html", page({
   <section class="section">
     <h2>External Reported Result</h2>
     <div class="status-board">
-      <article class="card"><h3>From Entropy to Epiplexity</h3><ul class="meta-inline"><li>arXiv:2601.03220v2</li><li>Status: external reported result</li></ul><p>Epiplexity framing; not locally reproduced here.</p><p><a class="button" href="https://arxiv.org/abs/2601.03220v2">Open arXiv</a></p></article>
-      <article class="card"><h3>Intelligence from Learnable Novelty</h3><ul class="meta-inline"><li>arXiv:2607.18433v1</li><li>Status: external reported result</li></ul><p>Reservoir-based estimator/approximation with fixed bounded observer.</p><p><a class="button" href="https://arxiv.org/abs/2607.18433v1">Open arXiv</a></p></article>
-      <article class="card"><h3>Reproduction protocol</h3><ul class="meta-inline"><li>Status: not yet run</li><li>Boundary: preregistered before results</li></ul><p>Seeds, environment, controls, metrics, deviations, hashes, hardware, and falsification conditions.</p><p><a class="button" href="/research/learnable-novelty-reproduction.html">Read protocol</a></p></article>
+      <article class="card"><h3>From Entropy to Epiplexity</h3><ul class="meta-inline"><li>arXiv:2601.03220v2</li><li>Status: external reported result</li></ul><p>Epiplexity framing; not locally reproduced here.</p><ul class="artifact-links"><li><a href="https://arxiv.org/abs/2601.03220v2">arXiv abstract</a></li><li><a href="https://arxiv.org/pdf/2601.03220v2">PDF</a></li></ul></article>
+      <article class="card"><h3>Intelligence from Learnable Novelty</h3><ul class="meta-inline"><li>arXiv:2607.18433v1</li><li>Status: external reported result</li></ul><p>Reservoir-based estimator/approximation with fixed bounded observer.</p><ul class="artifact-links"><li><a href="https://arxiv.org/abs/2607.18433v1">arXiv abstract</a></li><li><a href="https://arxiv.org/pdf/2607.18433v1">PDF</a></li><li><a href="/assets/docs/learnable-novelty-reproduction-protocol-v0.1.md">Protocol</a></li></ul></article>
+      <article class="card"><h3>Reproduction protocol</h3><ul class="meta-inline"><li>Status: not yet run</li><li>Boundary: preregistered before results</li></ul><p>Seeds, environment, controls, metrics, deviations, hashes, hardware, and falsification conditions.</p><ul class="artifact-links"><li><a href="/research/learnable-novelty-reproduction.html">Public page</a></li><li><a href="/assets/docs/learnable-novelty-reproduction-protocol-v0.1.md">Markdown protocol</a></li></ul></article>
     </div>
   </section>
 
