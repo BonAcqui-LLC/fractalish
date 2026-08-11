@@ -1,0 +1,36 @@
+{
+  "site": "fractalish.com",
+  "note_type": "operator_agent_change_note",
+  "note_schema": "fractalish.operator-agent-note.v0.1",
+  "created_at_utc": "2026-08-11",
+  "created_by": "opencode assistant session (agent), not a named human author",
+  "changes_made": [
+    {
+      "path": "research/event006-adjudication/event006-impartial-adjudication-prompt.md",
+      "action": "added",
+      "source": "R2R VERBICENTRICS/2026-08-10_phase3_preregistration/06_event006_impartial_adjudication_prompt_v2.md"
+    },
+    {
+      "path": "research/event006-adjudication/event006-claim-audit-correction-receipt.md",
+      "action": "added",
+      "source": "R2R VERBICENTRICS/2026-08-10_phase3_preregistration/07_event006_claim_audit_correction_receipt.md"
+    },
+    {
+      "path": "research/event006-adjudication/index.html",
+      "action": "added",
+      "note": "Landing page linking the two receipts"
+    },
+    {
+      "path": "research/event006-adjudication/README.md",
+      "action": "added",
+      "note": "Index describing the receipts and status boundary"
+    },
+    {
+      "path": "research.html",
+      "action": "modified",
+      "note": "Added an Event 006 card linking to /research/event006-adjudication"
+    }
+  ],
+  "deployment_note": "Pushed to BonAcqui-LLC/fractalish main and deployed to Cloudflare Pages project 'fractalish' by direct upload. Commit and deployment ids recorded in git history and the Cloudflare deployment record.",
+  "secrets": "none committed"
+}
