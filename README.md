@@ -26,12 +26,16 @@ This repository contains the public static site for Fractalish. The current cons
 
 ## Public Evidence Files
 
-- \`assets/docs/public-claim-evidence-map-v1.1-sanitized.json\`
-- \`assets/docs/public-source-manifest-sanitized-v1.1.csv\`
-- \`assets/docs/mathematical-bindings-ledger-v1.1-sanitized.json\`
-- \`docs/PAGE_TO_PUBLIC_CLAIM_MAP.md\`
-- \`docs/NAMESPACE_CROSSWALK.md\`
-- \`docs/PUBLIC_REPOSITORY_INDEX.md\`
+- `assets/docs/public-claim-evidence-map-v1.1-sanitized.json`
+- `assets/docs/public-source-manifest-sanitized-v1.1.csv`
+- `assets/docs/mathematical-bindings-ledger-v1.1-sanitized.json`
+- `docs/PAGE_TO_PUBLIC_CLAIM_MAP.md`
+- `docs/NAMESPACE_CROSSWALK.md`
+- `docs/PUBLIC_REPOSITORY_INDEX.md`
+
+## Future Research Lanes
+
+- **UMRM — Unknown-Mechanism Root Mining:** proposed adversarial program for reducing explicitly unresolved scientific mechanism edges to the smallest testable transition rules, with strict claim boundaries and falsification-first design. See `docs/future-research/UNKNOWN_MECHANISM_ROOT_MINING_UMRM.md`.
 
 ## Current Non-Claims
 
@@ -41,8 +45,8 @@ No current release demonstrates a universal grammar of nature, a universal geome
 
 Use the repository validator before review:
 
-\`\`\`powershell
+```powershell
 node scripts/validate-public-site.mjs
-\`\`\`
+```
 
 This branch may be deployed only after all current coordinated-release gates pass. Do not post to X or any social platform from automation.
