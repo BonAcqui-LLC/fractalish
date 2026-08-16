@@ -1,0 +1,58 @@
+name: One-time Synaptient attribution patch
+
+on:
+  push:
+    branches:
+      - docs/synaptient-recursive-admissibility-attribution
+    paths:
+      - .github/workflows/one-time-synaptient-attribution.yml
+
+permissions:
+  contents: write
+
+jobs:
+  patch-attribution:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: docs/synaptient-recursive-admissibility-attribution
+      - name: Replace personal attribution with Synaptient
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          md = Path('research/recursive-admissibility/Recursive_Admissibility_v0.1_2026-08-16.md')
+          text = md.read_text(encoding='utf-8')
+          old = text
+          text = text.replace('**James Allen Clow · Melissa Ellen Clow**  \nFractalish / BonAcqui LLC  ', '**Synaptient**  \nFractalish / BonAcqui LLC  ')
+          text = text.replace('Clow, J. A., & Clow, M. E. (2026). *Recursive Admissibility Theory: A General Hypothesis of Consequential Formation, Emergent Life, and Bounded Growth* (Working paper v0.1). Fractalish / BonAcqui LLC.', 'Synaptient. (2026). *Recursive Admissibility Theory: A General Hypothesis of Consequential Formation, Emergent Life, and Bounded Growth* (Working paper v0.1). Fractalish / BonAcqui LLC.')
+          text = text.replace('The authors invite counterexamples, competing formalizations, and experiments that force additional structure to earn itself.', 'The project invites counterexamples, competing formalizations, and experiments that force additional structure to earn itself.')
+          if text == old:
+              raise SystemExit('Markdown attribution replacement made no changes')
+          if 'James Allen Clow' in text or 'Melissa Ellen Clow' in text or 'Clow, J. A.' in text:
+              raise SystemExit('Personal attribution remains in Markdown')
+          md.write_text(text, encoding='utf-8')
+
+          html = Path('research/recursive-admissibility/index.html')
+          text = html.read_text(encoding='utf-8')
+          old = text
+          text = text.replace('<ul class="paper-meta"><li>James Allen Clow</li><li>Melissa Ellen Clow</li><li>Fractalish / BonAcqui LLC</li><li>Not peer reviewed</li></ul>', '<ul class="paper-meta"><li>Synaptient</li><li>Fractalish / BonAcqui LLC</li><li>Not peer reviewed</li></ul>')
+          text = text.replace('Clow, J. A., &amp; Clow, M. E. (2026). <em>Recursive Admissibility Theory: A General Hypothesis of Consequential Formation, Emergent Life, and Bounded Growth</em> (Working paper v0.1). Fractalish / BonAcqui LLC.', 'Synaptient. (2026). <em>Recursive Admissibility Theory: A General Hypothesis of Consequential Formation, Emergent Life, and Bounded Growth</em> (Working paper v0.1). Fractalish / BonAcqui LLC.')
+          if text == old:
+              raise SystemExit('HTML attribution replacement made no changes')
+          if 'James Allen Clow' in text or 'Melissa Ellen Clow' in text or 'Clow, J. A.' in text:
+              raise SystemExit('Personal attribution remains in HTML')
+          html.write_text(text, encoding='utf-8')
+          PY
+      - name: Remove one-time workflow and commit patch
+        shell: bash
+        run: |
+          git config user.name "Fractalish Research Bot"
+          git config user.email "actions@users.noreply.github.com"
+          git rm .github/workflows/one-time-synaptient-attribution.yml
+          git add research/recursive-admissibility/Recursive_Admissibility_v0.1_2026-08-16.md research/recursive-admissibility/index.html
+          git diff --cached --check
+          git commit -m "docs: attribute Recursive Admissibility to Synaptient"
+          git push origin HEAD:docs/synaptient-recursive-admissibility-attribution
