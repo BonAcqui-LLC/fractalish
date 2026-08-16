@@ -1,7 +1,7 @@
 # Recursive Admissibility Theory
 ## A General Hypothesis of Consequential Formation, Emergent Life, and Bounded Growth
 
-**James Allen Clow · Melissa Ellen Clow**  
+**Synaptient**  
 Fractalish / BonAcqui LLC  
 **Working paper v0.1 · 16 August 2026**
 
@@ -560,9 +560,9 @@ Only consequence that changes what can happen next.
 
 ## Suggested citation
 
-Clow, J. A., & Clow, M. E. (2026). *Recursive Admissibility Theory: A General Hypothesis of Consequential Formation, Emergent Life, and Bounded Growth* (Working paper v0.1). Fractalish / BonAcqui LLC.
+Synaptient. (2026). *Recursive Admissibility Theory: A General Hypothesis of Consequential Formation, Emergent Life, and Bounded Growth* (Working paper v0.1). Fractalish / BonAcqui LLC.
 
 ## Status
 
 **Working hypothesis / public research paper. Not peer reviewed.**  
-The authors invite counterexamples, competing formalizations, and experiments that force additional structure to earn itself.
+The project invites counterexamples, competing formalizations, and experiments that force additional structure to earn itself.
