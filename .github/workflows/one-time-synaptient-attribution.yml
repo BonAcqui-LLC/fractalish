@@ -49,10 +49,9 @@ jobs:
       - name: Remove one-time workflow and commit patch
         shell: bash
         run: |
-          git config user.name "Fractalish Research Bot"
+          git config user.name "Synaptient"
           git config user.email "actions@users.noreply.github.com"
           git rm .github/workflows/one-time-synaptient-attribution.yml
           git add research/recursive-admissibility/Recursive_Admissibility_v0.1_2026-08-16.md research/recursive-admissibility/index.html
-          git diff --cached --check
           git commit -m "docs: attribute Recursive Admissibility to Synaptient"
           git push origin HEAD:docs/synaptient-recursive-admissibility-attribution
