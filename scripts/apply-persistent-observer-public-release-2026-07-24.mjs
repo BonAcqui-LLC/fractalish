@@ -4,8 +4,16 @@ import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 
+// These indexes continued to evolve after this dated release generator was
+// written. Preserve the current, hand-maintained pages so replaying the older
+// generator cannot erase later research publications or status corrections.
+const PRESERVE_CURRENT_INDEXES = new Set(["documents.html", "research.html"]);
+
 function write(rel, body) {
   const target = path.join(ROOT, rel);
+  if (PRESERVE_CURRENT_INDEXES.has(rel) && fs.existsSync(target)) {
+    return;
+  }
   fs.mkdirSync(path.dirname(target), { recursive: true });
   fs.writeFileSync(target, body.trimStart(), "utf8");
 }
