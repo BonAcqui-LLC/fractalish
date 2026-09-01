@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.2.4 - ASF public release and Motorola M0 witness
+
+- Published `/research/asf/` as the public release page for ASF / APTD Sensor Fabric.
+- Added the public ASF repository and releases for `ASF_CORE_V0_1` and `ASF_MOTOROLA_LIVE_PROBE_M0`.
+- Bound ASF claims to 30/30 Core v0.1 tests, 46/46 Motorola M0 tests, freeze verification, no-device-write evidence, and no-actuation evidence.
+- Kept ASF framed as read-only observation infrastructure beneath or alongside APTD; it does not demonstrate a completed physical APTD, machine consciousness, autonomous physical control, continuous sensing, or hardware attestation.
+- Mentioned ConnectorDome only as a planned ASF-compatible connector ecosystem and left ExoMCP unchanged.
+
 ## v0.2.3 - APTD v1.0 publication and evidence reconciliation
 
 - Published `/research/aptd/` and the canonical APTD v1.0 Markdown source as a working design / proposed physical bridge.

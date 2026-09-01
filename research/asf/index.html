@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ASF: APTD Sensor Fabric | Fractalish</title>
+  <meta name="description" content="ASF is a read-only, provenance-bearing interoperability fabric for observations from devices, simulations, replays, fixtures, text claims, and future feeds.">
+  <meta property="og:title" content="ASF: APTD Sensor Fabric | Fractalish">
+  <meta property="og:description" content="A read-only observation fabric with frozen Core v0.1 and Motorola Live Probe M0 evidence.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://fractalish.com/research/asf/">
+  <meta property="og:image" content="https://fractalish.com/assets/figures/og-fractalish.svg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ASF: APTD Sensor Fabric | Fractalish">
+  <meta name="twitter:description" content="Read-only observation interoperability: one interface to observe, no interface to blindly obey.">
+  <meta name="twitter:image" content="https://fractalish.com/assets/figures/og-fractalish.svg">
+  <link rel="canonical" href="https://fractalish.com/research/asf/">
+  <link rel="stylesheet" href="/assets/site.css?v=ios-dark-20260724">
+  <script src="/assets/site.js?v=observer-20260724" defer></script>
+  <script>document.documentElement.classList.add("js");</script>
+  <style>
+    .release-meta{display:flex;gap:.6rem 1.2rem;flex-wrap:wrap;list-style:none;padding:0;margin:1rem 0}
+    .release-meta li{opacity:.86}
+    .claim-box{border-left:4px solid currentColor;padding:.2rem 0 .2rem 1rem;margin:1.5rem 0}
+    .evidence-box{border:1px solid var(--line,#30343a);border-radius:14px;padding:1.1rem 1.25rem;margin:1.5rem 0;background:color-mix(in srgb,currentColor 3%,transparent)}
+    .evidence-box h2,.evidence-box h3{margin-top:0}
+    .paper-actions{display:flex;gap:.75rem;flex-wrap:wrap;margin:1.2rem 0 0}
+    .flow-block{font:inherit;white-space:pre-wrap;border:1px solid var(--line,#30343a);border-radius:12px;padding:1rem;background:color-mix(in srgb,currentColor 4%,transparent)}
+    .status-table{width:100%;border-collapse:collapse}
+    .status-table th,.status-table td{text-align:left;vertical-align:top;padding:.7rem;border-bottom:1px solid var(--line,#30343a)}
+    .status-table th{white-space:nowrap}
+    @media(max-width:680px){.status-table,.status-table tbody,.status-table tr,.status-table th,.status-table td{display:block}.status-table thead{display:none}.status-table tr{padding:.6rem 0;border-bottom:1px solid var(--line,#30343a)}.status-table th,.status-table td{border:0;padding:.2rem 0}.status-table th::after{content:":"}.status-table td::before{content:attr(data-label);display:block;margin-top:.2rem;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;opacity:.68}}
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <nav class="nav" aria-label="Primary navigation">
+    <a class="brand" href="/" aria-label="Fractalish home">Fractalish<span>.</span></a>
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="primary-nav-links" data-nav-toggle>
+      <span class="nav-toggle-label">Menu</span>
+      <span class="nav-toggle-icon" aria-hidden="true"></span>
+    </button>
+    <div class="nav-links nav-groups" id="primary-nav-links" data-nav-links>
+      <div class="nav-group"><span class="nav-group-label">Understand</span><a href="/start-here">Idea</a><a href="/framework">Framework</a><a href="/constitution">Constitution</a></div>
+      <div class="nav-group"><span class="nav-group-label">Test</span><a href="/natural-math">Experiments</a><a href="/documents">Documents</a><a href="/synaptient-declaration/">Synaptient Declaration</a></div>
+      <div class="nav-group"><span class="nav-group-label">Build</span><a href="/cognitive-basin">Basin</a></div>
+      <div class="nav-group"><span class="nav-group-label">Help</span><a href="/contribute">Contribute</a></div>
+    </div>
+  </nav>
+</header>
+
+<main id="main-content" class="page-shell">
+  <header class="page-hero narrow">
+    <p class="eyebrow">Public release · 31 August 2026</p>
+    <h1>ASF: APTD Sensor Fabric</h1>
+    <p class="lead">A provenance-bearing interoperability layer between machine intelligence and observable systems.</p>
+    <ul class="release-meta">
+      <li><span class="status-badge is-frozen">Core v0.1: public / frozen</span></li>
+      <li><span class="status-badge is-frozen">Motorola M0: public / frozen</span></li>
+      <li><span class="status-badge is-spec">Read-only observation fabric</span></li>
+    </ul>
+    <div class="claim-box">
+      <p><strong>Claim boundary:</strong> ASF is experimental observational infrastructure. It does not demonstrate a completed physical APTD, machine consciousness, autonomous physical control, production safety, continuous sensing, hardware attestation, or general truth authority.</p>
+    </div>
+  </header>
+
+  <section class="section prose">
+    <h2>What ASF is</h2>
+    <p>ASF is an experimental, read-only interoperability fabric for provenance-bearing machine observations. It preserves source, identity, provenance, time, health, sampling semantics, history, and rate limitations before higher layers decide relevance, qualification, formation, or authority.</p>
+    <p><strong>One interface to observe. No interface to blindly obey.</strong></p>
+    <pre class="flow-block">WORLD
+  -> ADAPTER
+  -> RECEPTOR EVENT
+  -> LEDGER / OBSERVATION FABRIC</pre>
+  </section>
+
+  <section class="section">
+    <div class="evidence-box">
+      <h2>Public evidence status</h2>
+      <table class="status-table">
+        <thead><tr><th>Release</th><th>Status</th><th>Evidence</th><th>Boundary</th></tr></thead>
+        <tbody>
+          <tr><th>ASF Core v0.1</th><td data-label="Status">FROZEN / LOCALLY VERIFIED / PUBLIC RELEASE</td><td data-label="Evidence">30 tests passed; freeze verification OK; no actuation surface</td><td data-label="Boundary">Read-only core, no Motorola physical witness in this first freeze</td></tr>
+          <tr><th>ASF Motorola Live Probe M0</th><td data-label="Status">FROZEN / LOCALLY VERIFIED / PUBLIC RELEASE</td><td data-label="Evidence">46 tests passed; live Android source; restart, disconnect, tamper, MCP boundary, no device writes, no actuation</td><td data-label="Boundary">Read-only polled ADB telemetry; not hardware-attested or continuous sensing</td></tr>
+          <tr><th>Physical APTD</th><td data-label="Status">NOT DEMONSTRATED BY ASF ALONE</td><td data-label="Evidence">ASF supplies observation infrastructure beneath or alongside APTD</td><td data-label="Boundary">No governed physical execution boundary is released here</td></tr>
+          <tr><th>Machine consciousness</th><td data-label="Status">NOT CLAIMED</td><td data-label="Evidence">No ASF release contains a consciousness claim</td><td data-label="Boundary">Observation interoperability is not sentience, personhood, or AGI</td></tr>
+          <tr><th>Autonomous physical control</th><td data-label="Status">NOT IMPLEMENTED</td><td data-label="Evidence">MCP and HTTP surfaces expose observation/proposal paths only</td><td data-label="Boundary">No `adb_shell`, `device_command`, `execute`, `run_command`, or actuation endpoint</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="section prose">
+    <h2>First physical witness</h2>
+    <p>Motorola Live Probe M0 reports the same semantic proposition, <code>battery = 100%</code>, through five causally distinct sources: a live read-only Motorola observation, a test fixture, a simulation, a replay of the live event, and a text claim. ASF preserves distinct event identities and provenance for those sources.</p>
+    <p>This matters because the same proposition is not the same causal event. In ASF, that is an executable design property demonstrated by the implementation; it is not promoted here to a universal theorem.</p>
+  </section>
+
+  <section class="section prose">
+    <h2>Relation to APTD</h2>
+    <p>ASF is observational infrastructure beneath or alongside the APTD architecture. APTD remains the governed transition/execution boundary. Current ASF stops before physical execution authority.</p>
+    <pre class="flow-block">COGNITION
+  -> PROPOSAL
+  -> GOVERNANCE
+  -> APTD
+  -> PHYSICAL CONSEQUENCE</pre>
+  </section>
+
+  <section class="section prose">
+    <h2>Relation to Formation Calculus</h2>
+    <p>ASF supplies instrumentation for testing whether retained distinctions such as same semantic proposition with different provenance or acquisition paths later produce different legitimate downstream transitions. ASF does not prove Formation Calculus.</p>
+  </section>
+
+  <section class="section prose">
+    <h2>Known limitations</h2>
+    <ul>
+      <li>Motorola observations are polled snapshots.</li>
+      <li>No claim is made for continuous sensing between polls.</li>
+      <li><code>SOURCE_BOUND</code> is transport/adapter binding, not cryptographic hardware attestation.</li>
+      <li>The raw device serial is not a public identity.</li>
+      <li>The disconnect test used a host-side invalid binding.</li>
+      <li>No remote feeds are implemented yet.</li>
+      <li>No actuation surface exists in this release.</li>
+      <li>Qualification remains separate and not fully implemented.</li>
+      <li><code>TEST_FIXTURE</code> was introduced after v0.1 and does not rewrite the Core v0.1 freeze.</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>Inspect the release</h2>
+    <div class="status-board">
+      <article class="card"><h3>ASF repository</h3><p>Public source, docs, tests, protocol schemas, adapters, freeze artifacts, and release tags.</p><p><a class="button" href="https://github.com/BonAcqui-LLC/aptd-sensor-fabric">Open GitHub repo</a></p></article>
+      <article class="card"><h3>Core v0.1 release</h3><p>First frozen read-only ASF interoperability core.</p><p><a class="button" href="https://github.com/BonAcqui-LLC/aptd-sensor-fabric/releases/tag/ASF_CORE_V0_1">Open Core release</a></p></article>
+      <article class="card"><h3>Motorola M0 release</h3><p>First frozen live external physical-source witness using read-only Android/ADB telemetry.</p><p><a class="button" href="https://github.com/BonAcqui-LLC/aptd-sensor-fabric/releases/tag/ASF_MOTOROLA_LIVE_PROBE_M0">Open M0 release</a></p></article>
+    </div>
+  </section>
+
+  <section class="section prose">
+    <h2>Roadmap boundary</h2>
+    <p>ConnectorDome is the planned open ecosystem for discovering, building, validating, and sharing ASF-compatible connectors. ConnectorDome v0.1 is not published in this release. ExoMCP remains a separate security project and is unchanged by this tranche.</p>
+  </section>
+</main>
+
+<footer class="site-footer site-footer-unified">
+  <div class="inner footer-grid">
+    <div><p class="footer-title">Fractalish</p><p class="footer-tagline">Form is accumulated consequence.</p><p class="footer-motto">Read the receipt. Test the grammar. Preserve uncertainty.</p><p class="footer-boundary">An independent research program. Results, proposals, and open questions are labeled separately.</p><p class="footer-privacy">Site chat sends entered messages to the Fractalish Cloudflare Pages AI endpoint for processing by Cloudflare Workers AI. Please do not submit sensitive or private information.</p></div>
+    <div><p class="footer-label">Understand and test</p><nav class="footer-nav-inner" aria-label="Site footer navigation"><a href="/start-here">The idea</a><a href="/framework">Framework</a><a href="/constitution">Constitution</a><a href="/desiloization">Desiloization</a><a href="/natural-math">Natural Math experiments</a><a href="/specificity-thesis">Specificity</a><a href="/ageometrics/">Ageometrics</a><a href="/scientific-neighbors">Scientific neighbors</a><a href="/documents">Documents</a><a href="/synaptient-declaration/">Synaptient Declaration</a></nav></div>
+    <div><p class="footer-label">Build and review</p><nav class="footer-nav-inner" aria-label="Participation links"><a href="/cognitive-basin">Cognitive Basin</a><a href="/contribute">Contribute</a><a href="/review">Review and corrections</a><a href="/status">Status</a><a href="/support">Support</a><a href="https://github.com/BonAcqui-LLC/fractalish">Site repository</a><a href="https://github.com/BonAcqui-LLC/cognitive-basin-platform">Platform repository</a><a href="https://github.com/BonAcqui-LLC/aptd-sensor-fabric">ASF repository</a></nav></div>
+  </div>
+</footer>
+<script src="/site-ai-widget.js" defer data-site-name="Fractalish"></script>
+</body>
+</html>
