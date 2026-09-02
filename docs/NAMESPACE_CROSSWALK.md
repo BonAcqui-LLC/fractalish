@@ -13,6 +13,7 @@ Identically spelled states are not automatically equivalent. A source event may 
 | CNTM admission | CANONIZE, REJECT, HOLD | Admission posture; implementation authority remains unresolved unless named. |
 | APTD nomenclature | Current: Autonomic Persistence and Transition Device; historical: ATAL Portable Training Devices | The current expansion is canonical from APTD paper v1.0 (2026-08-31) forward. Historical artifacts keep their original expansion and context. See [APTD Nomenclature and Lineage](./APTD_NOMENCLATURE_AND_LINEAGE.md). |
 | ASF provenance | LIVE_LOCAL, REMOTE_FEED, TEST_FIXTURE, SIMULATION, REPLAY, TEXT_CLAIM | ReceptorEvent acquisition/provenance modes in APTD Sensor Fabric. Same semantic proposition does not imply same causal source, authority, truth, or persistence. `TEST_FIXTURE` is a post-v0.1 amendment and must not be retrofitted into the frozen Core v0.1 record. |
+| Authority Compiler status | EXACT, BOUNDED, RECOVERABLE, HOLD_UNRETAINED, HOLD_LINEAGE_AMBIGUOUS, COMMON_CARRIER, NO_COMMON_CARRIER, HISTORICALLY_VALID, NO_CURRENT_CLOSURE, REVERIFICATION_REQUIRED, UNSUPPORTED | Query-, carrier-, intervention-, channel-, admission-, and certificate-indexed compiler judgments. They are not a global total order, lattice, truth score, or site-wide evidence posture. |
 
 Do not publish a simple RESTRICT -> HOLD mapping. RESTRICT_DIE is a Natural Math action state. HOLD is a governed unresolved posture in other namespaces.
 

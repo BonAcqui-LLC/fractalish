@@ -12,6 +12,7 @@ This repository contains the public static site for Fractalish. The current cons
 - UFWK: specification only unless a named implementation qualifies it.
 - Bolt-On: v0.3 frozen evidence; v0.4 Stage 1 locally validated external-host contract; no production integration claim.
 - Resonant Morphology M1: historical development artifact and bounded software fixture, not flagship proof.
+- Authority Compiler: public verified finite reference fragment; reusable evidence/decision primitive, not a Cognitive Basin-specific component and not a new physics or truth-machine claim.
 
 ## Status Layers
 
@@ -40,6 +41,8 @@ This repository contains the public static site for Fractalish. The current cons
 ## Current Non-Claims
 
 No current release demonstrates a universal grammar of nature, a universal geometry, proof that everything is fractal, GO / STOP / HOLD as universal primitives, causation from morphology alone, or the complete Natural Math-UFWK-Cognitive Basin-Bolt-On pipeline operating end to end inside ChatGPT or another production language-model service. No page should imply completed production integration, physical CNT memory, morphology uniqueness, universal coding, or machine-generated human-value scoring.
+
+The Authority Compiler release is bounded to its public finite reference fragment. Its existence does not claim completed R2R, Cognitive Basin, APTD, ValuFai, or other governed-system integrations.
 
 ## Local Validation
 

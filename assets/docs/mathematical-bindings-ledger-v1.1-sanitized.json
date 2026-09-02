@@ -2,7 +2,7 @@
   "schema_version": "1.1-sanitized-site-ledger",
   "generated_at": "2026-07-23T18:15:00-04:00",
   "global_disclaimer": "No current release has yet demonstrated the complete Natural Math-UFWK-Cognitive Basin-Bolt-On pipeline operating end to end inside ChatGPT or another production language-model service.",
-  "binding_count": 103,
+  "binding_count": 104,
   "bindings": [
     {
       "binding_id": "FMB-0001",
@@ -3752,6 +3752,45 @@
       },
       "public_safe_source_id": "SRC-PUB-0050",
       "next_required_evidence": "Named implementation, tests, fixtures, hashes, and falsification conditions."
+    },
+    {
+      "binding_id": "FMB-0112",
+      "claim_id": "CLAIM-0112",
+      "name": "Authority Compiler finite certificate-indexed reference fragment",
+      "aliases": "authority compiler; proof-carrying authority checker",
+      "family": "Authority Compiler",
+      "category": "Engineering integration / proof-certificate checker",
+      "status": "ESTABLISHED",
+      "representation_layer": "PUBLIC / VERIFIED REFERENCE FRAGMENT",
+      "original_statement": "Declared evidence is qualified only relative to query, carrier, intervention semantics, authority channel, admission policy, certificates, and freshness.",
+      "normalized_representation": "Auth(A,Q,K,I,channel,Adm,certs,freshness) -> indexed status with certificate or fail-closed HOLD",
+      "definitions": "See public SOUNDNESS_SCOPE.md and CODEX_POST_REDTEAM_IMPLEMENTATION_REPORT.md.",
+      "input_domain": "Finite typed authority records, queries, admission policies, intervention classes, carrier classes, channels, certificates, and dependencies.",
+      "output_domain": "Indexed compiler status and proof/certificate payload.",
+      "semantics": "Engineering integration of established sufficiency, provenance, TMS/ATMS, certificate, freshness, and finite quantum/classical checks.",
+      "implementation_status": "Implemented and public clean-clone verified.",
+      "implementation_ref": "https://github.com/BonAcqui-LLC/authority-compiler/tree/4bed79509e73e5224f36dd21434e766790abd1a6",
+      "evidence": [
+        "107 public clean-clone tests passed",
+        "30 deterministic fixtures",
+        "Specialist 09 collision regressions passing",
+        "deterministic regeneration"
+      ],
+      "result": "PUBLIC / VERIFIED REFERENCE FRAGMENT.",
+      "negative_result": "No new physics, no new quantum-information theorem, no global status lattice, no universal authority scalar.",
+      "negative_controls": "Unsupported relation and missing-admission cases fail closed; no LLM fallback.",
+      "boundary": "Finite implemented fragment only; not a theory layer or universal theorem prover.",
+      "qualifiers": "PUBLIC-VERIFIED; FINITE-FRAGMENT; ENGINEERING-INTEGRATION; NON-ENDORSEMENT",
+      "summary": "Authority Compiler finite reference fragment is public verified within the named bounded source.",
+      "source": {
+        "repository": "REPO:authority-compiler",
+        "repository_locator": "https://github.com/BonAcqui-LLC/authority-compiler",
+        "commit": "4bed79509e73e5224f36dd21434e766790abd1a6",
+        "path": "SOUNDNESS_SCOPE.md; CODEX_POST_REDTEAM_IMPLEMENTATION_REPORT.md",
+        "sha256": "9a277a6153302e2773ce274912c55b8ab53a46a6615e81b59a625415ed4248a7"
+      },
+      "public_safe_source_id": "SRC-PUB-0061 to SRC-PUB-0066",
+      "next_required_evidence": "Production persistence, broader certificate completeness, general contextuality solvers, and integration-specific verifier suites."
     }
   ]
 }

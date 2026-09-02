@@ -8,11 +8,11 @@ Phase: audit
 - Browsers requested: Chromium, Firefox, WebKit.
 - Browsers skipped: chromium (Playwright unavailable: Cannot find module 'playwright'
 Require stack:
-- C:\Users\moop\Downloads\Articles on X.com\Fractalish.com\fractalish_public_site_v1.2\tools\audit-infographics.mjs); firefox (Playwright unavailable: Cannot find module 'playwright'
+- tools/audit-infographics.mjs); firefox (Playwright unavailable: Cannot find module 'playwright'
 Require stack:
-- C:\Users\moop\Downloads\Articles on X.com\Fractalish.com\fractalish_public_site_v1.2\tools\audit-infographics.mjs); webkit (Playwright unavailable: Cannot find module 'playwright'
+- tools/audit-infographics.mjs); webkit (Playwright unavailable: Cannot find module 'playwright'
 Require stack:
-- C:\Users\moop\Downloads\Articles on X.com\Fractalish.com\fractalish_public_site_v1.2\tools\audit-infographics.mjs)
+- tools/audit-infographics.mjs)
 - Viewports: 1600x1000, 1440x900, 1366x768, 1280x800, 1024x768, 768x1024, 430x932, 390x844, 375x812, 320x568
 - Zooms: 100%, 125%, 150%, 200%
 - Zoom method: Viewport dimensions are divided by zoom factor to approximate browser reflow at 125%, 150%, and 200%.

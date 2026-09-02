@@ -102,15 +102,15 @@
   "skippedBrowsers": [
     {
       "name": "chromium",
-      "reason": "Playwright unavailable: Cannot find module 'playwright'\nRequire stack:\n- C:\\Users\\moop\\Downloads\\Articles on X.com\\Fractalish.com\\fractalish_public_site_v1.2\\tools\\audit-infographics.mjs"
+      "reason": "Playwright unavailable: Cannot find module 'playwright'\nRequire stack:\n- tools/audit-infographics.mjs"
     },
     {
       "name": "firefox",
-      "reason": "Playwright unavailable: Cannot find module 'playwright'\nRequire stack:\n- C:\\Users\\moop\\Downloads\\Articles on X.com\\Fractalish.com\\fractalish_public_site_v1.2\\tools\\audit-infographics.mjs"
+      "reason": "Playwright unavailable: Cannot find module 'playwright'\nRequire stack:\n- tools/audit-infographics.mjs"
     },
     {
       "name": "webkit",
-      "reason": "Playwright unavailable: Cannot find module 'playwright'\nRequire stack:\n- C:\\Users\\moop\\Downloads\\Articles on X.com\\Fractalish.com\\fractalish_public_site_v1.2\\tools\\audit-infographics.mjs"
+      "reason": "Playwright unavailable: Cannot find module 'playwright'\nRequire stack:\n- tools/audit-infographics.mjs"
     }
   ],
   "summary": {

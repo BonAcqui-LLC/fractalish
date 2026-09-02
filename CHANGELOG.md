@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.2.5 - Authority Compiler public verified reference fragment
+
+- Published `/research/authority-compiler/` as the public release page for the Authority Compiler finite reference fragment.
+- Added `BonAcqui-LLC/authority-compiler` to the public repository index with commit, tag, verifier command, release, and limitations.
+- Bound public quantitative claims to the clean-clone public repository verification: 107 tests passed, 0 failed, 0 skipped, 30 named fixtures, Specialist 09 collision regressions passing, 15/15 gates, and deterministic regeneration.
+- Preserved the audit story: most novelty/theory claims died; a narrow operational structure survived as a deterministic fail-closed finite compiler.
+- Kept non-claims explicit: no new quantum-information theorem, no new physics, no global authority scalar or status lattice, no universal proof engine, and no institutional AI-lab endorsement.
+
 ## v0.2.4 - ASF public release and Motorola M0 witness
 
 - Published `/research/asf/` as the public release page for ASF / APTD Sensor Fabric.
