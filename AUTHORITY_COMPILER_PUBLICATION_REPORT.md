@@ -56,7 +56,8 @@ Results:
 ## Fractalish Site Reconciliation
 
 - Site route: https://fractalish.com/research/authority-compiler/
-- Site commit: SITE_COMMIT_TO_BE_FILLED_AFTER_COMMIT
+- Site reconciliation content commit: 06fa6362c580c490f57794e6b8f37980a1995990
+- Final pushed site HEAD is recorded in the final handoff; a commit cannot contain its own final SHA without changing that SHA.
 - Files changed:
   - `research/authority-compiler/index.html`
   - `research.html`
