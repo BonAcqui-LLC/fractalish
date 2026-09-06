@@ -2,6 +2,8 @@
 
 The initial static index missed Marr on Scientific Neighbors because Cloudflare Worker `fractalish-marr-attribution` injects that section into the public response. The local HTML does not contain it. A second extraction defect excluded headers inside main content. The new crawler reads public responses and keeps article headers. It also follows the Ageometrics canonical/meta-redirect relationship without losing its content.
 
+The crawler requires `global_fetch_strictly_public`: without it, same-zone requests from the production route bypass other Workers and read origin HTML. Verification must use the custom-domain index, not only the workers.dev preview.
+
 The search index is served by a dedicated Worker at `/assets/search-index.json`; no Pages deployment or attribution overlay was replaced in this repair. Native Cloudflare Cron runs at 09:17 UTC daily, independently of a local computer. A stale index also requests a background refresh on access. Refresh logic is shared by scheduled and initial requests. Only complete successful crawls replace the KV index. Status and route dispositions are published at `/assets/search-status.json`; failures preserve the previous index and are recorded in Worker observability.
 
 Coverage audit: 184 HTML routes resolve to 68 distinct content pages. Duplicate aliases and redirects are accounted for rather than listed repeatedly. The search page, 404 page, and four explicitly noindex visual-audit pages are excluded. Binary document contents are outside this HTML search scope. Public subtitle and bindings data linked by HTML are included. The deployment inventory, sitemap, and discovered internal links provide crawl seeds; CI requires regeneration of inventories whenever HTML files are added or removed.

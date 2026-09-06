@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {prepare,search} from '../assets/search-engine.mjs';
 // Isolate the coordinator from the Cloudflare runtime; extraction is checked against live HTML separately.
 const inventory=JSON.parse(fs.readFileSync(new URL('../services/search-worker/routes.json',import.meta.url)));
+assert.ok(fs.readFileSync(new URL('../services/search-worker/wrangler.toml',import.meta.url),'utf8').includes('"global_fetch_strictly_public"'),'The crawler must fetch public Worker overlays, not bypass them for origin HTML');
 const source=fs.readFileSync(new URL('../services/search-worker/worker.mjs',import.meta.url),'utf8')
   .replace("import inventory from './routes.json';",`const inventory=${JSON.stringify(inventory)};`)
   .replace("import { WorkerEntrypoint } from 'cloudflare:workers';",'class WorkerEntrypoint {}');
