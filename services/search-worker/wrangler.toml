@@ -1,0 +1,21 @@
+name = "fractalish-search-index"
+main = "worker.mjs"
+compatibility_date = "2026-08-08"
+workers_dev = true
+routes = [
+  { pattern = "fractalish.com/assets/search-index.json*", zone_name = "fractalish.com" },
+  { pattern = "www.fractalish.com/assets/search-index.json*", zone_name = "fractalish.com" },
+  { pattern = "fractalish.com/assets/search-status.json*", zone_name = "fractalish.com" }
+]
+[triggers]
+crons = ["17 9 * * *"]
+[[kv_namespaces]]
+binding = "SEARCH_INDEX"
+id = "c2119f4f4ccd4042a1cacc7328851345"
+[observability]
+enabled = true
+
+[[services]]
+binding = "PAGE_FETCHER"
+service = "fractalish-search-index"
+entrypoint = "PageFetcher"

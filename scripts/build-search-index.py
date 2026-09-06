@@ -15,7 +15,8 @@ class Page(HTMLParser):
     def handle_endtag(self, tag):
         if tag in self.stack: self.stack=self.stack[:len(self.stack)-1-self.stack[::-1].index(tag)]
     def handle_data(self, data):
-        if any(t in self.stack for t in ['script','style','nav','header','footer','noscript']): return
+        if any(t in self.stack for t in ['script','style','nav','noscript']): return
+        if 'main' not in self.stack and any(t in self.stack for t in ['header','footer']): return
         if 'title' in self.stack: self.title.append(data)
         if 'main' in self.stack:
             self.body.append(data)
@@ -38,3 +39,9 @@ if '--check' in sys.argv:
     if not target.exists() or target.read_text(encoding='utf-8') != output: raise SystemExit('Search index is stale: run python scripts/build-search-index.py')
 else: target.write_text(output,encoding='utf-8',newline='\n')
 print(f'Search index: {len(docs)} public pages, {len(output.encode())} bytes')
+routes=sorted('/'+p.relative_to(ROOT).as_posix() for p in ROOT.rglob('*.html') if not any(x.startswith('.') or x in ['node_modules','_partials','live-verification'] for x in p.relative_to(ROOT).parts))
+manifest=json.dumps(routes,indent=2)+'\n'
+for target in [ROOT/'assets/search-routes.json',ROOT/'services/search-worker/routes.json']:
+    if '--check' in sys.argv:
+        if not target.exists() or target.read_text(encoding='utf-8') != manifest: raise SystemExit('Search route inventory is stale: run python scripts/build-search-index.py')
+    else: target.write_text(manifest,encoding='utf-8',newline='\n')

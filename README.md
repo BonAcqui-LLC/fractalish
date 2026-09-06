@@ -46,7 +46,9 @@ The Authority Compiler release is bounded to its public finite reference fragmen
 
 ## Local Validation
 
-The site search at `/search` implements strict Boolean keyword retrieval over public HTML content. After editing pages, run `python scripts/build-search-index.py` to refresh the committed index. CI rejects stale indexes and runs `node scripts/test-search.mjs`. Navigation and footers, redirects, noindex pages, and downloadable file contents are excluded. Ranking cannot override Boolean constraints. Search runs in the browser without an external search provider.
+The site search at `/search` implements strict Boolean keyword retrieval. Its production index is served by `services/search-worker/worker.mjs`, which crawls the live domain daily at 09:17 UTC using Cloudflare Cron and KV. This includes live Worker-injected content, article headers, and the site's linked subtitle/bindings data. `/assets/search-status.json` reports the last crawl and every route's disposition. Aliases are consolidated; utility/noindex pages and binary downloads are excluded. Failed crawls preserve the previous complete index.
+
+After editing or adding pages, run `python scripts/build-search-index.py` to refresh the fallback index and both HTML inventories. CI rejects stale inventories, including new orphan pages missing from the sitemap. The crawler reads the deployed inventory, sitemap, and internal links; its bundled inventory supports the pre-manifest deployment. Deploy crawler changes with `npx wrangler deploy --config services/search-worker/wrangler.toml`. Do not overwrite live route overlays with stale source: Scientific Neighbors has a separate `fractalish-marr-attribution` Worker. Ranking cannot override Boolean constraints; queries are evaluated in the browser.
 
 Use the repository validator before review:
 
