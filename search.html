@@ -1,11 +1,23 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta name="robots" content="noindex, nofollow">
   <meta charset="utf-8">
-  <meta http-equiv="refresh" content="0; url=/commons/hold.html">
-  <link rel="canonical" href="https://fractalish.com/commons/hold">
-  <title>Redirecting…</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Search | Fractalish</title>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <link rel="canonical" href="https://fractalish.com/search">
+  <meta name="description" content="Search Fractalish with exact keywords, phrases and Boolean operators.">
+  <link rel="stylesheet" href="/assets/search.css">
+  <script type="module" src="/assets/search-ui.mjs"></script>
   <link rel="stylesheet" href="/assets/site.css?v=ios-dark-20260724">
   <script src="/assets/site.js" defer></script>
   <script>document.documentElement.classList.add("js");</script>
@@ -45,14 +57,30 @@
 </header>
 
 
-<span id="main-content" class="skip-target" tabindex="-1"></span>
-
-<p>Redirecting to <a href="/commons/hold">HOLD cases</a>.</p>
-
-
-
-
-
+<main id="main-content" class="search-page">
+<p class="eyebrow">Your words. Your constraints.</p>
+<h1>Search Fractalish</h1>
+<p>Exact keywords, useful excerpts, and Boolean control. Every word is required unless you say otherwise.</p>
+<label for="search-query">Words, phrase, or Boolean expression</label>
+<form id="site-search" action="/search" method="get" role="search">
+<input id="search-query" name="q" type="search" maxlength="500" placeholder='("natural math" OR MCVA) NOT archive' autocomplete="off">
+<button type="submit">Search</button></form>
+<details><summary>Search syntax and examples</summary>
+<table><tbody>
+<tr><td><code>cognitive basin</code></td><td>Both whole words must occur. Same as <code>cognitive AND basin</code>.</td></tr>
+<tr><td><code>"natural math"</code></td><td>Words together, in that order.</td></tr>
+<tr><td><code>MCVA OR AMCVA</code></td><td>Either word. The pipe <code>|</code> also means OR.</td></tr>
+<tr><td><code>morphology NOT quantum</code></td><td>Require morphology, exclude quantum. <code>-quantum</code> works too.</td></tr>
+<tr><td><code>(MCVA OR AMCVA) AND "natural math"</code></td><td>Group alternatives, then narrow them.</td></tr>
+<tr><td><code>morph*</code></td><td>Explicit prefix matching: morphology, morphological, and other words beginning with morph.</td></tr>
+</tbody></table>
+<p>Write operators in UPPERCASE. Precedence: parentheses, NOT, AND, OR. Matching is case-insensitive; punctuation separates words, including within phrases. No stemming, synonyms, or automatic query expansion. Quote an operator to search for the word itself, such as <code>"NOT"</code>.</p>
+<p>Search covers public HTML page content, excluding repeated navigation and footers. Linked PDF, Word, ZIP, and external file contents are not indexed. Results rank by matching titles, headings, term rarity, and body text. All results must satisfy your expression.</p>
+</details>
+<noscript>Enable JavaScript to run search locally in your browser.</noscript>
+<p id="search-status" role="status" aria-live="polite"></p>
+<ol id="search-results"></ol><button id="search-more" type="button" hidden>Show more</button>
+</main>
 <footer class="site-footer site-footer-unified">
   <div class="inner footer-grid">
     <div>

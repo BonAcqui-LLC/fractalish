@@ -46,6 +46,8 @@ The Authority Compiler release is bounded to its public finite reference fragmen
 
 ## Local Validation
 
+The site search at `/search` implements strict Boolean keyword retrieval over public HTML content. After editing pages, run `python scripts/build-search-index.py` to refresh the committed index. CI rejects stale indexes and runs `node scripts/test-search.mjs`. Navigation and footers, redirects, noindex pages, and downloadable file contents are excluded. Ranking cannot override Boolean constraints. Search runs in the browser without an external search provider.
+
 Use the repository validator before review:
 
 ```powershell

@@ -26,6 +26,11 @@ jobs:
       - name: Validate site structure
         run: node scripts/validate-public-site.mjs
 
+      - name: Verify search index and Boolean retrieval
+        run: |
+          python3 scripts/build-search-index.py --check
+          node scripts/test-search.mjs
+
       - name: Crawl local static site
         run: |
           python3 -m http.server 8000 &
