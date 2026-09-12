@@ -85,11 +85,19 @@ See `CF_PUBLIC_REBUILD_CONFLICTS.md`. The exact requested unified framework v0.2
 - `node scripts/validate-public-site.mjs`: PASS across 142 HTML files and 79 sitemap routes.
 - `python scripts/build-search-index.py --check`: PASS after rebuilding 83 public search documents.
 - `node scripts/test-search.mjs`: PASS for Boolean precedence, exclusions, phrases, whole words, prefixes, malformed queries, ranking, and public-index behavior.
-- Browser QA: all 13 newcomer routes rendered with one H1 and zero page-level horizontal overflow at 390x844 and 1440x900.
+- Browser QA: all 14 newcomer routes rendered with one H1 and zero page-level horizontal overflow at 390x844 and 1440x900.
 - Visual inspection completed for the full mobile homepage, full desktop Start Here, full mobile Life / Autonomy page, and full desktop project map.
 - `git diff --check`: PASS; line-ending notices are informational.
 
-Live deployment and production verification are recorded separately after deployment.
+## Live Deployment And Verification
+
+- Cloudflare Pages deployment: `https://6e666059.fractalish.pages.dev`
+- Production domain: `https://fractalish.com`
+- All 14 rebuilt or new public routes returned HTTP 200 with the expected title and H1 on the production domain.
+- Search Worker version: `8dc65aa4-82e9-494d-ba15-e7e5492f5b34`
+- Live search crawler version: 8
+- Live search state: 83 indexed documents and 228 accounted routes at `2026-09-12T16:53:42.432Z`.
+- Live-search tests passed for complete inventory, discovered links, partial batches, and failed-crawl preservation.
 
 ## Known Follow-Up Work
 
