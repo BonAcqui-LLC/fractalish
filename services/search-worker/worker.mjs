@@ -1,7 +1,7 @@
 import inventory from './routes.json';
 import { WorkerEntrypoint } from 'cloudflare:workers';
 const ORIGIN='https://fractalish.com';
-const CRAWLER_VERSION=6;
+const CRAWLER_VERSION=7;
 const clean=s=>s.replace(/\s+/g,' ').trim();
 const excluded=new Set(['/search','/search.html','/404.html']);
 function local(raw,base=ORIGIN) {

@@ -99,7 +99,7 @@ for (const file of files) {
 }
 
 const refreshed = [
-  "index.html", "start-here.html", "framework.html", "natural-math.html",
+  "index.html", "start-here.html", "consequential-formation.html", "try-the-lens.html", "cf-map.html", "framework.html", "natural-math.html",
   "cognitive-basin.html", "contribute.html", "support.html", "review.html",
   "scientific-neighbors.html"
 ];
@@ -114,14 +114,15 @@ for (const rel of refreshed) {
 
 const index = fs.readFileSync(path.join(ROOT, "index.html"), "utf8");
 for (const phrase of [
-  "Fractalish studies the generative grammar upstream of observable form",
+  "Things happen. Some changes leave consequences. Those consequences change what can happen next",
+  "Consequential Formation",
   "Form is accumulated consequence",
   "Geometry is one way of measuring the receipt",
   "Form is what exploration leaves behind",
   "The representation is an instrument, not the thesis",
   "Description reads the receipt. Intervention tests the grammar.",
-  "Decompartmentalization without decontextualization",
-  "GO / STOP / HOLD and PERMIT / INHIBIT / PRESERVE are hypotheses",
+  "Remove the noun. Reconstruct the relations.",
+  "A resemblance is not a discovery",
   "Fractalish is not a claim that everything is a fractal",
   "Unobserved is not zero"
 ]) {
@@ -151,7 +152,7 @@ const sitemap = fs.readFileSync(path.join(ROOT, "sitemap.xml"), "utf8");
 const locations = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
 const duplicateLocations = [...new Set(locations.filter((url, i) => locations.indexOf(url) !== i))];
 if (duplicateLocations.length) errors.push(`sitemap.xml: duplicate URLs ${duplicateLocations.join(", ")}`);
-for (const required of ["https://fractalish.com/", "https://fractalish.com/constitution", "https://fractalish.com/desiloization", "https://fractalish.com/scientific-neighbors", "https://fractalish.com/ageometrics/", "https://fractalish.com/specificity-thesis"]) {
+for (const required of ["https://fractalish.com/", "https://fractalish.com/start-here", "https://fractalish.com/consequential-formation", "https://fractalish.com/try-the-lens", "https://fractalish.com/cf-map", "https://fractalish.com/experiments", "https://fractalish.com/constitution", "https://fractalish.com/desiloization", "https://fractalish.com/scientific-neighbors", "https://fractalish.com/ageometrics/", "https://fractalish.com/specificity-thesis"]) {
   if (!locations.includes(required)) errors.push(`sitemap.xml: missing ${required}`);
 }
 if (locations.includes("https://fractalish.com/ageometrics.html")) errors.push("sitemap.xml: redirect alias ageometrics.html should not be indexed");

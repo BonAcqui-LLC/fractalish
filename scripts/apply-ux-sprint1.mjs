@@ -13,15 +13,19 @@ const HEADER = fs.readFileSync(path.join(ROOT, "_partials", "site-header.html"),
 const FOOTER = fs.readFileSync(path.join(ROOT, "_partials", "site-footer.html"), "utf8").trim();
 
 const NAV_MATCHERS = [
-  { test: /start-here/, href: "/start-here.html" },
-  { test: /framework/, href: "/framework.html" },
-  { test: /natural-math/, href: "/natural-math.html" },
-  { test: /specificity-thesis/, href: "/specificity-thesis.html" },
+  { test: /start-here/, href: "/start-here" },
+  { test: /consequential-formation/, href: "/consequential-formation" },
+  { test: /try-the-lens/, href: "/try-the-lens" },
+  { test: /cf-map/, href: "/cf-map" },
+  { test: /framework/, href: "/consequential-formation" },
+  { test: /natural-math|experiments/, href: "/experiments" },
+  { test: /specificity-thesis/, href: "/research" },
   { test: /ageometrics|geometric-sufficiency/, href: "/ageometrics/" },
-  { test: /documents|library|atlas|white-papers|whitepaper|docs\.html/, href: "/documents.html" },
-  { test: /contribute/, href: "/contribute.html" },
-  { test: /cognitive-basin/, href: "/cognitive-basin.html" },
-  { test: /review/, href: "/review.html" },
+  { test: /documents|library|atlas|white-papers|whitepaper|docs\.html/, href: "/documents" },
+  { test: /project-map/, href: "/project-map" },
+  { test: /contribute/, href: "/contribute" },
+  { test: /cognitive-basin/, href: "/project-map" },
+  { test: /review/, href: "/contribute" },
 ];
 
 function walk(dir, out = []) {

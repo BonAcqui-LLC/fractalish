@@ -463,6 +463,29 @@ async function initBindingsExplorer() {
   }
 }
 
+function initLensTool() {
+  const root = document.querySelector("[data-lens-tool]");
+  if (!root) return;
+  const input = root.querySelector("[data-lens-object]");
+  const output = root.querySelector("[data-lens-output]");
+  if (!input || !output) return;
+
+  const render = () => {
+    const subject = input.value.trim() || "this system";
+    output.replaceChildren();
+    appendText(output, "p", `Lens target: ${subject}`, "eyebrow");
+    appendText(output, "h2", "Start with observable change.");
+    appendText(
+      output,
+      "p",
+      `For ${subject}, avoid deciding the category first. Describe the transition, the retained consequence, and the altered reachability. Then write the falsifier before you trust the interpretation.`
+    );
+  };
+
+  input.addEventListener("input", render);
+  render();
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   initMobileNav();
   initDocCollapsibles();
@@ -471,4 +494,5 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   initImageLightbox();
   initBindingsExplorer();
+  initLensTool();
 });
