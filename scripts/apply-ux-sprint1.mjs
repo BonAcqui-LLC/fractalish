@@ -14,9 +14,14 @@ const FOOTER = fs.readFileSync(path.join(ROOT, "_partials", "site-footer.html"),
 
 const NAV_MATCHERS = [
   { test: /start-here/, href: "/start-here" },
+  { test: /erase-the-nouns/, href: "/erase-the-nouns" },
+  { test: /rounds/, href: "/rounds" },
   { test: /consequential-formation/, href: "/consequential-formation" },
-  { test: /try-the-lens/, href: "/try-the-lens" },
-  { test: /cf-map/, href: "/cf-map" },
+  { test: /what-emerged|life-autonomy|memory-intelligence|cognition/, href: "/what-emerged" },
+  { test: /reinspect-knowledge/, href: "/reinspect-knowledge" },
+  { test: /build-with-it/, href: "/build-with-it" },
+  { test: /try-to-kill-it/, href: "/try-to-kill-it" },
+  { test: /try-the-lens|cf-map/, href: "/erase-the-nouns" },
   { test: /framework/, href: "/consequential-formation" },
   { test: /natural-math|experiments/, href: "/experiments" },
   { test: /specificity-thesis/, href: "/research" },
@@ -30,7 +35,7 @@ const NAV_MATCHERS = [
 
 function walk(dir, out = []) {
   for (const ent of fs.readdirSync(dir, { withFileTypes: true })) {
-    if (ent.name === "node_modules" || ent.name === ".git" || ent.name === "_partials") continue;
+    if (ent.name === "node_modules" || ent.name === ".git" || ent.name === "_partials" || ent.name === "visual-audit" || ent.name === "live-verification") continue;
     const p = path.join(dir, ent.name);
     if (ent.isDirectory()) walk(p, out);
     else if (ent.name.endsWith(".html")) out.push(p);
