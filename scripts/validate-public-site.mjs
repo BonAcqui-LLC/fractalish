@@ -1,6 +1,7 @@
 /** Read-only local integrity checks for the static site. */
 import fs from "node:fs";
 import path from "node:path";
+import crypto from "node:crypto";
 import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -11,7 +12,7 @@ const declarationPunctuationLossPattern = /(?:[Hh]uman\?AI|human\?machine|reprod
 
 function walk(dir, out = []) {
   for (const ent of fs.readdirSync(dir, { withFileTypes: true })) {
-    if ([".git", ".wrangler", "node_modules", "_partials"].includes(ent.name)) continue;
+    if ([".git", ".wrangler", "node_modules", "_partials", "live-verification"].includes(ent.name)) continue;
     const full = path.join(dir, ent.name);
     if (ent.isDirectory()) walk(full, out);
     else if (ent.name.endsWith(".html")) out.push(full);
@@ -54,10 +55,20 @@ for (const file of files) {
 
   if (!redirect && h1Count !== 1) errors.push(`${rel}: expected one h1, found ${h1Count}`);
   if (!redirect && !/\bid=["']main-content["']/i.test(html)) errors.push(`${rel}: missing #main-content landmark target`);
-  if (/class=["'][^"']*\bskip-link\b/i.test(html) || /Skip to main content/i.test(html)) {
-    errors.push(`${rel}: retired skip link is still present`);
+  if (!redirect && !/<a\b[^>]*class=["'][^"']*\bskip-link\b[^>]*href=["']#main-content["']/i.test(html)) {
+    errors.push(`${rel}: missing keyboard skip link to #main-content`);
   }
   if (!redirect && !/document\.documentElement\.classList\.add\(["']js["']\)/.test(html)) errors.push(`${rel}: missing no-JS navigation hook`);
+  const pageClass = html.match(/<meta\b[^>]*name=["']fractalish:page-class["'][^>]*content=["']([^"']+)["']/i)?.[1];
+  const bodyClass = html.match(/<body\b[^>]*data-page-class=["']([^"']+)["']/i)?.[1];
+  const allowedPageClasses = new Set(["JOURNEY", "CURRENT_FRAMEWORK", "CURRENT_PROJECT", "EVIDENCE_RECORD", "HISTORICAL_RECORD", "TOOL", "ADMIN/UTILITY"]);
+  if (!pageClass || !allowedPageClasses.has(pageClass)) errors.push(`${rel}: missing or invalid page classification metadata`);
+  if (bodyClass !== pageClass) errors.push(`${rel}: body page classification differs from metadata`);
+  if (!redirect) {
+    const currentCss = (html.match(/\/assets\/site\.css\?v=canon-collapse-20260912/g) || []).length;
+    if (currentCss !== 1) errors.push(`${rel}: expected one current stylesheet token, found ${currentCss}`);
+    if (/href=["']\/(?:styles\.css|assets\/search\.css)/i.test(html)) errors.push(`${rel}: obsolete public stylesheet dependency remains`);
+  }
   if (duplicateIds.length) errors.push(`${rel}: duplicate ids ${duplicateIds.join(", ")}`);
   if (mojibakePattern.test(html)) errors.push(`${rel}: possible UTF-8 mojibake or replacement character`);
   if (rel === "synaptient-declaration/index.html" && declarationPunctuationLossPattern.test(html)) {
@@ -98,6 +109,19 @@ for (const file of files) {
   }
 }
 
+const chatAllowlist = new Set(["start-here.html", "consequential-formation.html", "search.html"]);
+for (const file of files) {
+  const rel = relative(file);
+  const html = fs.readFileSync(file, "utf8");
+  const hasChat = /src=["']\/site-ai-widget\.js/i.test(html);
+  if (hasChat !== chatAllowlist.has(rel)) errors.push(`${rel}: research chat placement differs from the approved three-route allowlist`);
+}
+
+const homeHtml = fs.readFileSync(path.join(ROOT, "index.html"), "utf8");
+if (!homeHtml.includes("Fractalish studies how past change becomes present structure and changes what can happen next.")) errors.push("index.html: missing adopted public sentence");
+if (!/Consequential Formation is the framework[\s\S]*constitutive investigative operation[\s\S]*projects are experiments, implementations, evidence, and historical formation/i.test(homeHtml)) errors.push("index.html: missing CF v0.3 public hierarchy statement");
+if (!/og:image[\s\S]*cf-social-card\.png/i.test(homeHtml)) errors.push("index.html: homepage social image is not the fixed PNG card");
+
 const refreshed = [
   "index.html", "start-here.html", "erase-the-nouns.html", "rounds.html", "consequential-formation.html", "what-emerged.html",
   "life-autonomy.html", "memory-intelligence.html", "cognition.html", "reinspect-knowledge.html", "build-with-it.html",
@@ -116,8 +140,8 @@ for (const rel of refreshed) {
 
 const index = fs.readFileSync(path.join(ROOT, "index.html"), "utf8");
 for (const phrase of [
-  "What happens if we erase the categories first?",
-  "Erase the noun. Keep the evidence.",
+  "Fractalish studies how past change becomes present structure and changes what can happen next.",
+  "Suspend the category. Keep the evidence. Audit what returns.",
   "The lines are not the territory.",
   "changed future possibilities",
   "Consequential Formation",
@@ -131,6 +155,36 @@ for (const phrase of [
 const framework = fs.readFileSync(path.join(ROOT, "framework.html"), "utf8");
 for (const phrase of ["EXTEND / HOLD / RETRACT", "SUPPORTED / UNRESOLVED / CONTRADICTED", "EXTEND / SENSE / RESTRICT", "GO / STOP / HOLD", "not a proof of identity", "not a substitute name for SENSE", "Unobserved does not mean zero"]) {
   if (!framework.includes(phrase)) errors.push(`framework.html: missing boundary phrase: ${phrase}`);
+}
+
+const cfV03 = fs.readFileSync(path.join(ROOT, "Consequential_Formation_Unified_Framework_v0_3_2026-09-13.md"), "utf8");
+const cfV03Hash = crypto.createHash("sha256").update(fs.readFileSync(path.join(ROOT, "Consequential_Formation_Unified_Framework_v0_3_2026-09-13.md"))).digest("hex").toUpperCase();
+const teamV03Hash = crypto.createHash("sha256").update(fs.readFileSync(path.join(ROOT, "CF_v0_3_Team_State_Transfer_2026-09-13.md"))).digest("hex").toUpperCase();
+if (cfV03Hash !== "79C2D5B2E0C33C7E8A900D6611F4D93133D40A7D9114584FFF54D9529BA7A9F5") errors.push("CF v0.3 full artifact differs from the supplied source bytes");
+if (teamV03Hash !== "8882613D788B65807B747C9C07B55F55816E38983C20051266B8DADE3EFF15F4") errors.push("CF v0.3 team packet differs from the supplied source bytes");
+if (!cfV03.includes("artifact_id: CF-UF-0.3") || !cfV03.includes("version: 0.2-unified-candidate") || !cfV03.includes("id: CF-UF-0.2")) errors.push("CF v0.3 HOLD metadata markers were unexpectedly reconciled");
+
+const currentFramework = fs.readFileSync(path.join(ROOT, "consequential-formation.html"), "utf8");
+for (const phrase of [
+  "Suspension comes first",
+  "A noun that was never removed cannot be said to have survived the CF filter",
+  "A returned category must earn its way back twice",
+  "Remove the old noun. Reconstruct. Then remove our new noun too",
+  "Mutual constitution does not mean identity",
+  "CAPABILITY != FORMATION",
+  "SPECIFICATION / BUILD-TEST TARGET",
+]) {
+  if (!currentFramework.includes(phrase)) errors.push(`consequential-formation.html: missing CF v0.3 phrase: ${phrase}`);
+}
+
+const methodPage = fs.readFileSync(path.join(ROOT, "erase-the-nouns.html"), "utf8");
+for (const phrase of ["constitutive of Consequential Formation", "AUDIT INDEPENDENCE", "TYPE THE RETURN", "COMPRESSION NOUN", "Audit our vocabulary too"]) {
+  if (!methodPage.includes(phrase)) errors.push(`erase-the-nouns.html: missing CF v0.3 method phrase: ${phrase}`);
+}
+
+const mfmPage = fs.readFileSync(path.join(ROOT, "cognitive-basin.html"), "utf8");
+for (const phrase of ["Minimum Formative Machine v0.1", "Twin history", "Single-write transplant", "ordinary RAG", "not an achieved intelligence"]) {
+  if (!mfmPage.includes(phrase)) errors.push(`cognitive-basin.html: missing MFM boundary phrase: ${phrase}`);
 }
 
 const constitution = fs.readFileSync(path.join(ROOT, "constitution.html"), "utf8");

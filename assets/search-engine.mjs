@@ -69,6 +69,14 @@ export function positiveTerms(tree, negative = false) {
 export function prepare(documents) {
   return documents.map(d => ({ ...d, fields: [d.title, d.headings, d.text].map(words) }));
 }
+const classBoost = pageClass => ({
+  CURRENT_FRAMEWORK: 1.35,
+  JOURNEY: 1.28,
+  CURRENT_PROJECT: 1.12,
+  EVIDENCE_RECORD: 1,
+  TOOL: 0.94,
+  HISTORICAL_RECORD: 0.42,
+}[pageClass] || 1);
 export function search(documents, query) {
   const tree = parse(query);
   if (!tree) return [];
@@ -81,7 +89,7 @@ export function search(documents, query) {
   };
   const idf = terms.map(t => Math.log(1 + documents.length / (1 + documents.filter(d => matches(d, t)).length)));
   return documents.filter(d => matches(d, tree)).map(d => ({ ...d,
-    score: terms.reduce((sum, t, i) => sum + idf[i] * d.fields.reduce((s, f, j) => {
+    score: classBoost(d.pageClass) * terms.reduce((sum, t, i) => sum + idf[i] * d.fields.reduce((s, f, j) => {
       const n = occurrences(f, t);
       return s + [12, 5, 1][j] * (n ? 1 + Math.log(n) : 0) / (1 + f.length / [80, 300, 2500][j]);
     }, 0) * (t.value.length > 1 ? 2 : 1), 0)

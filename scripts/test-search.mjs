@@ -27,6 +27,20 @@ for(const [q,path] of [['"authority compiler"','/research/authority-compiler/'],
   assert.ok(results.slice(0,5).some(d=>d.url===path),`${q}: expected relevant page in top 5`);
   console.log(q,results.slice(0,3).map(d=>d.url));
 }
+for (const [q, path] of [
+  ['Consequential Formation', '/consequential-formation'],
+  ['life', '/life-autonomy'],
+  ['memory', '/memory-intelligence'],
+  ['intelligence', '/memory-intelligence'],
+  ['Cognitive Basin', '/cognitive-basin'],
+  ['Natural Math', '/natural-math'],
+  ['Persistent Observer', '/persistent-observer'],
+  ['Minimum Formative Machine', '/cognitive-basin'],
+  ['morphology', '/build-with-it'],
+]) {
+  assert.equal(search(real, q)[0]?.url, path, `${q}: expected current pathway to rank first`);
+}
+assert.equal(search(real, 'resonant morphology')[0]?.pageClass, 'HISTORICAL_RECORD', 'specific historical queries must still reach the historical record');
 assert.equal(new Set(real.map(d=>d.url)).size,real.length);
 assert.ok(real.every(d=>d.url.startsWith('/')&&!d.url.startsWith('//')));
 console.log('PASS: Boolean precedence, exclusions, phrases, whole words, prefixes, malformed queries, ranking, and public index.');

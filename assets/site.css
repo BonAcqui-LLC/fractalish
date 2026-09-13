@@ -3221,3 +3221,112 @@ button:focus-visible {
   .handoff-diagram { grid-template-columns: 1fr; }.handoff-diagram > i { transform: rotate(90deg); text-align: center; }
   .journey-nav { flex-direction: column; }
 }
+
+/* Canon collapse: one chrome, two layers, explicit page context. */
+.skip-link {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  z-index: 100;
+  padding: 10px 14px;
+  border: 2px solid var(--accent-2);
+  border-radius: var(--radius);
+  background: var(--bg-deep);
+  color: var(--ink);
+  font: 700 14px/1.2 system-ui, sans-serif;
+  transform: translateY(-160%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.context-banner {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 10px 24px;
+  display: flex;
+  align-items: baseline;
+  gap: 8px 16px;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+  font: 13px/1.5 system-ui, sans-serif;
+}
+
+.context-banner strong {
+  color: var(--ink);
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.context-banner a {
+  margin-left: auto;
+  white-space: nowrap;
+}
+
+.context-banner a + a {
+  margin-left: 0;
+}
+
+.context-banner.is-current { border-bottom-color: rgba(124, 255, 107, 0.38); }
+.context-banner.is-project { border-bottom-color: rgba(157, 215, 255, 0.38); }
+.context-banner.is-history { border-bottom-color: rgba(240, 180, 106, 0.38); }
+
+body[data-page-class="EVIDENCE_RECORD"],
+body[data-page-class="HISTORICAL_RECORD"] {
+  background: #070b10;
+}
+
+body[data-page-class="EVIDENCE_RECORD"] main,
+body[data-page-class="HISTORICAL_RECORD"] main {
+  --measure: 840px;
+}
+
+.record-index,
+.reviewer-summary,
+.project-brief {
+  display: grid;
+  gap: 1px;
+  border: 1px solid var(--line);
+  background: var(--line);
+}
+
+.record-index > *,
+.reviewer-summary > *,
+.project-brief > * {
+  margin: 0;
+  padding: 18px;
+  background: var(--paper);
+}
+
+.project-brief dt {
+  color: var(--accent-2);
+  font: 700 11px/1.3 system-ui, sans-serif;
+  text-transform: uppercase;
+}
+
+.project-brief dd {
+  margin: 6px 0 0;
+}
+
+.search-page{max-width:960px;margin:0 auto;padding:48px 24px 80px}.search-page h1{font-size:3.5rem}.search-page form{display:flex;gap:12px;flex-wrap:wrap;margin:12px 0 24px}.search-page input{flex:1;min-width:0;width:100%;font:inherit;padding:15px;border:1px solid #718397;border-radius:8px;background:#101b29;color:#f1f5f9}.search-page button{font:inherit;cursor:pointer;padding:12px 22px;border-radius:8px;border:1px solid #82d7c3;background:#a2ecd9;color:#10231f}.search-page details{padding:18px;border:1px solid #718397;border-radius:8px;margin:24px 0}.search-page summary{cursor:pointer;font-weight:700}.search-page code{white-space:normal;color:inherit}.search-page table{width:100%;border-collapse:collapse;margin-top:16px}.search-page td{padding:10px 6px;border-bottom:1px solid #64748b;vertical-align:top}.search-page ol{list-style:none;padding:0}.search-page li{padding:22px 0;border-bottom:1px solid #64748b}.search-page li h2{font-size:1.3rem;margin:0 0 4px}.search-page li p{line-height:1.7;margin:10px 0}.search-page small{overflow-wrap:anywhere}.search-page mark{background:#ffe59a;color:#17212b;padding:0 2px}.search-page :focus-visible{outline:3px solid #e3ba62;outline-offset:4px}.search-page [hidden]{display:none}
+
+@media (max-width: 700px) {
+  .context-banner { align-items: flex-start; flex-direction: column; }
+  .context-banner a { margin-left: 0; }
+  .search-page { padding: 28px 16px; }
+  .search-page h1 { font-size: 2.35rem; }
+  .search-page form button { width: 100%; }
+  .search-page td { font-size: .9rem; }
+}
+
+@media print {
+  :root { color-scheme: light; }
+  body { background: #fff !important; color: #111 !important; font-size: 11pt; }
+  .site-header, .site-footer, .context-banner, .skip-link, .button, .hero-actions, script { display: none !important; }
+  main { max-width: none; padding: 0; }
+  a { color: #111; text-decoration: underline; }
+  a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 9pt; }
+  table { table-layout: auto; }
+  tr, figure, article { break-inside: avoid; }
+}

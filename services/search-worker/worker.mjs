@@ -1,7 +1,7 @@
 import inventory from './routes.json';
 import { WorkerEntrypoint } from 'cloudflare:workers';
 const ORIGIN='https://fractalish.com';
-const CRAWLER_VERSION=8;
+const CRAWLER_VERSION=10;
 const clean=s=>s.replace(/\s+/g,' ').trim();
 const excluded=new Set(['/search','/search.html','/404.html']);
 function local(raw,base=ORIGIN) {
@@ -19,7 +19,7 @@ async function get(path) {
 }
 // Parse the served document, including article headers and pages without <main>.
 export async function extract(html) {
-  let title='',body='',headings='',canonical=null,redirect=null,noindex=false;
+  let title='',body='',headings='',canonical=null,pageClass='EVIDENCE_RECORD',redirect=null,noindex=false;
   const links=[],sources=[];
   let stripped=await new HTMLRewriter()
     .on('script, style, nav, body > header, .site-header, body > footer, .site-footer, noscript, [hidden], [aria-hidden="true"]',{element(e){e.remove();}})
@@ -33,13 +33,14 @@ export async function extract(html) {
     .on('link[rel="canonical"]',{element(e){canonical=e.getAttribute('href');}})
     .on('meta',{element(e){
       if(e.getAttribute('name')?.toLowerCase()==='robots' && /noindex/i.test(e.getAttribute('content')||''))noindex=true;
+      if(e.getAttribute('name')?.toLowerCase()==='fractalish:page-class')pageClass=e.getAttribute('content')||pageClass;
       if(e.getAttribute('http-equiv')?.toLowerCase()==='refresh')redirect=(e.getAttribute('content')||'').match(/url\s*=\s*['"]?([^'";]+)/i)?.[1]?.trim();
     }})
     .on('a[href]',{element(e){links.push(e.getAttribute('href'));}})
     .on('[data-subtitle-source]',{element(e){sources.push({type:'text',url:e.getAttribute('data-subtitle-source')});}})
     .on('[data-bindings-source]',{element(e){sources.push({type:'bindings',url:e.getAttribute('data-bindings-source')});}})
     .transform(new Response(stripped)).text();
-  return {title:clean(title),text:clean(body),headings:clean(headings),canonical,redirect,noindex,links,sources};
+  return {title:clean(title),text:clean(body),headings:clean(headings),canonical,pageClass,redirect,noindex,links,sources};
 }
 function strings(value){return typeof value==='string'?value:Array.isArray(value)?value.map(strings).join(' '):value&&typeof value==='object'?Object.values(value).map(strings).join(' '):'';}
 export class PageFetcher extends WorkerEntrypoint {
@@ -90,7 +91,7 @@ export async function build(env) {
     // Always retrieve the canonical deployed route before choosing its text.
     if(path!==canonical){add(canonical);coverage.push({path,status:'alias',target:canonical});if(page.text)candidates.set(canonical,{path,page});continue;}
     if(!page.text)throw Error(`${path}: empty extracted content`);
-    documents.set(canonical,{url:canonical,title:page.title,headings:page.headings,text:clean(page.text)});
+    documents.set(canonical,{url:canonical,title:page.title,headings:page.headings,text:clean(page.text),pageClass:page.pageClass});
     coverage.push({path,status:'indexed'});
     }
   }
@@ -98,7 +99,7 @@ export async function build(env) {
   // A canonical URL can itself be a legacy meta redirect to a real content page.
   for(const [canonical,{path,page}] of candidates){
     if(!documents.has(canonical)&&coverage.some(x=>x.path===canonical&&x.status==='redirect')){
-      documents.set(canonical,{url:canonical,title:page.title,headings:page.headings,text:clean(page.text)});
+      documents.set(canonical,{url:canonical,title:page.title,headings:page.headings,text:clean(page.text),pageClass:page.pageClass});
       const entry=coverage.find(x=>x.path===path);entry.status='indexed';entry.canonical=canonical;
     }
   }

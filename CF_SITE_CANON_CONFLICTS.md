@@ -1,6 +1,6 @@
 # CF Site Canon Conflicts
 
-Date: 2026-09-12
+Date: 2026-09-13
 
 ## Status
 
@@ -8,9 +8,16 @@ No scientific conflict was resolved or overwritten during this site pass.
 
 ## Canonical Framework Source
 
-- Expected candidate: `Consequential_Formation_Unified_Framework_v0_2_2026-09-11.md`
-- Local search result: not found in the inspected Fractalish workspace during this pass.
-- Action taken: implemented the supplied public brief as the current canonical candidate for introductory site copy, while preserving older research routes as historical and project-specific material.
+- Current candidate: `Consequential_Formation_Unified_Framework_v0_3_2026-09-13.md`
+- Compact packet: `CF_v0_3_Team_State_Transfer_2026-09-13.md`
+- Authority: current orientation/state transfer only; frozen project artifacts, receipts, original source records, and native-domain mathematics retain their own authority.
+
+## Active HOLD
+
+| ID | Conflict | Handling |
+| --- | --- | --- |
+| HOLD-CF03-001 | The supplied file name, title, date, and `artifact_id` identify v0.3, but front matter says `version: 0.2-unified-candidate` and the embedded manifest says `id: CF-UF-0.2`. | Preserve the supplied source verbatim. Public links identify it by filename/title/date and state that the internal fields remain unresolved. No silent correction. |
+| HOLD-CF03-002 | The operational prompt says to retain the v0.2 unified framework as dated lineage, but no v0.2 unified-framework artifact was present in the supplied package, repository, or searched Fractalish workspaces. | Preserve all existing dated v0.2-era public pages and reports. Do not fabricate or reconstruct a missing canonical artifact. Add the exact v0.2 source only when an authoritative copy is supplied. |
 
 ## Potential Supersession Notes
 

@@ -11,7 +11,7 @@ const worker=await import('data:text/javascript;base64,'+Buffer.from(source).toS
 const originalFetch=globalThis.fetch;
 globalThis.fetch=async url=>String(url).includes('search-routes.json')?new Response('',{status:404}):new Response('<urlset></urlset>');
 const store=new Map([['index','previous-good-index']]);
-const env={SEARCH_INDEX:{put:async(k,v)=>store.set(k,v)},PAGE_FETCHER:{batch:async paths=>paths.map(path=>({path,page:{title:path,text:'Complete body including introduction.',headings:'Heading',links:path==='/'?['/discovered-at-tail']:[],sources:[]}}))}};
+const env={SEARCH_INDEX:{put:async(k,v)=>store.set(k,v)},PAGE_FETCHER:{batch:async paths=>paths.map(path=>({path,page:{title:path,text:'Complete body including introduction.',headings:'Heading',canonical:path,links:path==='/'?['/discovered-at-tail']:[],sources:[]}}))}};
 try {
   const built=await worker.build(env);
   assert.ok(built.documents.some(d=>d.url==='/discovered-at-tail'),'New links in the final partial batch must be crawled');

@@ -6,10 +6,11 @@ ROOT = Path(__file__).resolve().parent.parent
 class Page(HTMLParser):
     def __init__(self):
         super().__init__(convert_charrefs=True)
-        self.stack=[]; self.title=[]; self.headings=[]; self.body=[]; self.canonical=None; self.skip=False
+        self.stack=[]; self.title=[]; self.headings=[]; self.body=[]; self.canonical=None; self.page_class=None; self.skip=False
     def handle_starttag(self, tag, attrs):
         a=dict(attrs)
         if tag == 'link' and a.get('rel') == 'canonical': self.canonical=a.get('href')
+        if tag == 'meta' and a.get('name') == 'fractalish:page-class': self.page_class=a.get('content')
         if tag == 'meta' and (a.get('http-equiv','').lower() == 'refresh' or (a.get('name')=='robots' and 'noindex' in a.get('content',''))): self.skip=True
         if tag not in ['area','base','br','col','embed','hr','img','input','link','meta','param','source','track','wbr']: self.stack.append(tag)
     def handle_endtag(self, tag):
@@ -32,7 +33,7 @@ for file in sorted(ROOT.rglob('*.html')):
     if not url.startswith('https://fractalish.com/'): continue
     url=url.removeprefix('https://fractalish.com')
     if url in docs: continue
-    docs[url]=dict(url=url,title=clean(p.title),headings=clean(p.headings),text=clean(p.body))
+    docs[url]=dict(url=url,title=clean(p.title),headings=clean(p.headings),text=clean(p.body),pageClass=p.page_class or 'EVIDENCE_RECORD')
 output=json.dumps({'version':1,'documents':list(docs.values())},ensure_ascii=False,separators=(',',':'))+'\n'
 target=ROOT/'assets/search-index.json'
 if '--check' in sys.argv:
