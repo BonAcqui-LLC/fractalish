@@ -117,10 +117,67 @@ for (const file of files) {
   if (hasChat !== chatAllowlist.has(rel)) errors.push(`${rel}: research chat placement differs from the approved three-route allowlist`);
 }
 
+const siteHeader = fs.readFileSync(path.join(ROOT, "_partials/site-header.html"), "utf8");
+const expectedPrimaryNav = [
+  ["/start-here", "Start Here"],
+  ["/consequential-formation", "Framework"],
+  ["/ai", "AI"],
+  ["/project-map", "Projects"],
+  ["/evidence", "Evidence"],
+  ["/search", "Search"],
+];
+for (const [href, label] of expectedPrimaryNav) {
+  if (!siteHeader.includes(`<a href="${href}">${label}</a>`)) errors.push(`site header: missing primary navigation item ${label}`);
+}
+
+const aiPages = new Map([
+  ["ai.html", "<h1>AI</h1>"],
+  ["ai/research.html", "<h1>AI research</h1>"],
+  ["ai/team.html", "<h1>Fractalish Open AI Research Team</h1>"],
+  ["ai/method.html", "<h1>Heterogeneous Research Loop</h1>"],
+  ["ai/experiments.html", "<h1>AI experiments</h1>"],
+  ["ai/artifacts.html", "<h1>AI artifacts</h1>"],
+  ["ai/failures.html", "<h1>Failures and holds</h1>"],
+  ["ai/build-log.html", "<h1>AI build log</h1>"],
+]);
+for (const [rel, requiredHeading] of aiPages) {
+  const html = fs.readFileSync(path.join(ROOT, rel), "utf8");
+  if (!html.includes(requiredHeading)) errors.push(`${rel}: missing required AI heading`);
+  if (!html.includes('class="ai-subnav"')) errors.push(`${rel}: missing AI section navigation`);
+  if (!html.includes('class="project-brief ai-status-strip"')) errors.push(`${rel}: missing public research status strip`);
+  if (!html.includes('content="CURRENT_PROJECT"') || !html.includes('data-page-class="CURRENT_PROJECT"')) errors.push(`${rel}: wrong page class`);
+}
+
+const aiInventoryPath = path.join(ROOT, "docs/AI_RESEARCH_INVENTORY.json");
+let aiInventory;
+try {
+  aiInventory = JSON.parse(fs.readFileSync(aiInventoryPath, "utf8"));
+} catch (error) {
+  errors.push(`docs/AI_RESEARCH_INVENTORY.json: invalid JSON (${error.message})`);
+}
+if (aiInventory) {
+  if (aiInventory.schema_version !== "fractalish.ai-research-inventory.v1") errors.push("AI inventory: unexpected schema version");
+  if (!Array.isArray(aiInventory.items) || aiInventory.items.length !== 31) errors.push("AI inventory: expected 31 distinct records");
+  const inventoryIds = aiInventory.items?.map((item) => item.id) ?? [];
+  if (new Set(inventoryIds).size !== inventoryIds.length) errors.push("AI inventory: duplicate record IDs");
+  const relevance = new Set(aiInventory.items?.map((item) => item.relevance_class));
+  for (const required of ["CORE_AI", "DIRECT_SUPPORT", "ENABLING_INFRASTRUCTURE", "PHYSICAL_SUBSTRATE_BRIDGE", "EMBODIMENT_OR_ENERGY_BRIDGE", "HISTORICAL_LINEAGE", "ADJACENT_ONLY", "UNCERTAIN"]) {
+    if (!relevance.has(required)) errors.push(`AI inventory: missing relevance class ${required}`);
+  }
+  const serialized = JSON.stringify(aiInventory);
+  if (/[A-Z]:[\\/]|Users[\\/]moop/i.test(serialized)) errors.push("AI inventory: public record leaks an absolute workstation path");
+  for (const item of aiInventory.items ?? []) {
+    for (const key of ["id", "title", "project", "relevance_class", "connection", "status", "evidence_status", "public_release", "destination"]) {
+      if (item[key] === undefined || item[key] === "") errors.push(`AI inventory ${item.id ?? "unknown"}: missing ${key}`);
+    }
+  }
+}
+
 const homeHtml = fs.readFileSync(path.join(ROOT, "index.html"), "utf8");
 if (!homeHtml.includes("Fractalish studies how what happens leaves a difference, and how that difference changes what can happen next.")) errors.push("index.html: missing adopted public sentence");
 if (!/CF v0\.4 RC1 is the current canonical candidate[\s\S]*constitutive investigative operation[\s\S]*projects are experiments, implementations, evidence, and historical formation/i.test(homeHtml)) errors.push("index.html: missing CF v0.4 RC1 public hierarchy statement");
 if (!/record of formation is not presumed to be its runtime[\s\S]*Formation Ledger[\s\S]*Formative Field[\s\S]*Distributed embodiment/i.test(homeHtml)) errors.push("index.html: missing v0.4 RC1 architecture orientation");
+if (!/Public AI laboratory[\s\S]*AI that carries what happened forward[\s\S]*Capability is not formation|Public AI laboratory[\s\S]*host's available capability from acquired formation/i.test(homeHtml)) errors.push("index.html: missing AI public-laboratory doorway");
 if (!/og:image[\s\S]*cf-social-card\.png/i.test(homeHtml)) errors.push("index.html: homepage social image is not the fixed PNG card");
 
 const neighborsHtml = fs.readFileSync(path.join(ROOT, "scientific-neighbors.html"), "utf8");
@@ -216,7 +273,7 @@ const sitemap = fs.readFileSync(path.join(ROOT, "sitemap.xml"), "utf8");
 const locations = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
 const duplicateLocations = [...new Set(locations.filter((url, i) => locations.indexOf(url) !== i))];
 if (duplicateLocations.length) errors.push(`sitemap.xml: duplicate URLs ${duplicateLocations.join(", ")}`);
-for (const required of ["https://fractalish.com/", "https://fractalish.com/start-here", "https://fractalish.com/erase-the-nouns", "https://fractalish.com/rounds", "https://fractalish.com/consequential-formation", "https://fractalish.com/what-emerged", "https://fractalish.com/life-autonomy", "https://fractalish.com/memory-intelligence", "https://fractalish.com/cognition", "https://fractalish.com/reinspect-knowledge", "https://fractalish.com/build-with-it", "https://fractalish.com/what-cf-does-not-claim", "https://fractalish.com/try-to-kill-it", "https://fractalish.com/try-the-lens", "https://fractalish.com/cf-map", "https://fractalish.com/experiments", "https://fractalish.com/constitution", "https://fractalish.com/desiloization", "https://fractalish.com/scientific-neighbors", "https://fractalish.com/ageometrics/", "https://fractalish.com/specificity-thesis"]) {
+for (const required of ["https://fractalish.com/", "https://fractalish.com/start-here", "https://fractalish.com/erase-the-nouns", "https://fractalish.com/rounds", "https://fractalish.com/consequential-formation", "https://fractalish.com/what-emerged", "https://fractalish.com/life-autonomy", "https://fractalish.com/memory-intelligence", "https://fractalish.com/cognition", "https://fractalish.com/reinspect-knowledge", "https://fractalish.com/build-with-it", "https://fractalish.com/what-cf-does-not-claim", "https://fractalish.com/try-to-kill-it", "https://fractalish.com/try-the-lens", "https://fractalish.com/cf-map", "https://fractalish.com/experiments", "https://fractalish.com/constitution", "https://fractalish.com/desiloization", "https://fractalish.com/scientific-neighbors", "https://fractalish.com/ageometrics/", "https://fractalish.com/specificity-thesis", "https://fractalish.com/ai", "https://fractalish.com/ai/research", "https://fractalish.com/ai/team", "https://fractalish.com/ai/method", "https://fractalish.com/ai/experiments", "https://fractalish.com/ai/artifacts", "https://fractalish.com/ai/failures", "https://fractalish.com/ai/build-log"]) {
   if (!locations.includes(required)) errors.push(`sitemap.xml: missing ${required}`);
 }
 if (locations.includes("https://fractalish.com/ageometrics.html")) errors.push("sitemap.xml: redirect alias ageometrics.html should not be indexed");

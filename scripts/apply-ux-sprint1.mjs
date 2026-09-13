@@ -14,6 +14,7 @@ const FOOTER = fs.readFileSync(path.join(ROOT, "_partials", "site-footer.html"),
 
 const NAV_MATCHERS = [
   { test: /start-here/, href: "/start-here" },
+  { test: /^\/ai(?:\/|$)/, href: "/ai" },
   { test: /consequential-formation|erase-the-nouns|what-emerged|what-cf-does-not-claim|scientific-neighbors|try-to-kill-it|framework/, href: "/consequential-formation" },
   { test: /project-map|persistent-observer|cognitive-basin|natural-math|ageometrics|specificity-thesis|cntm|bolt-on|weighting-kernel|mathematical-bindings|fractalish-ai|motorola-activation/, href: "/project-map" },
   { test: /evidence|documents|library|atlas|white-papers|whitepaper|research|experiments|datasets|status|review|commons|synaptient-declaration|support|contribute|videos|glossary|roadmap|archive/, href: "/evidence" },
@@ -33,7 +34,7 @@ function classify(filePath, redirect = false) {
   if (redirect || route === "/404" || route.startsWith("/docs/visual-audit/")) return "ADMIN/UTILITY";
   if (JOURNEY.has(route)) return "JOURNEY";
   if (FRAMEWORK.has(route)) return "CURRENT_FRAMEWORK";
-  if (/^\/(persistent-observer|cognitive-basin|natural-math|ageometrics|geometric-sufficiency-ratio|specificity-thesis|cntm-realization|bolt-on|weighting-kernel|mathematical-bindings|fractalish-ai|motorola-activation|research\/(aptd|asf|authority-compiler|beyond-learnable-novelty|event006-adjudication|formative-field-computing|recovery-wake|recursive-admissibility))/.test(route)) return "CURRENT_PROJECT";
+  if (/^\/(ai(?:\/|$)|persistent-observer|cognitive-basin|natural-math|ageometrics|geometric-sufficiency-ratio|specificity-thesis|cntm-realization|bolt-on|weighting-kernel|mathematical-bindings|fractalish-ai|motorola-activation|research\/(aptd|asf|authority-compiler|beyond-learnable-novelty|event006-adjudication|formative-field-computing|recovery-wake|recursive-admissibility))/.test(route)) return "CURRENT_PROJECT";
   if (/^\/(archive|notes|resonant-morphology-thesis|mcva|mcva-amcva-hold|atlas|field-guide|whitepaper|white-papers|open-release-doctrine|desiloization|framework|research\/microglia-fractal-analysis-precedent)/.test(route)) return "HISTORICAL_RECORD";
   if (/^\/(tools|research-query|try-the-lens|cf-map)/.test(route)) return "TOOL";
   return "EVIDENCE_RECORD";

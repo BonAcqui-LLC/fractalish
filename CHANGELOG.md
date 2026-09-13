@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-09-13 - AI public laboratory and local research inventory
+
+- Added `/ai` as a first-class public section with research, team, method, experiments, artifacts, failures, and build-log offices.
+- Mined and classified 31 distinct local AI/intelligence project and artifact families by function, authority, maturity, supersession, and publication boundary.
+- Published a human-readable inventory, machine-readable inventory, relation map, and publication review queue without exposing workstation paths or private source material.
+- Preserved the distinction among host capability, host policy, and acquired formation; MFM and Formative Field remain build-test targets rather than achieved intelligence.
+- Added AI route, inventory, privacy, sitemap, search-ranking, and responsive-layout checks.
+
 ## 2026-09-13 - Consequential Formation v0.4 RC1 propagation
 
 - Published CF v0.4 RC1 as the current canonical candidate for orientation and external review; it remains not frozen.

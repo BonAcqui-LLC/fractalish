@@ -42,6 +42,10 @@ for (const [q, path] of [
   ['Formative Field runtime', '/build-with-it'],
   ['distributed embodiment', '/what-emerged'],
   ['morphology', '/build-with-it'],
+  ['Fractalish Open AI Research Team', '/ai/team'],
+  ['Heterogeneous Research Loop', '/ai/method'],
+  ['AI artifacts', '/ai/artifacts'],
+  ['AI failures', '/ai/failures'],
 ]) {
   assert.equal(search(real, q)[0]?.url, path, `${q}: expected current pathway to rank first`);
 }

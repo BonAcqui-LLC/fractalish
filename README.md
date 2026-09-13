@@ -15,6 +15,16 @@ This repository contains the public static site and evidence record for Fractali
 
 The current operation is `SUSPEND -> OBSERVE -> DISTINGUISH -> TRACE CHANGE -> TRACE RETENTION -> MAP CONSTRAINT -> MAP REACHABILITY -> AUDIT INDEPENDENCE -> RECONSTRUCT -> TYPE THE RETURN -> RENAME ONLY IF EARNED`.
 
+## AI Public Laboratory
+
+The top-level [`/ai`](https://fractalish.com/ai) section separates available host capability from acquired formation and publishes the machine-intelligence work as a status-bearing research record, not as a claim of achieved intelligence.
+
+- Research inventory: [`docs/AI_RESEARCH_INVENTORY.md`](docs/AI_RESEARCH_INVENTORY.md) and [`docs/AI_RESEARCH_INVENTORY.json`](docs/AI_RESEARCH_INVENTORY.json)
+- Project and evidence relations: [`docs/AI_RELATION_MAP.md`](docs/AI_RELATION_MAP.md)
+- HOLD, exclusion, and publication decisions: [`docs/AI_PUBLICATION_REVIEW_QUEUE.md`](docs/AI_PUBLICATION_REVIEW_QUEUE.md)
+- Public routes: `/ai/research`, `/ai/team`, `/ai/method`, `/ai/experiments`, `/ai/artifacts`, `/ai/failures`, and `/ai/build-log`
+- Claim boundary: inclusion identifies relevant local evidence or lineage; it does not promote a specification, draft, source paper, blocked experiment, or private record to a demonstrated result.
+
 ## Review Branch Focus
 
 - Current framework: Consequential Formation suspends inherited categories, reconstructs how retained consequences alter present constraints and future possibilities, audits whether returned concepts can stand independently, and types what returns.
