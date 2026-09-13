@@ -131,7 +131,15 @@ Playwright checked 10 representative routes at 1440x900 and 390x844: homepage, S
 
 ### Production verification
 
-Pending commit, GitHub push, Cloudflare deployment, live crawler refresh, and cache-busted verification.
+- GitHub implementation commit: `99d03a1` (`propagate CF v0.3 public canon`).
+- Cloudflare Pages production deployment: `8a706399-352a-4c0b-9fa0-4e4580648005`, source `99d03a1`, branch `main`, URL `https://8a706399.fractalish.pages.dev`.
+- Search Worker version: `36b4c526-5229-4b26-9d7a-1a0969b14189`; live crawler version 10 rebuilt 85 public documents.
+- Nine cache-busted custom-domain routes returned HTTP 200 with the required phrase, five-link primary navigation, and expected page class: `/`, `/start-here`, `/consequential-formation`, `/erase-the-nouns`, `/cognitive-basin`, `/cntm-realization`, `/evidence`, `/for-reviewers`, and `/archive/morphological-memory-paper`.
+- Live downloads of both v0.3 source artifacts matched the supplied SHA-256 hashes exactly.
+- Live research-artifact audit: 51 linked Markdown/PDF/DOCX/JSON/code artifacts tested, 0 failures.
+- Redirects: `/videos/` -> `/videos` (301) and `/library` -> `/documents` (301).
+- Social card: live PNG verified at 1200x630 pixels.
+- Live search results: current Framework first for broad CF; current Method first for category suspension and independence audit; Cognitive Basin/MFM first for Minimum Formative Machine; CNTM route first for CNTM; historical archive first for the specific Resonant Morphology query.
 
 ## Frozen Artifact Protection
 
