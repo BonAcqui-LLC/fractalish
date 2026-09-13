@@ -1,6 +1,6 @@
 # Fractalish Public Site
 
-**Fractalish studies how past change becomes present structure and changes what can happen next.**
+**Fractalish studies how what happens leaves a difference, and how that difference changes what can happen next.**
 
 This repository contains the public static site and evidence record for Fractalish. Consequential Formation is the current framework. Suspending explanatory privilege from inherited categories is its constitutive investigative operation, introduced publicly as Erase the Categories. Named projects are experiments, implementations, evidence, and historical formation.
 

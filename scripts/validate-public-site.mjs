@@ -118,9 +118,12 @@ for (const file of files) {
 }
 
 const homeHtml = fs.readFileSync(path.join(ROOT, "index.html"), "utf8");
-if (!homeHtml.includes("Fractalish studies how past change becomes present structure and changes what can happen next.")) errors.push("index.html: missing adopted public sentence");
+if (!homeHtml.includes("Fractalish studies how what happens leaves a difference, and how that difference changes what can happen next.")) errors.push("index.html: missing adopted public sentence");
 if (!/Consequential Formation is the framework[\s\S]*constitutive investigative operation[\s\S]*projects are experiments, implementations, evidence, and historical formation/i.test(homeHtml)) errors.push("index.html: missing CF v0.3 public hierarchy statement");
 if (!/og:image[\s\S]*cf-social-card\.png/i.test(homeHtml)) errors.push("index.html: homepage social image is not the fixed PNG card");
+
+const neighborsHtml = fs.readFileSync(path.join(ROOT, "scientific-neighbors.html"), "utf8");
+if (!/Sara Imari Walker[\s\S]*Leroy Cronin[\s\S]*Assembly Theory does not validate CF[\s\S]*EXTERNAL REPORTED RESULTS/i.test(neighborsHtml)) errors.push("scientific-neighbors.html: missing bounded Assembly Theory comparison");
 
 const refreshed = [
   "index.html", "start-here.html", "erase-the-nouns.html", "rounds.html", "consequential-formation.html", "what-emerged.html",
@@ -140,7 +143,7 @@ for (const rel of refreshed) {
 
 const index = fs.readFileSync(path.join(ROOT, "index.html"), "utf8");
 for (const phrase of [
-  "Fractalish studies how past change becomes present structure and changes what can happen next.",
+  "Fractalish studies how what happens leaves a difference, and how that difference changes what can happen next.",
   "Suspend the category. Keep the evidence. Audit what returns.",
   "The lines are not the territory.",
   "changed future possibilities",

@@ -29,6 +29,7 @@ if(process.argv[2]){
   for(const path of ['/scientific-neighbors','/research/authority-compiler/'])assert.ok(search(docs,'marr').some(d=>d.url===path),`marr must find ${path}`);
   assert.ok(docs.some(d=>d.url==='/ageometrics'),'Canonical redirect must not discard Ageometrics');
   assert.ok(docs.find(d=>d.url==='/scientific-neighbors').text.includes('Related work, overlap, and differences.'),'Article header must be indexed');
-  console.log(`Live regression: ${docs.length} pages, ${live.coverage.length} routes; both Marr results present.`);
+  assert.ok(docs.find(d=>d.url==='/scientific-neighbors').text.includes('Sara Imari Walker'),'Sara Walker comparison must be indexed');
+  console.log(`Live regression: ${docs.length} pages, ${live.coverage.length} routes; Marr and Walker comparisons present.`);
 }
 console.log('PASS: complete inventory, discovered links, partial batches, and failed-crawl preservation.');

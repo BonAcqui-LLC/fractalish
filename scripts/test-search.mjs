@@ -36,6 +36,8 @@ for (const [q, path] of [
   ['Natural Math', '/natural-math'],
   ['Persistent Observer', '/persistent-observer'],
   ['Minimum Formative Machine', '/cognitive-basin'],
+  ['Sara Walker', '/scientific-neighbors'],
+  ['Assembly Theory', '/scientific-neighbors'],
   ['morphology', '/build-with-it'],
 ]) {
   assert.equal(search(real, q)[0]?.url, path, `${q}: expected current pathway to rank first`);
