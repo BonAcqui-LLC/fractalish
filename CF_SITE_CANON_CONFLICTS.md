@@ -8,7 +8,8 @@ No scientific conflict was resolved or overwritten during this site pass.
 
 ## Canonical Framework Source
 
-- Current candidate: `Consequential_Formation_Unified_Framework_v0_3_2026-09-13.md`
+- Current candidate: `Consequential_Formation_Unified_Framework_v0_4_RC1_2026-09-13.md`
+- Prior orientation candidate: `Consequential_Formation_Unified_Framework_v0_3_2026-09-13.md`
 - Compact packet: `CF_v0_3_Team_State_Transfer_2026-09-13.md`
 - Authority: current orientation/state transfer only; frozen project artifacts, receipts, original source records, and native-domain mathematics retain their own authority.
 
@@ -18,6 +19,10 @@ No scientific conflict was resolved or overwritten during this site pass.
 | --- | --- | --- |
 | HOLD-CF03-001 | The supplied file name, title, date, and `artifact_id` identify v0.3, but front matter says `version: 0.2-unified-candidate` and the embedded manifest says `id: CF-UF-0.2`. | Preserve the supplied source verbatim. Public links identify it by filename/title/date and state that the internal fields remain unresolved. No silent correction. |
 | HOLD-CF03-002 | The operational prompt says to retain the v0.2 unified framework as dated lineage, but no v0.2 unified-framework artifact was present in the supplied package, repository, or searched Fractalish workspaces. | Preserve all existing dated v0.2-era public pages and reports. Do not fabricate or reconstruct a missing canonical artifact. Add the exact v0.2 source only when an authoritative copy is supplied. |
+
+## CF v0.4 RC1 Audit
+
+No conflict was identified between the RC1 integration delta and the frozen project claims inspected during public propagation. RC1 explicitly remains not frozen and preserves frozen project artifacts, native-domain mathematics, original source records, and test receipts as higher-precedence authorities for their own claims. The existing v0.3 HOLD items remain attached to the v0.3 artifact and are not silently reconciled by RC1.
 
 ## Potential Supersession Notes
 

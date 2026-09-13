@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-09-13 - Consequential Formation v0.4 RC1 propagation
+
+- Published CF v0.4 RC1 as the current canonical candidate for orientation and external review; it remains not frozen.
+- Preserved CF v0.3 and its unresolved HOLD record as prior orientation rather than silently reconciling it.
+- Propagated the ledger/runtime distinction, the Formative Field candidate runtime, hard admissibility before probability, bare-host profiling, causal MFM tests, distributed embodiment, and energy ecology across the public Journey, Record, status, review, and search surfaces.
+- Kept the new architecture explicitly at specification and build-test status: no achieved intelligence, proven superiority, identity across bodies, or universal energy-source ranking is claimed.
+
 ## v0.2.5 - Authority Compiler public verified reference fragment
 
 - Published `/research/authority-compiler/` as the public release page for the Authority Compiler finite reference fragment.

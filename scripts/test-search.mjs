@@ -38,6 +38,9 @@ for (const [q, path] of [
   ['Minimum Formative Machine', '/cognitive-basin'],
   ['Sara Walker', '/scientific-neighbors'],
   ['Assembly Theory', '/scientific-neighbors'],
+  ['Formative Field', '/research/formative-field-computing/'],
+  ['Formative Field runtime', '/build-with-it'],
+  ['distributed embodiment', '/what-emerged'],
   ['morphology', '/build-with-it'],
 ]) {
   assert.equal(search(real, q)[0]?.url, path, `${q}: expected current pathway to rank first`);

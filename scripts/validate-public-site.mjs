@@ -119,7 +119,8 @@ for (const file of files) {
 
 const homeHtml = fs.readFileSync(path.join(ROOT, "index.html"), "utf8");
 if (!homeHtml.includes("Fractalish studies how what happens leaves a difference, and how that difference changes what can happen next.")) errors.push("index.html: missing adopted public sentence");
-if (!/Consequential Formation is the framework[\s\S]*constitutive investigative operation[\s\S]*projects are experiments, implementations, evidence, and historical formation/i.test(homeHtml)) errors.push("index.html: missing CF v0.3 public hierarchy statement");
+if (!/CF v0\.4 RC1 is the current canonical candidate[\s\S]*constitutive investigative operation[\s\S]*projects are experiments, implementations, evidence, and historical formation/i.test(homeHtml)) errors.push("index.html: missing CF v0.4 RC1 public hierarchy statement");
+if (!/record of formation is not presumed to be its runtime[\s\S]*Formation Ledger[\s\S]*Formative Field[\s\S]*Distributed embodiment/i.test(homeHtml)) errors.push("index.html: missing v0.4 RC1 architecture orientation");
 if (!/og:image[\s\S]*cf-social-card\.png/i.test(homeHtml)) errors.push("index.html: homepage social image is not the fixed PNG card");
 
 const neighborsHtml = fs.readFileSync(path.join(ROOT, "scientific-neighbors.html"), "utf8");
@@ -163,9 +164,13 @@ for (const phrase of ["EXTEND / HOLD / RETRACT", "SUPPORTED / UNRESOLVED / CONTR
 const cfV03 = fs.readFileSync(path.join(ROOT, "Consequential_Formation_Unified_Framework_v0_3_2026-09-13.md"), "utf8");
 const cfV03Hash = crypto.createHash("sha256").update(fs.readFileSync(path.join(ROOT, "Consequential_Formation_Unified_Framework_v0_3_2026-09-13.md"))).digest("hex").toUpperCase();
 const teamV03Hash = crypto.createHash("sha256").update(fs.readFileSync(path.join(ROOT, "CF_v0_3_Team_State_Transfer_2026-09-13.md"))).digest("hex").toUpperCase();
+const cfV04 = fs.readFileSync(path.join(ROOT, "Consequential_Formation_Unified_Framework_v0_4_RC1_2026-09-13.md"), "utf8");
+const cfV04Hash = crypto.createHash("sha256").update(fs.readFileSync(path.join(ROOT, "Consequential_Formation_Unified_Framework_v0_4_RC1_2026-09-13.md"))).digest("hex").toUpperCase();
 if (cfV03Hash !== "79C2D5B2E0C33C7E8A900D6611F4D93133D40A7D9114584FFF54D9529BA7A9F5") errors.push("CF v0.3 full artifact differs from the supplied source bytes");
 if (teamV03Hash !== "8882613D788B65807B747C9C07B55F55816E38983C20051266B8DADE3EFF15F4") errors.push("CF v0.3 team packet differs from the supplied source bytes");
 if (!cfV03.includes("artifact_id: CF-UF-0.3") || !cfV03.includes("version: 0.2-unified-candidate") || !cfV03.includes("id: CF-UF-0.2")) errors.push("CF v0.3 HOLD metadata markers were unexpectedly reconciled");
+if (cfV04Hash !== "E61BE1EDDB045B2C05C3AD367C06B635BDBB685C292E1D80477599E60B7CEBAC") errors.push("CF v0.4 RC1 artifact differs from the supplied source bytes");
+if (!cfV04.includes("artifact_id: CF-UF-0.4-RC1") || !cfV04.includes("review_state: POST_V0_3_INTEGRATION_CANDIDATE__NOT_FROZEN")) errors.push("CF v0.4 RC1 authority markers are missing");
 
 const currentFramework = fs.readFileSync(path.join(ROOT, "consequential-formation.html"), "utf8");
 for (const phrase of [
@@ -174,10 +179,13 @@ for (const phrase of [
   "A returned category must earn its way back twice",
   "Remove the old noun. Reconstruct. Then remove our new noun too",
   "Mutual constitution does not mean identity",
-  "CAPABILITY != FORMATION",
+  "CAPABILITY != HOST POLICY != ACQUIRED FORMATION",
   "SPECIFICATION / BUILD-TEST TARGET",
+  "Current canonical candidate - CF v0.4 RC1",
+  "Representation for audit is not mechanism of execution",
+  "This does not establish one self across bodies",
 ]) {
-  if (!currentFramework.includes(phrase)) errors.push(`consequential-formation.html: missing CF v0.3 phrase: ${phrase}`);
+  if (!currentFramework.includes(phrase)) errors.push(`consequential-formation.html: missing current CF phrase: ${phrase}`);
 }
 
 const methodPage = fs.readFileSync(path.join(ROOT, "erase-the-nouns.html"), "utf8");
@@ -186,7 +194,7 @@ for (const phrase of ["constitutive of Consequential Formation", "AUDIT INDEPEND
 }
 
 const mfmPage = fs.readFileSync(path.join(ROOT, "cognitive-basin.html"), "utf8");
-for (const phrase of ["Minimum Formative Machine v0.1", "Twin history", "Single-write transplant", "ordinary RAG", "not an achieved intelligence"]) {
+for (const phrase of ["Minimum Formative Machine v0.1", "CAPABILITY != HOST POLICY != ACQUIRED FORMATION", "Theta_ledger", "Theta_exec", "Negative transfer", "Recovery and transplant", "RAG", "not achieved intelligence"]) {
   if (!mfmPage.includes(phrase)) errors.push(`cognitive-basin.html: missing MFM boundary phrase: ${phrase}`);
 }
 
