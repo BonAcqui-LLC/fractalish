@@ -1,7 +1,7 @@
 # Fractalish AI Public Laboratory Implementation Report
 
 Date: 2026-09-13  
-Release state: live and cache-busted on the canonical domain  
+Release state: live and cache-busted on the canonical domain
 Orientation authority: CF v0.4 RC1 canonical candidate, not frozen  
 Project-claim authority: each frozen or status-bearing source artifact remains authoritative for its own claims
 
