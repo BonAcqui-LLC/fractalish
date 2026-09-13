@@ -1,7 +1,7 @@
 # Fractalish AI Public Laboratory Implementation Report
 
 Date: 2026-09-13  
-Release state: implementation complete; production identifiers recorded after deployment  
+Release state: live and cache-busted on the canonical domain  
 Orientation authority: CF v0.4 RC1 canonical candidate, not frozen  
 Project-claim authority: each frozen or status-bearing source artifact remains authoritative for its own claims
 
@@ -135,4 +135,15 @@ Responsive render audit:
 
 ## Deployment and Live Verification
 
-To be completed from the production deployment receipts. No live claim is made in this draft section until those checks pass.
+Release receipts:
+
+- GitHub implementation commit: `ed1d853` on `BonAcqui-LLC/fractalish` `main`
+- Cloudflare Pages production deployment: `33800687-5045-408c-bf91-757e266068e9`
+- Pages preview receipt: `https://33800687.fractalish.pages.dev`
+- Search Worker: `fractalish-search-index`, crawler version 13
+- Search Worker deployment version: `cba01645-7525-45eb-9923-80fc933d157b`
+- Production crawl: 93 indexed pages, 248 route dispositions, indexed `2026-09-13T20:25:51.933Z`
+
+Cache-busted canonical-domain verification passed for the homepage, all eight AI routes, `/documents`, `/scientific-neighbors`, the four AI record downloads, the 31-record JSON payload, and search status/index endpoints. Every checked route returned HTTP 200. The live site preserved Sara Imari Walker's bounded Scientific Neighbors entry and the six-item primary navigation.
+
+Live Chromium verification passed at 1440 x 900 and 390 x 844 for the homepage and all eight extensionless AI routes with one H1, no horizontal overflow, and six primary navigation items. Production search ranked the AI team, Heterogeneous Research Loop, AI artifacts, AI failures, and Sara Walker to their intended public routes.
