@@ -60,7 +60,9 @@ Playwright checks at 1440 x 1000 and 390 x 844 found no horizontal page overflow
 
 ## 14. Deployment
 
-Pending committed-main deployment and live verification at the time this report was first written. This section will be replaced with GitHub commit, Cloudflare deployment, and cache-busted production receipts.
+The implementation commit `734e6092c908a2fc065a1c9b0d148a3ce0c8a994` was pushed to GitHub `main`; GitHub Actions run `34809229319` passed. The clean-source provenance gate confirmed a clean tree, synchronized `origin/main`, and zero local-only or remote-only commits. Cloudflare Pages deployment `https://6c2fee66.fractalish.pages.dev` was published from that exact SHA, and search Worker version `932a1a3d-e075-4378-a114-166d784e7680` was deployed.
+
+Cache-busted checks returned HTTP 200 with all required release language on the immutable Pages URL and `https://fractalish.com`. The live deployment receipt reported the same commit and `main` branch. The live source package was 342,362 bytes and matched SHA-256 `2b7f4c0b0ec2eb3ed8aa6ee25e149bf8e9ac10f44b54832e103833ef417ea1cf`. The live search index rebuilt at crawler version 14 with 95 documents and the release route present.
 
 ## 15. Publishing the next release
 
@@ -90,4 +92,4 @@ No frozen-artifact conflict was found. The handoff calls the corrected carry ver
 
 ## Acceptance result
 
-PASS locally. The article directly answers what happened, what stayed fixed, what failed, what improved, what did not improve, why the result may matter, what is not claimed, where the original evidence is downloadable, and what should be tested next.
+PASS locally and live. The article directly answers what happened, what stayed fixed, what failed, what improved, what did not improve, why the result may matter, what is not claimed, where the original evidence is downloadable, and what should be tested next.
