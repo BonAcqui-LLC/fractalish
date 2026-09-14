@@ -28,9 +28,10 @@ function snippet(text) {
 }
 function next() {
   for (const d of found.slice(shown,shown+20)) {
-    const item=node('li',''), title=node('h2',''), link=node('a',d.title);
+    const item=node('li',''), title=node('h2',''), link=node('a',d.title), type=node('span',d.pageClass==='RESEARCH_RELEASE'?'RESEARCH RELEASE':d.pageClass.replaceAll('_',' '));
+    type.className='search-result-type';
     link.href=d.url; title.append(link);
-    item.append(title,node('small',d.url),snippet(d.text)); results.append(item);
+    item.append(type,title,node('small',d.url),snippet(d.text)); results.append(item);
   }
   shown=Math.min(shown+20,found.length); more.hidden=shown>=found.length;
   more.textContent=`Show more (${found.length-shown} remaining)`;

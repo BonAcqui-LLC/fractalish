@@ -1,0 +1,128 @@
+{
+  "schemaVersion": 1,
+  "id": "RR-2026-09-13-NM-SCALE",
+  "title": "Natural Math: Fixed Local Rules Become More Reliable Under Proportional Scale",
+  "slug": "2026-09-13-natural-math-scale",
+  "date": "2026-09-13",
+  "authors": ["James Allen Clow", "Melissa Ellen Clow"],
+  "contributors": ["Documented human-AI research collaboration"],
+  "project": "Natural Math",
+  "researchArea": "Local deterministic formation and proportional scale",
+  "status": "EXPERIMENTAL_RESULT",
+  "evidenceClass": "EARNED_WITH_TESTED_SCOPE",
+  "failedGatesPreserved": true,
+  "summary": "A frozen moving/carry mechanism rose from 44/64 transported-reuse seeds at x1 to 64/64 at x2 and x3, while normalized work per agent-tick declined.",
+  "subtitle": "Reliability increased across the tested proportional scales without increasing local rule complexity; normalized throughput did not improve.",
+  "featured": true,
+  "tags": ["Natural Math", "local rules", "formation", "scale", "moving cycle", "carry", "transported reuse", "causal history", "admissibility", "AI lineage"],
+  "relatedRoutes": ["/natural-math", "/ai", "/ai/research", "/research", "/documents"],
+  "keyResult": "For this frozen mechanism and tested x1-x3 scaling regime, larger proportional systems created more opportunities for locally required conditions to coincide. Transported-substrate reuse became reliable in all 64 tested seeds at x2 and x3, while normalized work per agent-tick declined.",
+  "resultVisual": {
+    "ariaLabel": "Transport-success seeds increased from 44 of 64 at x1 to 64 of 64 at x2 and x3, while normalized work per agent-tick declined.",
+    "rows": [
+      {"label": "x1", "value": 44, "max": 64, "display": "44/64", "detail": "0.01324 work / agent-tick"},
+      {"label": "x2", "value": 64, "max": 64, "display": "64/64", "detail": "0.00970 work / agent-tick"},
+      {"label": "x3", "value": 64, "max": 64, "display": "64/64", "detail": "0.00867 work / agent-tick"}
+    ]
+  },
+  "claims": [
+    "Frozen local rules survived proportional x1, x2, and x3 scaling under the preregistered scale-test gates.",
+    "Sustained late work and contributor-independent reuse survived at all three tested scales.",
+    "Transported-substrate reuse occurred in 44/64 seeds at x1 and 64/64 at x2 and x3.",
+    "Conservation, provenance, exact replay, formation-contract, and nonnegative-state checks passed.",
+    "Normalized work per agent-tick declined from about 0.01324 at x1 to 0.00970 at x2 and 0.00867 at x3."
+  ],
+  "resultTable": {
+    "columns": ["Scale", "Grid", "Agents", "Ticks", "Lifetime", "Median work", "Re-formations", "Independent reuse", "Transported reuse median", "Transport-success seeds"],
+    "rows": [
+      ["x1", "17x17", "18", "512", "7", "122", "381.5", "181.5", "1", "44/64"],
+      ["x2", "34x34", "72", "1024", "14", "715.5", "2341.5", "996.5", "6", "64/64"],
+      ["x3", "51x51", "162", "1536", "21", "2157", "7679", "2959", "12", "64/64"]
+    ]
+  },
+  "whatChanged": [
+    "World side scaled as 17*s, agents as 18*s^2, horizon as 512*s, formation lifetime as 7*s, and material feed per tick as s^2.",
+    "The number and duration of possible local causal histories increased with scale.",
+    "Total cycling and transported-reuse reliability increased across the tested range."
+  ],
+  "whatHeldConstant": [
+    "Movement score, carry rule, trace rule, formation rule, maintenance priority, dissolution rule, work rule, local costs, relation count, and tie-break.",
+    "Movement remained one edge per tick.",
+    "Local formation, movement, maintenance, and work costs remained unchanged.",
+    "Cargo capacity remained three units of ordinary conserved material.",
+    "No global planner, global map, curiosity bonus, future-state representation, or broadcast knowledge was added."
+  ],
+  "whyItMatters": [
+    "A capability can be opportunity-limited rather than rule-limited.",
+    "Scale can change the space of admissible local causal histories even when the local rule does not change.",
+    "Before adding reasoning complexity to an unreliable system, test topology, lifetime, resource availability, transport, sparse encounter rate, and the number of independent causal histories."
+  ],
+  "whatDidNotImprove": [
+    "Normalized work per agent-tick declined: about 0.01324 at x1, 0.00970 at x2, and 0.00867 at x3.",
+    "The evidence does not show that scale made the system uniformly more efficient.",
+    "The x1 transported-reuse result did not change and was not repaired."
+  ],
+  "negativeResult": {
+    "title": "The original transported-substrate gate remains failed",
+    "summary": "The frozen carry correction preregistered at least 48/64 transported-success seeds at x1. The executable result was 44/64, so cycle gate C6 failed and the full cycle remained failed.",
+    "details": [
+      "A later 256-seed extension produced 171/256 successes, or 66.8%, with a Wilson 95% interval of about 60.8%-72.3%.",
+      "The four 64-seed blocks were 44/64, 45/64, 41/64, and 41/64.",
+      "Late work remained 256/256, supporting a conditional small-scale transport boundary rather than run-to-run noise.",
+      "The separate scale-test gate required at least 32/64 transported successes, so x1 passed that later scale-test gate without retroactively passing the original 48/64 carry gate."
+    ]
+  },
+  "diagnostics": [
+    {
+      "title": "Maintenance-first ordering",
+      "status": "SUSTAINED CYCLE / WEAK TRANSPORT",
+      "text": "Maintenance-first preserved sustained cycling but suppressed many moves that had been selected and were affordable before maintenance."
+    },
+    {
+      "title": "Movement-first ordering",
+      "status": "STRONGER TRANSPORT / CYCLE COLLAPSE",
+      "text": "Reversing the order strengthened transport but destroyed the larger sustained-work cycle."
+    },
+    {
+      "title": "Rejected arbitration variants",
+      "status": "FAILED",
+      "text": "Immediate-energy arbitration, terminal-life arbitration, and commitment reserve before formation did not preserve the desired cycle and universalize transport together."
+    }
+  ],
+  "interpretation": [
+    "A fixed set of local deterministic rules can preserve useful cycling across proportional increases in system size, while some higher-order capabilities become more reliable because larger systems create more opportunities for locally required conditions to coincide.",
+    "Scale changes the space of possible local causal histories even when the local rule does not change.",
+    "RULE COMPLEXITY != OPPORTUNITY COMPLEXITY."
+  ],
+  "limitations": [
+    "Only scale factors x1, x2, and x3 were tested.",
+    "World size, population, horizon, lifetime, and input schedule scaled together, so this release does not isolate which scaling dimension caused the reliability change.",
+    "The result belongs to this deterministic integer-discrete mechanism and its declared conditions.",
+    "The local-condition audits identify necessary and diagnostic conditions, not a complete causal decomposition of every failed seed."
+  ],
+  "notEstablished": [
+    "Arbitrary-scale continuation or a universal scaling law.",
+    "Improved normalized efficiency.",
+    "Intelligence, life, consciousness, or biological reproduction.",
+    "A general or philosophical theory of emergence.",
+    "Retroactive passing of the original 44/64 preregistered gate."
+  ],
+  "nextQuestion": "Which scaling dimension - topology, population, horizon, formation lifetime, input rate, or independent-history count - causally changes transported-reuse reliability under a newly frozen factorial or ablation design?",
+  "canonicalRelation": "This is a Natural Math mechanism-level experimental branch. It does not replace the Natural Math v5 frozen integer baseline and does not rewrite earlier Natural Math as Consequential Formation.",
+  "aiRelevance": "This result is being examined as a mechanism-level example for the broader Consequential Formation and Formative Field program: capability reliability may sometimes be limited by the availability of admissible local histories rather than by insufficient local reasoning complexity. This is interpretation, not evidence that artificial intelligence was demonstrated.",
+  "supersedes": [],
+  "supersededBy": null,
+  "priorReleaseLinks": [],
+  "codeDataLinks": [],
+  "sourceArtifacts": [
+    {"label": "Complete source package", "file": "NATURAL_MATH_SCALE_HANDOFF_FOR_JIM_2026-09-13.zip", "role": "original_package", "expectedSha256": "2b7f4c0b0ec2eb3ed8aa6ee25e149bf8e9ac10f44b54832e103833ef417ea1cf"},
+    {"label": "Handoff for Jim", "file": "HANDOFF_FOR_JIM.md", "role": "handoff", "expectedSha256": "b21232ae4184fa43a7b9f579fc9f4dec3f35824d05a8cce4132cc37fecd8abfe"},
+    {"label": "Carry correction evidence", "file": "NATURAL_MATH_MOVING_CYCLE_CARRY_CORRECTION_2026-09-13.zip", "role": "executable_receipts", "expectedSha256": "58b540adbb2c6b385fd6c1e845a50d32153624efc3f64172848bfe1b357f33b9"},
+    {"label": "Carry stability and local-condition audit", "file": "NATURAL_MATH_CARRY_STABILITY_LOCAL_CONDITION_AUDIT_2026-09-13.zip", "role": "audit_receipts", "expectedSha256": "50485202f1413588a8b61ec7157b775f4b96e0d4b0ec8a2795eafbd7171e189a"},
+    {"label": "Proportional scale test", "file": "NATURAL_MATH_CARRY_SCALE_TEST_2026-09-13.zip", "role": "preregistered_experiment", "expectedSha256": "a0732b4ade249f22b4491ba32f9df8f27d3f4fde2c0fc0fa843a2fe1cbca85b9"},
+    {"label": "Formed-movement causal audit", "file": "NATURAL_MATH_FORMED_MOVEMENT_CAUSAL_AUDIT_2026-09-13.zip", "role": "diagnostic_receipts", "expectedSha256": "ba67af4b14741b95ae05c370fe7e1f3c6bf5d598294ee30631c59768cd37376a"},
+    {"label": "Tick-order energy audit", "file": "NATURAL_MATH_TICK_ORDER_ENERGY_AUDIT_2026-09-13.zip", "role": "accepted_instrumentation", "expectedSha256": "4b8f1997ceb9eaef83765019d042233db6e1a22a9b9f228c16e875b2b3a6cb3b"},
+    {"label": "Source package README", "file": "README.md", "role": "source_orientation", "expectedSha256": "503ccfa803504463415277f82765c22fe1dcc6dfeaae2ce0276f38c66419ccb4"},
+    {"label": "Original package checksum manifest", "file": "SHA256_MANIFEST.txt", "role": "source_manifest", "expectedSha256": "893287337553cebda95afd3d12332d15321329e75d0c3bd9c93be5e8f8eeff43"}
+  ]
+}

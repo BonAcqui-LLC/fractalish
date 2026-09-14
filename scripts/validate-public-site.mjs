@@ -61,7 +61,7 @@ for (const file of files) {
   if (!redirect && !/document\.documentElement\.classList\.add\(["']js["']\)/.test(html)) errors.push(`${rel}: missing no-JS navigation hook`);
   const pageClass = html.match(/<meta\b[^>]*name=["']fractalish:page-class["'][^>]*content=["']([^"']+)["']/i)?.[1];
   const bodyClass = html.match(/<body\b[^>]*data-page-class=["']([^"']+)["']/i)?.[1];
-  const allowedPageClasses = new Set(["JOURNEY", "CURRENT_FRAMEWORK", "CURRENT_PROJECT", "EVIDENCE_RECORD", "HISTORICAL_RECORD", "TOOL", "ADMIN/UTILITY"]);
+  const allowedPageClasses = new Set(["JOURNEY", "CURRENT_FRAMEWORK", "CURRENT_PROJECT", "RESEARCH_RELEASE", "EVIDENCE_RECORD", "HISTORICAL_RECORD", "TOOL", "ADMIN/UTILITY"]);
   if (!pageClass || !allowedPageClasses.has(pageClass)) errors.push(`${rel}: missing or invalid page classification metadata`);
   if (bodyClass !== pageClass) errors.push(`${rel}: body page classification differs from metadata`);
   if (!redirect) {
@@ -173,6 +173,99 @@ if (aiInventory) {
   }
 }
 
+const releaseContentDir = path.join(ROOT, "content", "releases");
+const releaseRecords = fs.readdirSync(releaseContentDir)
+  .filter((name) => name.endsWith(".json") && !name.startsWith("_"))
+  .map((name) => JSON.parse(fs.readFileSync(path.join(releaseContentDir, name), "utf8")));
+const releaseIds = releaseRecords.map((release) => release.id);
+const releaseSlugs = releaseRecords.map((release) => release.slug);
+if (new Set(releaseIds).size !== releaseIds.length) errors.push("Research Releases: duplicate release IDs");
+if (new Set(releaseSlugs).size !== releaseSlugs.length) errors.push("Research Releases: duplicate release slugs");
+
+for (const release of releaseRecords) {
+  const articlePath = path.join(ROOT, "releases", `${release.slug}.html`);
+  const assetDir = path.join(ROOT, "release-assets", release.slug);
+  if (!fs.existsSync(articlePath)) {
+    errors.push(`Research Release ${release.id}: missing generated article`);
+    continue;
+  }
+  const article = fs.readFileSync(articlePath, "utf8");
+  if (!article.includes(`<h1>${release.title}</h1>`)) errors.push(`Research Release ${release.id}: title differs from content record`);
+  if (!article.includes('content="RESEARCH_RELEASE"') || !article.includes('data-page-class="RESEARCH_RELEASE"')) errors.push(`Research Release ${release.id}: wrong page class`);
+  if (!article.includes(release.id) || !article.includes(release.status) || !article.includes(release.evidenceClass)) errors.push(`Research Release ${release.id}: missing public status metadata`);
+
+  const manifestPath = path.join(assetDir, "manifest.json");
+  const checksumsPath = path.join(assetDir, "checksums.sha256");
+  if (!fs.existsSync(manifestPath) || !fs.existsSync(checksumsPath)) {
+    errors.push(`Research Release ${release.id}: missing generated manifest or checksums`);
+    continue;
+  }
+  const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf8"));
+  const checksums = fs.readFileSync(checksumsPath, "utf8");
+  if (manifest.id !== release.id || manifest.failed_gates_preserved !== release.failedGatesPreserved) errors.push(`Research Release ${release.id}: manifest metadata differs from content record`);
+  for (const artifact of release.sourceArtifacts) {
+    const artifactPath = path.join(assetDir, artifact.file);
+    if (!fs.existsSync(artifactPath)) {
+      errors.push(`Research Release ${release.id}: missing source artifact ${artifact.file}`);
+      continue;
+    }
+    const actual = crypto.createHash("sha256").update(fs.readFileSync(artifactPath)).digest("hex");
+    if (actual !== artifact.expectedSha256.toLowerCase()) errors.push(`Research Release ${release.id}: source hash mismatch for ${artifact.file}`);
+    if (manifest.sha256?.[artifact.file] !== actual) errors.push(`Research Release ${release.id}: manifest hash mismatch for ${artifact.file}`);
+    if (!checksums.includes(`${actual}  ${artifact.file}`)) errors.push(`Research Release ${release.id}: checksum listing missing ${artifact.file}`);
+    if (/\.(?:md|txt|json)$/i.test(artifact.file)) {
+      const text = fs.readFileSync(artifactPath, "utf8");
+      if (/[A-Z]:[\\/]|Users[\\/]moop/i.test(text)) errors.push(`Research Release ${release.id}: public source leaks an absolute workstation path in ${artifact.file}`);
+    }
+  }
+
+  for (const route of ["/", ...release.relatedRoutes]) {
+    const targetPath = route === "/" ? path.join(ROOT, "index.html") : path.join(ROOT, `${route.slice(1)}.html`);
+    const target = fs.readFileSync(targetPath, "utf8");
+    if ((target.match(/<!-- RESEARCH_RELEASES:START -->/g) || []).length !== 1 || (target.match(/<!-- RESEARCH_RELEASES:END -->/g) || []).length !== 1) errors.push(`${relative(targetPath)}: expected one Research Releases marker block`);
+    if (!target.includes(`/releases/${release.slug}`)) errors.push(`${relative(targetPath)}: missing related release ${release.slug}`);
+  }
+}
+
+const releaseArchive = fs.readFileSync(path.join(ROOT, "releases.html"), "utf8");
+for (const release of releaseRecords) {
+  if (!releaseArchive.includes(`/releases/${release.slug}`)) errors.push(`releases.html: missing ${release.slug}`);
+}
+
+const naturalMathScale = releaseRecords.find((release) => release.id === "RR-2026-09-13-NM-SCALE");
+if (!naturalMathScale) {
+  errors.push("Research Releases: missing Natural Math scale release");
+} else {
+  const immutableHashes = {
+    "NATURAL_MATH_SCALE_HANDOFF_FOR_JIM_2026-09-13.zip": "2b7f4c0b0ec2eb3ed8aa6ee25e149bf8e9ac10f44b54832e103833ef417ea1cf",
+    "HANDOFF_FOR_JIM.md": "b21232ae4184fa43a7b9f579fc9f4dec3f35824d05a8cce4132cc37fecd8abfe",
+    "NATURAL_MATH_MOVING_CYCLE_CARRY_CORRECTION_2026-09-13.zip": "58b540adbb2c6b385fd6c1e845a50d32153624efc3f64172848bfe1b357f33b9",
+    "NATURAL_MATH_CARRY_STABILITY_LOCAL_CONDITION_AUDIT_2026-09-13.zip": "50485202f1413588a8b61ec7157b775f4b96e0d4b0ec8a2795eafbd7171e189a",
+    "NATURAL_MATH_CARRY_SCALE_TEST_2026-09-13.zip": "a0732b4ade249f22b4491ba32f9df8f27d3f4fde2c0fc0fa843a2fe1cbca85b9",
+    "NATURAL_MATH_FORMED_MOVEMENT_CAUSAL_AUDIT_2026-09-13.zip": "ba67af4b14741b95ae05c370fe7e1f3c6bf5d598294ee30631c59768cd37376a",
+    "NATURAL_MATH_TICK_ORDER_ENERGY_AUDIT_2026-09-13.zip": "4b8f1997ceb9eaef83765019d042233db6e1a22a9b9f228c16e875b2b3a6cb3b",
+    "README.md": "503ccfa803504463415277f82765c22fe1dcc6dfeaae2ce0276f38c66419ccb4",
+    "SHA256_MANIFEST.txt": "893287337553cebda95afd3d12332d15321329e75d0c3bd9c93be5e8f8eeff43",
+  };
+  for (const [file, expected] of Object.entries(immutableHashes)) {
+    const declared = naturalMathScale.sourceArtifacts.find((artifact) => artifact.file === file)?.expectedSha256;
+    if (declared !== expected) errors.push(`Natural Math scale release: immutable source declaration changed for ${file}`);
+  }
+  const article = fs.readFileSync(path.join(ROOT, "releases", `${naturalMathScale.slug}.html`), "utf8");
+  for (const phrase of [
+    "44/64",
+    "at least 48/64",
+    "cycle gate C6 failed",
+    "at least 32/64",
+    "without retroactively passing the original 48/64 carry gate",
+    "Normalized work per agent-tick declined",
+    "does not replace the Natural Math v5 frozen integer baseline",
+    "not evidence that artificial intelligence was demonstrated",
+  ]) {
+    if (!article.includes(phrase)) errors.push(`Natural Math scale release: missing boundary phrase ${phrase}`);
+  }
+}
+
 const homeHtml = fs.readFileSync(path.join(ROOT, "index.html"), "utf8");
 if (!homeHtml.includes("Fractalish studies how what happens leaves a difference, and how that difference changes what can happen next.")) errors.push("index.html: missing adopted public sentence");
 if (!/CF v0\.4 RC1 is the current canonical candidate[\s\S]*constitutive investigative operation[\s\S]*projects are experiments, implementations, evidence, and historical formation/i.test(homeHtml)) errors.push("index.html: missing CF v0.4 RC1 public hierarchy statement");
@@ -273,7 +366,7 @@ const sitemap = fs.readFileSync(path.join(ROOT, "sitemap.xml"), "utf8");
 const locations = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
 const duplicateLocations = [...new Set(locations.filter((url, i) => locations.indexOf(url) !== i))];
 if (duplicateLocations.length) errors.push(`sitemap.xml: duplicate URLs ${duplicateLocations.join(", ")}`);
-for (const required of ["https://fractalish.com/", "https://fractalish.com/start-here", "https://fractalish.com/erase-the-nouns", "https://fractalish.com/rounds", "https://fractalish.com/consequential-formation", "https://fractalish.com/what-emerged", "https://fractalish.com/life-autonomy", "https://fractalish.com/memory-intelligence", "https://fractalish.com/cognition", "https://fractalish.com/reinspect-knowledge", "https://fractalish.com/build-with-it", "https://fractalish.com/what-cf-does-not-claim", "https://fractalish.com/try-to-kill-it", "https://fractalish.com/try-the-lens", "https://fractalish.com/cf-map", "https://fractalish.com/experiments", "https://fractalish.com/constitution", "https://fractalish.com/desiloization", "https://fractalish.com/scientific-neighbors", "https://fractalish.com/ageometrics/", "https://fractalish.com/specificity-thesis", "https://fractalish.com/ai", "https://fractalish.com/ai/research", "https://fractalish.com/ai/team", "https://fractalish.com/ai/method", "https://fractalish.com/ai/experiments", "https://fractalish.com/ai/artifacts", "https://fractalish.com/ai/failures", "https://fractalish.com/ai/build-log"]) {
+for (const required of ["https://fractalish.com/", "https://fractalish.com/start-here", "https://fractalish.com/erase-the-nouns", "https://fractalish.com/rounds", "https://fractalish.com/consequential-formation", "https://fractalish.com/what-emerged", "https://fractalish.com/life-autonomy", "https://fractalish.com/memory-intelligence", "https://fractalish.com/cognition", "https://fractalish.com/reinspect-knowledge", "https://fractalish.com/build-with-it", "https://fractalish.com/what-cf-does-not-claim", "https://fractalish.com/try-to-kill-it", "https://fractalish.com/try-the-lens", "https://fractalish.com/cf-map", "https://fractalish.com/experiments", "https://fractalish.com/constitution", "https://fractalish.com/desiloization", "https://fractalish.com/scientific-neighbors", "https://fractalish.com/ageometrics/", "https://fractalish.com/specificity-thesis", "https://fractalish.com/ai", "https://fractalish.com/ai/research", "https://fractalish.com/ai/team", "https://fractalish.com/ai/method", "https://fractalish.com/ai/experiments", "https://fractalish.com/ai/artifacts", "https://fractalish.com/ai/failures", "https://fractalish.com/ai/build-log", "https://fractalish.com/releases", "https://fractalish.com/releases/2026-09-13-natural-math-scale"]) {
   if (!locations.includes(required)) errors.push(`sitemap.xml: missing ${required}`);
 }
 if (locations.includes("https://fractalish.com/ageometrics.html")) errors.push("sitemap.xml: redirect alias ageometrics.html should not be indexed");

@@ -25,6 +25,18 @@ The top-level [`/ai`](https://fractalish.com/ai) section separates available hos
 - Public routes: `/ai/research`, `/ai/team`, `/ai/method`, `/ai/experiments`, `/ai/artifacts`, `/ai/failures`, and `/ai/build-log`
 - Claim boundary: inclusion identifies relevant local evidence or lineage; it does not promote a specification, draft, source paper, blocked experiment, or private record to a demonstrated result.
 
+## Research Releases
+
+[`/releases`](https://fractalish.com/releases) is the permanent chronological channel for reportable gains, failures, corrections, replications, and newly frozen artifacts. Each release has a readable article, explicit status and limitations, a machine-readable manifest, original backing files, and SHA-256 checksums.
+
+To publish the next release, copy `content/releases/_template.json`, add publication-safe files under `release-assets/<slug>/`, and run:
+
+```powershell
+node scripts/build-site.mjs
+```
+
+The build verifies hashes and then regenerates the article, archive, homepage cards, declared project/research cards, sitemap, shared chrome, search indexes, and tests. Full instructions: [`docs/RESEARCH_RELEASE_PUBLISHING.md`](docs/RESEARCH_RELEASE_PUBLISHING.md).
+
 ## Review Branch Focus
 
 - Current framework: Consequential Formation suspends inherited categories, reconstructs how retained consequences alter present constraints and future possibilities, audits whether returned concepts can stand independently, and types what returns.

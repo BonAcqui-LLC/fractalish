@@ -28,6 +28,14 @@ for(const [q,path] of [['"authority compiler"','/research/authority-compiler/'],
   console.log(q,results.slice(0,3).map(d=>d.url));
 }
 for (const [q, path] of [
+  ['"fixed local rules become more reliable"', '/releases/2026-09-13-natural-math-scale'],
+  ['"transported reuse" proportional scale', '/releases/2026-09-13-natural-math-scale'],
+]) {
+  const result = search(real, q)[0];
+  assert.equal(result?.url, path, `${q}: expected current Research Release to rank first`);
+  assert.equal(result?.pageClass, 'RESEARCH_RELEASE', `${q}: expected Research Release page class`);
+}
+for (const [q, path] of [
   ['Consequential Formation', '/consequential-formation'],
   ['life', '/life-autonomy'],
   ['memory', '/memory-intelligence'],

@@ -1,0 +1,91 @@
+{
+  "schema_version": "fractalish.research-release.v1",
+  "id": "RR-2026-09-13-NM-SCALE",
+  "title": "Natural Math: Fixed Local Rules Become More Reliable Under Proportional Scale",
+  "date": "2026-09-13",
+  "project": "Natural Math",
+  "status": "EXPERIMENTAL_RESULT",
+  "evidence_class": "EARNED_WITH_TESTED_SCOPE",
+  "source_precedence": [
+    "raw/executable receipt",
+    "frozen specification/preregistration",
+    "experiment report",
+    "handoff",
+    "interpretation"
+  ],
+  "claims": [
+    "Frozen local rules survived proportional x1, x2, and x3 scaling under the preregistered scale-test gates.",
+    "Sustained late work and contributor-independent reuse survived at all three tested scales.",
+    "Transported-substrate reuse occurred in 44/64 seeds at x1 and 64/64 at x2 and x3.",
+    "Conservation, provenance, exact replay, formation-contract, and nonnegative-state checks passed.",
+    "Normalized work per agent-tick declined from about 0.01324 at x1 to 0.00970 at x2 and 0.00867 at x3."
+  ],
+  "limitations": [
+    "Only scale factors x1, x2, and x3 were tested.",
+    "World size, population, horizon, lifetime, and input schedule scaled together, so this release does not isolate which scaling dimension caused the reliability change.",
+    "The result belongs to this deterministic integer-discrete mechanism and its declared conditions.",
+    "The local-condition audits identify necessary and diagnostic conditions, not a complete causal decomposition of every failed seed."
+  ],
+  "failed_gates_preserved": true,
+  "source_files": [
+    {
+      "label": "Complete source package",
+      "file": "NATURAL_MATH_SCALE_HANDOFF_FOR_JIM_2026-09-13.zip",
+      "role": "original_package"
+    },
+    {
+      "label": "Handoff for Jim",
+      "file": "HANDOFF_FOR_JIM.md",
+      "role": "handoff"
+    },
+    {
+      "label": "Carry correction evidence",
+      "file": "NATURAL_MATH_MOVING_CYCLE_CARRY_CORRECTION_2026-09-13.zip",
+      "role": "executable_receipts"
+    },
+    {
+      "label": "Carry stability and local-condition audit",
+      "file": "NATURAL_MATH_CARRY_STABILITY_LOCAL_CONDITION_AUDIT_2026-09-13.zip",
+      "role": "audit_receipts"
+    },
+    {
+      "label": "Proportional scale test",
+      "file": "NATURAL_MATH_CARRY_SCALE_TEST_2026-09-13.zip",
+      "role": "preregistered_experiment"
+    },
+    {
+      "label": "Formed-movement causal audit",
+      "file": "NATURAL_MATH_FORMED_MOVEMENT_CAUSAL_AUDIT_2026-09-13.zip",
+      "role": "diagnostic_receipts"
+    },
+    {
+      "label": "Tick-order energy audit",
+      "file": "NATURAL_MATH_TICK_ORDER_ENERGY_AUDIT_2026-09-13.zip",
+      "role": "accepted_instrumentation"
+    },
+    {
+      "label": "Source package README",
+      "file": "README.md",
+      "role": "source_orientation"
+    },
+    {
+      "label": "Original package checksum manifest",
+      "file": "SHA256_MANIFEST.txt",
+      "role": "source_manifest"
+    }
+  ],
+  "sha256": {
+    "NATURAL_MATH_SCALE_HANDOFF_FOR_JIM_2026-09-13.zip": "2b7f4c0b0ec2eb3ed8aa6ee25e149bf8e9ac10f44b54832e103833ef417ea1cf",
+    "HANDOFF_FOR_JIM.md": "b21232ae4184fa43a7b9f579fc9f4dec3f35824d05a8cce4132cc37fecd8abfe",
+    "NATURAL_MATH_MOVING_CYCLE_CARRY_CORRECTION_2026-09-13.zip": "58b540adbb2c6b385fd6c1e845a50d32153624efc3f64172848bfe1b357f33b9",
+    "NATURAL_MATH_CARRY_STABILITY_LOCAL_CONDITION_AUDIT_2026-09-13.zip": "50485202f1413588a8b61ec7157b775f4b96e0d4b0ec8a2795eafbd7171e189a",
+    "NATURAL_MATH_CARRY_SCALE_TEST_2026-09-13.zip": "a0732b4ade249f22b4491ba32f9df8f27d3f4fde2c0fc0fa843a2fe1cbca85b9",
+    "NATURAL_MATH_FORMED_MOVEMENT_CAUSAL_AUDIT_2026-09-13.zip": "ba67af4b14741b95ae05c370fe7e1f3c6bf5d598294ee30631c59768cd37376a",
+    "NATURAL_MATH_TICK_ORDER_ENERGY_AUDIT_2026-09-13.zip": "4b8f1997ceb9eaef83765019d042233db6e1a22a9b9f228c16e875b2b3a6cb3b",
+    "README.md": "503ccfa803504463415277f82765c22fe1dcc6dfeaae2ce0276f38c66419ccb4",
+    "SHA256_MANIFEST.txt": "893287337553cebda95afd3d12332d15321329e75d0c3bd9c93be5e8f8eeff43"
+  },
+  "supersedes": [],
+  "superseded_by": null,
+  "canonical_relation": "This is a Natural Math mechanism-level experimental branch. It does not replace the Natural Math v5 frozen integer baseline and does not rewrite earlier Natural Math as Consequential Formation."
+}

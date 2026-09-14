@@ -15,6 +15,7 @@ const FOOTER = fs.readFileSync(path.join(ROOT, "_partials", "site-footer.html"),
 const NAV_MATCHERS = [
   { test: /start-here/, href: "/start-here" },
   { test: /^\/ai(?:\/|$)/, href: "/ai" },
+  { test: /^\/releases(?:\/|$)/, href: "/evidence" },
   { test: /consequential-formation|erase-the-nouns|what-emerged|what-cf-does-not-claim|scientific-neighbors|try-to-kill-it|framework/, href: "/consequential-formation" },
   { test: /project-map|persistent-observer|cognitive-basin|natural-math|ageometrics|specificity-thesis|cntm|bolt-on|weighting-kernel|mathematical-bindings|fractalish-ai|motorola-activation/, href: "/project-map" },
   { test: /evidence|documents|library|atlas|white-papers|whitepaper|research|experiments|datasets|status|review|commons|synaptient-declaration|support|contribute|videos|glossary|roadmap|archive/, href: "/evidence" },
@@ -34,6 +35,7 @@ function classify(filePath, redirect = false) {
   if (redirect || route === "/404" || route.startsWith("/docs/visual-audit/")) return "ADMIN/UTILITY";
   if (JOURNEY.has(route)) return "JOURNEY";
   if (FRAMEWORK.has(route)) return "CURRENT_FRAMEWORK";
+  if (/^\/releases\//.test(route)) return "RESEARCH_RELEASE";
   if (/^\/(ai(?:\/|$)|persistent-observer|cognitive-basin|natural-math|ageometrics|geometric-sufficiency-ratio|specificity-thesis|cntm-realization|bolt-on|weighting-kernel|mathematical-bindings|fractalish-ai|motorola-activation|research\/(aptd|asf|authority-compiler|beyond-learnable-novelty|event006-adjudication|formative-field-computing|recovery-wake|recursive-admissibility))/.test(route)) return "CURRENT_PROJECT";
   if (/^\/(archive|notes|resonant-morphology-thesis|mcva|mcva-amcva-hold|atlas|field-guide|whitepaper|white-papers|open-release-doctrine|desiloization|framework|research\/microglia-fractal-analysis-precedent)/.test(route)) return "HISTORICAL_RECORD";
   if (/^\/(tools|research-query|try-the-lens|cf-map)/.test(route)) return "TOOL";
@@ -47,6 +49,7 @@ function contextBanner(pageClass) {
     EVIDENCE_RECORD: '<aside class="context-banner is-record" aria-label="Page context"><strong>Evidence record</strong><span>Technical, documentary, or review material. Status belongs to each named artifact.</span><a href="/for-reviewers">Reviewer guide</a></aside>',
     HISTORICAL_RECORD: '<aside class="context-banner is-history" aria-label="Page context"><strong>Historical record</strong><span>Earlier Fractalish research preserved as formation history. Current framework: Consequential Formation.</span><a href="/consequential-formation">Current framework</a><a href="/evidence">Related evidence</a></aside>',
     TOOL: '<aside class="context-banner is-tool" aria-label="Page context"><strong>Method or tooling</strong><span>Runnable behavior and specifications are identified separately; a described workflow is not presented as a deployed capability.</span><a href="/tools">Tooling record</a></aside>',
+    RESEARCH_RELEASE: '<aside class="context-banner is-release" aria-label="Page context"><strong>Research release</strong><span>Dated result, correction, failure, replication, or frozen artifact with backing evidence attached.</span><a href="/releases">All releases</a><a href="/documents">Documents</a></aside>',
   };
   return banners[pageClass] || "";
 }
@@ -54,7 +57,7 @@ function contextBanner(pageClass) {
 const PROJECT_BRIEFS = {
   "/persistent-observer": ["How much consequential state can survive transfer between hosts?", "A governed persistent-observer and PIA architecture with receipts, contradiction history, replay, and host-owned action.", "Proposed integration architecture with mixed-status components.", "Frozen and locally validated component evidence is linked on this page and in Documents.", "Demonstrate the complete sequence in a declared production host without collapsing evidence, interpretation, or execution authority."],
   "/cognitive-basin": ["Can a capable machine acquire an individual formed history that causally changes how it reasons next?", "Bounded Basin structures plus the MFM v0.1 candidate: an auditable Formation Ledger and indexed executable susceptibilities that recruit a sparse coalition.", "Cognitive Basin has bounded software evidence; MFM and the Formative Field runtime remain specification / immediate build-test targets, not an achieved intelligence.", "Local fixtures and public claim records are linked through Documents; CF v0.4 RC1 sharpens the causal and matched-baseline tests.", "Demonstrate reversal learning, recovery formation, single-susceptibility transfer, and ablation beyond transcript, RAG, RETE, procedural-memory, and temporal-KG baselines."],
-  "/natural-math": ["Can bounded integer operations expose how prior transitions constrain later formation?", "A frozen integer baseline with separate diagnostic and experimental branches.", "Natural Math v5 is frozen within its declared fixture boundary.", "Version authority, fixtures, and direct public artifacts are listed on this page.", "Establish usefulness beyond the frozen bounded tests without promoting adjacent specifications by association."],
+  "/natural-math": ["Can bounded integer operations expose how prior transitions constrain later formation?", "The v5 frozen integer baseline plus separately frozen, hash-bound experimental branches such as the 2026-09-13 moving/carry scale test.", "Natural Math v5 governs its declared fixture boundary; the moving/carry mechanism is frozen for its separate tested experiment and does not supersede v5.", "Version authority, fixtures, public release articles, executable receipts, and source-package hashes are linked on this page.", "Separate topology, population, horizon, lifetime, input rate, and independent-history count under a newly frozen design without repairing the original 44/64 failed gate."],
   "/ageometrics": ["What target-relevant value survives a geometric representation, and what becomes residue?", "Comparator protocols and a geometric sufficiency ratio under declared targets.", "Working paper and synthetic illustration; not a universal geometry.", "Paper, protocol, code, manifest, and result artifacts are directly linked.", "Validate on independent domain-native baselines and report failures without morphology-first inference."],
   "/geometric-sufficiency-ratio": ["How can representation sufficiency be measured without mistaking geometry for the thing represented?", "A target-conditioned ratio and comparator protocol.", "Working construct within Ageometrics.", "The Ageometrics paper and reproducible illustration are linked from the project record.", "Test whether the ratio predicts task-relevant loss across independent representations."],
   "/cntm-realization": ["Can growth history become durable morphology and conductance, and eventually alter later computation?", "An optional carbon-nanotube physical-substrate branch; biology supplies routines, not a required implementation script.", "Candidate physical program; not required for MFM and no demonstrated physical memory device is claimed.", "The public CNTM thesis is available as a direct document artifact.", "Build and independently measure a physical system against electrical and morphological controls."],
@@ -301,6 +304,7 @@ const classificationRows = files.map((file) => {
     EVIDENCE_RECORD: ["Current record", "Evidence", "Retain as dense technical or documentary record"],
     HISTORICAL_RECORD: ["Historical", "Evidence", "Preserve chronology with historical context banner"],
     TOOL: ["Current record", "Evidence", "Label deployed capability separately from specification"],
+    RESEARCH_RELEASE: ["Dated release", "Evidence", "Preserve result, failure, limits, sources, and supersession"],
     "ADMIN/UTILITY": ["Alias or utility", "None", "Preserve routing or administrative function"],
   }[pageClass];
   return {

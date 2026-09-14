@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-09-14 - Research Releases and Natural Math scale evidence
+
+- Added a JSON-driven Research Releases pipeline, permanent `/releases` archive, stable article routes, tagged project feeds, source manifests, checksums, and one-command build.
+- Published the September 13 Natural Math moving/carry proportional-scale result with the original `44/64 < 48/64` preregistered failure preserved.
+- Published the original source package and five evidence ZIPs byte-for-byte after complete outer/inner manifest verification and publication-safety review.
+- Kept Natural Math v5 authority separate from the frozen moving/carry experimental branch and kept the AI relation interpretive rather than evidentiary.
+- Added Research Release page classification, search-result labeling/ranking, responsive data tables, and source-hash validation.
+
 ## 2026-09-13 - AI public laboratory and local research inventory
 
 - Added `/ai` as a first-class public section with research, team, method, experiments, artifacts, failures, and build-log offices.
