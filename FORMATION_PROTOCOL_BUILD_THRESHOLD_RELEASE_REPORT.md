@@ -67,4 +67,8 @@ The Formation Kernel build was not started in this tranche.
 
 ## Commit and deployment
 
-Pending clean commit, GitHub validation, Cloudflare deployment, and cache-busted live verification at the time this report was first written. Final receipts will be recorded after publication.
+The implementation was committed as `b7cb4ad0f7095a7a7c1bfc7e4594aef9824ea442`. A clean-clone GitHub check exposed line-ending normalization of the source transcript; `.gitattributes` now preserves the release directory byte-for-byte, and corrective commit `a644c04ae86fb990c9b9ef8d537febb97f2065a2` restored the audited 251,689-byte source object. GitHub Actions validation run `34934334886` then passed all structure, search, crawl, source-hash, and provenance stages.
+
+Cloudflare Pages deployment `https://51ded82e.fractalish.pages.dev` was published from exact commit `a644c04ae86fb990c9b9ef8d537febb97f2065a2`. Search Worker version `270f6a4f-0d5b-43f7-95c1-daa400cd2dde` deployed crawler generation 15.
+
+Cache-busted checks on the immutable Pages URL and `https://fractalish.com` returned HTTP 200 for the homepage, archive, release, six related project/research routes, manifest, source, and sitemap. The live deployment receipt named the same commit and `main` branch. The live source matched size 251,689 and SHA-256 `F69D019749682422CCC18CCC5F7EECF9EB3E56BCE9EF33693887653C69406D3E`. The live search index contained 96 documents and ranked the release first for Formation Protocol/build threshold, proposal operator/reopening, and Wade Marr/recompression queries.
