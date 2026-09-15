@@ -30,6 +30,9 @@ for(const [q,path] of [['"authority compiler"','/research/authority-compiler/'],
 for (const [q, path] of [
   ['"fixed local rules become more reliable"', '/releases/2026-09-13-natural-math-scale'],
   ['"transported reuse" proportional scale', '/releases/2026-09-13-natural-math-scale'],
+  ['"formation protocol" "build threshold"', '/releases/2026-09-15-formation-protocol-build-threshold'],
+  ['"proposal operator" reopening', '/releases/2026-09-15-formation-protocol-build-threshold'],
+  ['"Wade Marr" recompression', '/releases/2026-09-15-formation-protocol-build-threshold'],
 ]) {
   const result = search(real, q)[0];
   assert.equal(result?.url, path, `${q}: expected current Research Release to rank first`);

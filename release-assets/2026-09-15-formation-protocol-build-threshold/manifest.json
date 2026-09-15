@@ -1,0 +1,42 @@
+{
+  "schema_version": "fractalish.research-release.v1",
+  "id": "RR-2026-09-15-CF-BUILD-THRESHOLD",
+  "title": "Formation Protocol Reaches the Build Threshold",
+  "date": "2026-09-15",
+  "project": "Consequential Formation",
+  "status": "WORKING RESEARCH / BUILD THRESHOLD REACHED",
+  "evidence_class": "CANDIDATE MECHANISM - BOUNDED IMPLEMENTATION NEXT",
+  "source_precedence": [
+    "raw/executable receipt",
+    "frozen specification/preregistration",
+    "experiment report",
+    "handoff",
+    "interpretation"
+  ],
+  "claims": [
+    "The Formation Protocol is specified well enough to justify a bounded Formation Kernel implementation.",
+    "Formation is operationally distinguished from storage by a verified retained distinction that changes later recruitment, admissibility, resolution, trust, exclusion, or recomputation.",
+    "Candidate proposal and consequential adjudication are separate offices in the proposed mechanism.",
+    "The first implementation is approved only as a matched, falsifiable build-test target below any intelligence claim."
+  ],
+  "limitations": [
+    "This is a pre-implementation mechanism release, not a result from executable software.",
+    "The bounded finite-state case imports established mathematics; the developmental extension remains a candidate engineering program.",
+    "The proposal operator's yield, reopening reliability, causal portability, and net resource dividend remain untested.",
+    "Disciplinary boundaries may correspond to real causal separations; this method requires testing rather than automatic removal."
+  ],
+  "failed_gates_preserved": true,
+  "source_files": [
+    {
+      "label": "Primary Round Two research artifact",
+      "file": "TEAM CHALLENGE - Remove the Privileges — Formation Protocol, Closure - Composition, GR, Dimensional State - ROUND TWO - ELIMINATION ROUND.txt",
+      "role": "primary_research_artifact"
+    }
+  ],
+  "sha256": {
+    "TEAM CHALLENGE - Remove the Privileges — Formation Protocol, Closure - Composition, GR, Dimensional State - ROUND TWO - ELIMINATION ROUND.txt": "f69d019749682422ccc18ccc5f7eecf9eb3e56bce9ef33693887653c69406d3e"
+  },
+  "supersedes": [],
+  "superseded_by": null,
+  "canonical_relation": "This release records a working mechanism and build threshold under the current CF v0.4 RC1 candidate. It does not modify, freeze, or supersede the canonical framework artifact, and it does not begin the Formation Kernel implementation."
+}

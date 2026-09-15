@@ -9,6 +9,7 @@ const ARTICLE_DIR = path.join(ROOT, "releases");
 const VALID_STATUSES = new Set([
   "REPORTABLE_RESULT", "EXPERIMENTAL_RESULT", "CORRECTION", "NEGATIVE_RESULT",
   "FAILURE", "NEW_SPECIFICATION", "FROZEN_ARTIFACT", "REPLICATION", "EXTENSION", "SUPERSEDED",
+  "WORKING RESEARCH / BUILD THRESHOLD REACHED",
 ]);
 const REQUIRED = [
   "schemaVersion", "id", "title", "slug", "date", "authors", "project", "researchArea", "status",
@@ -46,6 +47,15 @@ function validateRelease(release, sourceFile) {
   for (const row of release.resultVisual?.rows ?? []) {
     if (!row.label || !Number.isFinite(row.value) || !Number.isFinite(row.max) || row.max <= 0 || row.value < 0 || row.value > row.max) {
       throw new Error(`${sourceFile}: invalid resultVisual row`);
+    }
+  }
+  for (const section of release.articleSections ?? []) {
+    if (!section.heading || !Array.isArray(section.blocks)) throw new Error(`${sourceFile}: invalid article section`);
+    for (const block of section.blocks) {
+      if (!["paragraph", "question", "equation", "list", "callout"].includes(block.type)) throw new Error(`${sourceFile}: unsupported article block ${block.type}`);
+      if (["paragraph", "question", "equation"].includes(block.type) && !block.text) throw new Error(`${sourceFile}: empty ${block.type} block`);
+      if (block.type === "list" && (!Array.isArray(block.items) || !block.items.length)) throw new Error(`${sourceFile}: empty list block`);
+      if (block.type === "callout" && (!block.title || !block.text)) throw new Error(`${sourceFile}: incomplete callout block`);
     }
   }
 }
@@ -145,12 +155,31 @@ function renderVisual(visual) {
   return `<div class="scale-result-visual" aria-label="${escapeHtml(visual.ariaLabel)}">${visual.rows.map((row) => `<div><span>${escapeHtml(row.label)}</span><progress value="${row.value}" max="${row.max}">${escapeHtml(row.display ?? `${row.value}/${row.max}`)}</progress><strong>${escapeHtml(row.display ?? `${row.value}/${row.max}`)}</strong><small>${escapeHtml(row.detail ?? "")}</small></div>`).join("")}</div>`;
 }
 
+function renderArticleSections(sections) {
+  return sections.map((section) => `<section class="section release-narrative"><p class="eyebrow">${escapeHtml(section.eyebrow ?? "Research state")}</p><h2>${escapeHtml(section.heading)}</h2>${section.blocks.map((block) => {
+    if (block.type === "paragraph") return `<p>${escapeHtml(block.text)}</p>`;
+    if (block.type === "question") return `<p class="argument">${escapeHtml(block.text)}</p>`;
+    if (block.type === "equation") return `<div class="release-equation" role="img" aria-label="${escapeHtml(block.label ?? block.text)}"><code>${escapeHtml(block.text)}</code></div>`;
+    if (block.type === "list") return list(block.items);
+    return `<aside class="callout"><strong>${escapeHtml(block.title)}</strong><p>${escapeHtml(block.text)}</p></aside>`;
+  }).join("")}</section>`).join("");
+}
+
 function articleHtml(release, hashes) {
   const canonical = `https://fractalish.com/releases/${release.slug}`;
-  const negativeResult = release.negativeResult?.title ? `<section class="section failure-box"><p class="eyebrow">Failed preregistration preserved</p><h2>${escapeHtml(release.negativeResult.title)}</h2><p><strong>${escapeHtml(release.negativeResult.summary)}</strong></p>${list(release.negativeResult.details ?? [])}</section>` : "";
+  const negativeResult = release.negativeResult?.title ? `<section class="section failure-box"><p class="eyebrow">${escapeHtml(release.negativeResult.eyebrow ?? "Failed preregistration preserved")}</p><h2>${escapeHtml(release.negativeResult.title)}</h2><p><strong>${escapeHtml(release.negativeResult.summary)}</strong></p>${list(release.negativeResult.details ?? [])}</section>` : "";
   const diagnostics = release.diagnostics?.length ? `<section class="section"><p class="eyebrow">Causal and diagnostic audit</p><h2>Negative and diagnostic results</h2><div class="card-grid three">${release.diagnostics.map((item) => `<article class="card"><h3>${escapeHtml(item.title)}</h3><p>${escapeHtml(item.text)}</p><span class="status-badge is-negative">${escapeHtml(item.status)}</span></article>`).join("")}</div></section>` : "";
   const interpretation = release.interpretation?.length ? `<section class="section"><p class="eyebrow">Interpretation</p><h2>Interpretation boundary</h2>${release.interpretation.map((item) => `<p>${escapeHtml(item)}</p>`).join("")}</section>` : "";
   const aiRelation = release.aiRelevance ? `<p>${escapeHtml(release.aiRelevance)}</p>` : "";
+  const releaseEyebrow = release.articleSections?.length ? `${release.project} / Research Release` : "Research Release";
+  const sourceIntro = release.articleSections?.length
+    ? "Evidence role and SHA-256 are recorded in the release manifest. Source artifacts retain their own status and scope."
+    : "Evidence precedence: executable and raw receipt; frozen specification and preregistration; experiment report; handoff; interpretation.";
+  const standardBody = `<section class="section split"><div><p class="eyebrow">What changed</p><h2>What changed</h2>${list(release.whatChanged)}</div><div><p class="eyebrow">What stayed frozen</p><h2>What did not change</h2>${list(release.whatHeldConstant)}</div></section>
+  <section class="section split"><div><p class="eyebrow">Why it matters</p><h2>Why it matters</h2>${list(release.whyItMatters)}</div><aside class="callout"><strong>What did not improve</strong>${list(release.whatDidNotImprove)}</aside></section>
+  ${diagnostics}
+  ${interpretation}`;
+  const articleBody = release.articleSections?.length ? renderArticleSections(release.articleSections) : standardBody;
   return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
   <title>${escapeHtml(release.title)} | Fractalish Research Release</title>
   <meta name="description" content="${escapeHtml(release.summary)}">
@@ -161,17 +190,14 @@ function articleHtml(release, hashes) {
   <link rel="canonical" href="${canonical}"><meta name="fractalish:page-class" content="RESEARCH_RELEASE">
 </head><body data-page-class="RESEARCH_RELEASE">
 <main id="main-content" class="page-shell release-page">
-  <header class="page-hero narrow"><p class="eyebrow">Research Release / ${escapeHtml(isoDate(release.date))}</p><h1>${escapeHtml(release.title)}</h1><p class="lead">${escapeHtml(release.subtitle)}</p></header>
+  <header class="page-hero narrow"><p class="eyebrow">${escapeHtml(releaseEyebrow)} / ${escapeHtml(isoDate(release.date))}</p><h1>${escapeHtml(release.title)}</h1><p class="lead">${escapeHtml(release.subtitle)}</p></header>
   <dl class="project-brief release-status"><div><dt>Project</dt><dd>${escapeHtml(release.project)}</dd></div><div><dt>Status</dt><dd>${escapeHtml(release.status)}</dd></div><div><dt>Evidence class</dt><dd>${escapeHtml(release.evidenceClass)}</dd></div><div><dt>Research area</dt><dd>${escapeHtml(release.researchArea)}</dd></div><div><dt>Authors</dt><dd>${release.authors.map(escapeHtml).join(", ")}</dd></div><div><dt>Release ID</dt><dd>${escapeHtml(release.id)}</dd></div></dl>
   <section class="section release-abstract"><p class="eyebrow">The result</p><h2>Key result</h2><p class="argument">${escapeHtml(release.keyResult)}</p>${renderVisual(release.resultVisual)}${renderTable(release.resultTable)}</section>
   ${negativeResult}
-  <section class="section split"><div><p class="eyebrow">What changed</p><h2>What changed</h2>${list(release.whatChanged)}</div><div><p class="eyebrow">What stayed frozen</p><h2>What did not change</h2>${list(release.whatHeldConstant)}</div></section>
-  <section class="section split"><div><p class="eyebrow">Why it matters</p><h2>Why it matters</h2>${list(release.whyItMatters)}</div><aside class="callout"><strong>What did not improve</strong>${list(release.whatDidNotImprove)}</aside></section>
-  ${diagnostics}
-  ${interpretation}
+  ${articleBody}
   <section class="section split"><div><p class="eyebrow">Limitations</p><h2>Limitations</h2>${list(release.limitations)}</div><div><p class="eyebrow">Not established</p><h2>What is not established</h2>${list(release.notEstablished)}</div></section>
   <section class="section"><p class="eyebrow">Relation to current work</p><h2>Canonical relation</h2><p>${escapeHtml(release.canonicalRelation)}</p>${aiRelation}</section>
-  <section class="section"><p class="eyebrow">Source artifacts</p><h2>The article is the entry point. These files are the record.</h2><p>Evidence precedence: executable and raw receipt; frozen specification and preregistration; experiment report; handoff; interpretation.</p>${renderSources(release, hashes)}</section>
+  <section class="section"><p class="eyebrow">Source artifacts</p><h2>The article is the entry point. These files are the record.</h2><p>${escapeHtml(sourceIntro)}</p>${renderSources(release, hashes)}</section>
   <section class="section invitation"><p class="eyebrow">Next question</p><h2>Next question</h2><p>${escapeHtml(release.nextQuestion)}</p><p><a class="button secondary" href="/releases">Back to all Research Releases</a></p></section>
 </main></body></html>\n`;
 }

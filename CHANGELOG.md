@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-09-15 - Formation Protocol build threshold release
+
+- Published `/releases/2026-09-15-formation-protocol-build-threshold` as a working-research record before Formation Kernel implementation.
+- Preserved the candidate mechanism, restricted proposal office, operation-sufficient compression, provenance-preserving reopening, matched baselines, causal transplant/ablation test, resource accounting, and kill conditions.
+- Credited Wade Marr's closure and composition work without claiming co-authorship, formal equivalence, or invention of established partition-refinement mathematics.
+- Published the Round Two team artifact byte-for-byte with SHA-256 provenance; excluded Round One because its raw text contains signed cloud-access parameters, and did not surface Wade papers located outside the approved site artifact collection.
+- Extended the existing release renderer with ordered narrative blocks, added related CF page cards, hardened source safety validation, and advanced live search crawling to version 15.
+
 ## 2026-09-14 - Research Releases and Natural Math scale evidence
 
 - Added a JSON-driven Research Releases pipeline, permanent `/releases` archive, stable article routes, tagged project feeds, source manifests, checksums, and one-command build.

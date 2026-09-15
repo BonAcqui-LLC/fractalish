@@ -216,6 +216,7 @@ for (const release of releaseRecords) {
     if (/\.(?:md|txt|json)$/i.test(artifact.file)) {
       const text = fs.readFileSync(artifactPath, "utf8");
       if (/[A-Z]:[\\/]|Users[\\/]moop/i.test(text)) errors.push(`Research Release ${release.id}: public source leaks an absolute workstation path in ${artifact.file}`);
+      if (/(?:AWSAccessKeyId|x-amz-security-token|X-Amz-Credential|[?&]Signature=)/i.test(text)) errors.push(`Research Release ${release.id}: public source contains a signed credential URL in ${artifact.file}`);
     }
   }
 
@@ -264,6 +265,35 @@ if (!naturalMathScale) {
   ]) {
     if (!article.includes(phrase)) errors.push(`Natural Math scale release: missing boundary phrase ${phrase}`);
   }
+}
+
+const formationThreshold = releaseRecords.find((release) => release.id === "RR-2026-09-15-CF-BUILD-THRESHOLD");
+if (!formationThreshold) {
+  errors.push("Research Releases: missing Formation Protocol build-threshold release");
+} else {
+  const sourceName = "TEAM CHALLENGE - Remove the Privileges — Formation Protocol, Closure - Composition, GR, Dimensional State - ROUND TWO - ELIMINATION ROUND.txt";
+  const sourceHash = "f69d019749682422ccc18ccc5f7eecf9eb3e56bce9ef33693887653c69406d3e";
+  if (formationThreshold.sourceArtifacts.find((artifact) => artifact.file === sourceName)?.expectedSha256 !== sourceHash) errors.push("Formation threshold release: immutable Round Two source declaration changed");
+  const article = fs.readFileSync(path.join(ROOT, "releases", `${formationThreshold.slug}.html`), "utf8");
+  for (const phrase of [
+    "WORKING RESEARCH / BUILD THRESHOLD REACHED",
+    "CANDIDATE MECHANISM - BOUNDED IMPLEMENTATION NEXT",
+    "Formation is not storage",
+    "Proposal and adjudication are different offices",
+    "Inconsequential is never global",
+    "Wade Marr",
+    "They have not",
+    "does not report a Formation Kernel build",
+    "AGI or derived intelligence",
+    "That the Formation Kernel will work",
+    "Transplant and ablation fail to move the predicted behavior",
+  ]) {
+    if (!article.includes(phrase)) errors.push(`Formation threshold release: missing boundary phrase ${phrase}`);
+  }
+  if (/Hunter Marr/i.test(article)) errors.push("Formation threshold release: Hunter Marr appears instead of Wade Marr");
+  const homeReleaseSource = fs.readFileSync(path.join(ROOT, "index.html"), "utf8");
+  const homeReleaseLinks = [...homeReleaseSource.matchAll(/href="\/releases\/([^"]+)"/g)].map((match) => match[1]);
+  if (homeReleaseLinks[0] !== formationThreshold.slug) errors.push("index.html: Formation Protocol release is not the newest homepage release");
 }
 
 const homeHtml = fs.readFileSync(path.join(ROOT, "index.html"), "utf8");

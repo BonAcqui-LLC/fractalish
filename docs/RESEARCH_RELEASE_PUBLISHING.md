@@ -49,6 +49,7 @@ Use the project's native vocabulary where it is more precise. The release system
 - `REPLICATION`
 - `EXTENSION`
 - `SUPERSEDED`
+- `WORKING RESEARCH / BUILD THRESHOLD REACHED`
 
 Evidence classes are not globally constrained because native project evidence vocabularies retain authority. Use explicit labels such as `EARNED_WITH_TESTED_SCOPE`, `CANDIDATE`, `WORKING_HYPOTHESIS`, `FAILED`, or `HOLD`.
 

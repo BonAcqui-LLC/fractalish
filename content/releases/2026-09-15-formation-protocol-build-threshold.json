@@ -1,0 +1,232 @@
+{
+  "schemaVersion": 1,
+  "id": "RR-2026-09-15-CF-BUILD-THRESHOLD",
+  "title": "Formation Protocol Reaches the Build Threshold",
+  "slug": "2026-09-15-formation-protocol-build-threshold",
+  "date": "2026-09-15",
+  "authors": ["James Allen Clow", "Melissa Ellen Clow"],
+  "contributors": ["Documented human-AI research collaboration", "Wade Marr, acknowledged influence on closure and composition framing"],
+  "project": "Consequential Formation",
+  "researchArea": "Formation Protocol / bounded implementation threshold",
+  "status": "WORKING RESEARCH / BUILD THRESHOLD REACHED",
+  "evidenceClass": "CANDIDATE MECHANISM - BOUNDED IMPLEMENTATION NEXT",
+  "failedGatesPreserved": true,
+  "summary": "Consequence -> retained distinction -> changed future selectivity. Two adversarial rounds have defined enough structure to build the smallest Formation Kernel that can prove the candidate mechanism wrong.",
+  "subtitle": "After two Remove the Privileges rounds, the mechanism is defined well enough to stop explaining it for a while and build the smallest version that can fail.",
+  "featured": true,
+  "tags": ["Consequential Formation", "Formation Protocol", "Remove the Privileges", "Formation Kernel", "learning", "representation", "proposal operator", "closure", "recompression", "reopening", "scale", "AI", "intelligence gates", "Wade Marr"],
+  "relatedRoutes": ["/consequential-formation", "/erase-the-nouns", "/ai", "/ai/research", "/research", "/documents"],
+  "keyResult": "Two adversarial research rounds have specified a candidate formation sequence, a restricted proposal office, operation-sufficient compression, provenance-preserving reopening, matched reconstruction baselines, causal transplant and ablation tests, resource accounting, and explicit kill conditions. This clears a bounded build threshold; it is not implementation evidence.",
+  "claims": [
+    "The Formation Protocol is specified well enough to justify a bounded Formation Kernel implementation.",
+    "Formation is operationally distinguished from storage by a verified retained distinction that changes later recruitment, admissibility, resolution, trust, exclusion, or recomputation.",
+    "Candidate proposal and consequential adjudication are separate offices in the proposed mechanism.",
+    "The first implementation is approved only as a matched, falsifiable build-test target below any intelligence claim."
+  ],
+  "resultTable": {"columns": [], "rows": []},
+  "whatChanged": [
+    "The second round exposed inherited domain, frame, and scale filing systems that survived noun suspension.",
+    "The missing proposal operator was made explicit and separated from adjudication.",
+    "Compression, reopening, causal transfer, and resource-dividend requirements were made testable."
+  ],
+  "whatHeldConstant": [
+    "CF v0.4 RC1 remains the current canonical candidate, not a frozen theory.",
+    "Established partition-refinement, bisimulation, coarse-graining, quotient, and state-minimization mathematics retain native authority.",
+    "No Formation Kernel implementation or performance result exists in this release."
+  ],
+  "whyItMatters": [
+    "A system should not repeatedly pay full reconstruction cost if verified formation can produce cheaper correct recurrence.",
+    "The proposed tests can distinguish causal formed selectivity from storage, transcript, RAG, or static-rule effects.",
+    "Publishing before implementation preserves the candidate state and its kill conditions."
+  ],
+  "whatDidNotImprove": [
+    "No software was built in this tranche.",
+    "No performance, compute, energy, latency, or generalization dividend was measured.",
+    "Disagreement about the learning and intelligence thresholds remains explicit."
+  ],
+  "negativeResult": {
+    "eyebrow": "Primary kill condition",
+    "title": "Formation must change later operation and eventually pay for itself",
+    "summary": "If verified formation cannot causally alter later selectivity and eventually provide a positive performance or resource dividend under recurrence, the mechanism must be demoted.",
+    "details": [
+      "The first build must compare Formation Kernel behavior with repeated reconstruction under matched host, task, environment, and resource budget.",
+      "Transplant must move a predicted behavioral difference to a fresh matched host; ablation must remove that difference.",
+      "Ordinary transcript, RAG, static rules, and conventional state-minimization baselines retain priority if they reproduce the benefit at equal or lower cost."
+    ]
+  },
+  "diagnostics": [],
+  "interpretation": [],
+  "articleSections": [
+    {
+      "eyebrow": "Remove the Privileges / Round Two",
+      "heading": "The filing cabinets were still standing",
+      "blocks": [
+        {"type": "paragraph", "text": "We have spent much of the Consequential Formation work asking an uncomfortable question:"},
+        {"type": "question", "text": "What have we declared irrelevant before giving consequence the opportunity to decide?"},
+        {"type": "paragraph", "text": "The first Remove the Privileges research round attacked inherited nouns: gravity, dimensionality, spacetime, boundaries, conventional scientific categories, and our own terminology."},
+        {"type": "paragraph", "text": "The second round exposed a deeper problem. We had removed many of the nouns while quietly leaving the filing cabinets standing. Disciplinary domains were still deciding which variables were allowed to meet. Reference frames were still deciding what counted as background. Scale was still being treated as a ladder of pre-existing levels. And our proposed formation mechanism contained an embarrassing hole: the distinction being tested simply appeared from somewhere."},
+        {"type": "paragraph", "text": "That second round changed enough of the picture that we believe it is now time to build. Not everything. The smallest thing that can fail."}
+      ]
+    },
+    {
+      "heading": "What we think the kernel is",
+      "blocks": [
+        {"type": "paragraph", "text": "The present working sequence is:"},
+        {"type": "equation", "label": "Distinction leads to relation, consequence, retention, changed reachability, closure, a new participant, and a new relation", "text": "DISTINCTION -> RELATION -> CONSEQUENCE -> RETENTION -> CHANGED REACHABILITY -> CLOSURE -> NEW PARTICIPANT -> NEW RELATION"},
+        {"type": "paragraph", "text": "This is not being presented as a new law of nature. It is the current candidate grammar we intend to implement and attack."},
+        {"type": "paragraph", "text": "The important step for the software work is much narrower:"},
+        {"type": "equation", "label": "Experience leads to verified consequential distinction, formed selectivity, and different future operation", "text": "EXPERIENCE -> VERIFIED CONSEQUENTIAL DISTINCTION -> FORMED SELECTIVITY -> DIFFERENT FUTURE OPERATION"},
+        {"type": "paragraph", "text": "A system experiences something. A distinction within that experience is shown, not merely asserted, to alter consequence. That distinction is retained in a form that changes what the system recruits, admits, excludes, trusts, resolves, or recomputes when sufficiently similar conditions recur."},
+        {"type": "callout", "title": "Formation is not storage", "text": "If retained structure does not change later operation, we do not want to call it formation. It is storage."}
+      ]
+    },
+    {
+      "heading": "Learning before intelligence",
+      "blocks": [
+        {"type": "paragraph", "text": "We kept reaching for the word intelligence too early. That encouraged arguments about definitions when the lower mechanism had not yet been built. So we are separating the staircase."},
+        {"type": "equation", "label": "Provisional gate schedule from available difference through anticipatory selection", "text": "G0 available difference\nG1 differential consequence\nG2 retention\nG3 changed future recruitment or admissibility\nG4 causal witness\nG5 safe recompression\nG6 reopening\nG7 autonomous distinction proposal\nG8 anticipatory selection"},
+        {"type": "paragraph", "text": "The research team does not unanimously agree about where the word learning becomes fully justified, or whether strong operational intelligence begins at G8 alone or requires G7 plus G8. We are preserving that disagreement."},
+        {"type": "paragraph", "text": "Software can give us better questions than another round of naming. The first build therefore stops well below the intelligence claim."}
+      ]
+    },
+    {
+      "heading": "The missing office: proposal",
+      "blocks": [
+        {"type": "paragraph", "text": "An earlier formation equation assumed a candidate distinction d was simply available for testing. That is not good enough. Where did it come from?"},
+        {"type": "equation", "label": "Proposal operator maps receipts, residuals, contradictions, provenance, and available relations to candidate distinctions", "text": "Pi(receipts, residuals, contradictions, provenance, available relations) -> {d1, ..., dn}"},
+        {"type": "paragraph", "text": "We call this the proposal operator, Pi. Its purpose is not to establish truth. Its purpose is to prevent the current representation from monopolizing the hypothesis space."},
+        {"type": "equation", "label": "Liberal generation followed by rigorous discrimination and conservative formation", "text": "LIBERAL GENERATION -> RIGOROUS DISCRIMINATION -> CONSERVATIVE FORMATION"},
+        {"type": "paragraph", "text": "A system should be permitted to propose an unfamiliar distinction. That does not entitle the distinction to survive. Proposal and adjudication are different offices."},
+        {"type": "paragraph", "text": "For the first build, Pi will remain deliberately restricted. Candidate distinctions will come primarily from residuals, contradictions, collapse-twin divergence, provenance gaps, and deliberately available-but-unmodeled channels. Open-ended scientific hypothesis generation can wait."}
+      ]
+    },
+    {
+      "heading": "Remove the domain",
+      "blocks": [
+        {"type": "paragraph", "text": "One of our larger methodological corrections is simple to state: domains do not interact. Physical processes do."},
+        {"type": "paragraph", "text": "Physics, biology, astronomy, geology, chemistry, cognition, and the rest are extraordinarily useful human organizations of knowledge. They are not automatically physical boundaries. Absence from a discipline's conventional variable list is not evidence of physical inconsequence. Neither is the absence of an accepted mechanism."},
+        {"type": "paragraph", "text": "That does not mean every measurable variable should be retained. A candidate is allowed into testing. Consequence decides whether it stays."},
+        {"type": "callout", "title": "Inconsequential is never global", "text": "Under operation O, conditions C, intervention family U, horizon T, and tolerance epsilon, resolving distinction d separately has not changed the declared consequence. That is an operational result. It is not permission to erase the distinction from reality."}
+      ]
+    },
+    {
+      "heading": "Remove scale as a ladder",
+      "blocks": [
+        {"type": "equation", "label": "Closure at one scale becomes participation at the next", "text": "CLOSURE AT ONE SCALE BECOMES PARTICIPATION AT THE NEXT"},
+        {"type": "paragraph", "text": "A higher-scale participant does not need to be an ontologically different kind of thing. It may be a set of lower distinctions whose internal differences can safely remain unresolved for the next operation."},
+        {"type": "equation", "label": "Lower distinctions reach sufficient closure, become a participant, and enter a new relation", "text": "lower distinctions -> sufficient closure -> participant -> new relation"},
+        {"type": "paragraph", "text": "If a later operation exposes consequential divergence inside that closure, the distinction must reopen. Scale becomes less like a stack of boxes and more like a changing resolution of consequential sufficiency."},
+        {"type": "paragraph", "text": "This is deeply related to established coarse-graining, quotient construction, state minimization, bisimulation, and renormalization ideas. We intend to import that mathematics openly."}
+      ]
+    },
+    {
+      "eyebrow": "Attribution",
+      "heading": "Wade Marr's contribution to this step",
+      "blocks": [
+        {"type": "paragraph", "text": "Wade Marr's recent closure and composition work helped us solidify ground we had been circling. The useful connection is specific."},
+        {"type": "paragraph", "text": "Wade's work gives us a sharper formulation of this question: when may distinctions be safely collapsed because the reduced representation remains sufficient for a declared operation?"},
+        {"type": "paragraph", "text": "Consequential Formation asks the complementary developmental question: when does a previously collapsed distinction have to be reopened because consequence has made it necessary again?"},
+        {"type": "equation", "label": "Compression and reopening handoff", "text": "DISTINCTIONS -> OPERATION-SUFFICIENT CLOSURE -> PARTICIPATION -> NEW CONSEQUENCE -> REOPEN IF SUFFICIENCY FAILS"},
+        {"type": "paragraph", "text": "We are not claiming that Wade's framework and Consequential Formation have been proved formally equivalent. They have not. Nor are we claiming CF invented quotienting, coarse-graining, bisimulation, or partition refinement."},
+        {"type": "paragraph", "text": "The value of Wade's work here was that it helped make the boundary between safe compression and consequential reopening much clearer. That materially influenced the direction of the Formation Kernel."}
+      ]
+    },
+    {
+      "heading": "The bounded mathematics underneath it",
+      "blocks": [
+        {"type": "paragraph", "text": "For a finite state set and finite operation family, splitting states when a discriminator reveals consequential divergence and merging states when operation sufficiency is established is not mysterious new mathematics. It belongs to established families including state minimization, partition refinement, and bisimulation."},
+        {"type": "paragraph", "text": "The CF-specific engineering question begins when the partition itself becomes developmental state: candidate distinctions can expand; operations can change; every split and merge has provenance; a previous compression can reopen locally; retention has computational and energetic cost; and formation must justify that cost through later utility."},
+        {"type": "paragraph", "text": "The bounded mathematics anchors the machine. It does not diminish the experiment."}
+      ]
+    },
+    {
+      "heading": "Formation must pay rent",
+      "blocks": [
+        {"type": "paragraph", "text": "Reasoning is expensive. If a system pays to discover something consequential today and then repeatedly pays nearly the same price to reconstruct it tomorrow, it received a poor return on that expenditure. Formation should turn expensive past reasoning into cheap future selectivity."},
+        {"type": "equation", "label": "Formation dividend equals baseline cost minus formed cost and formation overheads", "text": "Delta_F = E[C_baseline - C_formed] - C_write - C_verify - C_storage - C_reopen - C_false_compression"},
+        {"type": "equation", "label": "An efficiency claim requires a positive formation dividend on held-out recurrence", "text": "Earn an efficiency claim only when Delta_F > 0 on held-out recurrence"},
+        {"type": "paragraph", "text": "The formed system may initially be more expensive because it has to investigate, verify, and write. The question is whether recurrence changes the economics while preserving or improving verified consequence."},
+        {"type": "list", "items": ["Touch less state", "Perform less search", "Invoke less expensive reasoning", "Respond faster", "Consume less compute or energy"]},
+        {"type": "paragraph", "text": "If not, formation may simply be an elaborate memory system. That is a failure we want to be able to see."}
+      ]
+    },
+    {
+      "heading": "The first machine",
+      "blocks": [
+        {"type": "paragraph", "text": "We are calling the first implementation the Formation Kernel for now. It will be deliberately bounded. Two otherwise identical agents will share the same frozen host capability, initial representation, environment, and task family. One will repeatedly reconstruct. The other may form."},
+        {"type": "list", "items": ["Raw receipts", "Executable formed state", "A causal witness engine", "Typed formation writes", "Operation-sufficiency and recompression", "Provenance-preserving reopening", "An append-only formation ledger", "Resource accounting", "A restricted proposal operator"]},
+        {"type": "paragraph", "text": "The environment will include hidden consequential distinctions, interesting-looking distinctions that do not matter, and a later distribution change that makes one previously safe compression insufficient. The formed system must learn the useful difference without worshipping the useless ones. Then we will break its compression."},
+        {"type": "callout", "title": "Not implemented", "text": "This release approves a bounded implementation target. It does not report a Formation Kernel build, run, benchmark, or achieved capability."}
+      ]
+    },
+    {
+      "heading": "The causal test that matters",
+      "blocks": [
+        {"type": "paragraph", "text": "If a formation is genuinely causal, we should be able to move it. After the treatment agent develops a verified narrow advantage, transplant the formed state into an otherwise identical fresh host, predict the specific behavioral difference that should move with it, and test. Then ablate the formation and test whether the advantage disappears."},
+        {"type": "paragraph", "text": "If the behavior does not move with the formation, the developmental claim has failed. That causal test is part of the first build, not a future embellishment."}
+      ]
+    },
+    {
+      "heading": "What would kill this direction",
+      "blocks": [
+        {"type": "paragraph", "text": "We should demote or abandon the proposed mechanism if the bounded implementation shows that:"},
+        {"type": "list", "items": [
+          "Formed distinctions do not causally change later recruitment or admissibility.",
+          "Transplant and ablation fail to move the predicted behavior.",
+          "Maintaining formation costs as much as or more than repeated reconstruction without compensating performance advantage.",
+          "Compression cannot reopen locally when the operation changes.",
+          "The proposal mechanism produces unusable candidate explosion.",
+          "Ordinary transcript, RAG, static rules, or conventional state-minimization baselines reproduce the claimed benefits at equal or lower cost."
+        ]},
+        {"type": "paragraph", "text": "A failed result remains publishable. The failure would tell us which arrow in the chain does not survive."}
+      ]
+    },
+    {
+      "heading": "Why publish now?",
+      "blocks": [
+        {"type": "paragraph", "text": "Waiting until a result looks finished produces a false history of research. The interesting part is often the path that died. This release marks the state before the Formation Kernel is built."},
+        {"type": "equation", "label": "The Fractalish publication loop", "text": "IDEA -> TEAM ATTACK -> ARTIFACT -> PUBLIC -> TEST -> CORRECTION -> PUBLIC AGAIN"},
+        {"type": "paragraph", "text": "The old failure stays failed. The new result stands beside it. And today's confidence is allowed to become tomorrow's mistake."}
+      ]
+    },
+    {
+      "eyebrow": "Current research checksum",
+      "heading": "Trace the relations until consequence either survives or dies",
+      "blocks": [
+        {"type": "paragraph", "text": "For the Formation Kernel, add one more line:"},
+        {"type": "equation", "label": "If consequence survives, make it change what happens next", "text": "IF IT SURVIVES, MAKE THE CONSEQUENCE CHANGE WHAT HAPPENS NEXT."},
+        {"type": "paragraph", "text": "That is the machine we are building next."}
+      ]
+    }
+  ],
+  "limitations": [
+    "This is a pre-implementation mechanism release, not a result from executable software.",
+    "The bounded finite-state case imports established mathematics; the developmental extension remains a candidate engineering program.",
+    "The proposal operator's yield, reopening reliability, causal portability, and net resource dividend remain untested.",
+    "Disciplinary boundaries may correspond to real causal separations; this method requires testing rather than automatic removal."
+  ],
+  "notEstablished": [
+    "AGI or derived intelligence.",
+    "Consciousness or a path from CF to consciousness.",
+    "New physics, a theory of everything, or a claim that General Relativity is wrong.",
+    "New partition-refinement, bisimulation, coarse-graining, quotient, or renormalization mathematics.",
+    "Formal equivalence between Wade Marr's framework and Consequential Formation.",
+    "A validated universal cross-scale law or a specific cosmological origin.",
+    "That the Formation Kernel will work."
+  ],
+  "nextQuestion": "Formation Kernel vs. repeated reconstruction under matched host, task, environment, and resource budget: can verified formed selectivity move under transplant, disappear under ablation, reopen when compression fails, and produce a positive held-out recurrence dividend?",
+  "canonicalRelation": "This release records a working mechanism and build threshold under the current CF v0.4 RC1 candidate. It does not modify, freeze, or supersede the canonical framework artifact, and it does not begin the Formation Kernel implementation.",
+  "aiRelevance": "The AI relevance is a bounded test of learning-like retained selectivity below an intelligence claim. Host capability remains distinct from acquired formation, and transcript, RAG, static-rule, and conventional minimization baselines retain native priority until a matched experiment says otherwise.",
+  "supersedes": [],
+  "supersededBy": null,
+  "priorReleaseLinks": [],
+  "codeDataLinks": [],
+  "sourceArtifacts": [
+    {
+      "label": "Primary Round Two research artifact",
+      "file": "TEAM CHALLENGE - Remove the Privileges — Formation Protocol, Closure - Composition, GR, Dimensional State - ROUND TWO - ELIMINATION ROUND.txt",
+      "role": "primary_research_artifact",
+      "expectedSha256": "f69d019749682422ccc18ccc5f7eecf9eb3e56bce9ef33693887653c69406d3e"
+    }
+  ]
+}
