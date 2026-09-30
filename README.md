@@ -15,6 +15,20 @@ This repository contains the public static site and evidence record for Fractali
 
 The current operation is `SUSPEND -> OBSERVE -> DISTINGUISH -> TRACE CHANGE -> TRACE RETENTION -> MAP CONSTRAINT -> MAP REACHABILITY -> AUDIT INDEPENDENCE -> RECONSTRUCT -> TYPE THE RETURN -> RENAME ONLY IF EARNED`.
 
+## September 30 Working Synchronization
+
+The current non-canonical working orientation separates exploratory drift in proposal space from unauthorized drift in persistent state. Formation logic constrains persistence, promotion, authority, and retraction without suppressing candidate generation.
+
+- Working note: [`/research/drift-governance/`](https://fractalish.com/research/drift-governance/)
+- Candidate invariant: no consequence may acquire more authority than its evidence earns.
+- Proposal Space is permissive, speculative, probabilistic, divergent, and not automatically durable.
+- Formed State is governed, inspectable, scoped, receipt-bearing, contradiction-aware, revisable, retractable, and authority-bounded.
+- CRR separates retained consequence from later causal recruitment.
+- NLM-BD001 is `WORKING / CREATOR CONSULT REQUIRED / NOT FROZEN`; it does not define learning in advance.
+- The causal analysis may stop at retained/recruited morphology if no additional substrate-neutral office survives subtraction.
+- Actual causal condition and certifiable historical condition remain distinct; missing provenance may require `UNKNOWN` without denying present causal structure.
+- CF v0.4 RC1 remains the public canonical candidate. Frozen project artifacts remain authoritative for their own claims.
+
 ## AI Public Laboratory
 
 The top-level [`/ai`](https://fractalish.com/ai) section separates available host capability from acquired formation and publishes the machine-intelligence work as a status-bearing research record, not as a claim of achieved intelligence.
@@ -58,6 +72,7 @@ The build verifies hashes and then regenerates the article, archive, homepage ca
 - Bolt-On: v0.3 frozen evidence; v0.4 Stage 1 locally validated external-host contract; no production integration claim.
 - Resonant Morphology M1: historical development artifact and bounded software fixture, not flagship proof.
 - Authority Compiler: public verified finite reference fragment; reusable evidence/decision primitive, not a Cognitive Basin-specific component and not a new physics or truth-machine claim.
+- R2R: existing promotion-control machinery for cold promotion into binding state; receiving information is not establishing it, and establishing it is not authorizing an effect.
 
 ## Status Layers
 
@@ -85,7 +100,7 @@ The build verifies hashes and then regenerates the article, archive, homepage ca
 
 ## Current Non-Claims
 
-No current release demonstrates a universal grammar of nature, a universal geometry, proof that everything is fractal, GO / STOP / HOLD as universal primitives, causation from morphology alone, or the complete Natural Math-UFWK-Cognitive Basin-Bolt-On pipeline operating end to end inside ChatGPT or another production language-model service. No page should imply completed production integration, physical CNT memory, morphology uniqueness, universal coding, machine-generated human-value scoring, identity among time/energy/matter/gravity, solved consciousness or physics, achieved MFM intelligence, a required biological/molecular substrate, a proven-superior Formative Field, one identity across distributed bodies, a universal energy-source ranking, or a fixed developmental timeline.
+No current release demonstrates a universal grammar of nature, a universal geometry, proof that everything is fractal, GO / STOP / HOLD as universal primitives, causation from morphology alone, or the complete Natural Math-UFWK-Cognitive Basin-Bolt-On pipeline operating end to end inside ChatGPT or another production language-model service. No page should imply completed production integration, solved hallucination, a final definition of learning, universal CRR, physical learning in CNTM, physical CNT memory, morphology uniqueness, universal coding, machine-generated human-value scoring, identity among time/energy/matter/gravity, solved consciousness or physics, achieved MFM intelligence, a required biological/molecular substrate, a proven-superior Formative Field, one identity across distributed bodies, a universal energy-source ranking, or a fixed developmental timeline.
 
 The Authority Compiler release is bounded to its public finite reference fragment. Its existence does not claim completed R2R, Cognitive Basin, APTD, ValuFai, or other governed-system integrations.
 

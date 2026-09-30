@@ -297,11 +297,40 @@ if (!formationThreshold) {
 }
 
 const homeHtml = fs.readFileSync(path.join(ROOT, "index.html"), "utf8");
-if (!homeHtml.includes("Fractalish studies how what happens leaves a difference, and how that difference changes what can happen next.")) errors.push("index.html: missing adopted public sentence");
-if (!/CF v0\.4 RC1 is the current canonical candidate[\s\S]*constitutive investigative operation[\s\S]*projects are experiments, implementations, evidence, and historical formation/i.test(homeHtml)) errors.push("index.html: missing CF v0.4 RC1 public hierarchy statement");
-if (!/record of formation is not presumed to be its runtime[\s\S]*Formation Ledger[\s\S]*Formative Field[\s\S]*Distributed embodiment/i.test(homeHtml)) errors.push("index.html: missing v0.4 RC1 architecture orientation");
-if (!/Public AI laboratory[\s\S]*AI that carries what happened forward[\s\S]*Capability is not formation|Public AI laboratory[\s\S]*host's available capability from acquired formation/i.test(homeHtml)) errors.push("index.html: missing AI public-laboratory doorway");
+if (!homeHtml.includes("Fractalish studies how possibilities become consequences, how consequences become durable structure, and what that structure is entitled to do next.")) errors.push("index.html: missing September 30 public thesis");
+if (!/CF v0\.4 RC1 remains the public canonical candidate[\s\S]*v0\.12 concordance is a working, non-canonical synchronization record/i.test(homeHtml)) errors.push("index.html: missing canonical-candidate / working-sync authority boundary");
+if (!/Proposal Space[\s\S]*Promotion Gate[\s\S]*Formed State[\s\S]*Later Recruitment/i.test(homeHtml)) errors.push("index.html: missing proposal-space / formed-state architecture orientation");
+if (!/Public AI laboratory[\s\S]*Keep the intelligence\. Govern the consequences/i.test(homeHtml)) errors.push("index.html: missing AI drift-governance doorway");
 if (!/og:image[\s\S]*cf-social-card\.png/i.test(homeHtml)) errors.push("index.html: homepage social image is not the fixed PNG card");
+
+const driftGovernance = fs.readFileSync(path.join(ROOT, "research", "drift-governance", "index.html"), "utf8");
+for (const phrase of [
+  "WORKING / NON-CANONICAL",
+  "Formation logic should constrain persistence, not possibility",
+  "Do not suppress drift. Govern what drift is allowed to become",
+  "No consequence may acquire more authority than its evidence earns",
+  "The mistake was never necessarily that the machine imagined. The mistake was that we gave imagination the same output channel as knowledge and then blamed the imagination",
+  "Proposal Space",
+  "Formed State",
+  "Retention is not recruitment",
+  "NLM Boundary Discriminator 001",
+  "WORKING / CREATOR CONSULT REQUIRED / NOT FROZEN",
+  "Actual condition is not the same as certifiable condition",
+  "Hot assimilation, cold promotion",
+  "Tensor Logic",
+  "Fractalish v1 closure TODO that was not present",
+]) {
+  if (!driftGovernance.includes(phrase)) errors.push(`research/drift-governance/index.html: missing boundary phrase ${phrase}`);
+}
+for (const prohibited of [
+  /<h\d[^>]*>[^<]*Fractalish solves hallucination/i,
+  /<h\d[^>]*>[^<]*NLM has defined learning/i,
+  /<h\d[^>]*>[^<]*CRR is proven universal/i,
+  /<h\d[^>]*>[^<]*Tensor Logic validates Fractalish/i,
+  /<h\d[^>]*>[^<]*team reached unanimous agreement/i,
+]) {
+  if (prohibited.test(driftGovernance)) errors.push(`research/drift-governance/index.html: prohibited claim ${prohibited}`);
+}
 
 const neighborsHtml = fs.readFileSync(path.join(ROOT, "scientific-neighbors.html"), "utf8");
 if (!/Sara Imari Walker[\s\S]*Leroy Cronin[\s\S]*Assembly Theory does not validate CF[\s\S]*EXTERNAL REPORTED RESULTS/i.test(neighborsHtml)) errors.push("scientific-neighbors.html: missing bounded Assembly Theory comparison");
@@ -324,12 +353,14 @@ for (const rel of refreshed) {
 
 const index = fs.readFileSync(path.join(ROOT, "index.html"), "utf8");
 for (const phrase of [
-  "Fractalish studies how what happens leaves a difference, and how that difference changes what can happen next.",
+  "Fractalish studies how possibilities become consequences, how consequences become durable structure, and what that structure is entitled to do next.",
   "Suspend the category. Keep the evidence. Audit what returns.",
   "The lines are not the territory.",
   "changed future possibilities",
   "Consequential Formation",
   "Form is accumulated consequence",
+  "Formation logic should constrain persistence, not possibility.",
+  "No consequence may acquire more authority than its evidence earns.",
   "A resemblance is not a discovery",
   "Do not protect the framework. Try to break it."
 ]) {
@@ -396,7 +427,7 @@ const sitemap = fs.readFileSync(path.join(ROOT, "sitemap.xml"), "utf8");
 const locations = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
 const duplicateLocations = [...new Set(locations.filter((url, i) => locations.indexOf(url) !== i))];
 if (duplicateLocations.length) errors.push(`sitemap.xml: duplicate URLs ${duplicateLocations.join(", ")}`);
-for (const required of ["https://fractalish.com/", "https://fractalish.com/start-here", "https://fractalish.com/erase-the-nouns", "https://fractalish.com/rounds", "https://fractalish.com/consequential-formation", "https://fractalish.com/what-emerged", "https://fractalish.com/life-autonomy", "https://fractalish.com/memory-intelligence", "https://fractalish.com/cognition", "https://fractalish.com/reinspect-knowledge", "https://fractalish.com/build-with-it", "https://fractalish.com/what-cf-does-not-claim", "https://fractalish.com/try-to-kill-it", "https://fractalish.com/try-the-lens", "https://fractalish.com/cf-map", "https://fractalish.com/experiments", "https://fractalish.com/constitution", "https://fractalish.com/desiloization", "https://fractalish.com/scientific-neighbors", "https://fractalish.com/ageometrics/", "https://fractalish.com/specificity-thesis", "https://fractalish.com/ai", "https://fractalish.com/ai/research", "https://fractalish.com/ai/team", "https://fractalish.com/ai/method", "https://fractalish.com/ai/experiments", "https://fractalish.com/ai/artifacts", "https://fractalish.com/ai/failures", "https://fractalish.com/ai/build-log", "https://fractalish.com/releases", "https://fractalish.com/releases/2026-09-13-natural-math-scale"]) {
+for (const required of ["https://fractalish.com/", "https://fractalish.com/start-here", "https://fractalish.com/erase-the-nouns", "https://fractalish.com/rounds", "https://fractalish.com/consequential-formation", "https://fractalish.com/what-emerged", "https://fractalish.com/life-autonomy", "https://fractalish.com/memory-intelligence", "https://fractalish.com/cognition", "https://fractalish.com/reinspect-knowledge", "https://fractalish.com/build-with-it", "https://fractalish.com/what-cf-does-not-claim", "https://fractalish.com/try-to-kill-it", "https://fractalish.com/try-the-lens", "https://fractalish.com/cf-map", "https://fractalish.com/experiments", "https://fractalish.com/constitution", "https://fractalish.com/desiloization", "https://fractalish.com/scientific-neighbors", "https://fractalish.com/ageometrics/", "https://fractalish.com/specificity-thesis", "https://fractalish.com/ai", "https://fractalish.com/ai/research", "https://fractalish.com/ai/team", "https://fractalish.com/ai/method", "https://fractalish.com/ai/experiments", "https://fractalish.com/ai/artifacts", "https://fractalish.com/ai/failures", "https://fractalish.com/ai/build-log", "https://fractalish.com/research/drift-governance/", "https://fractalish.com/releases", "https://fractalish.com/releases/2026-09-13-natural-math-scale"]) {
   if (!locations.includes(required)) errors.push(`sitemap.xml: missing ${required}`);
 }
 if (locations.includes("https://fractalish.com/ageometrics.html")) errors.push("sitemap.xml: redirect alias ageometrics.html should not be indexed");

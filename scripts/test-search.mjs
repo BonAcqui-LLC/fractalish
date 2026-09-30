@@ -40,6 +40,8 @@ for (const [q, path] of [
 }
 for (const [q, path] of [
   ['Consequential Formation', '/consequential-formation'],
+  ['"looking at AI drift backwards"', '/research/drift-governance/'],
+  ['"unauthorized persistent-state drift"', '/research/drift-governance/'],
   ['life', '/life-autonomy'],
   ['memory', '/memory-intelligence'],
   ['intelligence', '/memory-intelligence'],
@@ -59,6 +61,9 @@ for (const [q, path] of [
   ['AI failures', '/ai/failures'],
 ]) {
   assert.equal(search(real, q)[0]?.url, path, `${q}: expected current pathway to rank first`);
+}
+for (const q of ['"formation logic should constrain persistence"', '"proposal space" "formed state"', 'NLM-BD001']) {
+  assert.ok(search(real, q).slice(0, 5).some((item) => item.url === '/research/drift-governance/'), `${q}: expected drift-governance note in top 5`);
 }
 assert.equal(search(real, 'resonant morphology')[0]?.pageClass, 'HISTORICAL_RECORD', 'specific historical queries must still reach the historical record');
 assert.equal(new Set(real.map(d=>d.url)).size,real.length);

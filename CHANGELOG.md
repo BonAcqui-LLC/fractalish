@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-09-30 - Drift governance and Fractalish v1 working alignment
+
+- Added the working note `/research/drift-governance/`, separating exploratory drift in proposal space from unauthorized persistent-state drift.
+- Made the candidate authority invariant, proposal-space/formed-state boundary, CRR retention/recruitment distinction, NLM-BD001, morphology stop rule, and actual-versus-certifiable condition visible without promoting them to canon.
+- Updated the homepage, AI, Consequential Formation, Cognitive Basin, Natural Math, status, research, team, and roadmap surfaces while preserving CF v0.4 RC1 as the public canonical candidate.
+- Preserved modern probabilistic model capability and native-domain authority; added no claim of solved hallucination, learning, intelligence, consciousness, universal CRR, or Tensor Logic integration.
+- Left frozen Natural Math artifacts, frozen R2R baselines, historical releases, and existing evidence records unchanged.
+
 ## 2026-09-15 - Formation Protocol build threshold release
 
 - Published `/releases/2026-09-15-formation-protocol-build-threshold` as a working-research record before Formation Kernel implementation.
