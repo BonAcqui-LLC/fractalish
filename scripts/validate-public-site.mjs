@@ -342,9 +342,9 @@ for (const phrase of [
 }
 const octoberManifestRel = "docs/OCTOBER_2026_PUBLICATION_MANIFEST.sha256";
 const octoberManifest = fs.readFileSync(path.join(ROOT, octoberManifestRel), "utf8");
-if (!octoberManifest.includes("20 paths: 19 payload files listed here")) errors.push(`${octoberManifestRel}: missing self-exclusion accounting`);
+if (!octoberManifest.includes("21 paths: 20 payload files listed here")) errors.push(`${octoberManifestRel}: missing self-exclusion accounting`);
 const octoberManifestEntries = octoberManifest.split(/\r?\n/).map((line) => line.match(/^([0-9a-f]{64})  (.+)$/)).filter(Boolean);
-if (octoberManifestEntries.length !== 19) errors.push(`${octoberManifestRel}: expected 19 payload hashes, found ${octoberManifestEntries.length}`);
+if (octoberManifestEntries.length !== 20) errors.push(`${octoberManifestRel}: expected 20 payload hashes, found ${octoberManifestEntries.length}`);
 for (const [, expectedHash, rel] of octoberManifestEntries) {
   if (rel === octoberManifestRel) {
     errors.push(`${octoberManifestRel}: must not recursively hash itself`);
@@ -380,6 +380,20 @@ for (const prohibited of [
 
 const neighborsHtml = fs.readFileSync(path.join(ROOT, "scientific-neighbors.html"), "utf8");
 if (!/Sara Imari Walker[\s\S]*Leroy Cronin[\s\S]*Assembly Theory does not validate CF[\s\S]*EXTERNAL REPORTED RESULTS/i.test(neighborsHtml)) errors.push("scientific-neighbors.html: missing bounded Assembly Theory comparison");
+for (const phrase of [
+  'id="marr-thiel-recursive-closure"',
+  "R. Wade H. Marr and Joseph Adam Thiel",
+  "Marr and Thiel have not privately collaborated with Fractalish and are not represented as endorsing it",
+  "CONCEPTUAL NEIGHBOR / ACKNOWLEDGED INFLUENCE",
+  "Individual claims remain external reported results unless separately reproduced and registered",
+  "Lineage note — 2026-08-03",
+  "https://x.com/HunterWade",
+  "https://zenodo.org/records/18775328",
+  "https://zenodo.org/records/21659919",
+  "https://zenodo.org/records/21496649",
+]) {
+  if (!neighborsHtml.includes(phrase)) errors.push(`scientific-neighbors.html: missing production-reconciled attribution phrase ${phrase}`);
+}
 
 const refreshed = [
   "index.html", "start-here.html", "erase-the-nouns.html", "rounds.html", "consequential-formation.html", "what-emerged.html",

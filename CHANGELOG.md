@@ -10,6 +10,7 @@
 - Added a Cognitive Basin/CNC roadmap retaining PERCEPT, ATAL, RIGOR, R2R, ASF, Natural Math, and the Authority Compiler as instruments while keeping cognitive category claims open to experiment.
 - Preserved all historical releases and frozen artifacts; did not deploy, post to X, or alter unrelated repositories.
 - Final adversarial review aligned the public thesis with Master Concordance v2.3 by keeping becoming as the only currently admitted primitive, treating formation as ongoing physical expression, and separating retention from consequential retention and accommodation failure from rupture.
+- Reconciled the production-only August 3 Marr–Thiel acknowledgment into canonical Scientific Neighbors source, retained its external-result and non-endorsement boundaries, and added a validation gate against future source-controlled erasure.
 
 ## 2026-09-30 - Drift governance and Fractalish v1 working alignment
 
