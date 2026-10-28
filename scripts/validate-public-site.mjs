@@ -297,7 +297,7 @@ if (!formationThreshold) {
 }
 
 const homeHtml = fs.readFileSync(path.join(ROOT, "index.html"), "utf8");
-if (!homeHtml.includes("Matter matters. Formation first. Measurement governs.")) errors.push("index.html: missing October 28 public thesis");
+if (!homeHtml.includes("Matter matters. Formation is ongoing. Measurement governs.")) errors.push("index.html: missing October 28 public thesis");
 if (!/CF v0\.4 RC1 remains the public canonical candidate[\s\S]*October synchronization is working and non-canonical/i.test(homeHtml)) errors.push("index.html: missing canonical-candidate / October working-sync authority boundary");
 if (!/Proposal Space[\s\S]*Promotion Gate[\s\S]*Formed State[\s\S]*Later Recruitment/i.test(homeHtml)) errors.push("index.html: missing proposal-space / formed-state architecture orientation");
 if (!/Public AI laboratory[\s\S]*Keep the intelligence\. Govern the consequences/i.test(homeHtml)) errors.push("index.html: missing AI drift-governance doorway");
@@ -325,9 +325,13 @@ for (const phrase of [
 
 const octoberSync = fs.readFileSync(path.join(ROOT, "research", "october-2026-synchronization", "index.html"), "utf8");
 for (const phrase of [
-  "Matter matters. Formation first. Measurement governs.",
+  "Matter matters. Formation is ongoing. Measurement governs.",
   "WORKING / NON-CANONICAL / NOT A THEORY FREEZE",
-  "Formation, measurement, and representation are not the same thing",
+  "Master Concordance v2.3 keeps becoming as CF&rsquo;s only currently admitted primitive",
+  "Formation names that ongoing activity as physically expressed",
+  "Physical formation, observation, and representation are not the same thing",
+  "Consequential retention is narrower",
+  "Accommodation failure means that the predeclared tolerance or return horizon was exceeded",
   "Accommodation, instability, and rupture belong inside the evidence",
   "Physical comparison does not require a symbolic comparator",
   "Engineered synapses and CNC must earn their categories",
@@ -335,6 +339,24 @@ for (const phrase of [
   "does not replace CF v0.4 RC1",
 ]) {
   if (!octoberSync.includes(phrase)) errors.push(`research/october-2026-synchronization/index.html: missing boundary phrase ${phrase}`);
+}
+const octoberManifestRel = "docs/OCTOBER_2026_PUBLICATION_MANIFEST.sha256";
+const octoberManifest = fs.readFileSync(path.join(ROOT, octoberManifestRel), "utf8");
+if (!octoberManifest.includes("20 paths: 19 payload files listed here")) errors.push(`${octoberManifestRel}: missing self-exclusion accounting`);
+const octoberManifestEntries = octoberManifest.split(/\r?\n/).map((line) => line.match(/^([0-9a-f]{64})  (.+)$/)).filter(Boolean);
+if (octoberManifestEntries.length !== 19) errors.push(`${octoberManifestRel}: expected 19 payload hashes, found ${octoberManifestEntries.length}`);
+for (const [, expectedHash, rel] of octoberManifestEntries) {
+  if (rel === octoberManifestRel) {
+    errors.push(`${octoberManifestRel}: must not recursively hash itself`);
+    continue;
+  }
+  const fullPath = path.join(ROOT, rel);
+  if (!fs.existsSync(fullPath)) {
+    errors.push(`${octoberManifestRel}: missing payload ${rel}`);
+    continue;
+  }
+  const actualHash = crypto.createHash("sha256").update(fs.readFileSync(fullPath)).digest("hex");
+  if (actualHash !== expectedHash) errors.push(`${octoberManifestRel}: hash mismatch for ${rel}`);
 }
 const measurementRegister = fs.readFileSync(path.join(ROOT, "research", "measurement-first-register", "index.html"), "utf8");
 for (const phrase of [
@@ -377,18 +399,25 @@ for (const rel of refreshed) {
 
 const index = fs.readFileSync(path.join(ROOT, "index.html"), "utf8");
 for (const phrase of [
-  "Matter matters. Formation first. Measurement governs.",
+  "Matter matters. Formation is ongoing. Measurement governs.",
   "Suspend the category. Keep the evidence. Audit what returns.",
   "The lines are not the territory.",
   "changed future possibilities",
   "Consequential Formation",
   "Form is accumulated consequence",
-  "Formation, measurement, and representation are not the same thing.",
+  "Physical formation, observation, and representation are not the same thing.",
   "No consequence may acquire more authority than its evidence earns.",
   "A resemblance is not a discovery",
   "Do not protect the framework. Try to break it."
 ]) {
   if (!index.includes(phrase)) errors.push(`index.html: missing required narrative phrase: ${phrase}`);
+}
+for (const [rel, source] of [
+  ["index.html", index],
+  ["research/october-2026-synchronization/index.html", octoberSync],
+  ["docs/CF_OCTOBER_2026_RESEARCH_SYNCHRONIZATION.md", fs.readFileSync(path.join(ROOT, "docs", "CF_OCTOBER_2026_RESEARCH_SYNCHRONIZATION.md"), "utf8")],
+]) {
+  if (/Matter matters\. Formation first\./i.test(source)) errors.push(`${rel}: superseded primitive-floor slogan reintroduced as public thesis`);
 }
 
 const framework = fs.readFileSync(path.join(ROOT, "framework.html"), "utf8");

@@ -8,9 +8,11 @@
 
 This synchronization makes the October physical-formation orientation legible without replacing the historical sequential grammar. It distinguishes the physical investigation from the discrete records used to inspect it.
 
-> Matter matters. Formation first. Measurement governs.
+> Matter matters. Formation is ongoing. Measurement governs.
 
-Fractalish investigates how physical configurations arise, persist, interact, reorganize, fail, and alter subsequent accessibility. A measurement is an interaction with that formation. A diagram, state vector, event chain, equation, label, or software object is a representation built from declared measurements. These three layers must not be silently collapsed.
+This synchronization follows Master Concordance v2.3: becoming is the only primitive currently admitted by CF; formation names that ongoing activity as physically expressed; morphology is its observable organization at a chosen resolution. “Formation comes first” remains a historical repair slogan, not a primitive-floor claim or replacement universal mechanism.
+
+Fractalish investigates how physical configurations arise, persist, interact, reorganize, fail, and alter subsequent accessibility. A measurement is a declared physical interaction with ongoing formation. An observation is an instrument-conditioned result of that interaction. A diagram, state vector, event chain, equation, label, or software object is a representation built from selected observations for a declared question. Physical formation, observation, and representation must not be silently collapsed.
 
 ## Reconciliation
 
@@ -26,9 +28,9 @@ A discrete record is therefore a projection:
 4. build a representation for a declared question;
 5. test whether the representation preserves the response, transition, or prediction at issue.
 
-### Retention is active only when physically consequential
+### Retention is optional; consequence must be demonstrated
 
-Retention is not privileged as a passive store between completed events. A retained difference may be load-bearing in current interaction, may decay, may become inaccessible under one probe and accessible under another, or may cease to matter. “Memory” is not granted by duration alone.
+Retention means that morphology persists across a declared interval; it is optional, and terminating morphology still belongs to formation. Consequential retention is narrower: the retained morphology must demonstrably alter a later negotiation or measured response. A retained difference may be load-bearing in current interaction, may decay, may become inaccessible under one probe and accessible under another, or may cease to matter. Duration alone does not establish memory or consequence.
 
 ### Causal arrows are audit devices
 
@@ -40,7 +42,7 @@ A physical configuration and a state description are not identical. A state is s
 
 ### Rupture belongs inside the investigation
 
-Accommodation, instability, fracture, dissolution, phase change, cascade, recovery, and post-transition organization are evidence. Failed runs and high-resolution transition records are retained. A system need not preserve identity or return to baseline for the result to matter.
+Accommodation failure and rupture are not synonyms. Accommodation failure occurs when a predeclared bounded relationship exceeds its tolerance or fails to return within its declared horizon. Rupture requires a separately measured structural discontinuity such as fracture, dissolution, loss of connectivity, or loss of the tracked identity. Either may occur without the other. Instability, phase change, cascade, recovery, and post-transition organization are also evidence. Failed runs and high-resolution transition records are retained.
 
 ## Core research sections
 
@@ -50,7 +52,7 @@ Test whether simultaneous and spatially extended coupling explains observations 
 
 ### Accommodation, instability, and rupture
 
-Operationalize accommodation as the perturbation envelope within which a declared relationship remains bounded. Record approach-to-transition signatures, the transition itself, cascading effects, and the new probe response afterward. Do not infer a universal critical law from one substrate.
+Operationalize accommodation as the perturbation envelope within which a declared relationship remains bounded. Predeclare the observable, tolerance, and return horizon used to call accommodation failure; measure rupture independently through structural observables. Record approach-to-transition signatures, the transition itself, cascading effects, and the new probe response afterward. Do not infer a universal critical law from one substrate.
 
 ### Mobility, constraint, and nested formation
 

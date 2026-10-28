@@ -9,6 +9,7 @@
 - Added a measurement-first experimental register with native units, perturbations, continuous observations, controls, uncertainty, falsifiers, provenance, and reproduction requirements.
 - Added a Cognitive Basin/CNC roadmap retaining PERCEPT, ATAL, RIGOR, R2R, ASF, Natural Math, and the Authority Compiler as instruments while keeping cognitive category claims open to experiment.
 - Preserved all historical releases and frozen artifacts; did not deploy, post to X, or alter unrelated repositories.
+- Final adversarial review aligned the public thesis with Master Concordance v2.3 by keeping becoming as the only currently admitted primitive, treating formation as ongoing physical expression, and separating retention from consequential retention and accommodation failure from rupture.
 
 ## 2026-09-30 - Drift governance and Fractalish v1 working alignment
 

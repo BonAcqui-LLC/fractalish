@@ -26,7 +26,7 @@ The current publication-safe orientation returns the project to physical formati
 - Evidence-class map: [`docs/SCIENTIFIC_EVIDENCE_MAP_2026-10-28.md`](docs/SCIENTIFIC_EVIDENCE_MAP_2026-10-28.md)
 - Cognitive Basin / CNC roadmap: [`docs/COGNITIVE_BASIN_CNC_PHYSICAL_FORMATION_ROADMAP_2026-10-28.md`](docs/COGNITIVE_BASIN_CNC_PHYSICAL_FORMATION_ROADMAP_2026-10-28.md)
 
-Working compression: **Matter matters. Formation first. Measurement governs.** Formation, measurement, and representation remain distinct. The sequential grammar remains a useful operational projection, not a declaration that coupled physical processes occur in isolated stages. Accommodation, instability, rupture, and negative outcomes remain part of the evidence.
+Working compression: **Matter matters. Formation is ongoing. Measurement governs.** Master Concordance v2.3 keeps becoming as CF's only currently admitted primitive; formation names its ongoing physical expression rather than a replacement universal mechanism. Physical formation, observation, and representation remain distinct. The sequential grammar remains a useful operational projection, not a declaration that coupled physical processes occur in isolated stages. Accommodation failure, rupture, and negative outcomes remain distinct parts of the evidence.
 
 CF v0.4 RC1 and role-scoped frozen authorities retain their named authority. The October concordance is read as a non-frozen reconciliation. Team research packets generate candidates and criticism; model agreement is not experimental validation.
 
