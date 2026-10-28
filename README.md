@@ -15,6 +15,21 @@ This repository contains the public static site and evidence record for Fractali
 
 The current operation is `SUSPEND -> OBSERVE -> DISTINGUISH -> TRACE CHANGE -> TRACE RETENTION -> MAP CONSTRAINT -> MAP REACHABILITY -> AUDIT INDEPENDENCE -> RECONSTRUCT -> TYPE THE RETURN -> RENAME ONLY IF EARNED`.
 
+## October 28 Working Synchronization
+
+The current publication-safe orientation returns the project to physical formation without freezing a new framework version.
+
+- Public note: [`/research/october-2026-synchronization/`](https://fractalish.com/research/october-2026-synchronization/)
+- Experimental register: [`/research/measurement-first-register/`](https://fractalish.com/research/measurement-first-register/)
+- Source and authority inventory: [`docs/OCTOBER_2026_SOURCE_AUTHORITY_INVENTORY.md`](docs/OCTOBER_2026_SOURCE_AUTHORITY_INVENTORY.md)
+- Full synchronization: [`docs/CF_OCTOBER_2026_RESEARCH_SYNCHRONIZATION.md`](docs/CF_OCTOBER_2026_RESEARCH_SYNCHRONIZATION.md)
+- Evidence-class map: [`docs/SCIENTIFIC_EVIDENCE_MAP_2026-10-28.md`](docs/SCIENTIFIC_EVIDENCE_MAP_2026-10-28.md)
+- Cognitive Basin / CNC roadmap: [`docs/COGNITIVE_BASIN_CNC_PHYSICAL_FORMATION_ROADMAP_2026-10-28.md`](docs/COGNITIVE_BASIN_CNC_PHYSICAL_FORMATION_ROADMAP_2026-10-28.md)
+
+Working compression: **Matter matters. Formation first. Measurement governs.** Formation, measurement, and representation remain distinct. The sequential grammar remains a useful operational projection, not a declaration that coupled physical processes occur in isolated stages. Accommodation, instability, rupture, and negative outcomes remain part of the evidence.
+
+CF v0.4 RC1 and role-scoped frozen authorities retain their named authority. The October concordance is read as a non-frozen reconciliation. Team research packets generate candidates and criticism; model agreement is not experimental validation.
+
 ## September 30 Working Synchronization
 
 The current non-canonical working orientation separates exploratory drift in proposal space from unauthorized drift in persistent state. Formation logic constrains persistence, promotion, authority, and retraction without suppressing candidate generation.

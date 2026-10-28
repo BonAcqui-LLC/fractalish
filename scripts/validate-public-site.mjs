@@ -297,8 +297,8 @@ if (!formationThreshold) {
 }
 
 const homeHtml = fs.readFileSync(path.join(ROOT, "index.html"), "utf8");
-if (!homeHtml.includes("Fractalish studies how possibilities become consequences, how consequences become durable structure, and what that structure is entitled to do next.")) errors.push("index.html: missing September 30 public thesis");
-if (!/CF v0\.4 RC1 remains the public canonical candidate[\s\S]*v0\.12 concordance is a working, non-canonical synchronization record/i.test(homeHtml)) errors.push("index.html: missing canonical-candidate / working-sync authority boundary");
+if (!homeHtml.includes("Matter matters. Formation first. Measurement governs.")) errors.push("index.html: missing October 28 public thesis");
+if (!/CF v0\.4 RC1 remains the public canonical candidate[\s\S]*October synchronization is working and non-canonical/i.test(homeHtml)) errors.push("index.html: missing canonical-candidate / October working-sync authority boundary");
 if (!/Proposal Space[\s\S]*Promotion Gate[\s\S]*Formed State[\s\S]*Later Recruitment/i.test(homeHtml)) errors.push("index.html: missing proposal-space / formed-state architecture orientation");
 if (!/Public AI laboratory[\s\S]*Keep the intelligence\. Govern the consequences/i.test(homeHtml)) errors.push("index.html: missing AI drift-governance doorway");
 if (!/og:image[\s\S]*cf-social-card\.png/i.test(homeHtml)) errors.push("index.html: homepage social image is not the fixed PNG card");
@@ -321,6 +321,30 @@ for (const phrase of [
   "Fractalish v1 closure TODO that was not present",
 ]) {
   if (!driftGovernance.includes(phrase)) errors.push(`research/drift-governance/index.html: missing boundary phrase ${phrase}`);
+}
+
+const octoberSync = fs.readFileSync(path.join(ROOT, "research", "october-2026-synchronization", "index.html"), "utf8");
+for (const phrase of [
+  "Matter matters. Formation first. Measurement governs.",
+  "WORKING / NON-CANONICAL / NOT A THEORY FREEZE",
+  "Formation, measurement, and representation are not the same thing",
+  "Accommodation, instability, and rupture belong inside the evidence",
+  "Physical comparison does not require a symbolic comparator",
+  "Engineered synapses and CNC must earn their categories",
+  "Alpha Dictionary remains a proposal",
+  "does not replace CF v0.4 RC1",
+]) {
+  if (!octoberSync.includes(phrase)) errors.push(`research/october-2026-synchronization/index.html: missing boundary phrase ${phrase}`);
+}
+const measurementRegister = fs.readFileSync(path.join(ROOT, "research", "measurement-first-register", "index.html"), "utf8");
+for (const phrase of [
+  "PROPOSED / NOT RUN",
+  "EXP-OF-001",
+  "Native quantities",
+  "Falsifying result",
+  "This register does not itself authorize a run",
+]) {
+  if (!measurementRegister.includes(phrase)) errors.push(`research/measurement-first-register/index.html: missing experimental-register phrase ${phrase}`);
 }
 for (const prohibited of [
   /<h\d[^>]*>[^<]*Fractalish solves hallucination/i,
@@ -353,13 +377,13 @@ for (const rel of refreshed) {
 
 const index = fs.readFileSync(path.join(ROOT, "index.html"), "utf8");
 for (const phrase of [
-  "Fractalish studies how possibilities become consequences, how consequences become durable structure, and what that structure is entitled to do next.",
+  "Matter matters. Formation first. Measurement governs.",
   "Suspend the category. Keep the evidence. Audit what returns.",
   "The lines are not the territory.",
   "changed future possibilities",
   "Consequential Formation",
   "Form is accumulated consequence",
-  "Formation logic should constrain persistence, not possibility.",
+  "Formation, measurement, and representation are not the same thing.",
   "No consequence may acquire more authority than its evidence earns.",
   "A resemblance is not a discovery",
   "Do not protect the framework. Try to break it."

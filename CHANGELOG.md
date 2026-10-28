@@ -1,5 +1,15 @@
 # Changelog
 
+## 2026-10-28 - Physical-formation research synchronization
+
+- Added a non-canonical October synchronization separating ongoing physical formation, measurement, and representation while preserving CF v0.4 RC1 and role-scoped frozen authorities.
+- Added a source/authority inventory covering nine requested public repositories, exact remote refs, dirty-checkout boundaries, controlling October concordance blobs, reviewed local team packets, and explicit HOLDs.
+- Added publication-safe research sections for accommodation/rupture, mobility/constraint, physical differential response, CF Evolution, engineered synapses/CNC, and the Alpha Dictionary proposal.
+- Added a scientific evidence map that distinguishes direct experiment, computation, derivation, perspective, and team synthesis; none is presented as automatic validation of CF.
+- Added a measurement-first experimental register with native units, perturbations, continuous observations, controls, uncertainty, falsifiers, provenance, and reproduction requirements.
+- Added a Cognitive Basin/CNC roadmap retaining PERCEPT, ATAL, RIGOR, R2R, ASF, Natural Math, and the Authority Compiler as instruments while keeping cognitive category claims open to experiment.
+- Preserved all historical releases and frozen artifacts; did not deploy, post to X, or alter unrelated repositories.
+
 ## 2026-09-30 - Drift governance and Fractalish v1 working alignment
 
 - Added the working note `/research/drift-governance/`, separating exploratory drift in proposal space from unauthorized persistent-state drift.
