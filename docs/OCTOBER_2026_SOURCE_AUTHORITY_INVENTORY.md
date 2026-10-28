@@ -19,6 +19,7 @@ Remote `HEAD` values were read on 2026-10-28. Dirty local checkouts were inspect
 | `BonAcqui-LLC/authority-compiler` | `main@4bed79509e73e5224f36dd21434e766790abd1a6` | remote verified 2026-10-28 | Finite fail-closed reference compiler already represented on the public site. | Its finite fixture/test contract | Public; instrument, not truth machine |
 | `BonAcqui-LLC/cntm-natural-math-canonical-library` | `main@4cc817441d3447e54303550090eaf8b95c451a83` | 2026-08-02 | Canonical library through Bolt-On Continuity v0.4 freeze. Local checkout is behind and has unrelated untracked artifacts. | Named frozen Natural Math/CNTM files and hashes | Public metadata; do not infer physical memory success |
 | `BonAcqui-LLC/fractalish-r2r-engine` | `main@5b950d3efc9a2ced91a0026cf2bbd23d594eed81` | 2026-08-06 | R2R foundation on remote default branch; a separate local hardening branch has a modified synthetic result. | Branch-specific receipts and gates | Public; no production trust-enrollment claim |
+| `persistentiterations/fractalish-ai-v2` | `main@49cbb8594d475aaf0a65ea20a305772d1b57b3e3` | 2026-06-10 | Additional repository discovered during the audit. The October `basin_challenge/` harness is local and untracked in this checkout, so only its bounded negative result is used in the working roadmap. | Committed public baseline controls repo claims; the untracked harness has no public-repo authority | Baseline public; local harness publication HOLD |
 
 ## Controlling October concordance sources
 
