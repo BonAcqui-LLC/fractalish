@@ -1,2 +1,6 @@
 research/aptd/*.md text eol=lf
+/Consequential_Formation_Unified_Framework_v0_3_2026-09-13.md -text
+/Consequential_Formation_Unified_Framework_v0_4_RC1_2026-09-13.md -text
+/CF_v0_3_Team_State_Transfer_2026-09-13.md -text
+release-assets/2026-09-13-natural-math-scale/* -text
 release-assets/2026-09-15-formation-protocol-build-threshold/* -text
